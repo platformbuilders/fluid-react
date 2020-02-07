@@ -6,6 +6,24 @@
   "author": "Platform-Builders",
   "license": "MIT",
   "private": true,
+  "lint-staged": {
+    "*.js": [
+      "yarn pretty",
+      "yarn lint",
+      "git add ."
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "scripts": {
+    "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
+    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "precommit": "yarn lint"
+  },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.7",
     "@types/lodash": "^4.14.149",
