@@ -1,11 +1,11 @@
 {
   "name": "builders-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Platform Builders Shared Components Library",
   "main": "src/index.ts",
   "author": "Platform-Builders",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "lint-staged": {
     "*.js": [
       "yarn pretty",
