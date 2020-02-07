@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ESNext",
+    "module": "commonjs",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "skipLibCheck": true,
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/api": ["src/api"],
+      "~/assets/svg": ["src/assets/svg"],
+      "~/assets/images": ["src/assets/images"],
+      "~/components": ["src/components"],
+      "~/scenes": ["src/scenes"],
+      "~/services": ["src/services"],
+      "~/stores": ["src/stores"],
+      "~/theme": ["src/theme"],
+      "~/navigation": ["src/navigation"],
+      "~/navigation/service": ["src/navigation/service.ts"],
+      "~/navigation/routes": ["src/navigation/routes.ts"],
+      "~/utils/modules": ["src/utils/modules"],
+      "~/utils/helpers": ["src/utils/helpers"],
+      "~/utils/entities": ["src/utils/entities"],
+      "~/utils/enums": ["src/utils/enums"],
+      "~/utils/config": ["src/utils/config"],
+      "~/utils/types": ["src/utils/types"],
+      "~/utils/hooks": ["src/utils/hooks"]
+    },
+  },
+  "exclude": [
+    "__tests__/" // exclude test files
+  ]
+}
