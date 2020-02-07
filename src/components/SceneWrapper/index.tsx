@@ -34,6 +34,7 @@ const SceneWrapper: React.FC<Props> = ({
   fullWidth = false,
   ...rest
 }) => {
+  // eslint-disable-next-line prettier/prettier
   const backgroundColor = style[0]?.backgroundColor;
   return (
     <DismissKeyboardView>

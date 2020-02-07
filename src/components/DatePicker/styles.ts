@@ -28,7 +28,9 @@ export const LABEL_LOWER_STYLE = {
 };
 
 interface TextProps {
-  dark: boolean;
+  dark?: boolean;
+  error?: string;
+  isPlaceholder?: boolean;
 }
 
 export const TextLabel = styled.Text<TextProps>`

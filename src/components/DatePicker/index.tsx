@@ -32,11 +32,11 @@ interface Props {
 const DatePickerInput: FC<Props> = (props) => {
   const {
     label,
-    error,
+    error = '',
     maxDate,
     confirmBtnText,
     cancelBtnText,
-    dark,
+    dark = false,
     editable = true,
   } = props;
   const [labelAnimatedStyle] = useState({
@@ -89,10 +89,9 @@ const DatePickerInput: FC<Props> = (props) => {
   return (
     <FormError error={error}>
       <Label
-        error={error}
+        error={error || ''}
         style={labelAnimatedStyle}
         isPlaceholder={isPlaceholder}
-        // @ts-ignore
         dark={dark}
       >
         {label}

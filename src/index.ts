@@ -1,7 +1,11 @@
 // Basic
 export { default as If } from './components/If';
-export { default as DismissKeyboardView } from './components/DismissKeyboardView';
-export { default as KeyboardAvoidingView } from './components/KeyboardAvoidingView';
+export {
+  default as DismissKeyboardView,
+} from './components/DismissKeyboardView';
+export {
+  default as KeyboardAvoidingView,
+} from './components/KeyboardAvoidingView';
 export { default as Typography } from './components/Typography';
 
 // Inputs

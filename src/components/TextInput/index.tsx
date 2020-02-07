@@ -135,6 +135,7 @@ const AnimatedTextInput: FC<Props> = (props) => {
   const prevValue = usePrevious<string>(props.value || '');
 
   useEffect(() => {
+    // eslint-disable-next-line prettier/prettier
     const wasEmpty = prevValue?.length === 0;
     if (props.value && props.value.length && wasEmpty) {
       animationUp();
@@ -153,8 +154,8 @@ const AnimatedTextInput: FC<Props> = (props) => {
         <Label
           status={status}
           style={[labelStyle, labelAnimatedStyle]}
-          isPlaceholder={isPlaceholder}
           dark={dark}
+          isPlaceholder={isPlaceholder}
         >
           {label}
         </Label>

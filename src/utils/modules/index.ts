@@ -12,12 +12,9 @@ export { moment as DateManager };
 export { default as Numeral } from 'numeral';
 export { lighten, darken } from 'polished';
 export { TextInputMask } from 'react-native-masked-text';
-export { default as AsyncStorage } from '@react-native-community/async-storage';
-export { default as Env } from 'react-native-config';
 export { default as Animation } from 'lottie-react-native';
 export { default as Haptic } from 'react-native-haptic';
 export { default as FastImage } from 'react-native-fast-image';
-export { default as VersionNumber } from 'react-native-version-number';
 export { default as ImagePicker } from 'react-native-image-picker';
 export {
   default as ToastMessage,

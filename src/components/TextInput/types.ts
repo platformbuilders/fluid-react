@@ -33,8 +33,8 @@ type ReturnKeyType =
   | undefined;
 
 export interface TextInputProps {
-  id: string;
-  accessibility: string;
+  id?: string;
+  accessibility?: string;
   dark?: boolean;
   multiline?: boolean;
   secureTextEntry?: boolean;
@@ -55,6 +55,7 @@ export interface TextInputProps {
   style?: any;
   textStyle?: any;
   labelStyle?: any;
+  isPlaceholder: boolean;
   onPressIcon?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
