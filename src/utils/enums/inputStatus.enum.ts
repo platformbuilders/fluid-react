@@ -1,0 +1,6 @@
+export default {
+  SUCCESS: 'SUCCESS',
+  FAILURE: 'FAILURE',
+  DEFAULT: 'DEFAULT',
+  DISABLED: 'DISABLED',
+};
