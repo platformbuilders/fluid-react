@@ -1,4 +1,4 @@
-import React, { FC, useState, useCallback, useEffect } from 'react';
+import React, { FC, useState, useCallback, useEffect, useContext } from 'react';
 import { Animated } from 'react-native';
 
 import { FormError } from '~/components';
@@ -13,6 +13,8 @@ import {
   LABEL_UPPER_STYLE,
   LABEL_LOWER_STYLE,
 } from './styles';
+import { ThemeProvider } from 'styled-components';
+import { ThemeContext } from '../ThemeContext';
 
 interface Props {
   value?: string;
@@ -39,6 +41,7 @@ const DatePickerInput: FC<Props> = (props) => {
     dark = false,
     editable = true,
   } = props;
+  const { theme } = useContext(ThemeContext);
   const [labelAnimatedStyle] = useState({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
@@ -87,33 +90,35 @@ const DatePickerInput: FC<Props> = (props) => {
     : DatePickerStyles;
 
   return (
-    <FormError error={error}>
-      <Label
-        error={error || ''}
-        style={labelAnimatedStyle}
-        isPlaceholder={isPlaceholder}
-        dark={dark}
-      >
-        {label}
-      </Label>
-      <DatePicker
-        editable={!editable}
-        date={date}
-        mode="date"
-        androidMode="spinner"
-        locale="pt-BR"
-        customStyles={customStyles}
-        maxDate={maxDate}
-        placeholder=" "
-        format="DD/MM/YYYY"
-        confirmBtnText={confirmBtnText}
-        cancelBtnText={cancelBtnText}
-        onDateChange={updateDate}
-        showIcon={false}
-        dark={dark}
-      />
-      <BottomLine dark={dark} />
-    </FormError>
+    <ThemeProvider theme={theme}>
+      <FormError error={error}>
+        <Label
+          error={error || ''}
+          style={labelAnimatedStyle}
+          isPlaceholder={isPlaceholder}
+          dark={dark}
+        >
+          {label}
+        </Label>
+        <DatePicker
+          editable={!editable}
+          date={date}
+          mode="date"
+          androidMode="spinner"
+          locale="pt-BR"
+          customStyles={customStyles}
+          maxDate={maxDate}
+          placeholder=" "
+          format="DD/MM/YYYY"
+          confirmBtnText={confirmBtnText}
+          cancelBtnText={cancelBtnText}
+          onDateChange={updateDate}
+          showIcon={false}
+          dark={dark}
+        />
+        <BottomLine dark={dark} />
+      </FormError>
+    </ThemeProvider>
   );
 };
 

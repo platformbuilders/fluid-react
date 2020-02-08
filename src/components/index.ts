@@ -24,3 +24,4 @@ export { default as SceneWrapper } from './SceneWrapper';
 export { default as DatePicker } from './DatePicker';
 export { default as Avatar } from './Avatar';
 export { default as Link } from './Link';
+export { BuildersProvider } from './ThemeContext';

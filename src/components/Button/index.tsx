@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { LoadingIndicator } from '~/components';
 import { Touchable, ButtonWrapper, TextButton } from './styles';
+import { ThemeContext } from '../ThemeContext';
+import { ThemeProvider } from 'styled-components';
 
 type Props = {
   children: string;
@@ -27,36 +29,42 @@ const Button: FC<Props> = ({
   secondary = false,
   terciary = false,
   loading = false,
-}) => (
-  <Touchable
-    accessibility={accessibility}
-    touchable={loading || disabled}
-    onPress={onPress}
-    rounded={rounded}
-  >
-    <ButtonWrapper
-      secondary={secondary}
-      terciary={terciary}
-      style={style}
-      disabled={disabled}
-      rounded={rounded}
-    >
-      {loading ? (
-        <LoadingIndicator />
-      ) : (
-        <>
-          <TextButton
-            secondary={secondary}
-            terciary={terciary}
-            style={textStyle}
-            disabled={disabled}
-          >
-            {children}
-          </TextButton>
-        </>
-      )}
-    </ButtonWrapper>
-  </Touchable>
-);
+}) => {
+  const { theme } = useContext(ThemeContext);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Touchable
+        accessibility={accessibility}
+        touchable={loading || disabled}
+        onPress={onPress}
+        rounded={rounded}
+      >
+        <ButtonWrapper
+          secondary={secondary}
+          terciary={terciary}
+          style={style}
+          disabled={disabled}
+          rounded={rounded}
+        >
+          {loading ? (
+            <LoadingIndicator />
+          ) : (
+            <>
+              <TextButton
+                secondary={secondary}
+                terciary={terciary}
+                style={textStyle}
+                disabled={disabled}
+              >
+                {children}
+              </TextButton>
+            </>
+          )}
+        </ButtonWrapper>
+      </Touchable>
+    </ThemeProvider>
+  );
+};
 
 export default Button;

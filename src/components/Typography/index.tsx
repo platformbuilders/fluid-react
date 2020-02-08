@@ -1,8 +1,9 @@
-import React from 'react';
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { human } from 'react-native-typography';
 import { Theme, Metrics } from '~/utils/types';
 import { Text } from './styles';
+import { ThemeContext } from '../ThemeContext';
 
 const variants = [
   'largeTitle',
@@ -31,16 +32,20 @@ const Typography: React.FC<Props> = ({
   variant = variants[7],
   textRef = React.createRef(),
   children,
-  theme,
   ...rest
-}) => (
-  <Text
-    ref={textRef}
-    style={[human[variant], { color: theme.primary.contrast }, style]}
-    {...rest}
-  >
-    {children}
-  </Text>
-);
+}) => {
+  const { theme } = useContext(ThemeContext);
+  return (
+    <ThemeProvider theme={theme}>
+      <Text
+        ref={textRef}
+        style={[human[variant], { color: theme.primary.contrast }, style]}
+        {...rest}
+      >
+        {children}
+      </Text>
+    </ThemeProvider>
+  );
+};
 
-export default withTheme(Typography);
+export default Typography;
