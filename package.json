@@ -1,6 +1,6 @@
 {
   "name": "builders-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Platform Builders Shared Components Library",
   "main": "src/index.ts",
   "author": "Platform-Builders",
