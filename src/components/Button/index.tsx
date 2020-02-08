@@ -3,6 +3,7 @@ import { LoadingIndicator } from '~/components';
 import { Touchable, ButtonWrapper, TextButton } from './styles';
 import { ThemeContext } from '../ThemeContext';
 import { ThemeProvider } from 'styled-components';
+import If from '../If';
 
 type Props = {
   children: string;
@@ -47,9 +48,10 @@ const Button: FC<Props> = ({
           disabled={disabled}
           rounded={rounded}
         >
-          {loading ? (
+          <If condition={loading}>
             <LoadingIndicator />
-          ) : (
+          </If>
+          <If condition={!loading}>
             <>
               <TextButton
                 secondary={secondary}
@@ -60,7 +62,7 @@ const Button: FC<Props> = ({
                 {children}
               </TextButton>
             </>
-          )}
+          </If>
         </ButtonWrapper>
       </Touchable>
     </ThemeProvider>

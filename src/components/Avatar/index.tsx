@@ -82,8 +82,8 @@ class Avatar extends React.Component<Props, State> {
     const { uploadedImage } = this.state;
     return (
       <ThemeContext.Consumer>
-        {(props): JSX.Element => (
-          <ThemeProvider theme={props.theme}>
+        {({ theme }): JSX.Element => (
+          <ThemeProvider theme={theme}>
             <Wrapper
               accessibility={accessibility || defaultAccessibility}
               size={size}

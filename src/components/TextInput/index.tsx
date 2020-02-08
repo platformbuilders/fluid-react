@@ -18,6 +18,7 @@ import { TextInputProps } from './types';
 import { usePrevious } from '~/utils/hooks';
 import { ThemeContext } from '../ThemeContext';
 import { ThemeProvider } from 'styled-components';
+import If from '../If';
 
 type Props = TextInputProps & RNTextInputProps;
 
@@ -165,7 +166,7 @@ const AnimatedTextInput: FC<Props> = (props) => {
           </Label>
           <InputAreaWrapper multiline={multiline}>
             {renderTextInput(hasError)}
-            {!isEmpty(icon) && (
+            <If condition={!isEmpty(icon)}>
               <Icon
                 size={iconSize}
                 name={icon || ''}
@@ -174,7 +175,7 @@ const AnimatedTextInput: FC<Props> = (props) => {
                 onPress={onPressIcon}
                 hitSlop={iconHitSlop}
               />
-            )}
+            </If>
           </InputAreaWrapper>
           <BottomLine dark={dark} status={status} />
         </FormError>
