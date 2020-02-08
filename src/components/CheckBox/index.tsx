@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { CheckBox as DefaultCheckbox } from '~/utils/modules';
 import { FormError } from '~/components';
 import { colors } from '~/theme';
 import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
+import { ThemeProvider } from 'styled-components';
+import { ThemeContext } from '../ThemeContext';
 
 type Props = {
   checked?: boolean;
@@ -23,21 +25,27 @@ const Checkbox: FC<Props> = ({
   labelStyle = defaultLabelStyle,
   style,
   ...rest
-}) => (
-  <FormError error={error}>
-    <Wrapper style={style}>
-      <DefaultCheckbox
-        style={containerStyle}
-        checkBoxColor={colors.primary.light}
-        isChecked={checked}
-        rightText={label}
-        rightTextStyle={labelStyle}
-        leftText={labelBefore}
-        onClick={onPress}
-        {...rest}
-      />
-    </Wrapper>
-  </FormError>
-);
+}) => {
+  const { theme } = useContext(ThemeContext);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <FormError error={error}>
+        <Wrapper style={style}>
+          <DefaultCheckbox
+            style={containerStyle}
+            checkBoxColor={colors.primary.light}
+            isChecked={checked}
+            rightText={label}
+            rightTextStyle={labelStyle}
+            leftText={labelBefore}
+            onClick={onPress}
+            {...rest}
+          />
+        </Wrapper>
+      </FormError>
+    </ThemeProvider>
+  );
+};
 
 export default Checkbox;

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { DismissKeyboardView, If } from '~/components';
 import { ChildrenWrapper, Title, Subtitle } from './styles';
+import { ThemeContext } from '../ThemeContext';
+import { ThemeProvider } from 'styled-components'
 
 const contentContainerStyle = {
   width: '100%',
@@ -34,28 +36,31 @@ const SceneWrapper: React.FC<Props> = ({
   fullWidth = false,
   ...rest
 }) => {
+  const { theme } = useContext(ThemeContext);
   // eslint-disable-next-line prettier/prettier
   const backgroundColor = style[0]?.backgroundColor;
   return (
-    <DismissKeyboardView>
-      <ChildrenWrapper
-        fullWidth={fullWidth}
-        keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
-        contentContainerStyle={[contentContainerStyle, style]}
-        style={[scrollStyle, { backgroundColor, width: '100%' }]}
-        ref={scrollRef}
-        {...rest}
-      >
-        <If condition={!!title}>
-          <Title fullWidth={fullWidth}>{title}</Title>
-        </If>
-        <If condition={!!subtitle}>
-          <Subtitle fullWidth={fullWidth}>{subtitle}</Subtitle>
-        </If>
-        {children}
-      </ChildrenWrapper>
-    </DismissKeyboardView>
+    <ThemeProvider theme={theme}>
+      <DismissKeyboardView>
+        <ChildrenWrapper
+          fullWidth={fullWidth}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+          contentContainerStyle={[contentContainerStyle, style]}
+          style={[scrollStyle, { backgroundColor, width: '100%' }]}
+          ref={scrollRef}
+          {...rest}
+        >
+          <If condition={!!title}>
+            <Title fullWidth={fullWidth}>{title}</Title>
+          </If>
+          <If condition={!!subtitle}>
+            <Subtitle fullWidth={fullWidth}>{subtitle}</Subtitle>
+          </If>
+          {children}
+        </ChildrenWrapper>
+      </DismissKeyboardView>
+    </ThemeProvider>
   );
 };
 

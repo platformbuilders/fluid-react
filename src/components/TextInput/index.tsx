@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useCallback } from 'react';
+import React, { FC, useState, useEffect, useCallback, useContext } from 'react';
 import { Animated, TextInputProps as RNTextInputProps } from 'react-native';
 import { isEmpty } from 'lodash';
 import { INPUT_STATUS } from '~/utils/enums';
@@ -16,6 +16,9 @@ import {
 } from './styles';
 import { TextInputProps } from './types';
 import { usePrevious } from '~/utils/hooks';
+import { ThemeContext } from '../ThemeContext';
+import { ThemeProvider } from 'styled-components';
+import If from '../If';
 
 type Props = TextInputProps & RNTextInputProps;
 
@@ -39,6 +42,7 @@ const AnimatedTextInput: FC<Props> = (props) => {
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
   });
+  const { theme } = useContext(ThemeContext);
 
   const [isPlaceholder, setIsPlaceHolder] = useState(true);
 
@@ -149,32 +153,34 @@ const AnimatedTextInput: FC<Props> = (props) => {
   const status = hasError ? INPUT_STATUS.FAILURE : statusProp;
 
   return (
-    <Wrapper style={style} multiline={multiline}>
-      <FormError error={error}>
-        <Label
-          status={status}
-          style={[labelStyle, labelAnimatedStyle]}
-          dark={dark}
-          isPlaceholder={isPlaceholder}
-        >
-          {label}
-        </Label>
-        <InputAreaWrapper multiline={multiline}>
-          {renderTextInput(hasError)}
-          {!isEmpty(icon) && (
-            <Icon
-              size={iconSize}
-              name={icon || ''}
-              color={iconColor}
-              touchable={iconTouchableEnabled}
-              onPress={onPressIcon}
-              hitSlop={iconHitSlop}
-            />
-          )}
-        </InputAreaWrapper>
-        <BottomLine dark={dark} status={status} />
-      </FormError>
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper style={style} multiline={multiline}>
+        <FormError error={error}>
+          <Label
+            status={status}
+            style={[labelStyle, labelAnimatedStyle]}
+            dark={dark}
+            isPlaceholder={isPlaceholder}
+          >
+            {label}
+          </Label>
+          <InputAreaWrapper multiline={multiline}>
+            {renderTextInput(hasError)}
+            <If condition={!isEmpty(icon)}>
+              <Icon
+                size={iconSize}
+                name={icon || ''}
+                color={iconColor}
+                touchable={iconTouchableEnabled}
+                onPress={onPressIcon}
+                hitSlop={iconHitSlop}
+              />
+            </If>
+          </InputAreaWrapper>
+          <BottomLine dark={dark} status={status} />
+        </FormError>
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 

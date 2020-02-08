@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FormBehavior } from '~/utils/modules';
 import { Wrapper } from './styles';
+import { ThemeContext } from '../ThemeContext';
+import { ThemeProvider } from 'styled-components';
 
 interface Props {
   children: any;
@@ -20,18 +22,23 @@ const FormContainer: React.FC<Props> = ({
   validateOnChange = false,
   enableReinitialize = false,
   style = [{}],
-}) => (
-  <Wrapper style={style}>
-    <FormBehavior
-      enableReinitialize={enableReinitialize}
-      validateOnChange={validateOnChange}
-      validationSchema={validationSchema}
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-    >
-      {children}
-    </FormBehavior>
-  </Wrapper>
-);
+}) => {
+  const { theme } = useContext(ThemeContext);
+  return (
+    <ThemeProvider theme={theme}>
+      <Wrapper style={style}>
+        <FormBehavior
+          enableReinitialize={enableReinitialize}
+          validateOnChange={validateOnChange}
+          validationSchema={validationSchema}
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+        >
+          {children}
+        </FormBehavior>
+      </Wrapper>
+    </ThemeProvider>
+  );
+};
 
 export default FormContainer;
