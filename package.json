@@ -10,7 +10,11 @@
     "clean": "rm -rf ./node_modules && yarn install",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
     "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
-    "precommit": "yarn lint"
+    "precommit": "yarn lint",
+    "preversion": "lint-staged",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major"
   },
   "lint-staged": {
     "*.js": [
