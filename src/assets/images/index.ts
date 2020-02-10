@@ -1,1 +1,1 @@
-export { default as ImageAvatarPlaceholder } from './avatar.jpg';
+export { default as ImageAvatarPlaceholder } from './avatar.png';

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Animated, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Touchable } from '~/components';
-import * as Icons from '~/assets/svg';
+import Touchable from '../Touchable';
+import * as Icons from '../../assets/svg';
 
 type Props = {
   name: string;
@@ -22,7 +22,7 @@ type Props = {
   };
 };
 
-export const Icon: React.FC<Props> = ({
+export const Icon: FC<Props> = ({
   name,
   accessibility,
   touchable = true,
@@ -34,7 +34,7 @@ export const Icon: React.FC<Props> = ({
   backgroundColor = '',
   ...rest
 }) => {
-  // eslint-disable-next-line
+  // eslint-disable-next-line prettier/prettier
   const iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
   const Svg = Icons[`Icon${iconName}`];
 

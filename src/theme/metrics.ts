@@ -1,10 +1,6 @@
 import { Dimensions } from 'react-native';
-import {
-  getStatusBarHeight,
-  verticalScale,
-  moderateScale,
-} from '~/utils/modules';
-import { Metrics } from '~/utils/types';
+import { verticalScale, moderateScale } from '../utils/modules';
+import { Metrics } from '../utils/types';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
@@ -16,7 +12,7 @@ export default {
   largeSpacing: `${moderateScale(20)}px`,
   giantSpacing: `${moderateScale(26)}px`,
   sectionSpacing: `${moderateScale(38)}px`,
-  statusHeight: `${getStatusBarHeight()}px`,
+  statusHeight: `${moderateScale(44)}px`,
   smallRadius: `${moderateScale(3)}px`,
   mediumRadius: `${moderateScale(8)}px`,
   largeRadius: `${moderateScale(15)}px`,

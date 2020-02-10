@@ -1,10 +1,11 @@
 import React, { FC, useState, useEffect, useCallback, useContext } from 'react';
 import { Animated, TextInputProps as RNTextInputProps } from 'react-native';
 import { isEmpty } from 'lodash';
-import { INPUT_STATUS } from '~/utils/enums';
-import { Icon, FormError } from '~/components';
-import { colors } from '~/theme';
-import TextInputMask from './TextInputMask';
+import { ThemeProvider } from 'styled-components';
+import { colors } from '../../theme';
+import { usePrevious } from '../../utils/hooks';
+import { TextInput as TextInputType, InputStatus } from '../../utils/types';
+import MaskedTextInput from './MaskedTextInput';
 import {
   Label,
   Wrapper,
@@ -14,30 +15,36 @@ import {
   LABEL_UPPER_STYLE,
   LABEL_LOWER_STYLE,
 } from './styles';
-import { TextInputProps } from './types';
-import { usePrevious } from '~/utils/hooks';
+import Icon from '../Icon';
+import FormError from '../FormError';
 import { ThemeContext } from '../ThemeContext';
-import { ThemeProvider } from 'styled-components';
-import If from '../If';
 
-type Props = TextInputProps & RNTextInputProps;
+type Props = TextInputType & RNTextInputProps;
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
-const AnimatedTextInput: FC<Props> = (props) => {
-  const {
-    dark = false,
-    multiline = false,
-    style,
-    label,
-    labelStyle,
-    error,
-    status: statusProp,
-    iconName,
-    iconSize,
-    onPressIcon,
-    iconTouchableEnabled,
-    iconHitSlop,
-  } = props;
+const AnimatedTextInput: FC<Props> = ({
+  dark = false,
+  multiline = false,
+  keyboardType = 'default',
+  iconSize = 20,
+  iconTouchableEnabled = false,
+  status = InputStatus.DEFAULT,
+  iconName = null,
+  maskType = null,
+  label = '',
+  value = '',
+  placeholder = '',
+  error = '',
+  style = {},
+  textStyle = {},
+  labelStyle = {},
+  iconHitSlop = {},
+  onBlur = (): any => {},
+  onFocus = (): any => {},
+  onChangeText = (): any => {},
+  onPressIcon = (): any => {},
+  ...rest
+  // eslint-disable-next-line sonarjs/cognitive-complexity
+}) => {
   const [labelAnimatedStyle] = useState({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
@@ -47,10 +54,10 @@ const AnimatedTextInput: FC<Props> = (props) => {
   const [isPlaceholder, setIsPlaceHolder] = useState(true);
 
   const animateComponent = useCallback(
-    (labelStyle: any): void => {
-      const animations = Object.keys(labelStyle).map((animationProp) =>
+    (updatedLabelStyle: any): void => {
+      const animations = Object.keys(updatedLabelStyle).map((animationProp) =>
         Animated.timing(labelAnimatedStyle[animationProp], {
-          toValue: labelStyle[animationProp],
+          toValue: updatedLabelStyle[animationProp],
           duration: 200,
         }),
       );
@@ -76,7 +83,6 @@ const AnimatedTextInput: FC<Props> = (props) => {
   };
 
   const handleOnFocus = (): void => {
-    const { onFocus } = props;
     if (isPlaceholder) {
       setIsPlaceHolder(false);
       animationUp();
@@ -87,7 +93,6 @@ const AnimatedTextInput: FC<Props> = (props) => {
   };
 
   const handleOnBlur = (): void => {
-    const { onBlur, value } = props;
     if (!value) {
       setIsPlaceHolder(true);
       animationDown();
@@ -97,60 +102,46 @@ const AnimatedTextInput: FC<Props> = (props) => {
     }
   };
 
-  const renderTextInput = (hasError: any): JSX.Element => {
-    const {
-      value,
-      status: statusProp,
-      maskType,
-      textStyle,
-      placeholder: placeholderProp,
-      onChangeText,
-      multiline = false,
-      dark = false,
-      keyboardType = 'default',
-      ...rest
-    } = props;
-
-    const status = hasError ? INPUT_STATUS.FAILURE : statusProp;
-    const placeholder = !value && !isPlaceholder ? placeholderProp : '';
+  const renderTextInput = (inputStatus: string): JSX.Element => {
+    const renderPlaceholder = !value && !isPlaceholder ? placeholder : '';
 
     const textInputProps = {
       ...rest,
       dark,
       multiline,
       value,
-      status,
       keyboardType,
-      placeholder,
+      onChangeText,
+      status: inputStatus,
+      placeholder: renderPlaceholder,
       style: textStyle,
-      underlineColorAndroid: 'transparent',
       onBlur: handleOnBlur,
       onFocus: handleOnFocus,
-      onChangeText,
+      underlineColorAndroid: 'transparent',
     };
 
     return maskType ? (
-      <TextInputMask maskType={maskType} {...textInputProps} />
+      <MaskedTextInput maskType={maskType} {...textInputProps} />
     ) : (
       <TextInput {...textInputProps} />
     );
   };
 
-  const prevValue = usePrevious<string>(props.value || '');
+  const previousValue = usePrevious<string>(value || '');
 
   useEffect(() => {
     // eslint-disable-next-line prettier/prettier
-    const wasEmpty = prevValue?.length === 0;
-    if (props.value && props.value.length && wasEmpty) {
+    const wasEmpty = previousValue?.length === 0;
+    if (value && value.length && wasEmpty) {
       animationUp();
     }
-  }, [props.value, prevValue]);
+  }, [value, previousValue]);
 
   const hasError = !isEmpty(error);
 
   const icon = iconName;
   const iconColor = getIconColor(hasError);
-  const status = hasError ? INPUT_STATUS.FAILURE : statusProp;
+  const renderStatus = hasError ? InputStatus.FAILURE : status;
 
   return (
     <ThemeProvider theme={theme}>
@@ -165,8 +156,8 @@ const AnimatedTextInput: FC<Props> = (props) => {
             {label}
           </Label>
           <InputAreaWrapper multiline={multiline}>
-            {renderTextInput(hasError)}
-            <If condition={!isEmpty(icon)}>
+            {renderTextInput(renderStatus)}
+            {!isEmpty(icon) && (
               <Icon
                 size={iconSize}
                 name={icon || ''}
@@ -175,37 +166,13 @@ const AnimatedTextInput: FC<Props> = (props) => {
                 onPress={onPressIcon}
                 hitSlop={iconHitSlop}
               />
-            </If>
+            )}
           </InputAreaWrapper>
           <BottomLine dark={dark} status={status} />
         </FormError>
       </Wrapper>
     </ThemeProvider>
   );
-};
-
-AnimatedTextInput.defaultProps = {
-  dark: false,
-  multiline: false,
-  secureTextEntry: false,
-  autoFocus: false,
-  iconSize: 20,
-  iconTouchableEnabled: false,
-  status: INPUT_STATUS.DEFAULT,
-  iconName: null,
-  maskType: null,
-  label: '',
-  value: '',
-  placeholder: '',
-  error: '',
-  style: {},
-  textStyle: {},
-  labelStyle: {},
-  iconHitSlop: {},
-  onBlur: (): void => {},
-  onFocus: (): void => {},
-  onChangeText: (): void => {},
-  onPressIcon: (): void => {},
 };
 
 export default AnimatedTextInput;

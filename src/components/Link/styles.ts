@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Typography } from '~/components';
-import { getTheme } from '~/utils/helpers';
+import { getTheme } from '../../utils/helpers';
+import Typography from '../Typography';
 
 const accentDark = getTheme('accent.dark');
 

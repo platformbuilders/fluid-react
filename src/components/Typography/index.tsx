@@ -1,35 +1,21 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { human } from 'react-native-typography';
-import { Theme, Metrics } from '~/utils/types';
+import { Theme, Metrics, Variant } from '../../utils/types';
 import { Text } from './styles';
 import { ThemeContext } from '../ThemeContext';
 
-const variants = [
-  'largeTitle',
-  'title1',
-  'title2',
-  'title3',
-  'title4',
-  'headline',
-  'body',
-  'subhead',
-  'footnote',
-  'caption1',
-  'caption2',
-];
-
 interface Props {
-  variant: string;
+  variant: Variant;
   children?: string | string[];
   style?: object[];
   textRef?: any;
   theme: Theme & Metrics;
 }
 
-const Typography: React.FC<Props> = ({
+const Typography: FC<Props> = ({
   style = [{}],
-  variant = variants[7],
+  variant = 'body',
   textRef = React.createRef(),
   children,
   ...rest

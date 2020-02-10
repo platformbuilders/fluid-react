@@ -1,10 +1,10 @@
 import React, { FC, useContext } from 'react';
-import { CheckBox as DefaultCheckbox } from '~/utils/modules';
-import { FormError } from '~/components';
-import { colors } from '~/theme';
-import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
 import { ThemeProvider } from 'styled-components';
+import { CheckBox as DefaultCheckbox } from '../../utils/modules';
+import { colors } from '../../theme';
+import FormError from '../FormError';
 import { ThemeContext } from '../ThemeContext';
+import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
 
 type Props = {
   checked?: boolean;

@@ -1,9 +1,9 @@
 import { Animated } from 'react-native';
 import { DatePickerCustomStylesProps } from 'react-native-datepicker';
 import styled from 'styled-components/native';
-import { getTheme, switchStyle } from '~/utils/helpers';
-import { DatePicker as DefaultDatePicker } from '~/utils/modules';
-import { INPUT_STATUS } from '~/utils/enums';
+import { getTheme, switchStyle } from '../../utils/helpers';
+import { DatePicker as DefaultDatePicker } from '../../utils/modules';
+import { InputStatus } from '../../utils/types';
 
 const getStatusStyle = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');
@@ -11,10 +11,10 @@ const primaryDark = getTheme('primary.dark');
 const secondaryDark = getTheme('disabled');
 const inputMainColor = (props: { dark: any }): any =>
   getStatusStyle({
-    [INPUT_STATUS.SUCCESS]: getTheme('success'),
-    [INPUT_STATUS.FAILURE]: getTheme('failure'),
-    [INPUT_STATUS.DEFAULT]: props.dark ? primaryDark : primaryContrast,
-    [INPUT_STATUS.DISABLED]: secondaryDark,
+    [InputStatus.SUCCESS]: getTheme('success'),
+    [InputStatus.FAILURE]: getTheme('failure'),
+    [InputStatus.DEFAULT]: props.dark ? primaryDark : primaryContrast,
+    [InputStatus.DISABLED]: secondaryDark,
   });
 
 export const LABEL_UPPER_STYLE = {

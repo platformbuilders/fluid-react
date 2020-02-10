@@ -1,17 +1,18 @@
-import React, { useContext } from 'react';
-import { Touchable } from '~/components';
-import { Text } from './styles';
-import { ThemeContext } from '../ThemeContext';
+import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { Variant } from '../../utils/types';
+import { Text } from './styles';
+import Touchable from '../Touchable';
+import { ThemeContext } from '../ThemeContext';
 
 type Props = {
   children: string;
   onPress: () => null;
-  variant?: string;
+  variant?: Variant;
   accessibility: string;
 };
 
-const Link: React.FC<Props> = ({
+const Link: FC<Props> = ({
   onPress,
   children,
   accessibility,

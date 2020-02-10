@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import TouchableComponent from '../Touchable';
-import { getTheme } from '~/utils/helpers';
+import { getTheme } from '../../utils/helpers';
 
 const primaryMain = getTheme('primary.main');
 const secondaryMain = getTheme('secondary.main');

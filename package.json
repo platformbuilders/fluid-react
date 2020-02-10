@@ -6,6 +6,12 @@
   "author": "Platform-Builders",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "clean": "rm -rf ./node_modules && yarn install",
+    "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
+    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
+    "precommit": "yarn lint"
+  },
   "lint-staged": {
     "*.js": [
       "yarn pretty",
@@ -18,10 +24,24 @@
       "pre-commit": "lint-staged"
     }
   },
-  "scripts": {
-    "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
-    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "precommit": "yarn lint"
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "lottie-react-native": "^3.3.2",
+    "polished": "^3.4.4",
+    "react": "^16.12.0",
+    "react-native": "^0.61.5",
+    "react-native-camera": "^3.17.0",
+    "react-native-checkbox": "^2.0.0",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-fast-image": "^7.0.2",
+    "react-native-haptic": "^1.0.1",
+    "react-native-image-picker": "^2.2.1",
+    "react-native-masked-text": "^1.13.0",
+    "react-native-size-matters": "^0.3.0",
+    "react-native-svg": "^11.0.1",
+    "react-native-typography": "^1.4.1",
+    "react-native-vector-icons": "^6.6.0",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.7",
@@ -60,35 +80,5 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "typescript": "^3.7.5"
-  },
-  "dependencies": {
-    "@fnando/cnpj": "^0.1.1",
-    "@fnando/cpf": "^0.1.1",
-    "formik": "^2.1.4",
-    "lodash": "^4.17.15",
-    "lottie-react-native": "^3.3.2",
-    "moment": "^2.24.0",
-    "numeral": "^2.0.6",
-    "polished": "^3.4.4",
-    "react": "^16.12.0",
-    "react-native": "^0.61.5",
-    "react-native-camera": "^3.17.0",
-    "react-native-checkbox": "^2.0.0",
-    "react-native-confirmation-code-input": "^1.0.4",
-    "react-native-datepicker": "^1.7.2",
-    "react-native-fast-image": "^7.0.2",
-    "react-native-flash-message": "^0.1.15",
-    "react-native-haptic": "^1.0.1",
-    "react-native-image-picker": "^2.2.1",
-    "react-native-iphone-x-helper": "^1.2.1",
-    "react-native-masked-text": "^1.13.0",
-    "react-native-modal": "^11.5.3",
-    "react-native-size-matters": "^0.3.0",
-    "react-native-svg": "^11.0.1",
-    "react-native-swiper": "^1.5.14",
-    "react-native-typography": "^1.4.1",
-    "react-native-vector-icons": "^6.6.0",
-    "styled-components": "^5.0.1",
-    "yup": "^0.28.1"
   }
 }

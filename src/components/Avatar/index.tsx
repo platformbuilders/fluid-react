@@ -1,11 +1,9 @@
 import React from 'react';
-import { Wrapper, Image, CameraView } from './styles';
-import { ImageAvatarPlaceholder } from '~/assets/images';
-import { ImagePicker, RNCamera } from '~/utils/modules';
-import { ThemeContext } from '../ThemeContext';
 import { ThemeProvider } from 'styled-components';
-
-const defaultAccessibility = 'Upload de Avatar';
+import { ImageAvatarPlaceholder } from '../../assets/images';
+import { ImagePicker, RNCamera } from '../../utils/modules';
+import { ThemeContext } from '../ThemeContext';
+import { Wrapper, Image, CameraView } from './styles';
 
 interface Props {
   image: string;
@@ -71,7 +69,7 @@ class Avatar extends React.Component<Props, State> {
 
   render(): JSX.Element {
     const {
-      accessibility,
+      accessibility = 'Upload de Avatar',
       image = null,
       size = 50,
       onPress = (): void => {},
@@ -85,7 +83,7 @@ class Avatar extends React.Component<Props, State> {
         {({ theme }): JSX.Element => (
           <ThemeProvider theme={theme}>
             <Wrapper
-              accessibility={accessibility || defaultAccessibility}
+              accessibility={accessibility}
               size={size}
               onPress={onPress}
               disabled={!onPress}

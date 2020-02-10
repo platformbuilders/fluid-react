@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Touchable } from '~/components';
-import { FastImage, RNCamera } from '~/utils/modules';
-import { ifStyle } from '~/utils/helpers';
+import Touchable from '../Touchable';
+import { FastImage, RNCamera } from '../../utils/modules';
+import { ifStyle } from '../../utils/helpers';
 
 const showBorder = ifStyle('showBorder');
 

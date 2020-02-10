@@ -1,12 +1,12 @@
-import { lighten, darken } from '~/utils/modules';
-import { Theme } from '~/utils/types';
+import { lighten, darken } from '../utils/modules';
+import { Colors } from '../utils/types';
 
 const primary = '#C6B09E';
 const secondary = '#805281';
 const tertiary = '#2A2E39';
 const accent = '#547E6A';
 
-export const theme: Theme = {
+const colors: Colors = {
   failure: '#cc0000',
   warning: '#F5B800',
   success: '#357a38',
@@ -38,4 +38,4 @@ export const theme: Theme = {
   },
 };
 
-export default theme;
+export default colors;
