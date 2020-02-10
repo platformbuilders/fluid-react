@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { ThemeProvider } from 'styled-components';
 import { Theme } from '../../utils/types';
 import { ThemeContext } from '../ThemeContext';
 import { colors, metrics } from '../../theme';

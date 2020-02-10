@@ -13,12 +13,10 @@ Its a place that we can share a little bit of our code base and show how we work
 Now it's under development and we will release it soon!
 
 You will need to install some native dependencies that we use on the code:
-- https://github.com/react-native-community/react-native-camera
-- https://github.com/oblador/react-native-vector-icons
-- https://github.com/AppAndFlow/react-native-haptic
-- https://github.com/react-native-community/react-native-image-picker
-- https://github.com/react-native-community/react-native-svg
-- https://github.com/DylanVann/react-native-fast-image
+
+```
+yarn add react-native-camera react-native-vector-icons react-native-haptic react-native-image-picker react-native-svg react-native-fast-image && cd ios && pod install
+```
 
 Here's how you add our dependencie to your project builders-ui
 1. Add all the native dependencies listed above
