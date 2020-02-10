@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Animation } from '../../utils/modules';
 import DefaultAnimation from './animation.json';
 
@@ -10,7 +10,7 @@ type Props = {
   animation?: any;
 };
 
-const Loading: React.FC<Props> = ({
+const Loading: FC<Props> = ({
   large = false,
   animation = DefaultAnimation,
 }) => (

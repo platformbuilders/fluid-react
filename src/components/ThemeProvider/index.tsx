@@ -1,4 +1,7 @@
-import { createContext } from 'react';
+import React, { FC } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Theme } from '../../utils/types';
+import { ThemeContext } from '../ThemeContext';
 import { colors, metrics } from '../../theme';
 
 const defaultTheme = {
@@ -6,8 +9,12 @@ const defaultTheme = {
   ...metrics,
 };
 
-const ThemeContext = createContext({
-  theme: defaultTheme,
-});
+interface Props {
+  theme: Theme;
+}
 
-export default ThemeContext.Provider;
+const BuildersProvider: FC<Props> = ({ children, theme = defaultTheme }) => (
+  <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
+);
+
+export default BuildersProvider;

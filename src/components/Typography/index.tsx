@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { human } from 'react-native-typography';
 import { Theme, Metrics, Variant } from '../../utils/types';
@@ -13,7 +13,7 @@ interface Props {
   theme: Theme & Metrics;
 }
 
-const Typography: React.FC<Props> = ({
+const Typography: FC<Props> = ({
   style = [{}],
   variant = 'body',
   textRef = React.createRef(),

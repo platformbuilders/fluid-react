@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { View } from 'react-native';
 
 const shadowStyle = {
@@ -14,7 +14,7 @@ type Props = {
   children: JSX.Element;
 };
 
-const Shadow: React.FC<Props> = ({ children }) => (
+const Shadow: FC<Props> = ({ children }) => (
   <View style={shadowStyle}>{children}</View>
 );
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Variant } from '../../utils/types';
 import { Text } from './styles';
@@ -12,7 +12,7 @@ type Props = {
   accessibility: string;
 };
 
-const Link: React.FC<Props> = ({
+const Link: FC<Props> = ({
   onPress,
   children,
   accessibility,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { HapticFeedbackType } from 'react-native-haptic';
 import { generateHaptic } from '../../utils/helpers';
@@ -11,7 +11,7 @@ type Props = {
   touchable?: boolean;
 };
 
-const CommonTouchable: React.FC<Props> = ({
+const CommonTouchable: FC<Props> = ({
   onPress = (): void => {},
   haptic = 'impact',
   touchable = true,

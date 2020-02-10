@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { ErrorText } from './styles';
 import { ThemeContext } from '../ThemeContext';
@@ -9,7 +9,7 @@ type Props = {
   style?: object[];
 };
 
-const FormError: React.FC<Props> = ({ error = '', children, style }) => {
+const FormError: FC<Props> = ({ error = '', children, style }) => {
   const { theme } = useContext(ThemeContext);
   return (
     <ThemeProvider theme={theme}>

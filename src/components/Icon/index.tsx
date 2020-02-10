@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Animated, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Touchable from '../Touchable';
@@ -22,7 +22,7 @@ type Props = {
   };
 };
 
-export const Icon: React.FC<Props> = ({
+export const Icon: FC<Props> = ({
   name,
   accessibility,
   touchable = true,

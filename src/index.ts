@@ -16,4 +16,4 @@ export { default as Shadow } from './components/Shadow';
 export { default as DatePicker } from './components/DatePicker';
 export { default as Avatar } from './components/Avatar';
 export { default as Link } from './components/Link';
-export { BuildersProvider } from './components/ThemeContext';
+export { default as BuildersThemeProvider } from './components/ThemeProvider';

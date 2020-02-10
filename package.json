@@ -6,6 +6,12 @@
   "author": "Platform-Builders",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "clean": "rm -rf ./node_modules && yarn install",
+    "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
+    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
+    "precommit": "yarn lint"
+  },
   "lint-staged": {
     "*.js": [
       "yarn pretty",
@@ -17,11 +23,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "scripts": {
-    "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
-    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
-    "precommit": "yarn lint"
   },
   "dependencies": {
     "lodash": "^4.17.15",
