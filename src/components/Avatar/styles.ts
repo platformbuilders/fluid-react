@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Touchable } from '~/components';
+import Touchable from '../Touchable';
 import { FastImage, RNCamera } from '~/utils/modules';
 import { ifStyle } from '~/utils/helpers';
 

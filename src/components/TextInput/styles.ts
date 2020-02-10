@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
 import { Animated } from 'react-native';
-import { INPUT_STATUS } from '~/utils/enums';
 import { ifStyle, switchStyle, getTheme } from '~/utils/helpers';
-import { TextInputProps } from './types';
+import { TextInput as TextInputType, InputStatus } from '~/utils/types';
 
 interface InputAreaWrapperProps {
   multiline: boolean;
@@ -22,10 +21,10 @@ const failure = getTheme('failure');
 const disabled = getTheme('disabled');
 const inputColor = (props: BottomLineProps): any =>
   switchStatus({
-    [INPUT_STATUS.SUCCESS]: success,
-    [INPUT_STATUS.FAILURE]: failure,
-    [INPUT_STATUS.DEFAULT]: props.dark ? primaryDark : primaryContrast,
-    [INPUT_STATUS.DISABLED]: disabled,
+    [InputStatus.SUCCESS]: success,
+    [InputStatus.FAILURE]: failure,
+    [InputStatus.DEFAULT]: props.dark ? primaryDark : primaryContrast,
+    [InputStatus.DISABLED]: disabled,
   });
 
 export const LABEL_UPPER_STYLE = {
@@ -51,7 +50,7 @@ export const Wrapper = styled.View<WrapperProps>`
   justify-content: flex-end;
 `;
 
-export const TextLabel = styled.Text<TextInputProps>`
+export const TextLabel = styled.Text<TextInputType>`
   line-height: 19px;
   position: absolute;
   color: ${inputColor};
@@ -68,7 +67,7 @@ export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   max-height: ${isMultiline('auto', '24px')};
 `;
 
-export const TextInput = styled.TextInput<TextInputProps>`
+export const TextInput = styled.TextInput<TextInputType>`
   padding: 0;
   flex-grow: 1;
   border-width: 0;

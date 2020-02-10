@@ -32,7 +32,10 @@ type ReturnKeyType =
   | 'emergency-call'
   | undefined;
 
-export interface TextInputProps {
+type MaskedInput = {
+  maskType: TextInputMaskTypeProp;
+};
+export interface TextInput {
   id?: string;
   accessibility?: string;
   dark?: boolean;
@@ -63,8 +66,4 @@ export interface TextInputProps {
   onSubmitEditing?(x?: any): void;
 }
 
-export type MaskedType = {
-  maskType: TextInputMaskTypeProp;
-};
-
-export type MaskedInput = TextInputProps & MaskedType;
+export type MaskedTextInput = TextInput & MaskedInput;

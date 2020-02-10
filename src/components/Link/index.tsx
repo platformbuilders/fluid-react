@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Touchable } from '~/components';
 import { Variant } from '~/utils/types';
 import { Text } from './styles';
+import Touchable from '../Touchable';
 import { ThemeContext } from '../ThemeContext';
 
 type Props = {

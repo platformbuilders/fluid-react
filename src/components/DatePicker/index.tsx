@@ -2,7 +2,7 @@ import React, { FC, useState, useCallback, useEffect, useContext } from 'react';
 import { Animated } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 import { DatePickerProps } from 'react-native-datepicker';
-import { FormError } from '~/components';
+import FormError from '../FormError';
 import {
   Label,
   BottomLine,

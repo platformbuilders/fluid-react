@@ -1,7 +1,7 @@
 import React from 'react';
 import { Animated, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Touchable } from '~/components';
+import Touchable from '../Touchable';
 import * as Icons from '~/assets/svg';
 
 type Props = {

@@ -1,10 +1,10 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { MaskedInput } from '../types';
+import { MaskedTextInput as MaskedTextInputType } from '~/utils/types';
 import { TextInput } from './styles';
 import { ThemeContext } from '../../ThemeContext';
 
-const TextInputMask: FC<MaskedInput> = ({
+const MaskedTextInput: FC<MaskedTextInputType> = ({
   maskType,
   dark = false,
   multiline = false,
@@ -24,4 +24,4 @@ const TextInputMask: FC<MaskedInput> = ({
   );
 };
 
-export default TextInputMask;
+export default MaskedTextInput;

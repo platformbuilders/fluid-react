@@ -2,10 +2,10 @@ import React, { FC, useState, useEffect, useCallback, useContext } from 'react';
 import { Animated, TextInputProps as RNTextInputProps } from 'react-native';
 import { isEmpty } from 'lodash';
 import { ThemeProvider } from 'styled-components';
-import { Icon, FormError } from '~/components';
-import { INPUT_STATUS } from '~/utils/enums';
 import { colors } from '~/theme';
-import TextInputMask from './TextInputMask';
+import { usePrevious } from '~/utils/hooks';
+import { TextInput as TextInputType, InputStatus } from '~/utils/types';
+import MaskedTextInput from './MaskedTextInput';
 import {
   Label,
   Wrapper,
@@ -15,12 +15,11 @@ import {
   LABEL_UPPER_STYLE,
   LABEL_LOWER_STYLE,
 } from './styles';
-import { TextInputProps } from './types';
-import { usePrevious } from '~/utils/hooks';
+import Icon from '../Icon';
+import FormError from '../FormError';
 import { ThemeContext } from '../ThemeContext';
-import If from '../If';
 
-type Props = TextInputProps & RNTextInputProps;
+type Props = TextInputType & RNTextInputProps;
 
 const AnimatedTextInput: FC<Props> = ({
   dark = false,
@@ -28,7 +27,7 @@ const AnimatedTextInput: FC<Props> = ({
   keyboardType = 'default',
   iconSize = 20,
   iconTouchableEnabled = false,
-  status = INPUT_STATUS.DEFAULT,
+  status = InputStatus.DEFAULT,
   iconName = null,
   maskType = null,
   label = '',
@@ -122,7 +121,7 @@ const AnimatedTextInput: FC<Props> = ({
     };
 
     return maskType ? (
-      <TextInputMask maskType={maskType} {...textInputProps} />
+      <MaskedTextInput maskType={maskType} {...textInputProps} />
     ) : (
       <TextInput {...textInputProps} />
     );
@@ -142,7 +141,7 @@ const AnimatedTextInput: FC<Props> = ({
 
   const icon = iconName;
   const iconColor = getIconColor(hasError);
-  const renderStatus = hasError ? INPUT_STATUS.FAILURE : status;
+  const renderStatus = hasError ? InputStatus.FAILURE : status;
 
   return (
     <ThemeProvider theme={theme}>
@@ -158,7 +157,7 @@ const AnimatedTextInput: FC<Props> = ({
           </Label>
           <InputAreaWrapper multiline={multiline}>
             {renderTextInput(renderStatus)}
-            <If condition={!isEmpty(icon)}>
+            {!isEmpty(icon) && (
               <Icon
                 size={iconSize}
                 name={icon || ''}
@@ -167,7 +166,7 @@ const AnimatedTextInput: FC<Props> = ({
                 onPress={onPressIcon}
                 hitSlop={iconHitSlop}
               />
-            </If>
+            )}
           </InputAreaWrapper>
           <BottomLine dark={dark} status={status} />
         </FormError>

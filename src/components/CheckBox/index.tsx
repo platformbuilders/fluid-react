@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { CheckBox as DefaultCheckbox } from '~/utils/modules';
-import { FormError } from '~/components';
+import FormError from '../FormError';
 import { colors } from '~/theme';
 import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
 import { ThemeContext } from '../ThemeContext';

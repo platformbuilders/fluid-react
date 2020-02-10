@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { If, LoadingIndicator } from '~/components';
+import LoadingIndicator from '../LoadingIndicator';
 import { ThemeContext } from '../ThemeContext';
 import { Touchable, ButtonWrapper, TextButton } from './styles';
 
@@ -47,10 +47,8 @@ const Button: FC<Props> = ({
           disabled={disabled}
           rounded={rounded}
         >
-          <If condition={loading}>
-            <LoadingIndicator />
-          </If>
-          <If condition={!loading}>
+          {loading && <LoadingIndicator />}
+          {!loading && (
             <>
               <TextButton
                 secondary={secondary}
@@ -61,7 +59,7 @@ const Button: FC<Props> = ({
                 {children}
               </TextButton>
             </>
-          </If>
+          )}
         </ButtonWrapper>
       </Touchable>
     </ThemeProvider>
