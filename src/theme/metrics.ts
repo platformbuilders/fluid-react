@@ -1,6 +1,6 @@
 import { Dimensions } from 'react-native';
-import { verticalScale, moderateScale } from '~/utils/modules';
-import { Metrics } from '~/utils/types';
+import { verticalScale, moderateScale } from '../utils/modules';
+import { Metrics } from '../utils/types';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animation } from '~/utils/modules';
+import { Animation } from '../../utils/modules';
 import DefaultAnimation from './animation.json';
 
 const smallSize = { width: 60, height: 60 };

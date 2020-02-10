@@ -1,6 +1,6 @@
 import React, { useState, FC, useCallback, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { TextInput as TextInputType } from '~/utils/types';
+import { TextInput as TextInputType } from '../../../utils/types';
 import TextInput from '../index';
 import { ThemeContext } from '../../ThemeContext';
 

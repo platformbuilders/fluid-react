@@ -1,9 +1,9 @@
 import { Animated } from 'react-native';
 import { DatePickerCustomStylesProps } from 'react-native-datepicker';
 import styled from 'styled-components/native';
-import { getTheme, switchStyle } from '~/utils/helpers';
-import { DatePicker as DefaultDatePicker } from '~/utils/modules';
-import { InputStatus } from '~/utils/types';
+import { getTheme, switchStyle } from '../../utils/helpers';
+import { DatePicker as DefaultDatePicker } from '../../utils/modules';
+import { InputStatus } from '../../utils/types';
 
 const getStatusStyle = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');

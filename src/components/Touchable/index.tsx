@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { HapticFeedbackType } from 'react-native-haptic';
-import { generateHaptic } from '~/utils/helpers';
+import { generateHaptic } from '../../utils/helpers';
 
 type Props = {
   onPress: (x: any) => void;

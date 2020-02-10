@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { ImageAvatarPlaceholder } from '~/assets/images';
-import { ImagePicker, RNCamera } from '~/utils/modules';
+import { ImageAvatarPlaceholder } from '../../assets/images';
+import { ImagePicker, RNCamera } from '../../utils/modules';
 import { ThemeContext } from '../ThemeContext';
 import { Wrapper, Image, CameraView } from './styles';
 

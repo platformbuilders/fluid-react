@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { getTheme } from '~/utils/helpers';
+import { getTheme } from '../../utils/helpers';
 
 const defaultColor = getTheme('primary.contrast');
 

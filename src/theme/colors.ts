@@ -1,5 +1,5 @@
-import { lighten, darken } from '~/utils/modules';
-import { Theme } from '~/utils/types';
+import { lighten, darken } from '../utils/modules';
+import { Theme } from '../utils/types';
 
 const primary = '#C6B09E';
 const secondary = '#805281';

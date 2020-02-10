@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { human } from 'react-native-typography';
-import { Theme, Metrics, Variant } from '~/utils/types';
+import { Theme, Metrics, Variant } from '../../utils/types';
 import { Text } from './styles';
 import { ThemeContext } from '../ThemeContext';
 

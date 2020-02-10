@@ -2,9 +2,9 @@ import React, { FC, useState, useEffect, useCallback, useContext } from 'react';
 import { Animated, TextInputProps as RNTextInputProps } from 'react-native';
 import { isEmpty } from 'lodash';
 import { ThemeProvider } from 'styled-components';
-import { colors } from '~/theme';
-import { usePrevious } from '~/utils/hooks';
-import { TextInput as TextInputType, InputStatus } from '~/utils/types';
+import { colors } from '../../theme';
+import { usePrevious } from '../../utils/hooks';
+import { TextInput as TextInputType, InputStatus } from '../../utils/types';
 import MaskedTextInput from './MaskedTextInput';
 import {
   Label,
