@@ -58,7 +58,7 @@ export interface TextInput {
   style?: any;
   textStyle?: any;
   labelStyle?: any;
-  isPlaceholder: boolean;
+  isPlaceholder?: boolean;
   onPressIcon?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
