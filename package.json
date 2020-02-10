@@ -20,7 +20,7 @@
   },
   "scripts": {
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
-    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
     "precommit": "yarn lint"
   },
   "devDependencies": {

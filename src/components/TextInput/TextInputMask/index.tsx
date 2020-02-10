@@ -1,8 +1,8 @@
 import React, { FC, useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { MaskedInput } from '../types';
 import { TextInput } from './styles';
 import { ThemeContext } from '../../ThemeContext';
-import { ThemeProvider } from 'styled-components';
 
 const TextInputMask: FC<MaskedInput> = ({
   maskType,

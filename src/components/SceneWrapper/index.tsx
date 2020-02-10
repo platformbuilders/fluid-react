@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
+import { ThemeProvider } from 'styled-components'
 import { DismissKeyboardView, If } from '~/components';
 import { ChildrenWrapper, Title, Subtitle } from './styles';
 import { ThemeContext } from '../ThemeContext';
-import { ThemeProvider } from 'styled-components'
 
 const contentContainerStyle = {
   width: '100%',

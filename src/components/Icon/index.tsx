@@ -34,7 +34,7 @@ export const Icon: React.FC<Props> = ({
   backgroundColor = '',
   ...rest
 }) => {
-  // eslint-disable-next-line
+  // eslint-disable-next-line prettier/prettier
   const iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
   const Svg = Icons[`Icon${iconName}`];
 

@@ -1,9 +1,8 @@
 import React, { FC, useState, useCallback, useEffect, useContext } from 'react';
 import { Animated } from 'react-native';
-
+import { ThemeProvider } from 'styled-components';
+import { DatePickerProps } from 'react-native-datepicker';
 import { FormError } from '~/components';
-import { INPUT_STATUS } from '~/utils/enums';
-
 import {
   Label,
   BottomLine,
@@ -13,7 +12,6 @@ import {
   LABEL_UPPER_STYLE,
   LABEL_LOWER_STYLE,
 } from './styles';
-import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from '../ThemeContext';
 
 interface Props {
@@ -24,23 +22,33 @@ interface Props {
   testID?: string;
   accessibilityLabel?: string;
   confirmBtnText?: string;
+  mode: DatePickerProps['mode'];
+  androidMode: DatePickerProps['androidMode'];
   onDateChange?(x: string): void;
   maxDate?: string;
   editable?: boolean;
+  locale: string;
+  format: string;
   dark?: boolean;
   status?: string;
 }
 
-const DatePickerInput: FC<Props> = (props) => {
-  const {
-    label,
-    error = '',
-    maxDate,
-    confirmBtnText,
-    cancelBtnText,
-    dark = false,
-    editable = true,
-  } = props;
+const DatePickerInput: FC<Props> = ({
+  label = '',
+  error = '',
+  dark = false,
+  editable = true,
+  value = '',
+  testID = '',
+  mode = 'date',
+  androidMode = 'spinner',
+  locale = 'pt-BR',
+  format = 'DD/MM/YYYY',
+  cancelBtnText = 'Cancelar',
+  confirmBtnText = 'Confirmar',
+  onDateChange = (): void => {},
+  maxDate,
+}) => {
   const { theme } = useContext(ThemeContext);
   const [labelAnimatedStyle] = useState({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
@@ -64,21 +72,21 @@ const DatePickerInput: FC<Props> = (props) => {
   }, [Animated, labelAnimatedStyle]);
 
   const updateDate = useCallback(
-    (date: string): void => {
-      setDate(date);
+    (updatedDate: string): void => {
+      setDate(updatedDate);
       execAnimation();
-      if (props.onDateChange) {
-        props.onDateChange(date);
+      if (onDateChange) {
+        onDateChange(updatedDate);
       }
     },
-    [props.onDateChange],
+    [onDateChange],
   );
 
   useEffect(() => {
-    if (props.value) {
+    if (value) {
       execAnimation();
     }
-  }, [props.value]);
+  }, [value]);
 
   const customStyles = error
     ? {
@@ -101,15 +109,16 @@ const DatePickerInput: FC<Props> = (props) => {
           {label}
         </Label>
         <DatePicker
+          mode={mode}
+          androidMode={androidMode}
+          locale={locale}
+          placeholder=" "
+          format={format}
           editable={!editable}
           date={date}
-          mode="date"
-          androidMode="spinner"
-          locale="pt-BR"
           customStyles={customStyles}
           maxDate={maxDate}
-          placeholder=" "
-          format="DD/MM/YYYY"
+          testID={testID}
           confirmBtnText={confirmBtnText}
           cancelBtnText={cancelBtnText}
           onDateChange={updateDate}
@@ -120,21 +129,6 @@ const DatePickerInput: FC<Props> = (props) => {
       </FormError>
     </ThemeProvider>
   );
-};
-
-DatePickerInput.defaultProps = {
-  value: '',
-  label: '',
-  testID: '',
-  accessibilityLabel: '',
-  error: '',
-  cancelBtnText: 'Cancelar',
-  confirmBtnText: 'Confirmar',
-  onDateChange: (): void => {},
-  maxDate: undefined,
-  editable: true,
-  dark: false,
-  status: INPUT_STATUS.DEFAULT,
 };
 
 export default DatePickerInput;

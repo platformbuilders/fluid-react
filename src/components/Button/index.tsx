@@ -1,9 +1,8 @@
 import React, { FC, useContext } from 'react';
-import { LoadingIndicator } from '~/components';
-import { Touchable, ButtonWrapper, TextButton } from './styles';
-import { ThemeContext } from '../ThemeContext';
 import { ThemeProvider } from 'styled-components';
-import If from '../If';
+import { If, LoadingIndicator } from '~/components';
+import { ThemeContext } from '../ThemeContext';
+import { Touchable, ButtonWrapper, TextButton } from './styles';
 
 type Props = {
   children: string;

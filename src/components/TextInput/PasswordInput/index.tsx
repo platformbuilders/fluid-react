@@ -1,8 +1,8 @@
 import React, { useState, FC, useCallback, useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { TextInputProps } from '../types';
 import { TextInput } from '~/components';
 import { ThemeContext } from '../../ThemeContext';
-import { ThemeProvider } from 'styled-components';
 
 const PasswordInput: FC<TextInputProps> = (props) => {
   const [hidePassword, setHidePassword] = useState<boolean>(true);

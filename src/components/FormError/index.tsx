@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { ErrorText } from './styles';
 import { ThemeContext } from '../ThemeContext';
-import { ThemeProvider } from 'styled-components';
 
 type Props = {
   error: string | boolean | undefined;

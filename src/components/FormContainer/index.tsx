@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { FormBehavior } from '~/utils/modules';
 import { Wrapper } from './styles';
 import { ThemeContext } from '../ThemeContext';
-import { ThemeProvider } from 'styled-components';
 
 interface Props {
   children: any;

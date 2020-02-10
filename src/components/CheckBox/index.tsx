@@ -1,9 +1,9 @@
 import React, { FC, useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { CheckBox as DefaultCheckbox } from '~/utils/modules';
 import { FormError } from '~/components';
 import { colors } from '~/theme';
 import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
-import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from '../ThemeContext';
 
 type Props = {

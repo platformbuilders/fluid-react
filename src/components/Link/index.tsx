@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { Touchable } from '~/components';
+import { Variant } from '~/utils/types';
 import { Text } from './styles';
 import { ThemeContext } from '../ThemeContext';
-import { ThemeProvider } from 'styled-components';
 
 type Props = {
   children: string;
   onPress: () => null;
-  variant?: string;
+  variant?: Variant;
   accessibility: string;
 };
 
