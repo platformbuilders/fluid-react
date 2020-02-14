@@ -30,6 +30,7 @@
     "baseUrl": ".",
   },
   "exclude": [
-    "__tests__/" // exclude test files
+    "__tests__/", // exclude test files
+    "storybook/"
   ]
 }

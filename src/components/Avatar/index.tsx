@@ -20,6 +20,10 @@ interface State {
 }
 
 class Avatar extends React.Component<Props, State> {
+  state = {
+    uploadedImage: '',
+  };
+
   camera: any;
 
   openPicker = (): Promise<void> => {
