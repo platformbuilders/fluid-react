@@ -7,7 +7,7 @@ import { ThemeContext } from '../ThemeContext';
 
 interface Props {
   variant: Variant;
-  children?: string | string[];
+  children?: string | string[] | (string | JSX.Element)[];
   style?: object[];
   textRef?: any;
   theme: Theme & Metrics;

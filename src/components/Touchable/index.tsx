@@ -21,7 +21,7 @@ const CommonTouchable: FC<Props> = ({
   <TouchableOpacity
     {...rest}
     accessibilityLabel={accessibility}
-    disabled={touchable}
+    disabled={!touchable}
     onPress={(e): void => {
       generateHaptic(haptic);
       onPress(e);
