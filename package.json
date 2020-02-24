@@ -1,6 +1,6 @@
 {
   "name": "builders-ui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Platform Builders Shared Components Library",
   "main": "src/index.ts",
   "author": "Platform-Builders",
@@ -48,6 +48,8 @@
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/eslint-config": "^0.0.7",
     "@types/lodash": "^4.14.149",
     "@types/moment": "^2.13.0",
@@ -81,8 +83,6 @@
     "eslint-plugin-sonarjs": "^0.5.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
     "typescript": "^3.7.5"
   }
 }
