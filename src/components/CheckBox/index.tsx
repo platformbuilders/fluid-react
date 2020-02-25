@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { CheckBox as DefaultCheckbox } from '../../utils/modules';
+import DefaultCheckbox from 'react-native-check-box';
 import { colors } from '../../theme';
 import FormError from '../FormError';
 import { ThemeContext } from '../ThemeContext';

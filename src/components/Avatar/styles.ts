@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { RNCamera } from 'react-native-camera';
+import FastImage from 'react-native-fast-image';
 import Touchable from '../Touchable';
-import { FastImage, RNCamera } from '../../utils/modules';
 import { ifStyle } from '../../utils/helpers';
 
 const showBorder = ifStyle('showBorder');

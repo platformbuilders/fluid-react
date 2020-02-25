@@ -1,5 +1,4 @@
-import { HapticFeedbackType } from 'react-native-haptic';
-import { Haptic } from '../modules';
+import Haptic, { HapticFeedbackType } from 'react-native-haptic';
 import { isIOS } from './isIOS';
 
 export const generateHaptic = (haptic: HapticFeedbackType = 'impact'): void => {

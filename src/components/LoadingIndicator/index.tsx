@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Animation } from '../../utils/modules';
+import Animation from 'lottie-react-native';
 import DefaultAnimation from './animation.json';
 
 const smallSize = { width: 60, height: 60 };
