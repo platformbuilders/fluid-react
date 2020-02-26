@@ -8,20 +8,20 @@ type Props = {
   children: JSX.Element;
   accessibility: string;
   haptic?: HapticFeedbackType;
-  touchable?: boolean;
+  disabled?: boolean;
 };
 
 const CommonTouchable: FC<Props> = ({
   onPress = (): void => {},
   haptic = 'impact',
-  touchable = true,
+  disabled = false,
   accessibility,
   ...rest
 }) => (
   <TouchableOpacity
     {...rest}
     accessibilityLabel={accessibility}
-    disabled={!touchable}
+    disabled={disabled}
     onPress={(e): void => {
       generateHaptic(haptic);
       onPress(e);

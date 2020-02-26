@@ -36,7 +36,7 @@ const Button: FC<Props> = ({
     <ThemeProvider theme={theme}>
       <Touchable
         accessibility={accessibility}
-        touchable={loading || disabled}
+        disabled={loading || disabled}
         onPress={onPress}
         rounded={rounded}
       >

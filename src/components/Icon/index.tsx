@@ -42,7 +42,7 @@ export const Icon: FC<Props> = ({
     <Animated.View style={style}>
       <Touchable
         accessibility={accessibility || iconName}
-        touchable={!touchable}
+        disabled={!touchable}
         onPress={onPress}
         {...rest}
       >
