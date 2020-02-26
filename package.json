@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-native-ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Platform Builders Shared Components Library",
   "main": "src/index.ts",
   "publishConfig": {
@@ -35,7 +35,6 @@
     "lodash": "^4.17.15",
     "lottie-react-native": "^3.3.2",
     "polished": "^3.4.4",
-    "react-native-camera": "^3.17.0",
     "react-native-checkbox": "^2.0.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-fast-image": "^7.0.2",
