@@ -4,6 +4,9 @@
   "description": "Platform Builders Shared Components Library",
   "main": "src/index.ts",
   "author": "platformbuilders",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "license": "MIT",
   "private": false,
   "scripts": {
