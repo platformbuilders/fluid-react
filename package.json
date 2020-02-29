@@ -1,11 +1,8 @@
 {
   "name": "@platformbuilders/react-native-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Platform Builders Shared Components Library",
   "main": "src/index.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "author": "platformbuilders",
   "license": "MIT",
   "private": false,
