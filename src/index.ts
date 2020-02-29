@@ -9,6 +9,7 @@ export { default as Icon } from './components/Icon';
 export { default as Button } from './components/Button';
 
 // General
+export { default as If } from './components/If';
 export { default as Typography } from './components/Typography';
 export { default as CheckBox } from './components/CheckBox';
 export { default as LoadingIndicator } from './components/LoadingIndicator';

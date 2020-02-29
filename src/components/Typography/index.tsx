@@ -6,7 +6,7 @@ import { Text } from './styles';
 import { ThemeContext } from '../ThemeContext';
 
 interface Props {
-  variant: Variant;
+  variant?: Variant;
   children?: string | string[] | (string | JSX.Element)[];
   style?: object[];
   textRef?: any;
