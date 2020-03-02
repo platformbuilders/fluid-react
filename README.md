@@ -1,5 +1,19 @@
 # Welcome to Builders UI
 
+[![Build Status][check-badge]][workflows]
+[![npm][npm-badge]][npm]
+[![react-native][rn-badge]][rn]
+[![MIT][license-badge]][license]
+
+[npm-badge]: https://img.shields.io/npm/v/@platformbuilders/react-native-ui.svg
+[npm]: https://www.npmjs.com/package/@platformbuilders/react-native-ui
+[rn]: https://facebook.github.io/react-native
+[rn-badge]: https://img.shields.io/badge/react--native-v0.61-05A5D1.svg
+[license-badge]: https://img.shields.io/dub/l/vibe-d.svg
+[license]: https://raw.githubusercontent.com/platformbuilders/react-native-element/master/LICENSE.md
+[workflows]: https://github.com/platformbuilders/react-native-ui/actions
+[check-badge]: https://github.com/platformbuilders/react-native-ui/workflows/check/badge.svg
+
 Welcome to the builder ui package here you will find out all of our components shared with the community
 
 <img src="https://pbs.twimg.com/profile_images/1093878457807847425/3oSyUp1U_400x400.jpg">
@@ -19,6 +33,7 @@ yarn add react-native-camera react-native-vector-icons react-native-haptic react
 ```
 
 Here's how you add our dependencie to your project builders-ui
+
 1. Add all the native dependencies listed above
 2. Add our library to your project `yarn add builders-ui`
 3. You can use it on your projects
