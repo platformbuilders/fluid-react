@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Variant } from '../../utils/types';
+import { Variants } from '../../utils/types';
 import { Text } from './styles';
 import Touchable from '../Touchable';
 import { ThemeContext } from '../ThemeContext';
@@ -8,7 +8,7 @@ import { ThemeContext } from '../ThemeContext';
 type Props = {
   children: string;
   onPress: () => null;
-  variant?: Variant;
+  variant?: Variants;
   accessibility: string;
 };
 

@@ -1,4 +1,4 @@
-export type Variant =
+export type Variants =
   | 'largeTitle'
   | 'title1'
   | 'title2'

@@ -1,6 +1,5 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { RNCamera } from 'react-native-camera';
-import FastImage from 'react-native-fast-image';
 import Touchable from '../Touchable';
 import { ifStyle } from '../../utils/helpers';
 
@@ -18,7 +17,7 @@ export const Wrapper = styled(Touchable)<{
   border: ${showBorder('4px solid white', '')};
 `;
 
-export const Image = styled(FastImage).attrs({ resizeMode: 'cover' })<{
+export const Image = styled.Image.attrs({ resizeMode: 'cover' })<{
   source: any;
 }>`
   width: 100%;

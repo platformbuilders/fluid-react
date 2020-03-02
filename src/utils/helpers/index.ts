@@ -1,6 +1,2 @@
-export * from './haptic';
-export { default as getTheme } from './getTheme';
-export { default as ifStyle } from './ifStyle';
-export { default as setStyleIOS } from './setStyleIOS';
-export { default as switchStyle } from './switchStyle';
-export { isIOS } from './isIOS';
+export * from '@platformbuilders/helpers';
+export * from './generateHaptic';

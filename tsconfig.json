@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "ESNext",
-    "module": "commonjs",
-    "allowJs": true,
+    "target": "es6",
+    "module": "es6",
+    "lib": ["es6"],
+    "types": ["react-native"],
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "importHelpers": true,
     "resolveJsonModule": true,
     "jsx": "react-native",
-    "noEmit": true,
+    "baseUrl": ".",
     "skipLibCheck": true,
     /* Strict Type-Checking Options */
     "strict": true,
@@ -22,15 +28,12 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "experimentalDecorators": true,
     /* Module Resolution Options */
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "baseUrl": ".",
+    "esModuleInterop": true
   },
-  "exclude": [
-    "__tests__/", // exclude test files
-    "storybook/"
-  ]
+  "compileOnSave": true,
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

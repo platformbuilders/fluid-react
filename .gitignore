@@ -60,6 +60,10 @@ buck-out/
 # testing
 /coverage
 
+# dist
+/dist
+package-lock.json
+
 # Android builds
 *.apk
 

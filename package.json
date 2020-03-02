@@ -2,19 +2,29 @@
   "name": "@platformbuilders/react-native-ui",
   "version": "0.0.9",
   "description": "Platform Builders Shared Components Library",
-  "main": "src/index.ts",
-  "author": "platformbuilders",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platformbuilders/react-native-ui.git"
   },
+  "keywords": [
+    "platformbuilders",
+    "react-native",
+    "react-native-ui"
+  ],
+  "author": "Platform Builders <dev@platformbuilders.io>",
   "license": "MIT",
   "private": false,
   "scripts": {
     "clean": "rm -rf ./node_modules && yarn install",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
     "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
+    "build": "rm -rf dist && tsc",
+    "prepublish": "yarn build",
     "precommit": "yarn lint",
     "preversion": "yarn lint",
+    "postversion": "git push && git push --tags",
     "version:patch": "npm version patch",
     "version:minor": "npm version minor",
     "version:major": "npm version major"
@@ -31,10 +41,16 @@
       "pre-commit": "lint-staged"
     }
   },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.61.0"
+  },
   "dependencies": {
+    "@platformbuilders/helpers": "^0.0.18",
     "lodash": "^4.17.15",
     "lottie-react-native": "^3.3.2",
     "polished": "^3.4.4",
+    "react-native-camera": "^3.19.0",
     "react-native-checkbox": "^2.0.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-fast-image": "^7.0.2",

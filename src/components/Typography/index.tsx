@@ -1,19 +1,11 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { human } from 'react-native-typography';
-import { Theme, Metrics, Variant } from '../../utils/types';
+import { Typography as TypographyType } from '../../utils/types';
 import { Text } from './styles';
 import { ThemeContext } from '../ThemeContext';
 
-interface Props {
-  variant?: Variant;
-  children?: string | string[] | (string | JSX.Element)[];
-  style?: object[];
-  textRef?: any;
-  theme: Theme & Metrics;
-}
-
-const Typography: FC<Props> = ({
+const Typography: FC<TypographyType> = ({
   style = [{}],
   variant = 'body',
   textRef = React.createRef(),

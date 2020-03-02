@@ -2,9 +2,11 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { RNCamera } from 'react-native-camera';
 import ImagePicker from 'react-native-image-picker';
-import { ImageAvatarPlaceholder } from '../../assets/images';
 import { ThemeContext } from '../ThemeContext';
 import { Wrapper, Image, CameraView } from './styles';
+
+const defaultAvatar =
+  'https://qph.fs.quoracdn.net/main-qimg-54075e2b6df5d93405b85ee3a77e6098';
 
 interface Props {
   image: string;
@@ -115,7 +117,7 @@ class Avatar extends React.Component<Props, State> {
                   source={
                     uploadedImage
                       ? { uri: uploadedImage }
-                      : { uri: image } || ImageAvatarPlaceholder
+                      : { uri: image } || defaultAvatar
                   }
                 />
               )}
