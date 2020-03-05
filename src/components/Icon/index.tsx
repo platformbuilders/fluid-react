@@ -1,17 +1,16 @@
 import React, { FC } from 'react';
 import { Animated, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { TouchableType } from '../../utils/types';
 import Touchable from '../Touchable';
 import * as Icons from '../../assets/svg';
 
-type Props = {
+interface Props extends TouchableType {
   name: string;
   touchable?: boolean;
   size?: number;
-  accessibility?: string;
   color?: string;
   style?: any;
-  onPress?(): void;
   borderColor?: string;
   backgroundColor?: string;
   hitSlop?: {
@@ -20,9 +19,10 @@ type Props = {
     left?: number;
     right?: number;
   };
-};
+}
 
 export const Icon: FC<Props> = ({
+  id,
   name,
   accessibility,
   touchable = true,
@@ -41,6 +41,7 @@ export const Icon: FC<Props> = ({
   return (
     <Animated.View style={style}>
       <Touchable
+        id={id}
         accessibility={accessibility || iconName}
         disabled={!touchable}
         onPress={onPress}

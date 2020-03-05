@@ -36,8 +36,8 @@ type MaskedInput = {
   maskType: TextInputMaskTypeProp;
 };
 export interface TextInput {
-  id?: string;
-  accessibility?: string;
+  id: string;
+  accessibility: string;
   dark?: boolean;
   multiline?: boolean;
   secureTextEntry?: boolean;

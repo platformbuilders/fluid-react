@@ -5,10 +5,10 @@ import DefaultAnimation from './animation.json';
 const smallSize = { width: 60, height: 60 };
 const largeSize = { width: 120, height: 120 };
 
-type Props = {
+interface Props {
   large?: boolean;
   animation?: any;
-};
+}
 
 const Loading: FC<Props> = ({
   large = false,

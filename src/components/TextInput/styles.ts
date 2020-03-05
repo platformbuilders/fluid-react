@@ -50,7 +50,13 @@ export const Wrapper = styled.View<WrapperProps>`
   justify-content: flex-end;
 `;
 
-export const TextLabel = styled.Text<TextInputType>`
+interface TextLabelProps {
+  dark: boolean;
+  status: string;
+  isPlaceholder: boolean;
+}
+
+export const TextLabel = styled.Text<TextLabelProps>`
   line-height: 19px;
   position: absolute;
   color: ${inputColor};

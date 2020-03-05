@@ -15,7 +15,8 @@ interface Props {
   size: number;
   onPress: (x: any) => void;
   onUpload: (x: any) => any;
-  accessibility?: string;
+  id: string;
+  accessibility: string;
 }
 
 interface State {
@@ -76,6 +77,7 @@ class Avatar extends React.Component<Props, State> {
 
   render(): JSX.Element {
     const {
+      id,
       accessibility = 'Upload de Avatar',
       image = null,
       size = 50,
@@ -90,6 +92,7 @@ class Avatar extends React.Component<Props, State> {
         {({ theme }): JSX.Element => (
           <ThemeProvider theme={theme}>
             <Wrapper
+              id={id}
               accessibility={accessibility}
               size={size}
               onPress={onPress}

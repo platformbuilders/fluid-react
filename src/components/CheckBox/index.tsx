@@ -6,7 +6,7 @@ import FormError from '../FormError';
 import { ThemeContext } from '../ThemeContext';
 import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
 
-type Props = {
+interface Props {
   checked?: boolean;
   label?: string;
   labelBefore?: string;
@@ -14,7 +14,7 @@ type Props = {
   onPress?: () => null;
   labelStyle?: object[];
   style?: any;
-};
+}
 
 const Checkbox: FC<Props> = ({
   label = '',

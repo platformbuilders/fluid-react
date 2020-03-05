@@ -1,18 +1,17 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Variants } from '../../utils/types';
+import { Variants, TouchableType } from '../../utils/types';
 import { Text } from './styles';
 import Touchable from '../Touchable';
 import { ThemeContext } from '../ThemeContext';
 
-type Props = {
+interface Props extends TouchableType {
   children: string;
-  onPress: () => null;
   variant?: Variants;
-  accessibility: string;
-};
+}
 
 const Link: FC<Props> = ({
+  id,
   onPress,
   children,
   accessibility,
@@ -22,7 +21,12 @@ const Link: FC<Props> = ({
   const { theme } = useContext(ThemeContext);
   return (
     <ThemeProvider theme={theme}>
-      <Touchable onPress={onPress} accessibility={accessibility} {...rest}>
+      <Touchable
+        id={id}
+        onPress={onPress}
+        accessibility={accessibility}
+        {...rest}
+      >
         <Text variant={variant}>{children}</Text>
       </Touchable>
     </ThemeProvider>

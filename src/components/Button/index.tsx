@@ -1,24 +1,21 @@
 import React, { FC, useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { TouchableType } from '../../utils/types';
 import LoadingIndicator from '../LoadingIndicator';
 import { ThemeContext } from '../ThemeContext';
 import { Touchable, ButtonWrapper, TextButton } from './styles';
 
-type Props = {
-  children: string;
-  onPress(): void;
-  id: string;
-  accessibility: string;
-  style?: object[];
+interface Props extends TouchableType {
+  style?: any;
   textStyle?: object;
-  disabled?: boolean;
   rounded?: boolean;
   secondary?: boolean;
   terciary?: boolean;
   loading?: boolean;
-};
+}
 
 const Button: FC<Props> = ({
+  id,
   children,
   onPress,
   accessibility,
@@ -35,6 +32,7 @@ const Button: FC<Props> = ({
   return (
     <ThemeProvider theme={theme}>
       <Touchable
+        id={id}
         accessibility={accessibility}
         disabled={loading || disabled}
         onPress={onPress}

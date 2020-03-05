@@ -22,6 +22,8 @@ import { ThemeContext } from '../ThemeContext';
 type Props = TextInputType & RNTextInputProps;
 
 const AnimatedTextInput: FC<Props> = ({
+  id,
+  accessibility,
   dark = false,
   multiline = false,
   keyboardType = 'default',
@@ -107,6 +109,8 @@ const AnimatedTextInput: FC<Props> = ({
 
     const textInputProps = {
       ...rest,
+      id,
+      accessibility,
       dark,
       multiline,
       value,
@@ -159,6 +163,8 @@ const AnimatedTextInput: FC<Props> = ({
             {renderTextInput(renderStatus)}
             {!isEmpty(icon) && (
               <Icon
+                id={`icon_${id}`}
+                accessibility={`icon_${accessibility}`}
                 size={iconSize}
                 name={icon || ''}
                 color={iconColor}
