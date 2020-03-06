@@ -20,6 +20,7 @@ interface ButtonWrapperProps {
   secondary: boolean;
   disabled?: boolean;
 }
+
 export const ButtonWrapper = styled.View<ButtonWrapperProps>`
   height: 42px;
   flex-direction: row;
