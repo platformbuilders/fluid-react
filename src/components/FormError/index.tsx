@@ -5,7 +5,7 @@ import { ThemeContext } from '../ThemeContext';
 
 interface Props {
   centered?: boolean;
-  error?: string | string[];
+  error?: string | string[] | boolean;
   style?: object[];
 }
 
@@ -20,9 +20,11 @@ const FormError: FC<Props> = ({
     <ThemeProvider theme={theme}>
       <>
         {children}
-        <ErrorText centered={centered} style={style}>
-          {error}
-        </ErrorText>
+        {error && (
+          <ErrorText centered={centered} style={style}>
+            {error}
+          </ErrorText>
+        )}
       </>
     </ThemeProvider>
   );
