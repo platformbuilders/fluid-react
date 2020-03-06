@@ -17,7 +17,7 @@ export interface TextInput extends TextInputProps {
   label?: string;
   iconName?: string;
   status?: string;
-  error?: string;
+  error?: string | boolean;
   iconHitSlop?: object;
   labelStyle?: any;
   isPlaceholder?: boolean;
