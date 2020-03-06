@@ -12,10 +12,10 @@ const primaryDark = getTheme('primary.dark');
 const secondaryDark = getTheme('disabled');
 const inputMainColor = (props: { dark: any }): any =>
   getStatusStyle({
-    [InputStatus.SUCCESS]: getTheme('success'),
-    [InputStatus.FAILURE]: getTheme('failure'),
-    [InputStatus.DEFAULT]: props.dark ? primaryDark : primaryContrast,
-    [InputStatus.DISABLED]: secondaryDark,
+    [InputStatus.Success]: getTheme('success'),
+    [InputStatus.Failure]: getTheme('failure'),
+    [InputStatus.Default]: props.dark ? primaryDark : primaryContrast,
+    [InputStatus.Disabled]: secondaryDark,
   });
 
 export const LABEL_UPPER_STYLE = {

@@ -1,26 +1,23 @@
-import React, { FC, useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
+import React, { FC } from 'react';
 import { MaskedTextInput as MaskedTextInputType } from '../../../utils/types';
-import { ThemeContext } from '../../ThemeContext';
 import { TextInput } from './styles';
 
 const MaskedTextInput: FC<MaskedTextInputType> = ({
   maskType,
-  dark = false,
+  inputRef,
+  contrast = false,
   multiline = false,
   ...props
 }) => {
-  const { theme } = useContext(ThemeContext);
   return (
-    <ThemeProvider theme={theme}>
-      <TextInput
-        {...props}
-        dark={dark}
-        multiline={multiline}
-        type={maskType}
-        underlineColorAndroid="transparent"
-      />
-    </ThemeProvider>
+    <TextInput
+      {...props}
+      ref={inputRef}
+      contrast={contrast}
+      multiline={multiline}
+      type={maskType}
+      underlineColorAndroid="transparent"
+    />
   );
 };
 
