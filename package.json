@@ -44,14 +44,16 @@
   },
   "peerDependencies": {
     "react": ">=16.11.0",
-    "react-native": ">=0.61.0"
+    "react-native": ">=0.61.0",
+    "react-native-svg": ">=11.0.0",
+    "react-native-camera": ">=3.19.0",
+    "styled-components": ">=5.0.1"
   },
   "dependencies": {
     "@platformbuilders/helpers": "^0.0.19",
     "lodash": "^4.17.15",
     "lottie-react-native": "^3.3.2",
     "polished": "^3.4.4",
-    "react-native-camera": "^3.19.0",
     "react-native-checkbox": "^2.0.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-fast-image": "^7.0.2",
@@ -59,10 +61,8 @@
     "react-native-image-picker": "^2.3.1",
     "react-native-masked-text": "^1.13.0",
     "react-native-size-matters": "^0.3.0",
-    "react-native-svg": "^11.0.1",
     "react-native-typography": "^1.4.1",
-    "react-native-vector-icons": "^6.6.0",
-    "styled-components": "^5.0.1"
+    "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
