@@ -6,7 +6,7 @@ import Touchable from '../Touchable';
 import { ThemeContext } from '../ThemeContext';
 
 interface Props extends TouchableType {
-  children: string;
+  children: string | string[];
   variant?: Variants;
 }
 

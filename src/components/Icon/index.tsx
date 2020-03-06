@@ -23,8 +23,8 @@ interface Props extends TouchableType {
 
 export const Icon: FC<Props> = ({
   id,
-  name,
   accessibility,
+  name = '',
   touchable = true,
   size = 20,
   color = undefined,

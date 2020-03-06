@@ -8,32 +8,39 @@ interface InputAreaWrapperProps {
 }
 
 interface BottomLineProps {
-  dark?: boolean;
-  status?: string;
+  contrast: boolean;
+  status: string;
 }
 
+const normalTextSize = 16;
+const bigTextSize = 24;
+
 const isMultiline = ifStyle('multiline');
+const isCentered = ifStyle('centered');
+const isLarge = ifStyle('large');
+const hasLabel = ifStyle('label');
+const isContrast = ifStyle('contrast');
 const switchStatus = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');
 const primaryDark = getTheme('primary.dark');
 const success = getTheme('success');
 const failure = getTheme('failure');
 const disabled = getTheme('disabled');
-const inputColor = (props: BottomLineProps): any =>
+const inputColor = (props: TextInputType | BottomLineProps): any =>
   switchStatus({
-    [InputStatus.SUCCESS]: success,
-    [InputStatus.FAILURE]: failure,
-    [InputStatus.DEFAULT]: props.dark ? primaryDark : primaryContrast,
-    [InputStatus.DISABLED]: disabled,
+    [InputStatus.Success]: success,
+    [InputStatus.Failure]: failure,
+    [InputStatus.Default]: isContrast(primaryContrast, primaryDark)(props),
+    [InputStatus.Disabled]: disabled,
   });
 
 export const LABEL_UPPER_STYLE = {
-  top: 8,
+  top: -10,
   fontSize: 14,
 };
 
 export const LABEL_LOWER_STYLE = {
-  top: 40,
+  top: 20,
   fontSize: 18,
 };
 
@@ -42,28 +49,20 @@ interface WrapperProps {
 }
 
 export const Wrapper = styled.View<WrapperProps>`
-  height: ${isMultiline('auto', '89px')};
-  max-height: ${isMultiline('auto', '89px')};
-  min-height: ${isMultiline('89px', 'auto')};
+  height: ${hasLabel(isMultiline('auto', '89px'), isMultiline('auto', '32px'))};
+  max-height: ${hasLabel(
+    isMultiline('auto', '89px'),
+    isMultiline('auto', '32px'),
+  )};
+  min-height: ${hasLabel(
+    isMultiline('89px', 'auto'),
+    isMultiline('auto', '32px'),
+  )};
+  justify-content: ${hasLabel('flex-end', 'flex-start')};
   padding-top: 8px;
   position: relative;
-  justify-content: flex-end;
+  justify-content: ${hasLabel('flex-end', 'flex-start')};
 `;
-
-interface TextLabelProps {
-  dark: boolean;
-  status: string;
-  isPlaceholder: boolean;
-}
-
-export const TextLabel = styled.Text<TextLabelProps>`
-  line-height: 19px;
-  position: absolute;
-  color: ${inputColor};
-  font-size: ${LABEL_LOWER_STYLE.fontSize}px;
-`;
-
-export const Label = Animated.createAnimatedComponent(TextLabel);
 
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   margin-top: 6px;
@@ -73,15 +72,33 @@ export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   max-height: ${isMultiline('auto', '24px')};
 `;
 
-export const TextInput = styled.TextInput<TextInputType>`
+export const TextLabel = styled.Text`
+  line-height: 20px;
+  position: absolute;
+  color: ${inputColor};
+  font-size: ${LABEL_LOWER_STYLE.fontSize}px;
+  top: ${LABEL_LOWER_STYLE.top}px;
+`;
+export const Label = Animated.createAnimatedComponent(TextLabel);
+
+export const TextInput = styled.TextInput.attrs((props: TextInputType) => ({
+  textAlign: isCentered('center', 'left')(props),
+  selectionColor: props.contrast
+    ? `${primaryContrast(props)}80`
+    : `${primaryDark(props)}80`,
+  placeholderTextColor: props.contrast
+    ? `${primaryContrast(props)}60`
+    : `${primaryDark(props)}60`,
+}))<TextInputType>`
   padding: 0;
   flex-grow: 1;
   border-width: 0;
   min-height: 24px;
-  margin-top: ${isMultiline('16px', '0px')};
-  max-height: ${isMultiline('150px', '24px')};
   font-weight: 700;
   color: ${inputColor};
+  margin-top: ${isMultiline('16px', '0px')};
+  max-height: ${isMultiline('150px', '24px')};
+  font-size: ${isLarge(bigTextSize, normalTextSize)}px;
 `;
 
 export const BottomLine = styled.View<BottomLineProps>`

@@ -1,6 +1,6 @@
 export enum InputStatus {
-  SUCCESS = 'SUCCESS',
-  FAILURE = 'FAILURE',
-  DEFAULT = 'DEFAULT',
-  DISABLED = 'DISABLED',
+  Success = 'SUCCESS',
+  Failure = 'FAILURE',
+  Default = 'DEFAULT',
+  Disabled = 'DISABLED',
 }

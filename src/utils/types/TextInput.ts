@@ -1,69 +1,32 @@
+import { TextInputProps, StyleProp, TextStyle } from 'react-native';
 import { TextInputMaskTypeProp } from 'react-native-masked-text';
 
-type KeyboardType =
-  | 'default'
-  | 'url'
-  | 'numeric'
-  | 'email-address'
-  | 'phone-pad'
-  | 'visible-password'
-  | 'ascii-capable'
-  | 'numbers-and-punctuation'
-  | 'number-pad'
-  | 'name-phone-pad'
-  | 'decimal-pad'
-  | 'twitter'
-  | 'web-search'
-  | undefined;
-
-type ReturnKeyType =
-  | 'default'
-  | 'none'
-  | 'search'
-  | 'send'
-  | 'done'
-  | 'go'
-  | 'next'
-  | 'previous'
-  | 'google'
-  | 'join'
-  | 'route'
-  | 'yahoo'
-  | 'emergency-call'
-  | undefined;
-
-type MaskedInput = {
-  maskType: TextInputMaskTypeProp;
-};
-export interface TextInput {
+export interface TextInput extends TextInputProps {
   id: string;
   accessibility: string;
-  dark?: boolean;
-  multiline?: boolean;
-  secureTextEntry?: boolean;
-  autoComplete?: string;
-  keyboardType?: KeyboardType;
-  returnKeyType?: ReturnKeyType;
-  autoFocus?: boolean;
+  inputRef?: any;
+  options?: any;
+  large?: boolean;
+  borderless?: boolean;
+  contrast?: boolean;
+  centered?: boolean;
   iconSize?: number;
   iconTouchableEnabled?: boolean;
+  textStyle?: StyleProp<TextStyle>;
+  maskType?: TextInputMaskTypeProp;
   label?: string;
-  value?: string;
-  placeholder?: string;
-  iconName?: string | null;
-  maskType?: TextInputMaskTypeProp | null;
+  iconName?: string;
   status?: string;
-  error?: string | boolean;
+  error?: string;
   iconHitSlop?: object;
-  style?: any;
-  textStyle?: any;
   labelStyle?: any;
   isPlaceholder?: boolean;
   onPressIcon?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
-  onChangeText?(x?: any): void;
   onSubmitEditing?(x?: any): void;
 }
 
-export type MaskedTextInput = TextInput & MaskedInput;
+export interface MaskedTextInput extends TextInput {
+  maskType: TextInputMaskTypeProp;
+}

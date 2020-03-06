@@ -1,8 +1,15 @@
 import styled from 'styled-components/native';
-import { getTheme } from '../../utils/helpers';
+import Typography from '../Typography';
+import { getTheme, ifStyle } from '../../utils/helpers';
 
-export const ErrorText = styled.Text`
-  min-height: 17px;
+const isCentered = ifStyle('centered');
+
+interface ErrorTextProps {
+  centered: boolean;
+}
+export const ErrorText = styled(Typography)<ErrorTextProps>`
   color: ${getTheme('failure')};
-  margin-top: 5px;
+  margin-top: ${getTheme('smallSpacing')};
+  text-align: ${isCentered('center', 'start')};
+  min-height: 25px;
 `;

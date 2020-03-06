@@ -1,7 +1,6 @@
-import React, { FC, useState, useEffect, useCallback, useContext } from 'react';
-import { Animated, TextInputProps as RNTextInputProps } from 'react-native';
+import React, { FC, useState, useEffect, useCallback } from 'react';
+import { Animated } from 'react-native';
 import { isEmpty } from 'lodash';
-import { ThemeProvider } from 'styled-components';
 import { colors } from '../../theme';
 import { usePrevious } from '../../utils/hooks';
 import { TextInput as TextInputType, InputStatus } from '../../utils/types';
@@ -17,29 +16,29 @@ import {
 } from './styles';
 import Icon from '../Icon';
 import FormError from '../FormError';
-import { ThemeContext } from '../ThemeContext';
 
-type Props = TextInputType & RNTextInputProps;
-
-const AnimatedTextInput: FC<Props> = ({
+const AnimatedTextInput: FC<TextInputType> = ({
   id,
   accessibility,
-  dark = false,
+  large = false,
+  contrast = false,
+  centered = false,
+  borderless = false,
   multiline = false,
   keyboardType = 'default',
   iconSize = 20,
   iconTouchableEnabled = false,
-  status = InputStatus.DEFAULT,
-  iconName = null,
+  status = InputStatus.Default,
   maskType = null,
+  iconName = '',
   label = '',
   value = '',
   placeholder = '',
   error = '',
   style = {},
   textStyle = {},
-  labelStyle = {},
   iconHitSlop = {},
+  inputRef = React.createRef(),
   onBlur = (): any => {},
   onFocus = (): any => {},
   onChangeText = (): any => {},
@@ -51,7 +50,6 @@ const AnimatedTextInput: FC<Props> = ({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
   });
-  const { theme } = useContext(ThemeContext);
 
   const [isPlaceholder, setIsPlaceHolder] = useState(true);
 
@@ -84,24 +82,24 @@ const AnimatedTextInput: FC<Props> = ({
     return colors.primary.contrast;
   };
 
-  const handleOnFocus = (): void => {
+  const handleOnFocus = (event: any): void => {
     if (isPlaceholder) {
       setIsPlaceHolder(false);
       animationUp();
     }
-    if (onFocus) {
-      onFocus();
-    }
+    onFocus(event);
   };
 
-  const handleOnBlur = (): void => {
-    if (!value) {
+  const handleOnBlur = (event: any): void => {
+    const isEmptyLabel = label === '';
+    if (!value && !isEmptyLabel) {
       setIsPlaceHolder(true);
       animationDown();
     }
-    if (onBlur) {
-      onBlur();
+    if (isEmptyLabel) {
+      setIsPlaceHolder(false);
     }
+    onBlur(event);
   };
 
   const renderTextInput = (inputStatus: string): JSX.Element => {
@@ -111,7 +109,10 @@ const AnimatedTextInput: FC<Props> = ({
       ...rest,
       id,
       accessibility,
-      dark,
+      large,
+      centered,
+      contrast,
+      borderless,
       multiline,
       value,
       keyboardType,
@@ -125,9 +126,20 @@ const AnimatedTextInput: FC<Props> = ({
     };
 
     return maskType ? (
-      <MaskedTextInput maskType={maskType} {...textInputProps} />
+      <MaskedTextInput
+        id={id}
+        inputRef={inputRef}
+        maskType={maskType}
+        accessibilityLabel={accessibility}
+        {...textInputProps}
+      />
     ) : (
-      <TextInput {...textInputProps} />
+      <TextInput
+        id={id}
+        ref={inputRef}
+        accessibilityLabel={accessibility}
+        {...textInputProps}
+      />
     );
   };
 
@@ -139,45 +151,48 @@ const AnimatedTextInput: FC<Props> = ({
     if (value && value.length && wasEmpty) {
       animationUp();
     }
+    if (label === '') {
+      setIsPlaceHolder(false);
+    }
   }, [value, previousValue]);
 
   const hasError = !isEmpty(error);
 
   const icon = iconName;
   const iconColor = getIconColor(hasError);
-  const renderStatus = hasError ? InputStatus.FAILURE : status;
+  const renderStatus = hasError ? InputStatus.Failure : status;
 
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper style={style} multiline={multiline}>
-        <FormError error={error}>
+    <Wrapper style={style} multiline={multiline}>
+      <FormError centered={centered} error={error}>
+        {!centered && (
           <Label
             status={status}
-            style={[labelStyle, labelAnimatedStyle]}
-            dark={dark}
+            contrast={contrast}
+            style={labelAnimatedStyle}
             isPlaceholder={isPlaceholder}
           >
             {label}
           </Label>
-          <InputAreaWrapper multiline={multiline}>
-            {renderTextInput(renderStatus)}
-            {!isEmpty(icon) && (
-              <Icon
-                id={`icon_${id}`}
-                accessibility={`icon_${accessibility}`}
-                size={iconSize}
-                name={icon || ''}
-                color={iconColor}
-                touchable={iconTouchableEnabled}
-                onPress={onPressIcon}
-                hitSlop={iconHitSlop}
-              />
-            )}
-          </InputAreaWrapper>
-          <BottomLine dark={dark} status={status} />
-        </FormError>
-      </Wrapper>
-    </ThemeProvider>
+        )}
+        <InputAreaWrapper multiline={multiline}>
+          {renderTextInput(renderStatus)}
+          {!isEmpty(icon) && (
+            <Icon
+              id={`id_${icon}`}
+              accessibility={`icon_${accessibility}`}
+              size={iconSize}
+              name={icon || ''}
+              color={iconColor}
+              touchable={iconTouchableEnabled}
+              onPress={onPressIcon}
+              hitSlop={iconHitSlop}
+            />
+          )}
+        </InputAreaWrapper>
+        {!borderless && <BottomLine status={status} contrast={contrast} />}
+      </FormError>
+    </Wrapper>
   );
 };
 

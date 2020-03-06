@@ -4,18 +4,25 @@ import { ErrorText } from './styles';
 import { ThemeContext } from '../ThemeContext';
 
 interface Props {
-  error: string | boolean | undefined;
-  children?: JSX.Element | JSX.Element[];
+  centered?: boolean;
+  error?: string | string[];
   style?: object[];
 }
 
-const FormError: FC<Props> = ({ error = '', children, style }) => {
+const FormError: FC<Props> = ({
+  error = '',
+  centered = false,
+  children,
+  style,
+}) => {
   const { theme } = useContext(ThemeContext);
   return (
     <ThemeProvider theme={theme}>
       <>
         {children}
-        <ErrorText style={style}>{error}</ErrorText>
+        <ErrorText centered={centered} style={style}>
+          {error}
+        </ErrorText>
       </>
     </ThemeProvider>
   );

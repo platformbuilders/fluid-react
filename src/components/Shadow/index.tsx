@@ -10,11 +10,7 @@ const shadowStyle = {
   width: '100%',
 };
 
-interface Props {
-  children: JSX.Element;
-}
-
-const Shadow: FC<Props> = ({ children }) => (
+const Shadow: FC = ({ children }) => (
   <View style={shadowStyle}>{children}</View>
 );
 
