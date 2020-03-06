@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-native-ui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Platform Builders Shared Components Library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -45,8 +45,8 @@
   "peerDependencies": {
     "react": ">=16.11.0",
     "react-native": ">=0.61.0",
-    "react-native-svg": ">=11.0.0",
     "react-native-camera": ">=3.19.0",
+    "react-native-svg": ">=11.0.0",
     "styled-components": ">=5.0.1"
   },
   "dependencies": {
