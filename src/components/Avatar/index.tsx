@@ -10,11 +10,13 @@ const defaultAvatar =
 
 interface Props {
   image: string;
-  showBorder: boolean;
-  displayCamera: boolean;
-  size: number;
-  onPress: (x: any) => void;
-  onUpload: (x: any) => any;
+  showBorder?: boolean;
+  borderWidth?: number;
+  borderColor?: string;
+  displayCamera?: boolean;
+  size?: number;
+  onPress?: (x: any) => void;
+  onUpload?: (x: any) => any;
   id: string;
   accessibility: string;
 }
@@ -83,7 +85,7 @@ class Avatar extends React.Component<Props, State> {
       size = 50,
       onPress = (): void => {},
       showBorder = true,
-      displayCamera = null,
+      displayCamera = false,
       ...rest
     } = this.props;
     const { uploadedImage } = this.state;
