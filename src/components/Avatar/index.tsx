@@ -83,7 +83,6 @@ class Avatar extends React.Component<Props, State> {
       accessibility = 'Upload de Avatar',
       image = null,
       size = 50,
-      borderWidth = 2,
       onPress = (): void => {},
       showBorder = true,
       displayCamera = false,
