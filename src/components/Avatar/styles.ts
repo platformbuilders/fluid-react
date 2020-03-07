@@ -13,16 +13,17 @@ export const Wrapper = styled(Touchable)<{
   size: number;
   disabled: boolean;
   showBorder: boolean;
-  borderWidth: number;
-  borderColor: string;
+  borderWidth?: number;
+  borderColor?: string;
 }>`
   width: ${(props): number => props.size}px;
   height: ${(props): number => props.size}px;
   border-radius: ${(props): number => props.size / 2}px;
   overflow: hidden;
-  border-width: ${(props) =>
+  border-width: ${(props): any =>
     showBorder(hasBorderWidth(props.borderWidth, '2'), '0')}px;
-  border-color: ${(props) => hasBorderColor(props.borderColor, accentMain)};
+  border-color: ${(props): any =>
+    hasBorderColor(props.borderColor, accentMain)};
 `;
 
 export const Image = styled.Image.attrs({ resizeMode: 'cover' })<{

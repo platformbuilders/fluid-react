@@ -54,7 +54,7 @@ class Avatar extends React.Component<Props, State> {
 
   handleUploaded = (image: any): void => {
     const { onUpload } = this.props;
-    if (image && !image.didCancel) {
+    if (image && !image.didCancel && onUpload) {
       onUpload(image);
     }
   };
@@ -83,6 +83,7 @@ class Avatar extends React.Component<Props, State> {
       accessibility = 'Upload de Avatar',
       image = null,
       size = 50,
+      borderWidth = 2,
       onPress = (): void => {},
       showBorder = true,
       displayCamera = false,
