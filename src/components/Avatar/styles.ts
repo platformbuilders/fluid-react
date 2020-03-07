@@ -4,6 +4,7 @@ import Touchable from '../Touchable';
 import { ifStyle } from '../../utils/helpers';
 
 const showBorder = ifStyle('showBorder');
+const borderColor = ifStyle('borderColor');
 
 export const Wrapper = styled(Touchable)<{
   size: number;
@@ -14,7 +15,8 @@ export const Wrapper = styled(Touchable)<{
   height: ${(props): number => props.size}px;
   border-radius: ${(props): number => props.size / 2}px;
   overflow: hidden;
-  border: ${showBorder('4px solid white', '')};
+  border: ${showBorder('4px solid', '')};
+  border-color: ${(props) => borderColor(props.borderColor, 'white')};
 `;
 
 export const Image = styled.Image.attrs({ resizeMode: 'cover' })<{
