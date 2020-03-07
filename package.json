@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-native-ui",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Platform Builders Shared Components Library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
