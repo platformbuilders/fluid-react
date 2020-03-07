@@ -20,7 +20,7 @@ const FormError: FC<Props> = ({
     <ThemeProvider theme={theme}>
       <>
         {children}
-        {error && (
+        {error && typeof error === 'string' && (
           <ErrorText centered={centered} style={style}>
             {error}
           </ErrorText>
