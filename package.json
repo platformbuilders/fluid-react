@@ -30,7 +30,7 @@
     "version:major": "npm version major"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,jsx,ts,tsx}": [
       "tsc",
       "yarn pretty",
       "yarn lint",
