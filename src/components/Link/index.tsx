@@ -15,6 +15,8 @@ const Link: FC<Props> = ({
   onPress,
   children,
   accessibility,
+  accessibilityLabel,
+  testID,
   variant = 'body',
   ...rest
 }) => {
@@ -25,6 +27,8 @@ const Link: FC<Props> = ({
         id={id}
         onPress={onPress}
         accessibility={accessibility}
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
         {...rest}
       >
         <Text variant={variant}>{children}</Text>

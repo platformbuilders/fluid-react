@@ -19,7 +19,7 @@
   "scripts": {
     "clean": "rm -rf ./node_modules && yarn install",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
-    "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
+    "lint": "eslint '*/**/*.{ts,tsx}' --fix",
     "build": "rm -rf dist && yarn lint && tsc",
     "prepublish": "yarn build",
     "precommit": "yarn lint",
@@ -30,8 +30,7 @@
     "version:major": "npm version major"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "tsc",
+    "*.{ts,tsx}": [
       "yarn pretty",
       "yarn lint",
       "git add ."

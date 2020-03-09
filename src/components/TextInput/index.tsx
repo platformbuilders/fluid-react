@@ -20,6 +20,8 @@ import FormError from '../FormError';
 const AnimatedTextInput: FC<TextInputType> = ({
   id,
   accessibility,
+  accessibilityLabel,
+  testID,
   large = false,
   contrast = false,
   centered = false,
@@ -109,6 +111,8 @@ const AnimatedTextInput: FC<TextInputType> = ({
       ...rest,
       id,
       accessibility,
+      accessibilityLabel,
+      testID,
       large,
       centered,
       contrast,
@@ -130,14 +134,18 @@ const AnimatedTextInput: FC<TextInputType> = ({
         id={id}
         inputRef={inputRef}
         maskType={maskType}
-        accessibilityLabel={accessibility}
+        accessibility={accessibility}
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
         {...textInputProps}
       />
     ) : (
       <TextInput
         id={id}
         ref={inputRef}
-        accessibilityLabel={accessibility}
+        accessibility={accessibility}
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
         {...textInputProps}
       />
     );
@@ -181,6 +189,8 @@ const AnimatedTextInput: FC<TextInputType> = ({
             <Icon
               id={`id_${icon}`}
               accessibility={`icon_${accessibility}`}
+              accessibilityLabel={`icon_${accessibilityLabel}`}
+              testID={`icon_${testID}`}
               size={iconSize}
               name={icon || ''}
               color={iconColor}

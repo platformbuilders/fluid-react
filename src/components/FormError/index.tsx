@@ -19,6 +19,7 @@ const FormError: FC<Props> = ({
   centered = false,
   children,
   style,
+  ...rest
 }) => {
   const { theme } = useContext(ThemeContext);
   if (error && typeof error === 'boolean') warnBoolean();
@@ -27,7 +28,7 @@ const FormError: FC<Props> = ({
       <>
         {children}
         {error && typeof error === 'string' ? (
-          <ErrorText centered={centered} style={style}>
+          <ErrorText centered={centered} style={style} {...rest}>
             {error}
           </ErrorText>
         ) : null}

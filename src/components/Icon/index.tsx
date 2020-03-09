@@ -24,6 +24,8 @@ interface Props extends TouchableType {
 export const Icon: FC<Props> = ({
   id,
   accessibility,
+  accessibilityLabel,
+  testID,
   name = '',
   touchable = true,
   size = 20,
@@ -43,6 +45,8 @@ export const Icon: FC<Props> = ({
       <Touchable
         id={id}
         accessibility={accessibility || iconName}
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
         disabled={!touchable}
         onPress={onPress}
         {...rest}

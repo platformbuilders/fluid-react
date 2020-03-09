@@ -13,12 +13,14 @@ interface Props {
 const Loading: FC<Props> = ({
   large = false,
   animation = DefaultAnimation,
+  ...rest
 }) => (
   <Animation
     style={large ? largeSize : smallSize}
     source={animation}
     autoPlay
     loop
+    {...rest}
   />
 );
 

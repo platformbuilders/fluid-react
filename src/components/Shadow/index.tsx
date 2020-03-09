@@ -10,8 +10,10 @@ const shadowStyle = {
   width: '100%',
 };
 
-const Shadow: FC = ({ children }) => (
-  <View style={shadowStyle}>{children}</View>
+const Shadow: FC = ({ children, ...rest }) => (
+  <View style={shadowStyle} {...rest}>
+    {children}
+  </View>
 );
 
 export default Shadow;
