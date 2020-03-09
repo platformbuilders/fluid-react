@@ -19,6 +19,8 @@ const Button: FC<Props> = ({
   children,
   onPress,
   accessibility,
+  accessibilityLabel,
+  testID,
   style = [{}],
   textStyle = {},
   disabled = false,
@@ -34,6 +36,8 @@ const Button: FC<Props> = ({
       <Touchable
         id={id}
         accessibility={accessibility}
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
         disabled={loading || disabled}
         onPress={onPress}
         rounded={rounded}

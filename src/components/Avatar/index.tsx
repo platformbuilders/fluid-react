@@ -19,6 +19,8 @@ interface Props {
   onUpload?: (x: any) => any;
   id: string;
   accessibility: string;
+  accessibilityLabel: string;
+  testID: string;
 }
 
 interface State {
@@ -81,6 +83,8 @@ class Avatar extends React.Component<Props, State> {
     const {
       id,
       accessibility = 'Upload de Avatar',
+      accessibilityLabel,
+      testID,
       image = null,
       size = 50,
       onPress = (): void => {},
@@ -96,6 +100,8 @@ class Avatar extends React.Component<Props, State> {
             <Wrapper
               id={id}
               accessibility={accessibility}
+              accessibilityLabel={accessibilityLabel}
+              testID={testID}
               size={size}
               onPress={onPress}
               disabled={!onPress}
