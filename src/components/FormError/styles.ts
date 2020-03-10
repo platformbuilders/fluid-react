@@ -10,6 +10,6 @@ interface ErrorTextProps {
 export const ErrorText = styled(Typography)<ErrorTextProps>`
   color: ${getTheme('failure')};
   margin-top: ${getTheme('smallSpacing')};
-  text-align: ${isCentered('center', 'start')};
+  text-align: ${isCentered('center', 'left')};
   min-height: 25px;
 `;
