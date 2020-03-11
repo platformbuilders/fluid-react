@@ -59,7 +59,7 @@ export const TextButton = styled(Typography).attrs({ variant: 'headline' })<
   letter-spacing: 0.4px;
   color: ${(props): string =>
     props.secondary
-      ? primaryMain(props)
+      ? primaryContrast(props)
       : props.terciary
       ? primaryDark(props)
       : primaryContrast(props)};
