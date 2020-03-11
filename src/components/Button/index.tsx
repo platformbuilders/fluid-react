@@ -36,8 +36,8 @@ const Button: FC<Props> = ({
       <Touchable
         id={id}
         accessibility={accessibility}
-        accessibilityLabel={accessibilityLabel}
-        testID={testID}
+        accessibilityLabel={accessibility || accessibilityLabel}
+        testID={testID || id}
         disabled={loading || disabled}
         onPress={onPress}
         rounded={rounded}
