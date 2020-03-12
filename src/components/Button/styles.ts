@@ -18,7 +18,7 @@ export const Touchable = styled(TouchableComponent)<TouchableProps>`
 
 interface ButtonWrapperProps {
   rounded: boolean;
-  terciary: boolean;
+  tertiary: boolean;
   secondary: boolean;
   disabled?: boolean;
 }
@@ -33,7 +33,7 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
   border-radius: ${(props): string => (props.rounded ? '50px' : '8px')}
   justify-content: center;
   background-color: ${(props): string =>
-    props.terciary
+    props.tertiary
       ? 'transparent'
       : props.secondary
       ? secondaryMain(props)
@@ -41,7 +41,7 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
       ? disabled(props)
       : primaryMain(props)};
   border-color: ${(props): string =>
-    props.terciary
+    props.tertiary
       ? 'transparent'
       : props.secondary
       ? secondaryMain(props)
@@ -49,7 +49,7 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
 `;
 
 interface TextButtonProps {
-  terciary: boolean;
+  tertiary: boolean;
   secondary: boolean;
   disabled?: boolean;
 }
@@ -60,7 +60,7 @@ export const TextButton = styled(Typography).attrs({ variant: 'headline' })<
   color: ${(props): string =>
     props.secondary
       ? primaryContrast(props)
-      : props.terciary
+      : props.tertiary
       ? primaryDark(props)
       : primaryContrast(props)};
 `;

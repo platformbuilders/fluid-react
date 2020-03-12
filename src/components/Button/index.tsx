@@ -10,7 +10,7 @@ interface Props extends TouchableType {
   textStyle?: object;
   rounded?: boolean;
   secondary?: boolean;
-  terciary?: boolean;
+  tertiary?: boolean;
   loading?: boolean;
 }
 
@@ -26,7 +26,7 @@ const Button: FC<Props> = ({
   disabled = false,
   rounded = false,
   secondary = false,
-  terciary = false,
+  tertiary = false,
   loading = false,
 }) => {
   const { theme } = useContext(ThemeContext);
@@ -44,7 +44,7 @@ const Button: FC<Props> = ({
       >
         <ButtonWrapper
           secondary={secondary}
-          terciary={terciary}
+          tertiary={tertiary}
           style={style}
           disabled={disabled}
           rounded={rounded}
@@ -54,7 +54,7 @@ const Button: FC<Props> = ({
             <>
               <TextButton
                 secondary={secondary}
-                terciary={terciary}
+                tertiary={tertiary}
                 style={textStyle}
                 disabled={disabled}
               >
