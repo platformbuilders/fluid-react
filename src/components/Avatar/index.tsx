@@ -87,7 +87,7 @@ class Avatar extends React.Component<Props, State> {
       testID,
       image = null,
       size = 50,
-      onPress = (): void => {},
+      onPress,
       showBorder = true,
       displayCamera = false,
       ...rest
