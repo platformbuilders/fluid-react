@@ -6,6 +6,7 @@ import { getTheme } from '../../utils/helpers';
 const disabled = getTheme('disabled');
 const primaryMain = getTheme('primary.main');
 const secondaryMain = getTheme('secondary.main');
+const secondaryContrast = getTheme('secondary.contrast');
 const primaryContrast = getTheme('primary.contrast');
 const primaryDark = getTheme('primary.dark');
 
@@ -58,9 +59,5 @@ export const TextButton = styled(Typography).attrs({ variant: 'headline' })<
 >`
   letter-spacing: 0.4px;
   color: ${(props): string =>
-    props.secondary
-      ? primaryContrast(props)
-      : props.tertiary
-      ? primaryDark(props)
-      : primaryContrast(props)};
+    props.secondary ? secondaryContrast(props) : primaryContrast(props)};
 `;
