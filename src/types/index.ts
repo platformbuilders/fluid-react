@@ -1,5 +1,5 @@
 export * from './Colors';
-export * from './Theme';
+export * from './ThemeType';
 export * from './Metrics';
 export * from './Variants';
 export * from './TypographyType';
