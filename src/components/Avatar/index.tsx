@@ -1,8 +1,6 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
 import { RNCamera } from 'react-native-camera';
 import ImagePicker from 'react-native-image-picker';
-import { ThemeContext } from '../ThemeContext';
 import { Wrapper, Image, CameraView } from './styles';
 
 const defaultAvatar =
@@ -94,48 +92,42 @@ class Avatar extends React.Component<Props, State> {
     } = this.props;
     const { uploadedImage } = this.state;
     return (
-      <ThemeContext.Consumer>
-        {({ theme }): JSX.Element => (
-          <ThemeProvider theme={theme}>
-            <Wrapper
-              id={id}
-              accessibility={accessibility}
-              accessibilityLabel={accessibilityLabel || accessibility}
-              testID={testID || id}
-              size={size}
-              onPress={onPress}
-              disabled={!onPress}
-              showBorder={showBorder}
-              {...rest}
-            >
-              {displayCamera && !uploadedImage ? (
-                <CameraView
-                  ref={(ref): void => {
-                    this.camera = ref;
-                  }}
-                  size={size}
-                  type={RNCamera.Constants.Type.front}
-                  flashMode={RNCamera.Constants.FlashMode.auto}
-                  androidCameraPermissionOptions={{
-                    title: 'Camera',
-                    message: 'Precisamos da sua permissão para usar a camera.',
-                    buttonPositive: 'Ok',
-                    buttonNegative: 'Cancelar',
-                  }}
-                />
-              ) : (
-                <Image
-                  source={
-                    uploadedImage
-                      ? { uri: uploadedImage }
-                      : { uri: image } || defaultAvatar
-                  }
-                />
-              )}
-            </Wrapper>
-          </ThemeProvider>
+      <Wrapper
+        id={id}
+        accessibility={accessibility}
+        accessibilityLabel={accessibilityLabel || accessibility}
+        testID={testID || id}
+        size={size}
+        onPress={onPress}
+        disabled={!onPress}
+        showBorder={showBorder}
+        {...rest}
+      >
+        {displayCamera && !uploadedImage ? (
+          <CameraView
+            ref={(ref): void => {
+              this.camera = ref;
+            }}
+            size={size}
+            type={RNCamera.Constants.Type.front}
+            flashMode={RNCamera.Constants.FlashMode.auto}
+            androidCameraPermissionOptions={{
+              title: 'Camera',
+              message: 'Precisamos da sua permissão para usar a camera.',
+              buttonPositive: 'Ok',
+              buttonNegative: 'Cancelar',
+            }}
+          />
+        ) : (
+          <Image
+            source={
+              uploadedImage
+                ? { uri: uploadedImage }
+                : { uri: image } || defaultAvatar
+            }
+          />
         )}
-      </ThemeContext.Consumer>
+      </Wrapper>
     );
   }
 }

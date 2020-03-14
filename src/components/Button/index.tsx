@@ -1,13 +1,12 @@
-import React, { FC, useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { TouchableType } from '../../utils/types';
+import React, { FC } from 'react';
+import { StyleProp, ViewStyle, TextStyle } from 'react-native';
+import { TouchableType } from '../../types';
 import LoadingIndicator from '../LoadingIndicator';
-import { ThemeContext } from '../ThemeContext';
 import { Touchable, ButtonWrapper, TextButton } from './styles';
 
 interface Props extends TouchableType {
-  style?: any;
-  textStyle?: object;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
   rounded?: boolean;
   secondary?: boolean;
   tertiary?: boolean;
@@ -29,42 +28,38 @@ const Button: FC<Props> = ({
   tertiary = false,
   loading = false,
 }) => {
-  const { theme } = useContext(ThemeContext);
-
   return (
-    <ThemeProvider theme={theme}>
-      <Touchable
-        id={id}
-        accessibility={accessibility}
-        accessibilityLabel={accessibility || accessibilityLabel}
-        testID={testID || id}
-        disabled={loading || disabled}
-        onPress={onPress}
+    <Touchable
+      id={id}
+      accessibility={accessibility}
+      accessibilityLabel={accessibility || accessibilityLabel}
+      testID={testID || id}
+      disabled={loading || disabled}
+      onPress={onPress}
+      rounded={rounded}
+    >
+      <ButtonWrapper
+        secondary={secondary}
+        tertiary={tertiary}
+        style={style}
+        disabled={disabled}
         rounded={rounded}
       >
-        <ButtonWrapper
-          secondary={secondary}
-          tertiary={tertiary}
-          style={style}
-          disabled={disabled}
-          rounded={rounded}
-        >
-          {loading && <LoadingIndicator />}
-          {!loading && (
-            <>
-              <TextButton
-                secondary={secondary}
-                tertiary={tertiary}
-                style={textStyle}
-                disabled={disabled}
-              >
-                {children}
-              </TextButton>
-            </>
-          )}
-        </ButtonWrapper>
-      </Touchable>
-    </ThemeProvider>
+        {loading && <LoadingIndicator />}
+        {!loading && (
+          <>
+            <TextButton
+              secondary={secondary}
+              tertiary={tertiary}
+              style={textStyle}
+              disabled={disabled}
+            >
+              {children}
+            </TextButton>
+          </>
+        )}
+      </ButtonWrapper>
+    </Touchable>
   );
 };
 

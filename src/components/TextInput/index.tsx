@@ -1,9 +1,10 @@
-import React, { FC, useState, useEffect, useCallback } from 'react';
+import React, { FC, useState, useEffect, useCallback, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Animated } from 'react-native';
 import { isEmpty } from 'lodash';
-import { colors } from '../../theme';
 import { usePrevious } from '../../utils/hooks';
-import { TextInput as TextInputType, InputStatus } from '../../utils/types';
+import { TextInputType, InputStatus } from '../../types';
+
 import MaskedTextInput from './MaskedTextInput';
 import {
   Label,
@@ -11,10 +12,10 @@ import {
   TextInput,
   BottomLine,
   InputAreaWrapper,
+  Icon,
   LABEL_UPPER_STYLE,
   LABEL_LOWER_STYLE,
 } from './styles';
-import Icon from '../Icon';
 import FormError from '../FormError';
 
 const AnimatedTextInput: FC<TextInputType> = ({
@@ -48,6 +49,8 @@ const AnimatedTextInput: FC<TextInputType> = ({
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
+  const themeContext = useContext(ThemeContext);
+  console.log('LOG: themeContext', themeContext);
   const [labelAnimatedStyle] = useState({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
@@ -74,14 +77,6 @@ const AnimatedTextInput: FC<TextInputType> = ({
 
   const animationDown = (): void => {
     animateComponent(LABEL_LOWER_STYLE);
-  };
-
-  const getIconColor = (hasError: boolean): string => {
-    if (hasError) {
-      return colors.failure;
-    }
-
-    return colors.primary.contrast;
   };
 
   const handleOnFocus = (event: any): void => {
@@ -167,7 +162,6 @@ const AnimatedTextInput: FC<TextInputType> = ({
   const hasError = !isEmpty(error);
 
   const icon = iconName;
-  const iconColor = getIconColor(hasError);
   const renderStatus = hasError ? InputStatus.Failure : status;
 
   return (
@@ -193,7 +187,7 @@ const AnimatedTextInput: FC<TextInputType> = ({
               testID={`icon_${testID}`}
               size={iconSize}
               name={icon || ''}
-              color={iconColor}
+              error={hasError}
               touchable={iconTouchableEnabled}
               onPress={onPressIcon}
               hitSlop={iconHitSlop}

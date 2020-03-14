@@ -1,9 +1,7 @@
-import React, { FC, useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
+import React, { FC } from 'react';
 import DefaultCheckbox from 'react-native-check-box';
 import { colors } from '../../theme';
 import FormError from '../FormError';
-import { ThemeContext } from '../ThemeContext';
 import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
 
 interface Props {
@@ -25,27 +23,21 @@ const Checkbox: FC<Props> = ({
   labelStyle = defaultLabelStyle,
   style,
   ...rest
-}) => {
-  const { theme } = useContext(ThemeContext);
-
-  return (
-    <ThemeProvider theme={theme}>
-      <FormError error={error}>
-        <Wrapper style={style}>
-          <DefaultCheckbox
-            style={containerStyle}
-            checkBoxColor={colors.primary.light}
-            isChecked={checked}
-            rightText={label}
-            rightTextStyle={labelStyle}
-            leftText={labelBefore}
-            onClick={onPress}
-            {...rest}
-          />
-        </Wrapper>
-      </FormError>
-    </ThemeProvider>
-  );
-};
+}) => (
+  <FormError error={error}>
+    <Wrapper style={style}>
+      <DefaultCheckbox
+        style={containerStyle}
+        checkBoxColor={colors.primary.light}
+        isChecked={checked}
+        rightText={label}
+        rightTextStyle={labelStyle}
+        leftText={labelBefore}
+        onClick={onPress}
+        {...rest}
+      />
+    </Wrapper>
+  </FormError>
+);
 
 export default Checkbox;

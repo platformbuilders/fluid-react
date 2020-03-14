@@ -2,8 +2,8 @@ export type Colors = {
   failure: string;
   warning: string;
   success: string;
+  info: string;
   disabled: string;
-  transparent: string;
   primary: {
     light: string;
     main: string;

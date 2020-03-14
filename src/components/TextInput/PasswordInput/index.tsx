@@ -1,5 +1,5 @@
 import React, { useState, FC, useCallback } from 'react';
-import { TextInput as TextInputType } from '../../../utils/types';
+import { TextInputType } from '../../../types';
 import TextInput from '../index';
 
 const PasswordInput: FC<TextInputType> = (props) => {

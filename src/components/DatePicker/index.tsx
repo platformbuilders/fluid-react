@@ -1,6 +1,5 @@
-import React, { FC, useState, useCallback, useEffect, useContext } from 'react';
+import React, { FC, useState, useCallback, useEffect } from 'react';
 import { Animated } from 'react-native';
-import { ThemeProvider } from 'styled-components';
 import { DatePickerProps } from 'react-native-datepicker';
 import FormError from '../FormError';
 import {
@@ -12,7 +11,6 @@ import {
   LABEL_UPPER_STYLE,
   LABEL_LOWER_STYLE,
 } from './styles';
-import { ThemeContext } from '../ThemeContext';
 
 interface Props {
   value?: string;
@@ -49,7 +47,6 @@ const DatePickerInput: FC<Props> = ({
   onDateChange = (): void => {},
   maxDate,
 }) => {
-  const { theme } = useContext(ThemeContext);
   const [labelAnimatedStyle] = useState({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
@@ -98,36 +95,34 @@ const DatePickerInput: FC<Props> = ({
     : DatePickerStyles;
 
   return (
-    <ThemeProvider theme={theme}>
-      <FormError error={error}>
-        <Label
-          error={error || ''}
-          style={labelAnimatedStyle}
-          isPlaceholder={isPlaceholder}
-          dark={dark}
-        >
-          {label}
-        </Label>
-        <DatePicker
-          mode={mode}
-          androidMode={androidMode}
-          locale={locale}
-          placeholder=" "
-          format={format}
-          editable={!editable}
-          date={date}
-          customStyles={customStyles}
-          maxDate={maxDate}
-          testID={testID}
-          confirmBtnText={confirmBtnText}
-          cancelBtnText={cancelBtnText}
-          onDateChange={updateDate}
-          showIcon={false}
-          dark={dark}
-        />
-        <BottomLine dark={dark} />
-      </FormError>
-    </ThemeProvider>
+    <FormError error={error}>
+      <Label
+        error={error || ''}
+        style={labelAnimatedStyle}
+        isPlaceholder={isPlaceholder}
+        dark={dark}
+      >
+        {label}
+      </Label>
+      <DatePicker
+        mode={mode}
+        androidMode={androidMode}
+        locale={locale}
+        placeholder=" "
+        format={format}
+        editable={!editable}
+        date={date}
+        customStyles={customStyles}
+        maxDate={maxDate}
+        testID={testID}
+        confirmBtnText={confirmBtnText}
+        cancelBtnText={cancelBtnText}
+        onDateChange={updateDate}
+        showIcon={false}
+        dark={dark}
+      />
+      <BottomLine dark={dark} />
+    </FormError>
   );
 };
 

@@ -1,7 +1,7 @@
 import { TextInputProps, StyleProp, TextStyle } from 'react-native';
 import { TextInputMaskTypeProp } from 'react-native-masked-text';
 
-export interface TextInput extends TextInputProps {
+export interface TextInputType extends TextInputProps {
   id: string;
   accessibility: string;
   inputRef?: any;
@@ -27,6 +27,6 @@ export interface TextInput extends TextInputProps {
   onSubmitEditing?(x?: any): void;
 }
 
-export interface MaskedTextInput extends TextInput {
+export interface MaskedTextInputType extends TextInputType {
   maskType: TextInputMaskTypeProp;
 }
