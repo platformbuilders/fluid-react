@@ -1,7 +1,5 @@
-import React, { FC, useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
+import React, { FC } from 'react';
 import { ErrorText } from './styles';
-import { ThemeContext } from '../ThemeContext';
 
 const warnBoolean = (): void =>
   // eslint-disable-next-line no-console
@@ -22,19 +20,16 @@ const FormError: FC<Props> = ({
   style,
   ...rest
 }) => {
-  const { theme } = useContext(ThemeContext);
   if (error && typeof error === 'boolean') warnBoolean();
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        {children}
-        {error && typeof error === 'string' ? (
-          <ErrorText centered={centered} style={style} {...rest}>
-            {error}
-          </ErrorText>
-        ) : null}
-      </>
-    </ThemeProvider>
+    <>
+      {children}
+      {error && typeof error === 'string' ? (
+        <ErrorText centered={centered} style={style} {...rest}>
+          {error}
+        </ErrorText>
+      ) : null}
+    </>
   );
 };
 

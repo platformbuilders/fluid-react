@@ -1,9 +1,7 @@
-import React, { FC, useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
+import React, { FC } from 'react';
 import { human } from 'react-native-typography';
-import { Typography as TypographyType } from '../../utils/types';
+import { TypographyType } from '../../types';
 import { Text } from './styles';
-import { ThemeContext } from '../ThemeContext';
 
 const Typography: FC<TypographyType> = ({
   style = [{}],
@@ -11,19 +9,10 @@ const Typography: FC<TypographyType> = ({
   textRef = React.createRef(),
   children,
   ...rest
-}) => {
-  const { theme } = useContext(ThemeContext);
-  return (
-    <ThemeProvider theme={theme}>
-      <Text
-        ref={textRef}
-        style={[human[variant], { color: theme.primary.contrast }, style]}
-        {...rest}
-      >
-        {children}
-      </Text>
-    </ThemeProvider>
-  );
-};
+}) => (
+  <Text ref={textRef} style={[human[variant], style]} {...rest}>
+    {children}
+  </Text>
+);
 
 export default Typography;

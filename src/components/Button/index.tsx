@@ -1,13 +1,14 @@
 import React, { FC, useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { TouchableType } from '../../utils/types';
+import { ThemeContext, ThemeProvider } from 'styled-components';
+import { StyleProp, ViewStyle, TextStyle } from 'react-native';
+import * as defaultTheme from '../../theme';
+import { TouchableType } from '../../types';
 import LoadingIndicator from '../LoadingIndicator';
-import { ThemeContext } from '../ThemeContext';
 import { Touchable, ButtonWrapper, TextButton } from './styles';
 
 interface Props extends TouchableType {
-  style?: any;
-  textStyle?: object;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
   rounded?: boolean;
   secondary?: boolean;
   tertiary?: boolean;
@@ -29,8 +30,8 @@ const Button: FC<Props> = ({
   tertiary = false,
   loading = false,
 }) => {
-  const { theme } = useContext(ThemeContext);
-
+  const theme = useContext(ThemeContext);
+  console.log('LOG: theme', theme);
   return (
     <ThemeProvider theme={theme}>
       <Touchable

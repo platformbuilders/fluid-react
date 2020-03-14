@@ -38,7 +38,7 @@ Here's how you add our dependencie to your project @platformbuilders/react-nativ
 yarn add @platformbuilders/react-native-ui
 ```
 
-2. import the ThemeProvider following the [type declaration](https://github.com/platformbuilders/react-native-ui/blob/master/src/utils/types/Theme.ts)
+2. import the ThemeProvider following the [type declaration](https://github.com/platformbuilders/react-native-ui/blob/master/src/types/Theme.ts)
 
 ```bash
 import { BuildersThemeProvider } from '@platformbuilders/react-native-ui';

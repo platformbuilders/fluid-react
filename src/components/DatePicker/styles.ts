@@ -4,7 +4,7 @@ import DefaultDatePicker, {
 } from 'react-native-datepicker';
 import styled from 'styled-components/native';
 import { getTheme, switchStyle } from '../../utils/helpers';
-import { InputStatus } from '../../utils/types';
+import { InputStatus } from '../../types';
 
 const getStatusStyle = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');

@@ -1,5 +1,5 @@
 import { lighten, darken } from 'polished';
-import { Colors } from '../utils/types';
+import { Colors } from '../types';
 
 const primary = '#C6B09E';
 const secondary = '#805281';
@@ -7,11 +7,11 @@ const tertiary = '#2A2E39';
 const accent = '#547E6A';
 
 const colors: Colors = {
-  failure: '#cc0000',
-  warning: '#F5B800',
-  success: '#357a38',
-  transparent: 'transparent',
   disabled: '#EBEBE4',
+  info: '#4096D1',
+  success: '#357a38',
+  warning: '#F5B800',
+  failure: '#cc0000',
   primary: {
     light: lighten(0.05, primary),
     main: primary,

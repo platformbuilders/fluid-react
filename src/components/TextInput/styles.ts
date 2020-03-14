@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 import { Animated } from 'react-native';
+import DefaultIcon from '../Icon';
 import { ifStyle, switchStyle, getTheme } from '../../utils/helpers';
-import { TextInput as TextInputType, InputStatus } from '../../utils/types';
+import { TextInputType, InputStatus } from '../../types';
 
 interface InputAreaWrapperProps {
   multiline: boolean;
@@ -19,6 +20,7 @@ const isMultiline = ifStyle('multiline');
 const isCentered = ifStyle('centered');
 const isLarge = ifStyle('large');
 const hasLabel = ifStyle('label');
+const hasError = ifStyle('error');
 const isContrast = ifStyle('contrast');
 const switchStatus = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');
@@ -105,3 +107,10 @@ export const BottomLine = styled.View<BottomLineProps>`
   height: 1px;
   background-color: ${inputColor};
 `;
+
+interface IconProps {
+  error: boolean;
+}
+export const Icon = styled(DefaultIcon).attrs((props) => ({
+  color: hasError(failure(props), primaryContrast(props))(props),
+}))<IconProps>``;

@@ -1,27 +1,11 @@
 import React, { FC } from 'react';
 import { Animated, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { TouchableType } from '../../utils/types';
+import { IconType } from '../../types';
 import Touchable from '../Touchable';
 import * as Icons from '../../assets/svg';
 
-interface Props extends TouchableType {
-  name: string;
-  touchable?: boolean;
-  size?: number;
-  color?: string;
-  style?: any;
-  borderColor?: string;
-  backgroundColor?: string;
-  hitSlop?: {
-    top?: number;
-    bottom?: number;
-    left?: number;
-    right?: number;
-  };
-}
-
-export const Icon: FC<Props> = ({
+export const Icon: FC<IconType> = ({
   id,
   accessibility,
   accessibilityLabel,

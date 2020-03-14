@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { TouchableType } from '../../utils/types';
+import { TouchableType } from '../../types';
 import { generateHaptic } from '../../utils/helpers';
 
 const CommonTouchable: FC<TouchableType> = ({
