@@ -1,7 +1,5 @@
-import React, { FC, useContext } from 'react';
-import { ThemeContext, ThemeProvider } from 'styled-components';
+import React, { FC } from 'react';
 import { StyleProp, ViewStyle, TextStyle } from 'react-native';
-import * as defaultTheme from '../../theme';
 import { TouchableType } from '../../types';
 import LoadingIndicator from '../LoadingIndicator';
 import { Touchable, ButtonWrapper, TextButton } from './styles';
@@ -30,42 +28,38 @@ const Button: FC<Props> = ({
   tertiary = false,
   loading = false,
 }) => {
-  const theme = useContext(ThemeContext);
-  console.log('LOG: theme', theme);
   return (
-    <ThemeProvider theme={theme}>
-      <Touchable
-        id={id}
-        accessibility={accessibility}
-        accessibilityLabel={accessibility || accessibilityLabel}
-        testID={testID || id}
-        disabled={loading || disabled}
-        onPress={onPress}
+    <Touchable
+      id={id}
+      accessibility={accessibility}
+      accessibilityLabel={accessibility || accessibilityLabel}
+      testID={testID || id}
+      disabled={loading || disabled}
+      onPress={onPress}
+      rounded={rounded}
+    >
+      <ButtonWrapper
+        secondary={secondary}
+        tertiary={tertiary}
+        style={style}
+        disabled={disabled}
         rounded={rounded}
       >
-        <ButtonWrapper
-          secondary={secondary}
-          tertiary={tertiary}
-          style={style}
-          disabled={disabled}
-          rounded={rounded}
-        >
-          {loading && <LoadingIndicator />}
-          {!loading && (
-            <>
-              <TextButton
-                secondary={secondary}
-                tertiary={tertiary}
-                style={textStyle}
-                disabled={disabled}
-              >
-                {children}
-              </TextButton>
-            </>
-          )}
-        </ButtonWrapper>
-      </Touchable>
-    </ThemeProvider>
+        {loading && <LoadingIndicator />}
+        {!loading && (
+          <>
+            <TextButton
+              secondary={secondary}
+              tertiary={tertiary}
+              style={textStyle}
+              disabled={disabled}
+            >
+              {children}
+            </TextButton>
+          </>
+        )}
+      </ButtonWrapper>
+    </Touchable>
   );
 };
 

@@ -37,10 +37,16 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
     props.tertiary
       ? 'transparent'
       : props.secondary
-      ? props.theme.secondary.main
+      ? secondaryMain(props)
       : props.disabled
-      ? props.theme.disabled
-      : props.theme.primary.main};
+      ? disabled(props)
+      : primaryMain(props)};
+  border-color: ${(props): string =>
+    props.tertiary
+      ? 'transparent'
+      : props.secondary
+      ? secondaryMain(props)
+      : primaryDark(props)};
 `;
 
 interface TextButtonProps {
