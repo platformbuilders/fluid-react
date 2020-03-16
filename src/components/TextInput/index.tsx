@@ -1,5 +1,4 @@
-import React, { FC, useState, useEffect, useCallback, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { FC, useState, useEffect, useCallback } from 'react';
 import { Animated } from 'react-native';
 import { isEmpty } from 'lodash';
 import { usePrevious } from '../../utils/hooks';
@@ -49,8 +48,6 @@ const AnimatedTextInput: FC<TextInputType> = ({
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
-  const themeContext = useContext(ThemeContext);
-  console.log('LOG: themeContext', themeContext);
   const [labelAnimatedStyle] = useState({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
