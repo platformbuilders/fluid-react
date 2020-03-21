@@ -13,11 +13,6 @@ export default {
   giantSpacing: `${moderateScale(26)}px`,
   sectionSpacing: `${moderateScale(38)}px`,
   statusHeight: `${moderateScale(44)}px`,
-  smallRadius: `${moderateScale(3)}px`,
-  mediumRadius: `${moderateScale(8)}px`,
-  largeRadius: `${moderateScale(15)}px`,
-  modalRadius: `${moderateScale(20)}px`,
-  buttonRadius: `${moderateScale(38)}px`,
   screenWidth,
   screenHeight,
 } as Metrics;
