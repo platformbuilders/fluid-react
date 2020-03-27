@@ -11,6 +11,7 @@ interface Props extends TouchableType {
   secondary?: boolean;
   tertiary?: boolean;
   loading?: boolean;
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'accent';
 }
 
 const Button: FC<Props> = ({
@@ -24,9 +25,8 @@ const Button: FC<Props> = ({
   textStyle = {},
   disabled = false,
   rounded = false,
-  secondary = false,
-  tertiary = false,
   loading = false,
+  variant = 'primary',
 }) => {
   return (
     <Touchable
@@ -39,8 +39,7 @@ const Button: FC<Props> = ({
       rounded={rounded}
     >
       <ButtonWrapper
-        secondary={secondary}
-        tertiary={tertiary}
+        type={variant}
         style={style}
         disabled={disabled}
         rounded={rounded}
@@ -48,12 +47,7 @@ const Button: FC<Props> = ({
         {loading && <LoadingIndicator />}
         {!loading && (
           <>
-            <TextButton
-              secondary={secondary}
-              tertiary={tertiary}
-              style={textStyle}
-              disabled={disabled}
-            >
+            <TextButton type={variant} style={textStyle} disabled={disabled}>
               {children}
             </TextButton>
           </>
