@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { Variants, TouchableType } from '../../types';
+import { TypographyVariants, TouchableType } from '../../types';
 import { Text } from './styles';
 import Touchable from '../Touchable';
 
 interface Props extends TouchableType {
   children: string | string[];
-  variant?: Variants;
+  variant?: TypographyVariants;
 }
 
 const Link: FC<Props> = ({
