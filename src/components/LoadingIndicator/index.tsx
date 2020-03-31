@@ -1,25 +1,19 @@
 import React, { FC } from 'react';
-import Animation from 'lottie-react-native';
-import DefaultAnimation from './animation.json';
-
-const smallSize = { width: 60, height: 60 };
-const largeSize = { width: 120, height: 120 };
+import { Indicator, smallSize, largeSize, LoadingVariants } from './style';
 
 interface Props {
   large?: boolean;
-  animation?: any;
+  variant?: LoadingVariants;
 }
 
 const Loading: FC<Props> = ({
   large = false,
-  animation = DefaultAnimation,
+  variant = 'circular',
   ...rest
 }) => (
-  <Animation
+  <Indicator
+    variant={variant}
     style={large ? largeSize : smallSize}
-    source={animation}
-    autoPlay
-    loop
     {...rest}
   />
 );
