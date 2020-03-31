@@ -1,8 +1,8 @@
 import { StyleProp, TextStyle } from 'react-native';
-import { Variants } from './Variants';
+import { TypographyVariants } from './Variants';
 
 export interface TypographyType {
-  variant?: Variants;
+  variant?: TypographyVariants;
   children?: string | string[] | any;
   style?: StyleProp<TextStyle>;
   textRef?: any;
