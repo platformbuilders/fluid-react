@@ -124,19 +124,15 @@ const AnimatedTextInput: FC<TextInputType> = ({
 
     return maskType ? (
       <MaskedTextInput
-        id={id}
         inputRef={inputRef}
         maskType={maskType}
-        accessibility={accessibility}
         accessibilityLabel={accessibilityLabel}
         testID={testID}
         {...textInputProps}
       />
     ) : (
       <TextInput
-        id={id}
         ref={inputRef}
-        accessibility={accessibility}
         accessibilityLabel={accessibilityLabel}
         testID={testID}
         {...textInputProps}
