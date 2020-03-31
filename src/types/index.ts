@@ -1,6 +1,7 @@
 export * from './Colors';
 export * from './ThemeType';
 export * from './Metrics';
+export * from './Radius';
 export * from './Variants';
 export * from './TypographyType';
 export * from './InputStatus';

@@ -7,11 +7,6 @@ export type Metrics = {
   giantSpacing: string;
   sectionSpacing: string;
   statusHeight: string;
-  smallRadius: string;
-  mediumRadius: string;
-  largeRadius: string;
-  modalRadius: string;
-  buttonRadius: string;
   screenWidth: number;
   screenHeight: number;
 };
