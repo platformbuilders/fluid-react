@@ -7,3 +7,5 @@ export * from './InputStatus';
 export * from './TouchableType';
 export * from './IconType';
 export * from './TextInputType';
+export * from './Animations';
+export * from './Loading';

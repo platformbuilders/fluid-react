@@ -26,7 +26,7 @@ Now it's under development and we will release it soon!
 
 You will need to install some native dependencies that we use on the code:
 
-```
+```bash
 yarn add react-native-camera react-native-vector-icons react-native-haptic react-native-image-picker react-native-svg react-native-fast-image && cd ios && pod install
 ```
 
@@ -40,7 +40,7 @@ yarn add @platformbuilders/react-native-ui
 
 2. import the ThemeProvider from [styled-components](https://styled-components.com/docs/advanced) and provide the Theme following the ThemeType definition.
 
-```bash
+```jsx
 import { ThemeProvider } from 'styled-components';
 import { ThemeType } from '@platformbuilders/react-native-ui';
 
@@ -48,12 +48,11 @@ const theme: ThemeType = { ... };
 
 <ThemeProvider theme={theme}>
   <App />
-</ThemeProvider >
-
+</ThemeProvider>
 ```
 
 3. use it
 
-```bash
+```jsx
 import { Button } from '@platformbuilders/react-native-ui';
 ```

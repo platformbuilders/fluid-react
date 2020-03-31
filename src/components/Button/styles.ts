@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import TouchableComponent from '../Touchable';
+import LoadingIndicator from '../LoadingIndicator';
 import { ButtonVariants } from '../../types';
 import { getTheme } from '../../utils/helpers';
 
@@ -19,6 +20,8 @@ interface ButtonWrapperProps {
   variant: ButtonVariants;
   disabled?: boolean;
 }
+
+const buttonSize = moderateScale(48);
 
 const getBackgroundColor = (props: ButtonWrapperProps): string => {
   if (props.disabled) {
@@ -70,11 +73,11 @@ export const Touchable = styled(TouchableComponent)<TouchableProps>`
 `;
 
 export const ButtonWrapper = styled.View<ButtonWrapperProps>`
-  height: 48px;
+  height: ${buttonSize}px;
   flex-direction: row;
   align-items: center;
-  margin-vertical: 6px;
-  min-width: 180px;
+  margin-vertical: ${moderateScale(6)}px;
+  min-width: ${moderateScale(180)}px;
   padding: ${(props): string => (props.rounded ? '0' : '10px 11px')};
   border-radius: ${(props): string => (props.rounded ? '50px' : '8px')};
   justify-content: center;
@@ -87,4 +90,11 @@ export const TextButton = styled.Text<TextButtonProps>`
   letter-spacing: 0.4px;
   color: ${getTextColor};
   font-weight: 500;
+`;
+
+export const Loading = styled(LoadingIndicator).attrs({
+  variant: 'button',
+})`
+  align-self: center;
+  width: ${moderateScale(55)}px;
 `;
