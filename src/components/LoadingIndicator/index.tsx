@@ -1,12 +1,8 @@
 import React, { FC } from 'react';
-import { Indicator, smallSize, largeSize, LoadingVariants } from './style';
+import { LoadingType } from '../../types';
+import { Indicator, smallSize, largeSize } from './style';
 
-interface Props {
-  large?: boolean;
-  variant?: LoadingVariants;
-}
-
-const Loading: FC<Props> = ({
+const Loading: FC<LoadingType> = ({
   large = false,
   variant = 'circular',
   ...rest

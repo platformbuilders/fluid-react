@@ -17,3 +17,5 @@ export type TypographyVariants =
   | 'footnote'
   | 'caption1'
   | 'caption2';
+
+export type LoadingVariants = 'linear' | 'circular' | 'button';
