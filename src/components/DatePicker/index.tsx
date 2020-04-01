@@ -60,7 +60,7 @@ const DatePickerInput: FC<Props> = ({
       Animated.timing(labelAnimatedStyle[animationProp], {
         toValue: LABEL_UPPER_STYLE[animationProp],
         duration: 200,
-        useNativeDriver: true,
+        useNativeDriver: false,
       }),
     );
 
