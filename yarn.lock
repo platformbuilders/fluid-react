@@ -2896,9 +2896,9 @@ react-is@^16.7.0, react-is@^16.8.1:
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
 react-native-camera@^3.21.0:
-  version "3.21.0"
-  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.21.0.tgz#d8d5149c6bf5d84174093065e08e78b81d785e5d"
-  integrity sha512-xreKqJH6o4E6jgY4FM99Zl3nYo+MWkoWq3lW8xrIBeiNFMXtA5AohIftiWVqwlcH3CpcCBkc5hcHy2oE36rWNw==
+  version "3.22.0"
+  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.22.0.tgz#bd3dc0323f340711e2bd7f67472468e6a31729d1"
+  integrity sha512-bo+tolEmclVV5TVeDz02gRgnsR9lyM5Rc77OFo9PccVTKDu3eTRXeYJBkyZx1Im+TImKro0tkGYKg1/juOQolQ==
   dependencies:
     prop-types "^15.6.2"
 
