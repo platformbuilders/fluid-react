@@ -27,7 +27,7 @@ Now it's under development and we will release it soon!
 You will need to install some native dependencies that we use on the code:
 
 ```bash
-yarn add react-native-camera react-native-vector-icons react-native-haptic react-native-image-picker react-native-svg react-native-fast-image && cd ios && pod install
+yarn add react-native-camera react-native-vector-icons react-native-haptic react-native-image-picker react-native-svg react-native-fast-image react-native-checkbox && cd ios && pod install
 ```
 
 Here's how you add our dependencie to your project @platformbuilders/react-native-ui
