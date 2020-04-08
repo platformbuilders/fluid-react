@@ -46,14 +46,14 @@
     "react-native": ">=0.61.0",
     "react-native-camera": ">=3.19.0",
     "react-native-svg": ">=12.0.0",
-    "styled-components": ">=5"
+    "styled-components": ">=5",
+    "react-native-checkbox": ">=2.0.0"
   },
   "dependencies": {
     "@platformbuilders/helpers": "^0.0.19",
     "lodash": "^4.17.15",
     "lottie-react-native": "^3.3.2",
     "polished": "^3.5.1",
-    "react-native-checkbox": "^2.0.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-fast-image": "^8.1.5",
     "react-native-haptic": "^1.0.1",
