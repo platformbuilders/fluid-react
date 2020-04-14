@@ -27,7 +27,7 @@ const Select: FC<Props> = ({
     <InputLabel>{label}</InputLabel>
     <MaterialSelect
       value={selectedValue}
-      onChange={(event) => onChange(event.target.value)}
+      onChange={(event: any): any => onChange(event.target.value)}
       {...rest}
     >
       {values.map((item) => (

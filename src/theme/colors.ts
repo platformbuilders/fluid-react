@@ -1,41 +1,27 @@
-import { lighten, darken } from 'polished';
 import { Colors } from '../types';
 
-const primary = '#C6B09E';
-const secondary = '#805281';
-const tertiary = '#2A2E39';
-const accent = '#547E6A';
-
-const colors: Colors = {
-  disabled: '#EBEBE4',
-  info: '#4096D1',
+export default {
+  type: 'dark',
+  failure: '#f44336',
+  warning: '#FABD59',
   success: '#357a38',
-  warning: '#F5B800',
-  failure: '#cc0000',
+  disabled: '#c8c7c7',
   primary: {
-    light: lighten(0.05, primary),
-    main: primary,
-    dark: darken(0.12, primary),
-    contrast: '#ffffff',
+    light: '#881A67',
+    main: '#5B0B44',
+    dark: '#2A1632',
+    contrast: '#fff',
   },
   secondary: {
-    light: lighten(0.05, secondary),
-    main: secondary,
-    dark: darken(0.1, secondary),
-    contrast: '#ffffff',
-  },
-  tertiary: {
-    light: lighten(0.15, tertiary),
-    main: tertiary,
-    dark: darken(0.1, tertiary),
-    contrast: '#ffffff',
+    light: '#FFFFFF',
+    main: '#ffffff',
+    dark: '#C8C7C7',
+    contrast: '#5B0B44',
   },
   accent: {
-    light: lighten(0.05, accent),
-    main: accent,
-    dark: darken(0.05, accent),
-    contrast: '#ffffff',
+    light: '#1B8C5E',
+    main: '#1B8056',
+    dark: '#C8C7C7',
+    contrast: '#212121',
   },
-};
-
-export default colors;
+} as Colors;

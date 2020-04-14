@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getTheme } from '~/utils/helpers';
+import { getTheme } from '../../utils/helpers';
 
 export const ChildrenWrapper = styled.div`
   background-color: #fff;
