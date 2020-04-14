@@ -27,7 +27,7 @@ Here's how you add our dependencie to your project @platformbuilders/react-ui
 1. depend on it:
 
 ```bash
-yarn add @platformbuilders/react-native-ui
+yarn add @platformbuilders/react-ui
 ```
 
 2. import the ThemeProvider from [styled-components](https://styled-components.com/docs/advanced) and provide the Theme following the ThemeType definition.
