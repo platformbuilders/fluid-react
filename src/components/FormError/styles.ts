@@ -1,15 +1,7 @@
-import styled from 'styled-components/native';
-import Typography from '../Typography';
-import { getTheme, ifStyle } from '../../utils/helpers';
+import styled from 'styled-components';
+import { Typography } from '..';
+import { getTheme } from '../../utils/helpers';
 
-const isCentered = ifStyle('centered');
-
-interface ErrorTextProps {
-  centered: boolean;
-}
-export const ErrorText = styled(Typography)<ErrorTextProps>`
+export const ErrorText = styled(Typography).attrs({ variant: 'caption' })`
   color: ${getTheme('failure')};
-  margin-top: ${getTheme('smallSpacing')};
-  text-align: ${isCentered('center', 'left')};
-  min-height: 25px;
 `;

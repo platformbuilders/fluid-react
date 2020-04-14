@@ -1,43 +1,31 @@
 import React, { FC } from 'react';
-import DefaultCheckbox from 'react-native-check-box';
-import { colors } from '../../theme';
-import FormError from '../FormError';
-import { Wrapper, defaultLabelStyle, containerStyle } from './styles';
+import { FormError } from '..';
+import { Wrapper, StyledCheckbox } from './styles';
 
-interface Props {
-  checked?: boolean;
-  label?: string;
-  labelBefore?: string;
-  error?: string;
-  onPress?: () => null;
-  labelStyle?: object[];
-  style?: any;
-}
-
+type Props = {
+  onChange(value: any): void;
+  error: string;
+  label: string;
+  checked: boolean;
+  name: string;
+};
 const Checkbox: FC<Props> = ({
-  label = '',
-  error = '',
-  labelBefore = '',
-  checked = false,
-  onPress = (): void => {},
-  labelStyle = defaultLabelStyle,
-  style,
-  ...rest
-}) => (
-  <FormError error={error}>
-    <Wrapper style={style}>
-      <DefaultCheckbox
-        style={containerStyle}
-        checkBoxColor={colors.primary.light}
-        isChecked={checked}
-        rightText={label}
-        rightTextStyle={labelStyle}
-        leftText={labelBefore}
-        onClick={onPress}
-        {...rest}
+  checked,
+  onChange,
+  label,
+  name,
+  error,
+}): JSX.Element => (
+  <Wrapper>
+    <FormError error={error}>
+      <StyledCheckbox
+        label={label}
+        name={name}
+        checked={checked}
+        onChange={onChange}
       />
-    </Wrapper>
-  </FormError>
+    </FormError>
+  </Wrapper>
 );
 
 export default Checkbox;

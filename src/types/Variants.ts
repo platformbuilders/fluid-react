@@ -1,21 +1,18 @@
-export type ButtonVariants =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'accent'
-  | 'flat';
-
 export type TypographyVariants =
-  | 'largeTitle'
-  | 'title1'
-  | 'title2'
-  | 'title3'
-  | 'title4'
-  | 'headline'
-  | 'body'
-  | 'subhead'
-  | 'footnote'
-  | 'caption1'
-  | 'caption2';
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'subtitle1'
+  | 'subtitle2'
+  | 'body1'
+  | 'body2'
+  | 'button'
+  | 'caption'
+  | 'overline';
 
-export type LoadingVariants = 'linear' | 'circular' | 'button';
+export interface TypographyType {
+  variant?: TypographyVariants;
+}

@@ -1,12 +1,9 @@
 export type Metrics = {
-  headerSpacing: string;
-  sceneSpacing: string;
-  smallSpacing: string;
-  mediumSpacing: string;
-  largeSpacing: string;
-  giantSpacing: string;
-  sectionSpacing: string;
-  statusHeight: string;
+  sceneSpacing: number;
+  smallSpacing: number;
+  mediumSpacing: number;
+  largeSpacing: number;
+  sectionSpacing: number;
   screenWidth: number;
   screenHeight: number;
 };

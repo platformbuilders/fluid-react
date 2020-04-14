@@ -1,18 +1,24 @@
-import { Dimensions } from 'react-native';
-import { verticalScale, moderateScale } from 'react-native-size-matters';
 import { Metrics } from '../types';
 
-const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
+const guidelineBaseWidth = 360;
+const guidelineBaseHeight = 640;
+
+export const scale = (size: number): number =>
+  (window.innerWidth / guidelineBaseWidth) * size;
+export const verticalScale = (size: number): number =>
+  (window.innerHeight / guidelineBaseHeight) * size;
+export const moderateScale = (size: number, factor = 0.5) =>
+  size + (scale(size) - size) * factor;
 
 export default {
-  headerSpacing: `${verticalScale(20)}px`,
-  sceneSpacing: `${moderateScale(32)}px`,
-  smallSpacing: `${moderateScale(8)}px`,
-  mediumSpacing: `${moderateScale(12)}px`,
-  largeSpacing: `${moderateScale(20)}px`,
-  giantSpacing: `${moderateScale(26)}px`,
-  sectionSpacing: `${moderateScale(38)}px`,
-  statusHeight: `${moderateScale(44)}px`,
-  screenWidth,
-  screenHeight,
+  sceneSpacing: 24,
+  smallSpacing: 5,
+  mediumSpacing: 10,
+  largeSpacing: 20,
+  sectionSpacing: 38,
+  screenWidth: window.innerWidth,
+  screenHeight: window.innerHeight,
+  scale,
+  verticalScale,
+  moderateScale,
 } as Metrics;

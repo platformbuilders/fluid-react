@@ -1,59 +1,29 @@
 import React, { FC } from 'react';
-import { StyleProp, ViewStyle, TextStyle } from 'react-native';
-import { TouchableType, ButtonVariants } from '../../types';
-import { Touchable, ButtonWrapper, TextButton, Loading } from './styles';
+import { StyledButton, LoadingIndicator } from './styles';
+import { ButtonType } from '../../types';
+import If from '../If';
 
-interface Props extends TouchableType {
-  style?: StyleProp<ViewStyle>;
-  textStyle?: StyleProp<TextStyle>;
-  rounded?: boolean;
-  secondary?: boolean;
-  tertiary?: boolean;
-  loading?: boolean;
-  variant?: ButtonVariants;
-}
-
-const Button: FC<Props> = ({
-  id,
+const Button: FC<ButtonType> = ({
   children,
-  onPress,
-  accessibility,
-  accessibilityLabel,
-  testID,
-  style = [{}],
-  textStyle = {},
-  disabled = false,
-  rounded = false,
+  onPress = () => null,
+  type,
+  secondary = false,
+  transparent = false,
   loading = false,
-  variant = 'primary',
-}) => {
-  return (
-    <Touchable
-      id={id}
-      accessibility={accessibility}
-      accessibilityLabel={accessibility || accessibilityLabel}
-      testID={testID || id}
-      disabled={loading || disabled}
-      onPress={onPress}
-      rounded={rounded}
-    >
-      <ButtonWrapper
-        variant={variant}
-        style={style}
-        disabled={disabled}
-        rounded={rounded}
-      >
-        {loading && <Loading />}
-        {!loading && (
-          <>
-            <TextButton variant={variant} style={textStyle} disabled={disabled}>
-              {children}
-            </TextButton>
-          </>
-        )}
-      </ButtonWrapper>
-    </Touchable>
-  );
-};
+  disabled = false,
+  ...rest
+}) => (
+  <StyledButton
+    onClick={onPress}
+    secondary={secondary || undefined}
+    type={type || undefined}
+    {...rest}
+  >
+    <If condition={loading}>
+      <LoadingIndicator secondary={secondary || undefined} />
+    </If>
+    <If condition={!loading}>{children}</If>
+  </StyledButton>
+);
 
 export default Button;

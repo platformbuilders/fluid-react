@@ -18,7 +18,7 @@
   "private": false,
   "scripts": {
     "clean": "rm -rf ./node_modules && yarn install",
-    "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.js\"",
+    "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.{ts,tsx,js}\"",
     "lint": "eslint '*/**/*.{ts,tsx}' --fix",
     "build": "rm -rf dist && yarn lint && tsc",
     "prepublish": "yarn build",

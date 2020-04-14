@@ -1,22 +1,14 @@
-import React, { FC } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { TouchableType } from '../../types';
-import { generateHaptic } from '../../utils/helpers';
+import React, { ReactNode, FC } from 'react';
+import { CustomTouchable } from './styles';
 
-const CommonTouchable: FC<TouchableType> = ({
-  onPress = (): void => {},
-  haptic = 'impact',
-  disabled = false,
-  ...rest
-}) => (
-  <TouchableOpacity
-    {...rest}
-    disabled={disabled}
-    onPress={(e): void => {
-      generateHaptic(haptic);
-      onPress(e);
-    }}
-  />
+interface Props {
+  children: ReactNode;
+  onPress(): void;
+}
+const Touchable: FC<Props> = ({ children, onPress, ...rest }) => (
+  <CustomTouchable onClick={onPress} {...rest}>
+    {children}
+  </CustomTouchable>
 );
 
-export default CommonTouchable;
+export default Touchable;

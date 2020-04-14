@@ -1,18 +1,11 @@
 import React, { FC } from 'react';
-import { human } from 'react-native-typography';
+import { CustomTypography } from './styles';
 import { TypographyType } from '../../types';
-import { Text } from './styles';
 
-const Typography: FC<TypographyType> = ({
-  style = [{}],
-  variant = 'body',
-  textRef = React.createRef(),
-  children,
-  ...rest
-}) => (
-  <Text ref={textRef} style={[human[variant], style]} {...rest}>
+const Typography: FC<TypographyType> = ({ variant, children, ...rest }) => (
+  <CustomTypography variant={variant} {...rest}>
     {children}
-  </Text>
+  </CustomTypography>
 );
 
 export default Typography;
