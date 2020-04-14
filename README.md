@@ -1,4 +1,4 @@
-# @platformbuilders/react-native-ui
+# @platformbuilders/react-ui
 
 [![Build Status][check-badge]][workflows]
 [![npm][npm-badge]][npm]
@@ -14,7 +14,7 @@
 [workflows]: https://github.com/platformbuilders/react-native-ui/actions
 [check-badge]: https://github.com/platformbuilders/react-native-ui/workflows/check/badge.svg
 
-Welcome to the @platformbuilders/react-native-ui package here you will find out all of our components shared with the community
+Welcome to the @platformbuilders/react-ui package here you will find out all of our components shared with the community
 
 # Whats the idea of this repository
 
@@ -22,15 +22,7 @@ Its a place that we can share a little bit of our code base and show how we work
 
 # How can i use the library?
 
-Now it's under development and we will release it soon!
-
-You will need to install some native dependencies that we use on the code:
-
-```bash
-yarn add react-native-camera react-native-vector-icons react-native-haptic react-native-image-picker react-native-svg react-native-fast-image react-native-checkbox && cd ios && pod install
-```
-
-Here's how you add our dependencie to your project @platformbuilders/react-native-ui
+Here's how you add our dependencie to your project @platformbuilders/react-ui
 
 1. depend on it:
 
@@ -42,7 +34,7 @@ yarn add @platformbuilders/react-native-ui
 
 ```jsx
 import { ThemeProvider } from 'styled-components';
-import { ThemeType } from '@platformbuilders/react-native-ui';
+import { ThemeType } from '@platformbuilders/react-ui';
 
 const theme: ThemeType = { ... };
 
@@ -54,5 +46,5 @@ const theme: ThemeType = { ... };
 3. use it
 
 ```jsx
-import { Button } from '@platformbuilders/react-native-ui';
+import { Button } from '@platformbuilders/react-ui';
 ```
