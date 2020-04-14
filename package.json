@@ -1,17 +1,17 @@
 {
-  "name": "@platformbuilders/react-native-ui",
-  "version": "0.1.9",
-  "description": "Platform Builders Shared Components Library",
+  "name": "@platformbuilders/react-ui",
+  "version": "0.0.1",
+  "description": "Platform Builders Shared Components Library For React Web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/platformbuilders/react-native-ui.git"
+    "url": "git+https://github.com/platformbuilders/react-ui.git"
   },
   "keywords": [
     "platformbuilders",
-    "react-native",
-    "react-native-ui"
+    "react",
+    "react-ui"
   ],
   "author": "Platform Builders <dev@platformbuilders.io>",
   "license": "MIT",
@@ -43,38 +43,26 @@
   },
   "peerDependencies": {
     "react": ">=16.11.0",
-    "react-native": ">=0.61.0",
-    "react-native-camera": ">=3.19.0",
-    "react-native-svg": ">=12.0.0",
-    "styled-components": ">=5",
-    "react-native-checkbox": ">=2.0.0"
+    "styled-components": ">=5"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.10",
     "@platformbuilders/helpers": "^0.0.19",
+    "formik": "^2.1.4",
     "lodash": "^4.17.15",
-    "lottie-react-native": "^3.3.2",
     "polished": "^3.5.1",
-    "react-native-datepicker": "^1.7.2",
-    "react-native-fast-image": "^8.1.5",
-    "react-native-haptic": "^1.0.1",
-    "react-native-image-picker": "^2.3.1",
-    "react-native-masked-text": "^1.13.0",
-    "react-native-size-matters": "^0.3.0",
-    "react-native-typography": "^1.4.1",
-    "react-native-vector-icons": "^6.6.0"
+    "react-input-mask": "^2.0.4",
+    "react-lottie": "^1.2.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@react-native-community/eslint-config": "^1.0.0",
     "@types/lodash": "^4.14.149",
     "@types/moment": "^2.13.0",
     "@types/numeral": "^0.0.26",
     "@types/react": "^16.9.29",
-    "@types/react-native": "^0.62.1",
-    "@types/react-native-check-box": "^2.1.1",
-    "@types/react-native-datepicker": "^1.7.0",
-    "@types/react-native-vector-icons": "^6.4.5",
+    "@types/react-input-mask": "^2.0.5",
+    "@types/react-lottie": "^1.2.3",
     "@types/styled-components": "^5.0.1",
     "@types/yup": "^0.26.33",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
@@ -95,12 +83,9 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "eslint-plugin-react-native": "^3.8.1",
     "eslint-plugin-sonarjs": "^0.5.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.1",
-    "react-native-camera": "^3.21.0",
-    "react-native-svg": "^12.0.3",
     "styled-components": "^5.0.1",
     "typescript": "^3.8.3"
   }
