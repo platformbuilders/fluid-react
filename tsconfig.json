@@ -3,15 +3,15 @@
     /* Basic Options */
     "target": "es6",
     "module": "es6",
-    "lib": ["es6"],
-    "types": ["react-native"],
+    "lib": ["es6", "DOM"],
+    "types": ["react"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "dist",
     "importHelpers": true,
     "resolveJsonModule": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "baseUrl": ".",
     "skipLibCheck": true,
     /* Strict Type-Checking Options */
