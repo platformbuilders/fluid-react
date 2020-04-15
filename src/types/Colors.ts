@@ -1,9 +1,10 @@
-interface SubColors {
+type SubColors = {
   light: string;
   main: string;
   dark: string;
   contrast: string;
-}
+};
+
 export type Colors = {
   type: string;
   failure: string;

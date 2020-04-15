@@ -17,16 +17,20 @@ export const StyledButton = styled((props) => (
   min-width: 155px;
   border-radius: 50px;
   padding: 12px;
-  color: ${(props) => (props.secondary ? secondaryContrast : primaryContrast)};
+  color: ${(props): string =>
+    props.secondary ? secondaryContrast(props) : primaryContrast(props)};
   border: 0;
-  background: ${(props) => (props.secondary ? secondaryMain : primaryMain)};
+  background: ${(props): string =>
+    props.secondary ? secondaryMain(props) : primaryMain(props)};
   :hover {
-    background: ${(props) => (props.secondary ? secondaryMain : primaryMain)};
+    background: ${(props): string =>
+      props.secondary ? secondaryMain(props) : primaryMain(props)};
   }
 `;
 
 export const LoadingIndicator = styled((props) => (
   <CircularProgress {...props} secondary={undefined} size={20} />
 ))`
-  color: ${(props) => (props.secondary ? secondaryContrast : primaryContrast)};
+  color: ${(props): string =>
+    props.secondary ? secondaryContrast(props) : primaryContrast(props)};
 `;

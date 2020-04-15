@@ -13,6 +13,6 @@ export type TypographyVariants =
   | 'caption'
   | 'overline';
 
-export interface TypographyType {
+export type TypographyType = {
   variant?: TypographyVariants;
-}
+};

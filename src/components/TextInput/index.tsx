@@ -11,7 +11,7 @@ enum maskTypes {
   phone = '(99) 9999-9999',
   cellphone = '(99) 99999-9999',
 }
-interface Props {
+type Props = {
   mask?: string;
   maskType?: string;
   label?: string;
@@ -24,7 +24,7 @@ interface Props {
   value: string;
   autoFocus?: boolean;
   onChange(value: any): void;
-}
+};
 
 const TextInput: FC<Props> = ({ mask, maskType, error, ...rest }) => {
   const renderTextInput = (): JSX.Element => {
