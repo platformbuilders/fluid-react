@@ -3,17 +3,18 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import { Wrapper, MaterialSelect, Item } from './styles';
 
-interface ValuesProps {
+type ValuesProps = {
   value: string | number;
   label: string;
-}
-interface Props {
+};
+
+type Props = {
   onChange(value: any): void;
   error?: string | string[];
   label?: string;
   selectedValue?: string[] | number;
   values: ValuesProps[];
-}
+};
 
 const Select: FC<Props> = ({
   onChange,

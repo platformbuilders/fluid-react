@@ -1,10 +1,10 @@
-import React, { ReactNode, FC } from 'react';
+import React, { FC } from 'react';
 import { CustomTouchable } from './styles';
 
-interface Props {
-  children: ReactNode;
+type Props = {
   onPress(): void;
-}
+};
+
 const Touchable: FC<Props> = ({ children, onPress, ...rest }) => (
   <CustomTouchable onClick={onPress} {...rest}>
     {children}

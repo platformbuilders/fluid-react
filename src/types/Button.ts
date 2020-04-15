@@ -1,4 +1,4 @@
-export interface ButtonType {
+export type ButtonType = {
   onPress?: Function;
   type?: string;
   secondary?: boolean;
@@ -6,4 +6,4 @@ export interface ButtonType {
   loading?: boolean;
   disabled?: boolean;
   children: string;
-}
+};

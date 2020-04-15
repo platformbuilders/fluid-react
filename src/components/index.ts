@@ -5,7 +5,6 @@ export { default as Touchable } from './Touchable';
 export { default as Paper } from './Paper';
 export { default as Icon } from './Icon';
 export { default as Avatar } from './Avatar';
-export { default as SceneWrapper } from './SceneWrapper';
 export { default as Typography } from './Typography';
 export { default as LoadingIndicator } from './LoadingIndicator';
 

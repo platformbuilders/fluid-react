@@ -1,7 +1,9 @@
-interface Props {
+import { ReactNode } from 'react';
+
+type Props = {
   condition: boolean;
-  children: any;
-}
+  children: ReactNode | string;
+};
 
 const If = ({ condition, children }: Props): any =>
   condition ? children : null;

@@ -1,4 +1,4 @@
-export interface AnimationObject {
+export type AnimationObject = {
   v: string;
   fr: number;
   ip: number;
@@ -9,7 +9,7 @@ export interface AnimationObject {
   ddd: number;
   assets: any[];
   layers: any[];
-}
+};
 
 export type Animations = {
   circularLoading?: string | AnimationObject | { uri: string };

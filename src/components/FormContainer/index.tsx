@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { Formik } from 'formik';
 
 type Props = {
@@ -6,8 +6,8 @@ type Props = {
   initialValues: object;
   onSubmit: any;
   validateOnChange?: boolean;
-  children: ReactNode;
 };
+
 const FormContainer: FC<Props> = ({
   validationSchema,
   initialValues,

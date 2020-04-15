@@ -14,8 +14,7 @@
 
 ## Checklist 🚨
 
-- [ ] Meu código foi feito utilizando TDD (**testes unitários obrigatórios**)
 - [ ] Meu código segue o code style da Builders.
-- [ ] Testado no IOS
-- [ ] Testado no Android
-
+- [ ] Testado no Chrome
+- [ ] Testado no Firefox
+- [ ] Testado no Safari
