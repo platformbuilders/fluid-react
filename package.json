@@ -67,7 +67,7 @@
     "@types/react-input-mask": "^2.0.5",
     "@types/react-lottie": "^1.2.3",
     "@types/react-router-dom": "^5.1.4",
-    "@types/styled-components": "^5.0.1",
+    "@types/styled-components": "^5.1.0",
     "@types/yup": "^0.26.33",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
