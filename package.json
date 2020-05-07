@@ -60,7 +60,6 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "react-native": "^0.62.2",
     "@babel/core": "^7.9.6",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
@@ -106,6 +105,7 @@
     "lint-staged": "^10.1.6",
     "prettier": "^2.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
+    "react-native": "^0.62.2",
     "react-native-web": "^0.12.2",
     "storybook-addon-jsx": "^7.2.3",
     "storybook-addon-paddings": "^2.0.2",
