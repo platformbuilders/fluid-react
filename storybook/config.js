@@ -4,7 +4,6 @@ import React from 'react';
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withPaddings } from 'storybook-addon-paddings';
-import { jsxDecorator } from 'storybook-addon-jsx';
 import { addReadme } from 'storybook-readme';
 import { ThemeProvider } from 'styled-components';
 import { colors, metrics, animations, radius, } from '../src/theme';
@@ -17,7 +16,6 @@ const theme = {
 }
 
 addDecorator(addReadme);
-addDecorator(jsxDecorator);
 addDecorator(withPaddings);
 addDecorator((storyFn) => (
   <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
