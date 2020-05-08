@@ -27,7 +27,9 @@
     "postversion": "git push && git push --tags",
     "version:patch": "npm version patch",
     "version:minor": "npm version minor",
-    "version:major": "npm version major"
+    "version:major": "npm version major",
+    "storybook": "start-storybook -p 9009 -c storybook",
+    "storybook:build": "rimraf storybook-static; build-storybook -c storybook"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -48,7 +50,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.11",
-    "@platformbuilders/helpers": "^0.0.19",
+    "@platformbuilders/helpers": "^0.1.1",
     "formik": "^2.1.4",
     "lodash": "^4.17.15",
     "polished": "^3.6.0",
@@ -58,8 +60,16 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-backgrounds": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addon-viewport": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
     "@types/lodash": "^4.14.150",
     "@types/moment": "^2.13.0",
     "@types/numeral": "^0.0.27",
@@ -71,6 +81,8 @@
     "@types/yup": "^0.28.0",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-airbnb-typescript": "^7.2.1",
@@ -88,10 +100,20 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-sonarjs": "^0.5.0",
+    "file-loader": "^6.0.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.6",
     "prettier": "^2.0.5",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-native": "^0.62.2",
+    "react-native-web": "^0.12.2",
+    "storybook-addon-jsx": "^7.2.3",
+    "storybook-addon-paddings": "^2.0.2",
+    "storybook-readme": "^5.0.8",
+    "style-loader": "^1.2.1",
     "styled-components": "^5.0.1",
+    "svg-inline-loader": "^0.8.2",
+    "ts-loader": "^7.0.3",
     "typescript": "^3.8.3"
   }
 }
