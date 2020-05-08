@@ -5,7 +5,6 @@ module.exports = {
     '@storybook/addon-viewport/register',
     '@storybook/addon-backgrounds/register',
     'storybook-addon-paddings',
-    'storybook-addon-jsx/register',
     'storybook-readme/register',
   ],
 };
