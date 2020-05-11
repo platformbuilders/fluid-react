@@ -2259,10 +2259,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-lottie@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@types/react-lottie/-/react-lottie-1.2.3.tgz#aa25deecdc6d44e5d367662709c95121b7fe22ae"
-  integrity sha512-e1vOQ+poOGQwDAJkv8AIhXBOkUq9XctxUdFdbVsBIi2t9wgDrdjxUxnpzyy85XQNMwkRQF1VDDSyMN9whW2EVw==
+"@types/react-lottie@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@types/react-lottie/-/react-lottie-1.2.4.tgz#f06c71391db99d880815c191a42ea8b557c7b11b"
+  integrity sha512-RA28Ka6MK+SAYiDNOjinIXpR/JHIVzRVOudbZb35mWONB/Eld1uM68hu7Kw9cYcHcjBzq9XIlSV6B+70OenATg==
   dependencies:
     "@types/react" "*"
 
