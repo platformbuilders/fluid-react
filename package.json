@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.14",
-    "@platformbuilders/helpers": "^0.1.1",
+    "@platformbuilders/helpers": "^0.2.1",
     "formik": "^2.1.4",
     "lodash": "^4.17.15",
     "polished": "^3.6.0",
