@@ -52,7 +52,7 @@
     "@material-ui/core": "^4.9.14",
     "@platformbuilders/helpers": "^0.2.1",
     "formik": "^2.1.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "polished": "^3.6.0",
     "react": "^16.13.1",
     "react-input-mask": "^2.0.4",
