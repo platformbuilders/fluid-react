@@ -10284,10 +10284,10 @@ react-lottie@^1.2.3:
     babel-runtime "^6.26.0"
     lottie-web "^5.1.3"
 
-react-native-web@^0.12.3:
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.12.3.tgz#9f43301539672d46a302ee642afd29243a4376d5"
-  integrity sha512-6evhZl3tzYz5IUesbHEC4/ooUkXJPIAtrmDJWe3CdpDrV6rvBNNa1Utq192YKbHPzGtETuw+5X59K0O1n5EjWQ==
+react-native-web@^0.13.3:
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.3.tgz#fe6799a1a341b60a617194b51042c40f57bfb34c"
+  integrity sha512-szUf/qDMZileJKglUmMT5UdPYltmmF2ywZ0OFeW7/6XmYDJP+Bepo3eGaCwm1bMcopLBq+lNdbn854CHfU8yBw==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
