@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Platform Builders Shared Components Library For React Web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
