@@ -105,7 +105,7 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
-    "react-native": "^0.62.2",
+    "react-native": "^0.63.1",
     "react-native-web": "^0.13.3",
     "storybook-addon-paddings": "^2.0.2",
     "storybook-readme": "^5.0.8",
