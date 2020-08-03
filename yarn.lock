@@ -1514,9 +1514,9 @@
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
 "@platformbuilders/helpers@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@platformbuilders/helpers/-/helpers-0.2.1.tgz#5923350af03545c80645921b169ad759b45533fd"
-  integrity sha512-niTZ57V5WRhnfDxvlchAU0W/PtKKmlD8a3mrlZddD/RL+IDQrKVyxPLZGbN8eKOXpl+yzPdGFlNa/tprY95qYg==
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@platformbuilders/helpers/-/helpers-0.2.4.tgz#56e571a0a63d8f00426e06ed04f93290ec8ccfcd"
+  integrity sha512-aATTJTBsQLiamCXScmYFA9vgO5uHR7+jJ14HStQTFYftfINWEGeCdL1XRc6vAtoDBx7VqEriAmGocQuLQ8040g==
   dependencies:
     lodash "^4.17.15"
     moment "^2.25.3"
