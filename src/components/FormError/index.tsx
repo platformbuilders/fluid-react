@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ErrorText } from './styles';
 
 type Props = {
-  error: string;
+  error: string | boolean | undefined;
 };
 
 const FormError: FC<Props> = ({ children, error, ...rest }): JSX.Element => (

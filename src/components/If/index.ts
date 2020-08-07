@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode, FC } from 'react';
 
 type Props = {
   condition: boolean;
   children: ReactNode | string;
 };
 
-const If = ({ condition, children }: Props): any =>
+const If: FC<Props> = ({ condition, children }): any =>
   condition ? children : null;
 
 export default If;

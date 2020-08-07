@@ -5,14 +5,16 @@ import If from '../If';
 
 const Button: FC<ButtonType> = ({
   children,
-  onPress = (): void => {},
   type,
-  secondary = false,
   loading = false,
+  disabled = false,
+  secondary = false,
+  onPress = (): void => {},
   ...rest
 }) => (
   <StyledButton
     onClick={onPress}
+    disabled={disabled}
     secondary={secondary || undefined}
     type={type || undefined}
     {...rest}
