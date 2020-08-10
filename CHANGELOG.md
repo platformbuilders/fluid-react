@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - Add props(`disabled`) in Button
  - Add props(`size`, `color`) in Icon
  - Add props in If component
+ - Add helper `checkType`
 
 ### Changed
  - Update prop `error` in Checkbox 
