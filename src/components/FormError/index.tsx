@@ -1,14 +1,19 @@
 import React, { FC } from 'react';
+import { isString } from '../../utils/helpers';
 import { ErrorText } from './styles';
 
 type Props = {
-  error: string;
+  error: string | boolean | undefined;
 };
 
-const FormError: FC<Props> = ({ children, error, ...rest }): JSX.Element => (
-  <>
-    {children}
-    <ErrorText {...rest}>{error}</ErrorText>
-  </>
-);
+const FormError: FC<Props> = ({ children, error, ...rest }): JSX.Element => {
+  const isErrorValid = isString(error);
+
+  return (
+    <>
+      {children}
+      {isErrorValid && <ErrorText {...rest}>{error}</ErrorText>}
+    </>
+  );
+};
 export default FormError;

@@ -2,12 +2,32 @@ import React, { FC } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import MaterialIcon from '@material-ui/core/Icon';
 
+type IconSize = 'inherit' | 'default' | 'small' | 'large';
+
+type IconColor =
+  | 'inherit'
+  | 'primary'
+  | 'secondary'
+  | 'action'
+  | 'error'
+  | 'disabled';
+
 type Props = {
   name: string;
+  size?: IconSize;
+  color?: IconColor;
 };
-const Icon: FC<Props> = ({ name, ...rest }): JSX.Element => (
+
+const Icon: FC<Props> = ({
+  name,
+  color = 'inherit',
+  size = 'default',
+  ...rest
+}): JSX.Element => (
   <IconButton color="inherit" edge="start" {...rest}>
-    <MaterialIcon>{name}</MaterialIcon>
+    <MaterialIcon color={color} fontSize={size}>
+      {name}
+    </MaterialIcon>
   </IconButton>
 );
 

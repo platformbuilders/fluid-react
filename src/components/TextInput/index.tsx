@@ -3,7 +3,7 @@ import TextInputMask from 'react-input-mask';
 import { Input, InputWrapper } from './styles';
 import { FormError } from '..';
 
-enum maskTypes {
+enum Mask {
   cep = '99999-999',
   cpf = '999.999.999-99',
   cnpj = '99.999.999/9999-99',
@@ -11,25 +11,30 @@ enum maskTypes {
   phone = '(99) 9999-9999',
   cellphone = '(99) 99999-9999',
 }
+
 type Props = {
   mask?: string;
   maskType?: string;
   label?: string;
-  error: string;
+  error?: string | boolean;
   placeholder?: string;
   fullWidth?: boolean;
   name: string;
   id?: string;
   type: string;
-  value: string;
+  value: string | boolean | number;
   autoFocus?: boolean;
-  onChange(value: any): void;
+  onChange?: (value: any) => void;
+  onBlur?: (e: any) => void;
 };
 
-const TextInput: FC<Props> = ({ mask, maskType, error, ...rest }) => {
+const TextInput: FC<Props> = ({ mask, maskType = '', error = '', ...rest }) => {
   const renderTextInput = (): JSX.Element => {
-    return mask || maskType ? (
-      <TextInputMask mask={maskTypes[`${maskType}`] || mask} {...rest}>
+    const hasMask = mask || maskType;
+    const maskOption = Mask[maskType] || mask;
+
+    return hasMask ? (
+      <TextInputMask mask={maskOption}>
         {(inputProps: any): JSX.Element => (
           <Input margin="normal" {...inputProps} />
         )}
@@ -44,4 +49,5 @@ const TextInput: FC<Props> = ({ mask, maskType, error, ...rest }) => {
     </InputWrapper>
   );
 };
+
 export default TextInput;
