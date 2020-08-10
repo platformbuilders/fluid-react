@@ -10352,9 +10352,9 @@ react-lottie@^1.2.3:
     lottie-web "^5.1.3"
 
 react-native-web@^0.13.3:
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.3.tgz#fe6799a1a341b60a617194b51042c40f57bfb34c"
-  integrity sha512-szUf/qDMZileJKglUmMT5UdPYltmmF2ywZ0OFeW7/6XmYDJP+Bepo3eGaCwm1bMcopLBq+lNdbn854CHfU8yBw==
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.5.tgz#b8edeb26149fe1d986c34f488fa1562865e15f7b"
+  integrity sha512-Z4hiqKZ0bFFVMlsc/6gQMkIiGYPrY8bH6SFpLrLljDGLousNZjD+H4hV7QQz72smo8786994UJEBC0bU+0kAMw==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
