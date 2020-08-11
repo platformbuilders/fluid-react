@@ -5,7 +5,7 @@
 [![react-native][rn-badge]][rn]
 [![MIT][license-badge]][license]
 
-[npm-badge]: https://img.shields.io/npm/v/@platformbuilders/react-native-ui.svg
+[npm-badge]: https://img.shields.io/npm/v/@platformbuilders/react-ui.svg
 [npm]: https://www.npmjs.com/package/@platformbuilders/react-native-ui
 [rn]: https://facebook.github.io/react-native
 [rn-badge]: https://img.shields.io/badge/react--native-v0.61-05A5D1.svg
