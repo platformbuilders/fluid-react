@@ -41,6 +41,7 @@ module.exports = {
   },
   rules: {
     'import/no-cycle': 0,
+    'no-shadow': 0,
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': 0,
     '@typescript-eslint/member-delimiter-style': 0,
