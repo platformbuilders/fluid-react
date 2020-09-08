@@ -1,4 +1,5 @@
 import React from 'react';
+import faker from 'faker';
 import { shallow } from 'enzyme';
 
 import Avatar from '..';
@@ -27,17 +28,24 @@ describe('Component: Avatar', () => {
   });
 
   test('check props', () => {
+    // should
+    const altSpy = faker.random.words();
+    const srcSpy = faker.random.words();
+    const variantSpy = 'rounded';
+
+    // when
     const component = shallow(
       <Avatar
         onPress={jest.fn}
-        alt="some_alt"
-        src="some_url"
-        variant="rounded"
+        src={srcSpy}
+        alt={altSpy}
+        variant={variantSpy}
       />,
     );
 
-    expect(component.props().src).toEqual('some_url');
-    expect(component.props().alt).toEqual('some_alt');
-    expect(component.props().variant).toEqual('rounded');
+    // then
+    expect(component.props().src).toEqual(srcSpy);
+    expect(component.props().alt).toEqual(altSpy);
+    expect(component.props().variant).toEqual(variantSpy);
   });
 });
