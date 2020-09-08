@@ -8,6 +8,7 @@ module.exports = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
+    '!<rootDir>/src/config/*',
     '!<rootDir>/src/theme/index.ts',
     '!<rootDir>/src/types/index.ts',
     '!<rootDir>/src/components/index.ts',
@@ -25,9 +26,7 @@ module.exports = {
   ],
   testEnvironment: 'jsdom',
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  setupFiles: ['jest-canvas-mock'],
-  setupFilesAfterEnv: ['<rootDir>/src/config/setupEnzyme.ts'],
-  transformIgnorePatterns: ['<rootDir>/node_modules/@platformbuilders/helpers/dist'],
+  setupFilesAfterEnv: ['<rootDir>/src/config/setupEnzyme.ts', 'jest-canvas-mock'],
   transform: {
     ...tsjPreset.transform,
     '^.+\\.(ts|tsx)$': 'ts-jest'
