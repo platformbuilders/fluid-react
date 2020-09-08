@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Avatar snapshots 1`] = `
+<Styled(Component)
+  alt=""
+  onPress={[MockFunction]}
+  src="some_url"
+  variant="circle"
+/>
+`;
