@@ -20,7 +20,7 @@
     "clean": "rm -rf ./node_modules && yarn install",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.{ts,tsx,js}\"",
     "lint": "eslint '*/**/*.{ts,tsx}' --fix",
-    "test": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --no-cache",
     "test:watch": "yarn test -- --watch",
     "test:coverage": "yarn test -- --coverage",
     "build": "rm -rf dist && yarn lint && tsc",

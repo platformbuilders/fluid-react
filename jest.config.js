@@ -26,7 +26,7 @@ module.exports = {
   ],
   testEnvironment: 'jsdom',
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  setupFilesAfterEnv: ['<rootDir>/src/config/setupEnzyme.ts', 'jest-canvas-mock'],
+  setupFilesAfterEnv: ['<rootDir>/src/config/jest.setup.ts', 'jest-canvas-mock'],
   transform: {
     ...tsjPreset.transform,
     '^.+\\.(ts|tsx)$': 'ts-jest'
