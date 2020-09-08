@@ -21,8 +21,16 @@ describe('Component: Avatar', () => {
     defaultProps = { ...defaultProps };
   });
 
-  test('snapshots', () => {
+  test('snapshots with default props', () => {
     const component = shallow(<Avatar {...defaultProps} />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  test('snapshots with other props', () => {
+    const component = shallow(
+      <Avatar {...defaultProps} alt="alt text" variant="square" />,
+    );
 
     expect(component).toMatchSnapshot();
   });
@@ -47,5 +55,19 @@ describe('Component: Avatar', () => {
     expect(component.props().src).toEqual(srcSpy);
     expect(component.props().alt).toEqual(altSpy);
     expect(component.props().variant).toEqual(variantSpy);
+  });
+
+  test('should call onPress when pressed', () => {
+    // shuold
+    const onPressMock = jest.fn();
+    const component = shallow(
+      <Avatar {...defaultProps} onPress={onPressMock} />,
+    );
+
+    // when
+    component.simulate('press');
+
+    // then
+    expect(onPressMock).toHaveBeenCalled();
   });
 });

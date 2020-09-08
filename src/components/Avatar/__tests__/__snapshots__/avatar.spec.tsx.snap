@@ -1,10 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component: Avatar snapshots 1`] = `
+exports[`Component: Avatar snapshots with default props 1`] = `
 <Styled(Component)
   alt=""
   onPress={[MockFunction]}
   src="some_url"
   variant="circle"
+/>
+`;
+
+exports[`Component: Avatar snapshots with other props 1`] = `
+<Styled(Component)
+  alt="alt text"
+  onPress={[MockFunction]}
+  src="some_url"
+  variant="square"
 />
 `;
