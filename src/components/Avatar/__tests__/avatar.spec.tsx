@@ -1,28 +1,32 @@
 import React from 'react';
 import faker from 'faker';
 import { shallow } from 'enzyme';
+import { ThemeProvider } from 'styled-components';
 
 import Avatar, { Props } from '..';
+import { theme } from '../../../config/helpers';
 
-let defaultProps: Props = {
+const defaultProps: Props = {
   src: 'some_url',
   onPress: jest.fn(),
 };
 
 describe('Component: Avatar', () => {
-  beforeEach(() => {
-    defaultProps = { ...defaultProps };
-  });
-
   test('snapshots with default props', () => {
-    const component = shallow(<Avatar {...defaultProps} />);
+    const component = shallow(
+      <ThemeProvider theme={theme}>
+        <Avatar {...defaultProps} />
+      </ThemeProvider>,
+    );
 
     expect(component).toMatchSnapshot();
   });
 
   test('snapshots with other props', () => {
     const component = shallow(
-      <Avatar {...defaultProps} alt="alt text" variant="square" />,
+      <ThemeProvider theme={theme}>
+        <Avatar {...defaultProps} alt="alt text" variant="square" />
+      </ThemeProvider>,
     );
 
     expect(component).toMatchSnapshot();
@@ -45,13 +49,15 @@ describe('Component: Avatar', () => {
     );
 
     // then
-    expect(component.props().src).toEqual(srcMock);
-    expect(component.props().alt).toEqual(altMock);
-    expect(component.props().variant).toEqual(variantMock);
+    const { src, alt, variant } = component.props();
+
+    expect(src).toEqual(srcMock);
+    expect(alt).toEqual(altMock);
+    expect(variant).toEqual(variantMock);
   });
 
   test('should call onPress when pressed', () => {
-    // shuold
+    // should
     const onPressMock = jest.fn();
     const component = shallow(
       <Avatar {...defaultProps} onPress={onPressMock} />,
