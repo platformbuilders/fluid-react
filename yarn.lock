@@ -2349,13 +2349,13 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@platformbuilders/helpers@^0.2.1":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@platformbuilders/helpers/-/helpers-0.2.4.tgz#56e571a0a63d8f00426e06ed04f93290ec8ccfcd"
-  integrity sha512-aATTJTBsQLiamCXScmYFA9vgO5uHR7+jJ14HStQTFYftfINWEGeCdL1XRc6vAtoDBx7VqEriAmGocQuLQ8040g==
+"@platformbuilders/helpers@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@platformbuilders/helpers/-/helpers-0.3.0.tgz#3be7615464fcdc7d3c08418171dac7c619cad364"
+  integrity sha512-kufHbZRD4o8Xj9hSScKmFT2corhFQ0vmAbsSQ3hgLYQqnfK8Oael/SrOQk1Q/flf4qHlZVp7EejmpBWh8qQ5IQ==
   dependencies:
-    lodash "^4.17.15"
-    moment "^2.25.3"
+    lodash "^4.17.20"
+    moment "^2.27.0"
     numeral "^2.0.6"
     react "^16.13.1"
     react-dom "^16.13.1"
@@ -10681,7 +10681,7 @@ lodash.toarray@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
   integrity sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
 
-lodash@^4.0.1, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.3.0:
+lodash@^4.0.1, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.3.0:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
@@ -11538,7 +11538,7 @@ mkdirp@^0.5.3, mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.5"
 
-moment@*, moment@^2.25.3:
+moment@*, moment@^2.27.0:
   version "2.27.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
   integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
