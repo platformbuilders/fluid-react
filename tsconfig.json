@@ -4,7 +4,7 @@
     "target": "es6",
     "module": "es6",
     "lib": ["es6", "DOM"],
-    "types": ["react"],
+    "types": ["react",  "jest"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,

@@ -1,2 +1,2 @@
-export * from '@platformbuilders/helpers';
+export { getTheme } from '@platformbuilders/helpers';
 export { isString } from './checkType';
