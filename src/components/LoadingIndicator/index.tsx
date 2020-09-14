@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Animation from 'react-lottie';
 import loading from '../../assets/animations/loading.json';
 
-enum Sizes {
+export enum Sizes {
   small = 30,
   medium = 45,
   large = 60,
@@ -10,7 +10,7 @@ enum Sizes {
 
 type SizeOptions = 'small' | 'medium' | 'large';
 
-type Props = {
+export type Props = {
   size?: SizeOptions;
 };
 
@@ -23,13 +23,13 @@ const defaultOptions = {
   },
 };
 
-const LoadingIndicator: FC<Props> = ({ size }): JSX.Element => (
+const LoadingIndicator: FC<Props> = ({ size = 'medium' }): JSX.Element => (
   <Animation
     options={defaultOptions}
     isStopped={false}
     isPaused={false}
-    height={Sizes[`${size}`] || 45}
-    width={Sizes[`${size}`] || 45}
+    height={Sizes[size]}
+    width={Sizes[size]}
   />
 );
 

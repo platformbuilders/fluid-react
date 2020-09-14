@@ -21,8 +21,9 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   testPathIgnorePatterns: [
-    '<rootDir>/node_modules/',
-    '<rootDir>/src/main/test/cypress'
+    '/node_modules/',
+    '/coverage/',
+    '/dist/'
   ],
   testEnvironment: 'jsdom',
   snapshotSerializers: ['enzyme-to-json/serializer'],

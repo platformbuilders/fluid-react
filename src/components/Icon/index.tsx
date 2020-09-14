@@ -12,7 +12,7 @@ type IconColor =
   | 'error'
   | 'disabled';
 
-type Props = {
+export type Props = {
   name: string;
   size?: IconSize;
   color?: IconColor;

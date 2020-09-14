@@ -6,10 +6,10 @@ import If from '../If';
 const Button: FC<ButtonType> = ({
   children,
   type,
+  onPress,
   loading = false,
   disabled = false,
   secondary = false,
-  onPress = (): void => {},
   ...rest
 }) => (
   <StyledButton
@@ -19,7 +19,7 @@ const Button: FC<ButtonType> = ({
     type={type || undefined}
     {...rest}
   >
-    <If condition={loading}>
+    <If condition={!!loading}>
       <LoadingIndicator secondary={secondary || undefined} />
     </If>
     <If condition={!loading}>{children}</If>

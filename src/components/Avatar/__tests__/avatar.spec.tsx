@@ -41,7 +41,7 @@ describe('Component: Avatar', () => {
     // when
     const component = shallow(
       <Avatar
-        onPress={jest.fn}
+        {...defaultProps}
         src={srcMock}
         alt={altMock}
         variant={variantMock}
@@ -58,15 +58,15 @@ describe('Component: Avatar', () => {
 
   test('should call onPress when pressed', () => {
     // should
-    const onPressMock = jest.fn();
-    const component = shallow(
-      <Avatar {...defaultProps} onPress={onPressMock} />,
-    );
+    const mockFunction = jest.fn();
+    const newProps = { ...defaultProps, size: '20' };
+
+    const component = shallow(<Avatar {...newProps} onPress={mockFunction} />);
 
     // when
     component.simulate('press');
 
     // then
-    expect(onPressMock).toHaveBeenCalled();
+    expect(mockFunction).toHaveBeenCalled();
   });
 });
