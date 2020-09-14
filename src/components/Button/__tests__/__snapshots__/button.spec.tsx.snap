@@ -3203,7 +3203,9 @@ exports[`Component: Button snapshots with default props 1`] = `
 >
   <Button
     onPress={[MockFunction]}
-  />
+  >
+    Text
+  </Button>
 </ContextProvider>
 `;
 
@@ -6411,7 +6413,9 @@ exports[`Component: Button snapshots with loading 1`] = `
   <Button
     loading={true}
     onPress={[MockFunction]}
-  />
+  >
+    Text
+  </Button>
 </ContextProvider>
 `;
 

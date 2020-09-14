@@ -5,4 +5,5 @@ export type ButtonType = {
   transparent?: boolean;
   loading?: boolean;
   disabled?: boolean;
+  children: string;
 };

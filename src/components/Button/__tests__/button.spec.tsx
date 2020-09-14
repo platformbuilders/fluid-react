@@ -10,6 +10,7 @@ import { theme } from '../../../config/helpers';
 const defaultContent = 'Text';
 const defaultProps: Props = {
   onPress: jest.fn(),
+  children: defaultContent,
 };
 
 describe('Component: Button', () => {
