@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { CustomTouchable } from './styles';
 
-type Props = {
+export type Props = {
   onPress(): void;
 };
 

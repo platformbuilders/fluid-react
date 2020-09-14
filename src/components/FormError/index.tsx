@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { isString } from '../../utils/helpers';
 import { ErrorText } from './styles';
 
-type Props = {
+export type Props = {
   error: string | boolean | undefined;
 };
 
@@ -16,4 +16,5 @@ const FormError: FC<Props> = ({ children, error, ...rest }): JSX.Element => {
     </>
   );
 };
+
 export default FormError;

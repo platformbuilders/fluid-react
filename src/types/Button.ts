@@ -1,5 +1,5 @@
 export type ButtonType = {
-  onPress?(): void;
+  onPress(): void;
   type?: string;
   secondary?: boolean;
   transparent?: boolean;
