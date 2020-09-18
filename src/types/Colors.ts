@@ -1,4 +1,4 @@
-type SubColors = {
+type SubColor = {
   light: string;
   main: string;
   dark: string;
@@ -6,12 +6,14 @@ type SubColors = {
 };
 
 export type Colors = {
-  type: string;
+  text: string;
   failure: string;
   warning: string;
   success: string;
-  disabled: string;
-  primary: SubColors;
-  secondary: SubColors;
-  accent: SubColors;
+  info: string;
+  disabled: SubColor;
+  primary: SubColor;
+  secondary: SubColor;
+  tertiary: SubColor;
+  accent: SubColor;
 };
