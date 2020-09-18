@@ -1,6 +1,6 @@
 export * from './User';
 export * from './Credentials';
-export * from './Metrics';
+export * from './Spacings';
 export * from './Colors';
 export * from './Button';
 export * from './Variants';
