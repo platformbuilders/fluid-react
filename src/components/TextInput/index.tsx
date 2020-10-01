@@ -22,7 +22,7 @@ type Props = {
   name: string;
   id?: string;
   type: string;
-  value: string | boolean | number;
+  value: string | number | string[] | undefined;
   autoFocus?: boolean;
   onChange?: (value: any) => void;
   onBlur?: (e: any) => void;
@@ -34,7 +34,7 @@ const TextInput: FC<Props> = ({ mask, maskType = '', error = '', ...rest }) => {
     const maskOption = Mask[maskType] || mask;
 
     return hasMask ? (
-      <TextInputMask mask={maskOption}>
+      <TextInputMask mask={maskOption} {...rest}>
         {(inputProps: any): JSX.Element => (
           <Input margin="normal" {...inputProps} />
         )}
