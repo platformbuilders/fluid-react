@@ -40,7 +40,7 @@ const TextInput: FC<Props> = ({ mask, maskType = '', error = '', ...rest }) => {
         )}
       </TextInputMask>
     ) : (
-      <Input margin="normal" error={!!error} {...rest} />
+      <Input margin="normal" {...rest} error={!!error} />
     );
   };
   return (
