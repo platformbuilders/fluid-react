@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Accordion /> should render Accordion 1`] = `
+<View>
+  <View
+    style={Object {}}
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        isActive={false}
+      >
+        <Text
+          isActive={false}
+        >
+          Mock
+        </Text>
+      </View>
+    </View>
+    <View
+      pointerEvents="none"
+      style={
+        Object {
+          "height": 0,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <View
+        forwardedRef={[Function]}
+        onLayout={[Function]}
+        style={Object {}}
+      >
+        <View>
+          <Text>
+            Mock Content
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

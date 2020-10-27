@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Typography /> should render and match snapshot for default props 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "letterSpacing": -0.408,
+        "lineHeight": 22,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant caption1 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 12,
+        "fontWeight": "400",
+        "letterSpacing": 0,
+        "lineHeight": 16,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant caption2 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "letterSpacing": 0.06,
+        "lineHeight": 13,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant footnote 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 13,
+        "fontWeight": "400",
+        "letterSpacing": -0.078,
+        "lineHeight": 18,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant headline 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 17,
+        "fontWeight": "600",
+        "letterSpacing": -0.408,
+        "lineHeight": 22,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant largeTitle 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 34,
+        "fontWeight": "400",
+        "letterSpacing": 0.381836,
+        "lineHeight": 41,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant subhead 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "letterSpacing": -0.24,
+        "lineHeight": 20,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant title1 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 28,
+        "fontWeight": "400",
+        "letterSpacing": 0.355469,
+        "lineHeight": 34,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant title2 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 22,
+        "fontWeight": "400",
+        "letterSpacing": 0.34375,
+        "lineHeight": 28,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant title3 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 20,
+        "fontWeight": "400",
+        "letterSpacing": 0.361328,
+        "lineHeight": 25,
+      },
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;
+
+exports[`<Typography /> should render and match snapshot for variant title4 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      undefined,
+      Array [
+        Object {},
+      ],
+    ]
+  }
+/>
+`;

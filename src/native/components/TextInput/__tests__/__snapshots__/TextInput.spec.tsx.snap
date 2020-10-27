@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput /> should render textinput 1`] = `
+<View
+  multiline={false}
+  style={
+    Array [
+      Object {
+        "justifyContent": "flex-start",
+        "paddingTop": 12.571428571428571,
+        "position": "relative",
+      },
+      Object {},
+    ]
+  }
+>
+  <Text
+    accessibilityLabel="Erro "
+    contrast={false}
+    isPlaceholder={true}
+    status="DEFAULT"
+    style={
+      Array [
+        Object {
+          "color": "#af9177",
+          "fontSize": 18,
+          "lineHeight": 20,
+          "position": "absolute",
+          "top": 20,
+        },
+        Object {
+          "fontSize": 18,
+          "top": 20,
+        },
+      ]
+    }
+    testID="error_"
+  >
+    
+  </Text>
+  <View
+    multiline={false}
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 9,
+          "marginTop": 6,
+        },
+      ]
+    }
+  >
+    <TextInput
+      accessibility=""
+      accessibilityLabel=""
+      allowFontScaling={true}
+      borderless={false}
+      centered={false}
+      contrast={false}
+      id=""
+      keyboardType="default"
+      large={false}
+      multiline={false}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      placeholder=""
+      placeholderTextColor="#af917760"
+      rejectResponderTermination={true}
+      selectionColor="#af917780"
+      status="DEFAULT"
+      style={
+        Array [
+          Object {
+            "borderWidth": 0,
+            "color": "#af9177",
+            "flexGrow": 1,
+            "fontSize": 16,
+            "fontWeight": "700",
+            "marginTop": 0,
+            "minHeight": 24,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+          },
+          Object {},
+        ]
+      }
+      testID=""
+      textAlign="left"
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+  <View
+    contrast={false}
+    status="DEFAULT"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#af9177",
+          "height": 1,
+        },
+      ]
+    }
+  />
+</View>
+`;

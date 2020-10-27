@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Shadow /> should render Shadow correctly 1`] = `
+<View
+  style={
+    Object {
+      "elevation": 2,
+      "shadowColor": "#212121",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 2,
+      },
+      "shadowOpacity": 0.28,
+      "shadowRadius": 2,
+      "width": "100%",
+    }
+  }
+/>
+`;

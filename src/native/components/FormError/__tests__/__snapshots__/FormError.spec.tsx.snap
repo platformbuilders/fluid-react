@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormError /> should render the form error component 1`] = `
+<Text
+  accessibilityLabel="Erro "
+  centered={false}
+  large={true}
+  style={
+    Array [
+      Object {
+        "color": "#ffffff",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#000000",
+        "fontFamily": "System",
+        "fontSize": 17,
+        "fontWeight": "600",
+        "letterSpacing": -0.408,
+        "lineHeight": 22,
+      },
+      Array [
+        Object {
+          "color": "#cc0000",
+          "marginTop": 4.714285714285714,
+          "textAlign": "left",
+        },
+      ],
+    ]
+  }
+  testID="error_"
+>
+  testing error
+</Text>
+`;

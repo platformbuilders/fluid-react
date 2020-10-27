@@ -34,6 +34,6 @@
     "esModuleInterop": true
   },
   "compileOnSave": true,
-  "include": ["src"],
+  "include": ["src", "src/native"],
   "exclude": ["node_modules", "dist"]
 }
