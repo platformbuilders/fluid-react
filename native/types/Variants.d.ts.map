@@ -1,1 +1,0 @@
-{"version":3,"file":"Variants.d.ts","sourceRoot":"","sources":["../src/types/Variants.ts"],"names":[],"mappings":"AAAA,oBAAY,kBAAkB,GAC1B,IAAI,GACJ,IAAI,GACJ,IAAI,GACJ,IAAI,GACJ,IAAI,GACJ,IAAI,GACJ,WAAW,GACX,WAAW,GACX,OAAO,GACP,OAAO,GACP,QAAQ,GACR,SAAS,GACT,UAAU,CAAC;AAEf,oBAAY,cAAc,GAAG;IAC3B,OAAO,CAAC,EAAE,kBAAkB,CAAC;CAC9B,CAAC"}
