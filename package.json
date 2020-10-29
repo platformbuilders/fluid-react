@@ -1,19 +1,19 @@
 {
-  "name": "@platformbuilders/elements",
-  "version": "0.1.0",
-  "description": "Platform Builders Shared Components Library For React Web",
+  "name": "@platformbuilders/react-elements",
+  "version": "0.0.1",
+  "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/platformbuilders/elements.git"
+    "url": "git+https://github.com/platformbuilders/react-elements.git"
   },
   "keywords": [
     "platformbuilders",
     "react",
     "elements"
   ],
-  "author": "Platform Builders <dev@platformbuilders.io>",
+  "author": "Platform Builders <apps@platformbuilders.io>",
   "license": "MIT",
   "private": false,
   "scripts": {
