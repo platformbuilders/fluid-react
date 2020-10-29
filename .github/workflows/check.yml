@@ -21,10 +21,10 @@ jobs:
         uses: borales/actions-yarn/@v2.0.0
         with:
           cmd: install --ignore-engines
-      - name: Test
-        uses: borales/actions-yarn/@v2.0.0
-        with:
-          cmd: test
+      # - name: Test
+      #   uses: borales/actions-yarn/@v2.0.0
+      #   with:
+      #     cmd: test
       - name: Build
         uses: borales/actions-yarn/@v2.0.0
         with:
