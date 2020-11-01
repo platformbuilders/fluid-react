@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
-import { human } from 'react-native-typography';
 import { TypographyType } from '../../types';
 import { Text } from './styles';
 
 const Typography: FC<TypographyType> = ({
   style = [{}],
-  variant = 'body',
   textRef = React.createRef(),
+  variant = 'body',
   children,
   id,
   accessibility,
@@ -16,7 +15,8 @@ const Typography: FC<TypographyType> = ({
     testID={id}
     accessibilityLabel={accessibility}
     ref={textRef}
-    style={[human[variant], style]}
+    style={style}
+    variant={variant}
     {...rest}
   >
     {children}

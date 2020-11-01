@@ -3,10 +3,9 @@ import { isEmpty } from 'lodash';
 import { RNCamera } from 'react-native-camera';
 import FastImage, { Source } from 'react-native-fast-image';
 import ImagePicker from 'react-native-image-picker';
+import If from '../If';
+import { ImageAvatarPlaceholder as defaultAvatar } from '../../assets/images';
 import { Wrapper, CameraView, UploadIconWrapper, UploadIcon } from './styles';
-
-const defaultAvatar =
-  'https://static1.joj.sk/html/assets/avatar-placeholder.jpg';
 
 type Props = {
   ref?: any;
@@ -130,12 +129,14 @@ const Avatar: React.FC<Props> = React.forwardRef(
           <FastImage
             source={getCurrentAvatar()}
             resizeMode={FastImage.resizeMode.cover}
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: '101%', height: '101%' }}
           />
         )}
-        <UploadIconWrapper size={size}>
-          <UploadIcon id="" accessibility="" />
-        </UploadIconWrapper>
+        <If condition={!!displayCamera}>
+          <UploadIconWrapper size={size}>
+            <UploadIcon id="" accessibility="" />
+          </UploadIconWrapper>
+        </If>
       </Wrapper>
     );
   },

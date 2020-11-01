@@ -5,22 +5,14 @@ exports[`<Typography /> should render and match snapshot for default props 1`] =
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 31,
+        "lineHeight": 43,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 17,
-        "fontWeight": "400",
-        "letterSpacing": -0.408,
-        "lineHeight": 22,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="body"
 />
 `;
 
@@ -29,22 +21,14 @@ exports[`<Typography /> should render and match snapshot for variant caption1 1`
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 24,
+        "lineHeight": 31,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 12,
-        "fontWeight": "400",
-        "letterSpacing": 0,
-        "lineHeight": 16,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="caption1"
 />
 `;
 
@@ -53,22 +37,14 @@ exports[`<Typography /> should render and match snapshot for variant caption2 1`
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 22,
+        "lineHeight": 26,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 11,
-        "fontWeight": "400",
-        "letterSpacing": 0.06,
-        "lineHeight": 13,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="caption2"
 />
 `;
 
@@ -77,22 +53,14 @@ exports[`<Typography /> should render and match snapshot for variant footnote 1`
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 26,
+        "lineHeight": 35,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 13,
-        "fontWeight": "400",
-        "letterSpacing": -0.078,
-        "lineHeight": 18,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="footnote"
 />
 `;
 
@@ -101,22 +69,14 @@ exports[`<Typography /> should render and match snapshot for variant headline 1`
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 33,
+        "lineHeight": 43,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 17,
-        "fontWeight": "600",
-        "letterSpacing": -0.408,
-        "lineHeight": 22,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="headline"
 />
 `;
 
@@ -125,22 +85,14 @@ exports[`<Typography /> should render and match snapshot for variant largeTitle 
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 67,
+        "lineHeight": 80,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 34,
-        "fontWeight": "400",
-        "letterSpacing": 0.381836,
-        "lineHeight": 41,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="largeTitle"
 />
 `;
 
@@ -149,22 +101,14 @@ exports[`<Typography /> should render and match snapshot for variant subhead 1`]
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 29,
+        "lineHeight": 39,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 15,
-        "fontWeight": "400",
-        "letterSpacing": -0.24,
-        "lineHeight": 20,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="subhead"
 />
 `;
 
@@ -173,22 +117,14 @@ exports[`<Typography /> should render and match snapshot for variant title1 1`] 
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 55,
+        "lineHeight": 67,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 28,
-        "fontWeight": "400",
-        "letterSpacing": 0.355469,
-        "lineHeight": 34,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="title1"
 />
 `;
 
@@ -197,22 +133,14 @@ exports[`<Typography /> should render and match snapshot for variant title2 1`] 
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 43,
+        "lineHeight": 55,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 22,
-        "fontWeight": "400",
-        "letterSpacing": 0.34375,
-        "lineHeight": 28,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="title2"
 />
 `;
 
@@ -221,22 +149,14 @@ exports[`<Typography /> should render and match snapshot for variant title3 1`] 
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 39,
+        "lineHeight": 49,
       },
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 20,
-        "fontWeight": "400",
-        "letterSpacing": 0.361328,
-        "lineHeight": 25,
-      },
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="title3"
 />
 `;
 
@@ -245,13 +165,13 @@ exports[`<Typography /> should render and match snapshot for variant title4 1`] 
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 35,
+        "lineHeight": 43,
       },
-      undefined,
-      Array [
-        Object {},
-      ],
+      Object {},
     ]
   }
+  variant="title4"
 />
 `;

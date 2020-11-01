@@ -1,12 +1,20 @@
-import { TextInputProps, StyleProp, TextStyle } from 'react-native';
+import {
+  TextInputProps,
+  StyleProp,
+  TextStyle,
+  KeyboardTypeOptions,
+} from 'react-native';
 import { TextInputMaskTypeProp } from 'react-native-masked-text';
+
 import { HitSlopType } from './Common';
+import { TypographyVariants } from './Variants';
 
 export interface TextInputType extends TextInputProps {
   id: string;
   accessibility: string;
   inputRef?: any;
   options?: any;
+  variant?: TypographyVariants;
   large?: boolean;
   borderless?: boolean;
   contrast?: boolean;
@@ -26,8 +34,38 @@ export interface TextInputType extends TextInputProps {
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
   onSubmitEditing?(x?: any): void;
+  placeholderTextColor?: string;
 }
 
 export interface MaskedTextInputType extends TextInputType {
   maskType: TextInputMaskTypeProp;
+}
+
+export interface PinInputType {
+  onChangeText: (text: string) => void;
+  id?: string;
+  accessibility?: string;
+  caption?: string;
+  value?: string;
+  onFulfill?(): void;
+  onBackspace?(): void;
+  password?: boolean;
+  autoFocus?: boolean;
+  editable?: boolean;
+  animated?: boolean;
+  centered?: boolean;
+  restrictToNumbers?: boolean;
+  iconSize?: number;
+  cellSpacing?: number;
+  codeLength?: number;
+  cellSize?: number;
+  placeholder?: string;
+  error?: string | boolean;
+  mask?: string | JSX.Element;
+  maskDelay?: number;
+  cellStyle?: any;
+  cellStyleFocused?: any;
+  textStyle?: any;
+  textStyleFocused?: any;
+  keyboardType?: KeyboardTypeOptions;
 }

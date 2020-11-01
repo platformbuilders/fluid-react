@@ -14,7 +14,9 @@ const Button: FC<ButtonProps> = ({
   disabled = false,
   rounded = false,
   loading = false,
+  contrast = false,
   variant = 'primary',
+  typographyVariant = 'body',
 }) => {
   return (
     <Touchable
@@ -32,10 +34,14 @@ const Button: FC<ButtonProps> = ({
         disabled={disabled}
         rounded={rounded}
       >
-        {loading && <Loading />}
+        {loading && <Loading contrast={contrast} />}
         {!loading && (
           <>
-            <TextButton variant={variant} style={textStyle} disabled={disabled}>
+            <TextButton
+              style={textStyle}
+              disabled={disabled}
+              variant={typographyVariant}
+            >
               {children}
             </TextButton>
           </>

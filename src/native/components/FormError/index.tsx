@@ -11,12 +11,12 @@ type Props = {
   centered?: boolean;
   large?: boolean;
   error?: string | string[] | boolean;
-  id: string;
-  accessibility: string;
+  id?: string;
+  accessibility?: string;
 };
 
 const FormError: FC<Props> = ({
-  id,
+  id = 'form_error',
   accessibility,
   error = '',
   centered = false,
@@ -33,7 +33,7 @@ const FormError: FC<Props> = ({
           centered={centered}
           large={large}
           testID={`error_${id}`}
-          accessibilityLabel={`Erro ${accessibility}`}
+          accessibilityLabel={`Erro ${accessibility || error}`}
           {...rest}
         >
           {error}

@@ -5,13 +5,20 @@ const primary = '#C6B09E';
 const secondary = '#805281';
 const tertiary = '#2A2E39';
 const accent = '#547E6A';
+const disabled = '#eeeeee';
 
 const colors: Colors = {
-  disabled: '#EBEBE4',
+  text: '#212121',
   info: '#4096D1',
   success: '#357a38',
   warning: '#F5B800',
   failure: '#cc0000',
+  disabled: {
+    light: lighten(0.05, disabled),
+    main: disabled,
+    dark: darken(0.3, disabled),
+    contrast: '#cccccc',
+  },
   primary: {
     light: lighten(0.05, primary),
     main: primary,

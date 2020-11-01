@@ -1,6 +1,11 @@
 import { Colors } from './Colors';
-import { Metrics } from './Metrics';
+import { Spacings } from './Spacings';
 import { Animations } from './Animations';
 import { Radius } from './Radius';
+import { TypographyTheme } from './Typography';
 
-export type ThemeType = Colors & Metrics & Radius & Animations;
+export type ThemeType = Colors &
+  Spacings &
+  Radius &
+  Animations &
+  TypographyTheme;

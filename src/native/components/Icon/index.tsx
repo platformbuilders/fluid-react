@@ -1,10 +1,6 @@
 import React, { FC } from 'react';
 import { Animated, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import FeatherIcons from 'react-native-vector-icons/Feather';
-import EntypoIcons from 'react-native-vector-icons/Entypo';
-import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
-import Fontisto from 'react-native-vector-icons/Fontisto';
 import { IconType } from '../../types';
 import Touchable from '../Touchable';
 import * as Icons from '../../assets/svg';
@@ -16,7 +12,6 @@ export const Icon: FC<IconType> = ({
   testID,
   name = '',
   touchable = true,
-  type = 'material',
   size = 20,
   color = undefined,
   style = [{}],
@@ -25,17 +20,9 @@ export const Icon: FC<IconType> = ({
   backgroundColor = '',
   ...rest
 }) => {
-  const iconSet = {
-    feather: FeatherIcons,
-    material: MaterialIcons,
-    fontAwesome: FontAwesomeIcons,
-    entypo: EntypoIcons,
-    fontisto: Fontisto,
-  };
   // eslint-disable-next-line prettier/prettier
   const iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
   const Svg = Icons[`Icon${iconName}`];
-  const IconComponent = iconSet[type];
 
   return (
     <Animated.View style={style}>
@@ -58,7 +45,7 @@ export const Icon: FC<IconType> = ({
               backgroundColor={backgroundColor}
             />
           ) : (
-            <IconComponent name={name} color={color} size={size} />
+            <MaterialIcons name={name} color={color} size={size} />
           )}
         </View>
       </Touchable>

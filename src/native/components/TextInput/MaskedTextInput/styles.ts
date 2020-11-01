@@ -4,4 +4,12 @@ import { TextInput as TextInputStyle } from '../styles';
 
 const Input = TextInputStyle.withComponent(TextInputMask);
 
-export const TextInput = styled(Input)``;
+type Props = {
+  placeholderTextColor?: string;
+};
+
+export const TextInput = styled(Input).attrs((props: Props) => ({
+  placeholderTextColor: props.placeholderTextColor
+    ? props.placeholderTextColor
+    : '#72727260',
+}))``;

@@ -28,8 +28,10 @@ exports[`<Button /> should render button 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#C6B09E",
-          "borderColor": "#ffffff",
-          "borderRadius": 8,
+          "borderColor": "black",
+          "borderRadius": 11,
+          "borderStyle": "solid",
+          "borderWidth": 0,
           "flexDirection": "row",
           "height": 75.42857142857143,
           "justifyContent": "center",
@@ -50,15 +52,19 @@ exports[`<Button /> should render button 1`] = `
       style={
         Array [
           Object {
+            "color": "#212121",
+            "fontSize": 31,
+            "lineHeight": 43,
+          },
+          Object {
             "color": "#ffffff",
-            "fontSize": 25.142857142857142,
             "fontWeight": "500",
             "letterSpacing": 0.4,
           },
           Object {},
         ]
       }
-      variant="primary"
+      variant="body"
     />
   </View>
 </View>
@@ -92,8 +98,10 @@ exports[`<Button /> should render button when rounded 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#C6B09E",
-          "borderColor": "#ffffff",
-          "borderRadius": 50,
+          "borderColor": "black",
+          "borderRadius": 37.714285714285715,
+          "borderStyle": "solid",
+          "borderWidth": 0,
           "flexDirection": "row",
           "height": 75.42857142857143,
           "justifyContent": "center",
@@ -114,15 +122,19 @@ exports[`<Button /> should render button when rounded 1`] = `
       style={
         Array [
           Object {
+            "color": "#212121",
+            "fontSize": 31,
+            "lineHeight": 43,
+          },
+          Object {
             "color": "#ffffff",
-            "fontSize": 25.142857142857142,
             "fontWeight": "500",
             "letterSpacing": 0.4,
           },
           Object {},
         ]
       }
-      variant="primary"
+      variant="body"
     />
   </View>
 </View>
@@ -156,8 +168,10 @@ exports[`<Button /> should render button with loading 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#C6B09E",
-          "borderColor": "#ffffff",
-          "borderRadius": 8,
+          "borderColor": "black",
+          "borderRadius": 11,
+          "borderStyle": "solid",
+          "borderWidth": 0,
           "flexDirection": "row",
           "height": 75.42857142857143,
           "justifyContent": "center",
@@ -191,8 +205,9 @@ exports[`<Button /> should render button with loading 1`] = `
       }
     >
       <View
-        accessibilitylabel="Aguarde"
+        accessibilityLabel="Aguarde"
         autoPlay={true}
+        contrast={false}
         enableMergePathsAndroidForKitKatAndAbove={false}
         forwardedRef={[Function]}
         loop={true}
