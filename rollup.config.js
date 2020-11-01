@@ -1,5 +1,6 @@
 import typescript from 'rollup-plugin-typescript2';
 import json from '@rollup/plugin-json';
+import image from '@rollup/plugin-image';
 
 import pkg from './package.json';
 
@@ -17,6 +18,7 @@ const esm = {
 const baseConfig = {
   plugins: [
     json(),
+    image(),
     typescript({
       typescript: require('typescript'),
     }),
