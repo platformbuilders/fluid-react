@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -54,7 +54,9 @@
     "react-native-checkbox": ">=2.0.0",
     "react-native-fast-image": ">=8.1.5",
     "react-native-svg": ">=12.1.0",
+    "react-native-markdown-display": "^6.1.6",
     "react-native-vector-icons": "^7.0.0",
+    "react-native-collapsible": "^1.5.2",
     "react-router-dom": ">=5",
     "styled-components": ">=5"
   },

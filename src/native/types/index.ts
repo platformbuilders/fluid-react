@@ -1,5 +1,6 @@
 export * from './Accordion';
 export * from './Common';
+export * from './Button';
 export * from './Colors';
 export * from './ThemeType';
 export * from './Metrics';
