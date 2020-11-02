@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
-import { getTheme } from '../../utils/helpers';
+import { getTheme, getFontSize, getLineHeight } from '../../utils/helpers';
+import { TypographyType } from '../../types';
 
-const defaultColor = getTheme('primary.contrast');
-
-export const Text = styled.Text`
-  color: ${defaultColor};
+export const Text = styled.Text<TypographyType>`
+  color: ${getTheme('text')};
+  font-size: ${getFontSize}px;
+  line-height: ${getLineHeight}px;
 `;

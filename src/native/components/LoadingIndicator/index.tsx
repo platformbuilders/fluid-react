@@ -4,13 +4,15 @@ import { Indicator, smallSize, largeSize } from './style';
 
 const Loading: FC<LoadingType> = ({
   large = false,
+  contrast = false,
   variant = 'circular',
   ...rest
 }) => (
   <Indicator
     testID="loading"
-    accessibilitylabel="Aguarde"
+    accessibilityLabel="Aguarde"
     variant={variant}
+    contrast={contrast}
     style={large ? largeSize : smallSize}
     {...rest}
   />

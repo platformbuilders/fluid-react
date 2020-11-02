@@ -6,27 +6,38 @@ import { AnimationObject, LoadingVariants } from '../../types';
 import LoadingAnimation from '../../assets/animations/loading.json';
 
 export const circularLoading = getTheme('circularLoading');
+export const contrastCircularLoading = getTheme('contrastCircularLoading');
 export const buttonLoading = getTheme('buttonLoading');
+export const contrastButtonLoading = getTheme('contrastButtonLoading');
 export const linearLoading = getTheme('linearLoading');
+export const contrastLinearLoading = getTheme('contrastLinearLoading');
 
-interface IndicatorProps {
+type IndicatorProps = {
+  contrast: boolean;
   variant: LoadingVariants;
   testID: string;
-  accessibilitylabel: string;
-}
+  accessibilityLabel: string;
+};
 
 const loadingVariant = (
   props: any,
 ): string | AnimationObject | { uri: string } => {
-  switch (props.variant) {
+  const { variant, contrast } = props;
+  switch (variant) {
     case 'button':
-      return buttonLoading(props) || LoadingAnimation;
+      return contrast
+        ? contrastButtonLoading(props)
+        : buttonLoading(props) || LoadingAnimation;
     case 'circular':
-      return circularLoading(props) || LoadingAnimation;
+      return contrast
+        ? contrastCircularLoading(props)
+        : circularLoading(props) || LoadingAnimation;
     case 'linear':
-      return linearLoading(props) || LoadingAnimation;
+      return contrast
+        ? contrastLinearLoading(props)
+        : linearLoading(props) || LoadingAnimation;
     default:
-      return circularLoading(props) || LoadingAnimation;
+      return contrast ? contrastCircularLoading(props) : circularLoading(props);
   }
 };
 

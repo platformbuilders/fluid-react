@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MaskedTextInput /> should render textinput 1`] = `
+<TextInput
+  accessibility=""
+  accessibilityLabel=""
+  allowFontScaling={true}
+  contrast={false}
+  id="test"
+  keyboardType="numeric"
+  multiline={false}
+  onChangeText={[Function]}
+  placeholderTextColor="#72727260"
+  rejectResponderTermination={true}
+  status="DEFAULT"
+  style={
+    Array [
+      Object {
+        "borderWidth": 0,
+        "color": "#212121",
+        "flexGrow": 1,
+        "fontSize": 33,
+        "lineHeight": 43,
+        "marginTop": 0,
+        "minHeight": 37.714285714285715,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+      },
+    ]
+  }
+  testID="test"
+  textAlign="left"
+  type="cpf"
+  underlineColorAndroid="transparent"
+  value=""
+  variant="headline"
+/>
+`;

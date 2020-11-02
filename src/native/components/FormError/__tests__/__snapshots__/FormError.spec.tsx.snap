@@ -2,33 +2,25 @@
 
 exports[`<FormError /> should render the form error component 1`] = `
 <Text
-  accessibilityLabel="Erro "
+  accessibilityLabel="Erro testing error"
   centered={false}
   large={true}
   style={
     Array [
       Object {
-        "color": "#ffffff",
+        "color": "#212121",
+        "fontSize": 26,
+        "lineHeight": 35,
       },
       Object {
-        "backgroundColor": "transparent",
-        "color": "#000000",
-        "fontFamily": "System",
-        "fontSize": 17,
-        "fontWeight": "600",
-        "letterSpacing": -0.408,
-        "lineHeight": 22,
+        "color": "#cc0000",
+        "marginTop": 0,
+        "textAlign": "left",
       },
-      Array [
-        Object {
-          "color": "#cc0000",
-          "marginTop": 4.714285714285714,
-          "textAlign": "left",
-        },
-      ],
     ]
   }
   testID="error_"
+  variant="footnote"
 >
   testing error
 </Text>

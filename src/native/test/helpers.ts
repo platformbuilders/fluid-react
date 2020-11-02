@@ -1,8 +1,9 @@
-import { animations, colors, metrics, radius } from '../theme';
+import { animations, colors, spacing, radius, typography } from '../theme';
 
 export const theme = {
   ...colors,
   ...animations,
-  ...metrics,
+  ...spacing,
   ...radius,
+  ...typography,
 };

@@ -7,7 +7,7 @@ exports[`<TextInput /> should render textinput 1`] = `
     Array [
       Object {
         "justifyContent": "flex-start",
-        "paddingTop": 12.571428571428571,
+        "paddingTop": 0,
         "position": "relative",
       },
       Object {},
@@ -17,24 +17,24 @@ exports[`<TextInput /> should render textinput 1`] = `
   <Text
     accessibilityLabel="Erro "
     contrast={false}
-    isPlaceholder={true}
     status="DEFAULT"
     style={
       Array [
         Object {
-          "color": "#af9177",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "color": "#212121",
+          "fontSize": 31,
+          "lineHeight": 43,
           "position": "absolute",
           "top": 20,
         },
         Object {
-          "fontSize": 18,
+          "fontSize": 35,
           "top": 20,
         },
       ]
     }
-    testID="error_"
+    testID="error_test"
+    variant="body"
   >
     
   </Text>
@@ -43,9 +43,11 @@ exports[`<TextInput /> should render textinput 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
           "flexDirection": "row",
-          "marginBottom": 9,
-          "marginTop": 6,
+          "justifyContent": "center",
+          "paddingTop": 18.857142857142858,
+          "width": "100%",
         },
       ]
     }
@@ -53,11 +55,12 @@ exports[`<TextInput /> should render textinput 1`] = `
     <TextInput
       accessibility=""
       accessibilityLabel=""
-      allowFontScaling={true}
+      allowFontScaling={false}
       borderless={false}
       centered={false}
       contrast={false}
-      id=""
+      id="test"
+      isPlaceholder={true}
       keyboardType="default"
       large={false}
       multiline={false}
@@ -65,20 +68,19 @@ exports[`<TextInput /> should render textinput 1`] = `
       onChangeText={[Function]}
       onFocus={[Function]}
       placeholder=""
-      placeholderTextColor="#af917760"
+      placeholderTextColor="#72727260"
       rejectResponderTermination={true}
-      selectionColor="#af917780"
       status="DEFAULT"
       style={
         Array [
           Object {
             "borderWidth": 0,
-            "color": "#af9177",
+            "color": "#212121",
             "flexGrow": 1,
-            "fontSize": 16,
-            "fontWeight": "700",
+            "fontSize": 33,
+            "lineHeight": 43,
             "marginTop": 0,
-            "minHeight": 24,
+            "minHeight": 37.714285714285715,
             "paddingBottom": 0,
             "paddingLeft": 0,
             "paddingRight": 0,
@@ -87,10 +89,11 @@ exports[`<TextInput /> should render textinput 1`] = `
           Object {},
         ]
       }
-      testID=""
+      testID="test"
       textAlign="left"
       underlineColorAndroid="transparent"
       value=""
+      variant="headline"
     />
   </View>
   <View
@@ -99,8 +102,8 @@ exports[`<TextInput /> should render textinput 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#af9177",
-          "height": 1,
+          "backgroundColor": "#212121",
+          "height": 0.5,
         },
       ]
     }

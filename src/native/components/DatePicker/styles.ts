@@ -9,13 +9,13 @@ import { InputStatus } from '../../types';
 const getStatusStyle = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');
 const primaryDark = getTheme('primary.dark');
-const secondaryDark = getTheme('disabled');
+const disabled = getTheme('disabled.main');
 const inputMainColor = (props: { dark: any }): any =>
   getStatusStyle({
     [InputStatus.Success]: getTheme('success'),
     [InputStatus.Failure]: getTheme('failure'),
     [InputStatus.Default]: props.dark ? primaryDark : primaryContrast,
-    [InputStatus.Disabled]: secondaryDark,
+    [InputStatus.Disabled]: disabled,
   });
 
 export const LABEL_UPPER_STYLE = {

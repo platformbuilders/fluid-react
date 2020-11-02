@@ -20,13 +20,13 @@ interface Props {
   testID?: string;
   accessibilityLabel?: string;
   confirmBtnText?: string;
-  mode: DatePickerProps['mode'];
-  androidMode: DatePickerProps['androidMode'];
+  mode?: DatePickerProps['mode'];
+  androidMode?: DatePickerProps['androidMode'];
   onDateChange?(x: string): void;
   maxDate?: string;
   editable?: boolean;
-  locale: string;
-  format: string;
+  locale?: string;
+  format?: string;
   dark?: boolean;
   status?: string;
   id: string;

@@ -13,6 +13,9 @@ export interface AnimationObject {
 
 export type Animations = {
   circularLoading?: string | AnimationObject | { uri: string };
+  contrastCircularLoading?: string | AnimationObject | { uri: string };
   linearLoading?: string | AnimationObject | { uri: string };
+  contrastLinearLoading?: string | AnimationObject | { uri: string };
   buttonLoading?: string | AnimationObject | { uri: string };
+  contrastButtonLoading?: string | AnimationObject | { uri: string };
 };

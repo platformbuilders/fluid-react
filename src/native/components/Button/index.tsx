@@ -1,19 +1,8 @@
 import React, { FC } from 'react';
-import { StyleProp, ViewStyle, TextStyle } from 'react-native';
-import { TouchableType, ButtonVariants } from '../../types';
+import { ButtonProps } from '../../types';
 import { Touchable, ButtonWrapper, TextButton, Loading } from './styles';
 
-interface Props extends TouchableType {
-  style?: StyleProp<ViewStyle>;
-  textStyle?: StyleProp<TextStyle>;
-  rounded?: boolean;
-  secondary?: boolean;
-  tertiary?: boolean;
-  loading?: boolean;
-  variant?: ButtonVariants;
-}
-
-const Button: FC<Props> = ({
+const Button: FC<ButtonProps> = ({
   id,
   children,
   onPress,
@@ -25,7 +14,9 @@ const Button: FC<Props> = ({
   disabled = false,
   rounded = false,
   loading = false,
+  contrast = false,
   variant = 'primary',
+  typographyVariant = 'body',
 }) => {
   return (
     <Touchable
@@ -43,10 +34,14 @@ const Button: FC<Props> = ({
         disabled={disabled}
         rounded={rounded}
       >
-        {loading && <Loading />}
+        {loading && <Loading contrast={contrast} />}
         {!loading && (
           <>
-            <TextButton variant={variant} style={textStyle} disabled={disabled}>
+            <TextButton
+              style={textStyle}
+              disabled={disabled}
+              variant={typographyVariant}
+            >
               {children}
             </TextButton>
           </>

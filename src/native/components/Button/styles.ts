@@ -1,11 +1,13 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import TouchableComponent from '../Touchable';
+import TypographyComponent from '../Typography';
 import LoadingIndicator from '../LoadingIndicator';
 import { ButtonVariants } from '../../types';
 import { getTheme } from '../../utils/helpers';
 
-const disabled = getTheme('disabled');
+const disabledMain = getTheme('disabled.main');
+const disabledContrast = getTheme('disabled.contrast');
 const primaryMain = getTheme('primary.main');
 const primaryContrast = getTheme('primary.contrast');
 const secondaryMain = getTheme('secondary.main');
@@ -14,18 +16,19 @@ const tertiaryMain = getTheme('tertiary.main');
 const tertiaryContrast = getTheme('tertiary.contrast');
 const accentMain = getTheme('accent.main');
 const accentContrast = getTheme('accent.contrast');
+const buttonRadius = getTheme('buttonRadius');
 
-interface ButtonWrapperProps {
+type ButtonWrapperProps = {
   rounded: boolean;
   variant: ButtonVariants;
   disabled?: boolean;
-}
+};
 
 const buttonSize = moderateScale(48);
 
 const getBackgroundColor = (props: ButtonWrapperProps): string => {
   if (props.disabled) {
-    return disabled(props);
+    return disabledMain(props);
   }
   switch (props.variant) {
     case 'primary':
@@ -43,12 +46,15 @@ const getBackgroundColor = (props: ButtonWrapperProps): string => {
   }
 };
 
-interface TextButtonProps {
+type TextButtonProps = {
   variant: ButtonVariants;
   disabled?: boolean;
-}
+};
 
 const getTextColor = (props: TextButtonProps): string => {
+  if (props.disabled) {
+    return disabledContrast(props);
+  }
   switch (props.variant) {
     case 'primary':
       return primaryContrast(props);
@@ -59,15 +65,15 @@ const getTextColor = (props: TextButtonProps): string => {
     case 'accent':
       return accentContrast(props);
     case 'flat':
-      return primaryContrast(props);
+      return primaryMain(props);
     default:
       return primaryContrast(props);
   }
 };
 
-interface TouchableProps {
+type TouchableProps = {
   rounded: boolean;
-}
+};
 export const Touchable = styled(TouchableComponent)<TouchableProps>`
   border-radius: ${(props): string => (props.rounded ? '50px' : '0')};
 `;
@@ -79,14 +85,16 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
   margin-vertical: ${moderateScale(6)}px;
   min-width: ${moderateScale(180)}px;
   padding: ${(props): string => (props.rounded ? '0' : '10px 11px')};
-  border-radius: ${(props): string => (props.rounded ? '50px' : '8px')};
+  border-radius: ${(props): string =>
+    props.rounded ? `${buttonSize / 2}px` : buttonRadius(props)};
   justify-content: center;
   background-color: ${getBackgroundColor};
   border-color: ${getTextColor};
+  border: ${(props) =>
+    props.variant === 'flat' ? `1px solid ${getTextColor(props)}` : '0'};
 `;
 
-export const TextButton = styled.Text<TextButtonProps>`
-  font-size: ${moderateScale(16)}px;
+export const TextButton = styled(TypographyComponent)<TextButtonProps | any>`
   letter-spacing: 0.4px;
   color: ${getTextColor};
   font-weight: 500;

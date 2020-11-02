@@ -33,8 +33,8 @@ exports[`<Avatar /> should render Avatar 1`] = `
           "overflow": "hidden",
         },
         Object {
-          "height": "100%",
-          "width": "100%",
+          "height": "101%",
+          "width": "101%",
         },
       ]
     }
@@ -43,7 +43,9 @@ exports[`<Avatar /> should render Avatar 1`] = `
       resizeMode="cover"
       source={
         Object {
-          "uri": "https://static1.joj.sk/html/assets/avatar-placeholder.jpg",
+          "uri": Object {
+            "testUri": "../../../src/assets/images/avatar-placeholder.png",
+          },
         }
       }
       style={
@@ -56,73 +58,6 @@ exports[`<Avatar /> should render Avatar 1`] = `
         }
       }
     />
-  </View>
-  <View
-    size={50}
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#547E6A",
-          "borderRadius": 6.25,
-          "height": 12.5,
-          "justifyContent": "center",
-          "position": "absolute",
-          "width": 12.5,
-          "zIndex": 2,
-        },
-      ]
-    }
-  >
-    <View
-      style={
-        Object {
-          "color": "#ffffff",
-        }
-      }
-    >
-      <View
-        accessibilityLabel="Camera"
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID=""
-      >
-        <View>
-          <Text
-            allowFontScaling={false}
-            style={
-              Array [
-                Object {
-                  "color": undefined,
-                  "fontSize": 20,
-                },
-                undefined,
-                Object {
-                  "fontFamily": "Material Design Icons",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-                Object {},
-              ]
-            }
-          >
-            󰄀
-          </Text>
-        </View>
-      </View>
-    </View>
   </View>
 </View>
 `;

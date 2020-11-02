@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> should render link 1`] = `
+<View
+  accessibilityLabel=""
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID="testing"
+>
+  <Text
+    accessibilityLabel="Texto "
+    style={
+      Array [
+        Object {
+          "color": "#212121",
+          "fontSize": 31,
+          "lineHeight": 43,
+        },
+        Object {
+          "color": "#ffffff",
+          "fontWeight": "500",
+          "textDecorationColor": "#ffffff",
+          "textDecorationLine": "underline",
+        },
+      ]
+    }
+    testID="text_testing"
+    variant="body"
+  />
+</View>
+`;

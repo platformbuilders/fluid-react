@@ -15,7 +15,6 @@ const Home: React.FC = () => {
       accessibility="icone"
       accessibilityLabel="icone"
       testID="test_icon"
-      type="material"
       name="atom"
       touchable
       color="blue"
@@ -37,7 +36,6 @@ export default Home;
 | testID | false | string |  | |
 | name | true | string | ' ' | icon save in application or from [MaterialCommunityIcons](https://materialdesignicons.com/) |
 | size | false | number | 20  | icon size |
-| type | false | string | material  | icon type |
 | color | false | string | undefined  | icon color |
 | touchable | false | boolean | true  | icon clickable |
 | style | false | any | []  | icon style |

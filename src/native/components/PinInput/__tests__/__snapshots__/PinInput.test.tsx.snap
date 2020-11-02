@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PinInput /> should render textinput 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginBottom": 18.857142857142858,
+      },
+    ]
+  }
+>
+  <View
+    forwardedRef={[Function]}
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+        "height": 88,
+        "justifyContent": "center",
+        "position": "relative",
+        "width": 380.2857142857143,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": "100%",
+          "margin": 0,
+          "position": "absolute",
+        }
+      }
+    >
+      <View
+        forwardedRef={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": undefined,
+            "borderRadius": 12.571428571428571,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "height": 88,
+            "justifyContent": "center",
+            "marginLeft": 4.714285714285714,
+            "marginRight": 4.714285714285714,
+            "width": 88,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 40.85714285714286,
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        forwardedRef={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": undefined,
+            "borderRadius": 12.571428571428571,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "height": 88,
+            "justifyContent": "center",
+            "marginLeft": 4.714285714285714,
+            "marginRight": 4.714285714285714,
+            "width": 88,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 40.85714285714286,
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        forwardedRef={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": undefined,
+            "borderRadius": 12.571428571428571,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "height": 88,
+            "justifyContent": "center",
+            "marginLeft": 4.714285714285714,
+            "marginRight": 4.714285714285714,
+            "width": 88,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 40.85714285714286,
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        forwardedRef={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": undefined,
+            "borderRadius": 12.571428571428571,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "height": 88,
+            "justifyContent": "center",
+            "marginLeft": 4.714285714285714,
+            "marginRight": 4.714285714285714,
+            "width": 88,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 40.85714285714286,
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      autoFocus={false}
+      caretHidden={true}
+      disableFullscreenUI={true}
+      editable={true}
+      keyboardType="numeric"
+      maxLength={4}
+      numberOfLines={1}
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      onKeyPress={[Function]}
+      rejectResponderTermination={true}
+      selection={
+        Object {
+          "end": 0,
+          "start": 0,
+        }
+      }
+      spellCheck={false}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 0,
+          "textAlign": "center",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;

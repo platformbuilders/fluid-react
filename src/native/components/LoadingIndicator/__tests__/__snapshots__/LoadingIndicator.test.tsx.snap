@@ -19,8 +19,9 @@ exports[`<LoadingIndicator /> should render LoadingIndicator correctly 1`] = `
   }
 >
   <View
-    accessibilitylabel="Aguarde"
+    accessibilityLabel="Aguarde"
     autoPlay={true}
+    contrast={false}
     enableMergePathsAndroidForKitKatAndAbove={false}
     forwardedRef={[Function]}
     loop={true}

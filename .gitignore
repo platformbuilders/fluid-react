@@ -61,6 +61,7 @@ buck-out/
 /coverage
 
 # dist
+/native
 /dist
 package-lock.json
 
@@ -75,5 +76,3 @@ package-lock.json
 *.prefs
 .classpath
 .project
-
-native/

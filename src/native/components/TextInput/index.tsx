@@ -1,14 +1,15 @@
-import React, { FC, useState, useEffect, useCallback } from 'react';
+import React, { FC, useState, useEffect, useCallback, useRef } from 'react';
 import { Animated } from 'react-native';
 import { isEmpty } from 'lodash';
 import { usePrevious } from '../../utils/hooks';
-import { TextInputType, InputStatus } from '../../types';
+import { isIOS } from '../../utils/helpers/isIOS';
+import { TextInputType, InputStatus, TypographyVariants } from '../../types';
 
 import MaskedTextInput from './MaskedTextInput';
 import {
   Label,
   Wrapper,
-  TextInput,
+  TextInput as DefaultTextInput,
   BottomLine,
   InputAreaWrapper,
   Icon,
@@ -17,7 +18,7 @@ import {
 } from './styles';
 import FormError from '../FormError';
 
-const AnimatedTextInput: FC<TextInputType> = ({
+const TextInput: FC<TextInputType> = ({
   id,
   accessibility,
   accessibilityLabel,
@@ -27,6 +28,8 @@ const AnimatedTextInput: FC<TextInputType> = ({
   centered = false,
   borderless = false,
   multiline = false,
+  autoFocus = false,
+  allowFontScaling = false,
   keyboardType = 'default',
   iconSize = 20,
   iconTouchableEnabled = false,
@@ -40,19 +43,23 @@ const AnimatedTextInput: FC<TextInputType> = ({
   style = {},
   textStyle = {},
   iconHitSlop = {},
-  inputRef = React.createRef(),
+  inputRef = useRef(null),
   onBlur = (): any => {},
   onFocus = (): any => {},
   onChangeText = (): any => {},
   onPressIcon = (): any => {},
+  ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
   const [labelAnimatedStyle] = useState({
     top: new Animated.Value(LABEL_LOWER_STYLE.top),
     fontSize: new Animated.Value(LABEL_LOWER_STYLE.fontSize),
   });
-
   const [isPlaceholder, setIsPlaceHolder] = useState(true);
+  const previousValue = usePrevious<string>(value || '');
+  const labelVariant: TypographyVariants = large ? 'subhead' : 'footnote';
+  const textVariant: TypographyVariants = large ? 'title2' : 'headline';
+  const placeholderVariant: TypographyVariants = large ? 'title3' : 'body';
 
   const animateComponent = useCallback(
     (updatedLabelStyle: any): void => {
@@ -105,6 +112,7 @@ const AnimatedTextInput: FC<TextInputType> = ({
       accessibilityLabel,
       testID,
       large,
+      variant: textVariant,
       centered,
       contrast,
       borderless,
@@ -112,12 +120,15 @@ const AnimatedTextInput: FC<TextInputType> = ({
       value,
       keyboardType,
       onChangeText,
+      allowFontScaling,
+      isPlaceholder,
       status: inputStatus,
       placeholder: renderPlaceholder,
       style: textStyle,
       onBlur: handleOnBlur,
       onFocus: handleOnFocus,
       underlineColorAndroid: 'transparent',
+      ...rest,
     };
 
     return maskType ? (
@@ -129,7 +140,7 @@ const AnimatedTextInput: FC<TextInputType> = ({
         {...textInputProps}
       />
     ) : (
-      <TextInput
+      <DefaultTextInput
         ref={inputRef}
         accessibilityLabel={accessibilityLabel || accessibility}
         testID={testID || id}
@@ -138,10 +149,7 @@ const AnimatedTextInput: FC<TextInputType> = ({
     );
   };
 
-  const previousValue = usePrevious<string>(value || '');
-
-  useEffect(() => {
-    // eslint-disable-next-line prettier/prettier
+  const setAnimation = () => {
     const wasEmpty = previousValue?.length === 0;
     if (value && value.length && wasEmpty) {
       animationUp();
@@ -149,7 +157,33 @@ const AnimatedTextInput: FC<TextInputType> = ({
     if (label === '') {
       setIsPlaceHolder(false);
     }
+  };
+
+  const focusInputElement = (element: any) => {
+    const delay = isIOS() ? 0 : 5;
+    setTimeout(() => {
+      element.focus();
+    }, delay);
+  };
+
+  const checkFocus = () => {
+    let element = inputRef?.current;
+    if (autoFocus) {
+      if (maskType) {
+        // eslint-disable-next-line no-underscore-dangle
+        element = inputRef?.current?._inputElement;
+      }
+      focusInputElement(element);
+    }
+  };
+
+  useEffect(() => {
+    setAnimation();
   }, [value, previousValue]);
+
+  useEffect(() => {
+    checkFocus();
+  }, []); // mount only
 
   const hasError = !isEmpty(error);
 
@@ -170,7 +204,7 @@ const AnimatedTextInput: FC<TextInputType> = ({
             status={status}
             contrast={contrast}
             style={labelAnimatedStyle}
-            isPlaceholder={isPlaceholder}
+            variant={isPlaceholder ? placeholderVariant : labelVariant}
             testID={`error_${id}`}
             accessibilityLabel={`Erro ${accessibility}`}
           >
@@ -199,4 +233,4 @@ const AnimatedTextInput: FC<TextInputType> = ({
   );
 };
 
-export default AnimatedTextInput;
+export default TextInput;

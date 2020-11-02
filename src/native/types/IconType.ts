@@ -6,7 +6,6 @@ export interface IconType extends TouchableType {
   touchable?: boolean;
   size?: number;
   color?: string;
-  type?: string;
   style?: any;
   borderColor?: string;
   backgroundColor?: string;
