@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> should render radio button component 1`] = `
+<View
+  accessibilityLabel="Select information"
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "borderColor": "#212121",
+      "borderRadius": 14.142857142857142,
+      "borderStyle": "solid",
+      "borderWidth": 1.5714285714285714,
+      "height": 28.285714285714285,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 28.285714285714285,
+    }
+  }
+  testID="testing_radio_btn"
+/>
+`;
