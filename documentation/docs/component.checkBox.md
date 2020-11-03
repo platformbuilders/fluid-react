@@ -31,6 +31,8 @@ export const CheckExample = () => {
 
 Esse componente tem como função auxiliar na manipulação, manutenção e padronização das caixas de seleção dentro de uma aplicação.
 
+## Atributos
+
 | Formato        | Conceito      | Tipo   |
 | ------|-----|-----|
 | **checked**  	| Define se está marcado ou não.	| **boolean** 	|
