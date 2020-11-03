@@ -17,6 +17,9 @@ module.exports = {
         ],
         Button: [
           'component.button.concept',
+        ],
+        CheckBox: [
+          'component.checkBox.concept',
         ]
       },
     ],
