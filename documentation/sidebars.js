@@ -23,6 +23,9 @@ module.exports = {
         ],
         FormContainer: [
           'component.formContainer.concept'
+        ],
+        FormError : [
+          'component.formError.concept'
         ]
       },
     ],
