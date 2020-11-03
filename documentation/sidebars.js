@@ -20,6 +20,9 @@ module.exports = {
         ],
         CheckBox: [
           'component.checkBox.concept',
+        ],
+        FormContainer: [
+          'component.formContainer.concept'
         ]
       },
     ],
