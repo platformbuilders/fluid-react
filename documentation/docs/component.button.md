@@ -1,0 +1,64 @@
+---
+id: component.button.concept
+title: Conceito
+---
+
+<!-- Component declaration begin -->
+
+import { Button } from '@platformbuilders/react-ui';
+
+<!-- Component declaration end -->
+
+<!-- Documentation begin -->
+
+Esse componente tem como função auxiliar na manipulação, manutenção e padronização de botões dentro de uma aplicação.
+
+## Atributos
+
+| Formato        | Conceito      | Tipo   |
+| ------|-----|-----|
+| **children**  	| Aqui é declarado uma string que será renderizada dentro do botão.	| **string** 	|
+| **onPress** 	| Evento disparado quando o botão for pressionado, quando evocado, chama uma função. 	| **function** 	|
+| **disabled?** 	| Define se o botão está habilitado ou não.	| **boolean** 	|
+| **key?** 	| Geralmente utilizado em listas, onde cada elemento tem sua chave. 	| **string** 	|
+| **loading?** 	| Declarado se o componente estiver carregando. 	| **boolean** 	|
+| **secondary?** 	| É declarado quando o tema do componente é o secundário. 	| **boolean** 	|
+
+<!-- 
+| **transparent?** 	| Estilo da forma a ser renderizada, podendo ser: *circle, rounded* ou *square* 	| **string** 	|
+| **type?** 	| Estilo da forma a ser renderizada, podendo ser: *circle, rounded* ou *square* 	| **string** 	|
+-->
+
+## Exemplo
+
+### Fonte
+```javascript
+import { Button } from '@platformbuilders/react-ui';
+
+function handleClickButton(){
+  // YOUR_FUNCTION...
+}
+
+<Button
+  onPress={handleClickButton}
+  children={'Click me!'}
+  style={{
+    color: "#F9BD00",
+    border: "1px solid #F9BD00"
+  }}
+/>
+```
+
+### Visualização
+
+
+<Button
+  onPress={() => {}}
+  children={'Click me!'}
+  style={{
+    color: "#F9BD00",
+    border: "1px solid #F9BD00"
+  }}
+/>
+
+<!-- Documentation end -->

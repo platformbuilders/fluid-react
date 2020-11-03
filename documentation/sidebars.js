@@ -15,6 +15,9 @@ module.exports = {
             ],
           }
         ],
+        Button: [
+          'component.button.concept',
+        ]
       },
     ],
   },
