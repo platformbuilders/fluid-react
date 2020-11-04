@@ -29,6 +29,9 @@ module.exports = {
         ],
         Icon: [
           'component.icon.concept'
+        ],
+        If: [
+          'component.if.concept'
         ]
       },
     ],
