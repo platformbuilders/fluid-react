@@ -25,7 +25,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ### Fonte
 ```javascript
-import { Icon } from '@platformbuilders/react-ui';
+import { If } from '@platformbuilders/react-ui';
 
 <If
   condition={true}

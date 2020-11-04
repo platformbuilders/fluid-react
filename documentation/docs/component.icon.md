@@ -6,7 +6,6 @@ title: Conceito
 <!-- Component declaration begin -->
 
 import { Icon } from '@platformbuilders/react-ui';
-import MaterialIcon from '@material-ui/core/Icon';
 
 <!-- Component declaration end -->
 
