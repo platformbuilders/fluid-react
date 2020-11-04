@@ -35,6 +35,9 @@ module.exports = {
         ],
         LoadingIndicator: [
           'component.loadingIndicator.concept'
+        ],
+        Paper: [
+          'component.paper.concept'
         ]
       },
     ],
