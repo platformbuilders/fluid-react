@@ -38,6 +38,9 @@ module.exports = {
         ],
         Paper: [
           'component.paper.concept'
+        ],
+        Select: [
+          'component.Select.concept'
         ]
       },
     ],
