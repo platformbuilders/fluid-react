@@ -32,6 +32,9 @@ module.exports = {
         ],
         If: [
           'component.if.concept'
+        ],
+        LoadingIndicator: [
+          'component.loadingIndicator.concept'
         ]
       },
     ],
