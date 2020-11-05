@@ -44,6 +44,9 @@ module.exports = {
         ],
         TextInput: [
           'component.textInput.concept'
+        ],
+        Touchable: [
+          'component.touchable.concept'
         ]
       },
     ],
