@@ -47,6 +47,9 @@ module.exports = {
         ],
         Touchable: [
           'component.touchable.concept'
+        ],
+        Typography: [
+          'component.typography.concept'
         ]
       },
     ],
