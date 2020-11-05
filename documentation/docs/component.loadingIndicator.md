@@ -1,6 +1,6 @@
 ---
-id: component.loadingIndicator.concept
-title: Conceito
+id: component.loadingIndicator
+title: LoadingIndicator
 ---
 
 <!-- Component declaration begin -->
@@ -13,25 +13,24 @@ import { LoadingIndicator } from '@platformbuilders/react-ui';
 
 Esse componente tem como função auxiliar na manipulação, manutenção e padronização de animações de carregamento dentro de uma aplicação.
 
-## Atributos
-
-| Formato        | Conceito      | Tipo   |
-| ------|-----|-----|
-| **children?**  	| Elementos/componentes filhos. 	| **React.ReactNode** 	|
-| **size?**  	| Define o tamanho da animação loading, podendo ser: *small, medium e large*.	| **string** 	|
-| **key?** 	| Geralmente utilizado em listas, onde cada elemento tem sua chave. 	| **string** 	|
-
 ## Exemplo
 
+<LoadingIndicator/>
+
 ### Fonte
+
 ```javascript
 import { LoadingIndicator } from '@platformbuilders/react-ui';
 
-<LoadingIndicator/>
+<LoadingIndicator />;
 ```
 
-### Visualização
+## Atributos
 
-<LoadingIndicator/>
+| Formato       | Conceito                                                                    | Tipo                |
+| ------------- | --------------------------------------------------------------------------- | ------------------- |
+| **children?** | Elementos/componentes filhos.                                               | **React.ReactNode** |
+| **size?**     | Define o tamanho da animação loading, podendo ser: _small, medium e large_. | **string**          |
+| **key?**      | Geralmente utilizado em listas, onde cada elemento tem sua chave.           | **string**          |
 
 <!-- Documentation end -->

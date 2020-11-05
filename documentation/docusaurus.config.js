@@ -1,5 +1,5 @@
 module.exports = {
-  title: '@platformbuilders/react-ui',
+  title: '@platformbuilders/react-elements',
   tagline: `The perfect environment to learn and with the option to don't get your eyes burned down`,
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -9,10 +9,10 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'React Elements',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/favicon.ico',
       },
       items: [
         {
@@ -20,12 +20,6 @@ module.exports = {
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
         },
       ],
     },
@@ -36,42 +30,8 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
+              label: 'Componentes',
               to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
             },
           ],
         },
@@ -88,12 +48,6 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

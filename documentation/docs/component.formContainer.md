@@ -1,6 +1,6 @@
 ---
-id: component.formContainer.concept
-title: Conceito
+id: component.formContainer
+title: FormContainer
 ---
 
 <!-- Component declaration begin -->
@@ -9,29 +9,28 @@ import { FormContainer } from '@platformbuilders/react-ui';
 import { useFormik } from 'formik';
 
 export const FormExample = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    }
-  });
-  return(
-    <FormContainer
-      initialValues={formik.initialValues}
-      children={
-        <form onSubmit={formik.handleSubmit}
-          name="Seus dados"
-          style={{
+const formik = useFormik({
+initialValues: {
+name: '',
+email: '',
+},
+onSubmit: values => {
+alert(JSON.stringify(values, null, 2));
+}
+});
+return(
+<FormContainer
+initialValues={formik.initialValues}
+children={
+<form onSubmit={formik.handleSubmit}
+name="Seus dados"
+style={{
             display: 'flex',
             flex: 1,
             flexDirection: 'column'
-          }}
-        >
-          <label htmlFor="name">Nome</label>
-          <input
+          }} >
+<label htmlFor="name">Nome</label>
+<input
             id="name"
             name="name"
             type="name"
@@ -39,11 +38,10 @@ export const FormExample = () => {
             value={formik.values.name}
             placeholder="Seu nome"
           />
-          <label
-            htmlFor="email"
-            style={{marginTop: '10px'}}
-          >Email</label>
-          <input
+<label
+htmlFor="email"
+style={{marginTop: '10px'}} >Email</label>
+<input
             id="email"
             name="email"
             type="email"
@@ -51,14 +49,14 @@ export const FormExample = () => {
             value={formik.values.email}
             placeholder="Email"
           />
-          <button style={{marginTop: '15px'}} type="submit">
-            enviar
-          </button>
-        </form>
-      }
-      onSubmit={() => {formik.handleSubmit}}
-    />
-  );
+<button style={{marginTop: '15px'}} type="submit">
+enviar
+</button>
+</form>
+}
+onSubmit={() => {formik.handleSubmit}}
+/>
+);
 }
 
 <!-- Component declaration end -->
@@ -67,20 +65,12 @@ export const FormExample = () => {
 
 Esse componente tem como função auxiliar na manipulação, manutenção e padronização das caixas de seleção dentro de uma aplicação.
 
-## Atributos
-
-| Formato        | Conceito      | Tipo   |
-| ------|-----|-----|
-| **children**  	| Elementos filhos do formulário. 	| **React.ReactNode** 	|
-| **initialValues**  	| Valores iniciais dos campos do formulário.	| **Record<string, unknown>** 	|
-| **onSubmit**  	| É disparado quando o formulário é submetido.	| **function** 	|
-| **key?** 	| Geralmente utilizado em listas, onde cada elemento tem sua chave. 	| **string** 	|
-| **validateOnChange?**  	| Define se é pra validar cada vez que algum campo do formulário for alterado.	| **boolean** 	|
-| **validationSchema?** 	| É o que diz como o formulário será validado. 	| **Record<string, unknown> | undefined** 	|
-
 ## Exemplo
 
+<FormExample />
+
 ### Fonte
+
 ```javascript
 import { FormContainer } from '@platformbuilders/react-ui';
 import { useFormik } from 'formik';
@@ -90,22 +80,23 @@ const formik = useFormik({
     name: '',
     email: '',
   },
-  onSubmit: values => {
+  onSubmit: (values) => {
     alert(JSON.stringify(values, null, 2));
-  }
+  },
 });
 
 export const FormExample = () => {
-  return(
+  return (
     <FormContainer
       initialValues={formik.initialValues}
       children={
-        <form onSubmit={formik.handleSubmit}
+        <form
+          onSubmit={formik.handleSubmit}
           name="Seus dados"
           style={{
             display: 'flex',
             flex: 1,
-            flexDirection: 'column'
+            flexDirection: 'column',
           }}
         >
           <label htmlFor="name">Nome</label>
@@ -117,10 +108,9 @@ export const FormExample = () => {
             value={formik.values.name}
             placeholder="Seu nome"
           />
-          <label
-            htmlFor="email"
-            style={{marginTop: '10px'}}
-          >Email</label>
+          <label htmlFor="email" style={{ marginTop: '10px' }}>
+            Email
+          </label>
           <input
             id="email"
             name="email"
@@ -129,20 +119,28 @@ export const FormExample = () => {
             value={formik.values.email}
             placeholder="Email"
           />
-          <button style={{marginTop: '15px'}} type="submit">
+          <button style={{ marginTop: '15px' }} type="submit">
             enviar
           </button>
         </form>
       }
-      onSubmit={() => {formik.handleSubmit}}
+      onSubmit={() => {
+        formik.handleSubmit;
+      }}
     />
   );
-}
-
+};
 ```
+## Atributos
 
-### Visualização
+| Formato               | Conceito                                                                     | Tipo                        |
+| --------------------- | ---------------------------------------------------------------------------- | --------------------------- |
+| **children**          | Elementos filhos do formulário.                                              | **React.ReactNode**         |
+| **initialValues**     | Valores iniciais dos campos do formulário.                                   | **Record<string, unknown>** |
+| **onSubmit**          | É disparado quando o formulário é submetido.                                 | **function**                |
+| **key?**              | Geralmente utilizado em listas, onde cada elemento tem sua chave.            | **string**                  |
+| **validateOnChange?** | Define se é pra validar cada vez que algum campo do formulário for alterado. | **boolean**                 |
+| **validationSchema?** | É o que diz como o formulário será validado.                                 | \*\*Record<string, unknown> | undefined\*\* |
 
-<FormExample />
 
 <!-- Documentation end -->

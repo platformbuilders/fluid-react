@@ -1,6 +1,6 @@
 ---
-id: component.paper.concept
-title: Conceito
+id: component.paper
+title: Paper
 ---
 
 <!-- Component declaration begin -->
@@ -13,28 +13,25 @@ import { Paper } from '@platformbuilders/react-ui';
 
 Esse componente tem como função auxiliar na manipulação, manutenção e padronização de quadros que (nesse caso...) simulam um papel dentro de uma aplicação.
 
-## Atributos
-
-| Formato        | Conceito      | Tipo   |
-| ------|-----|-----|
-| **children?**  	| Elementos/componentes filhos do *Paper*. 	| **React.ReactNode** 	|
-| **key?** 	| Geralmente utilizado em listas, onde cada elemento tem sua chave. 	| **string** 	|
-
 ## Exemplo
 
+<Paper>
+  Esse é um componente papel.
+</Paper>
+
 ### Fonte
+
 ```javascript
 import { Paper } from '@platformbuilders/react-ui';
 
-<Paper>
-  Esse é um componente papel.
-</Paper>
+<Paper>Esse é um componente papel.</Paper>;
 ```
 
-### Visualização
+## Atributos
 
-<Paper>
-  Esse é um componente papel.
-</Paper>
+| Formato       | Conceito                                                          | Tipo                |
+| ------------- | ----------------------------------------------------------------- | ------------------- |
+| **children?** | Elementos/componentes filhos do _Paper_.                          | **React.ReactNode** |
+| **key?**      | Geralmente utilizado em listas, onde cada elemento tem sua chave. | **string**          |
 
 <!-- Documentation end -->

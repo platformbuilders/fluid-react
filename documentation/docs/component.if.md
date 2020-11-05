@@ -1,6 +1,6 @@
 ---
-id: component.if.concept
-title: Conceito
+id: component.if
+title: If
 ---
 
 <!-- Component declaration begin -->
@@ -12,14 +12,6 @@ import { If } from '@platformbuilders/react-ui';
 <!-- Documentation begin -->
 
 Esse componente tem como função auxiliar na manipulação, manutenção e padronização de quando elementos devem ser renderizados efetivamente dentro de uma aplicação.
-
-## Atributos
-
-| Formato        | Conceito      | Tipo   |
-| ------|-----|-----|
-| **children**  	| Elementos/componentes a serem renderizados quando *condition* for **true**. 	| **React.ReactNode** 	|
-| **condition**  	| Condição que determinará se o *children* será efetivamente renderizado.	| **boolean** 	|
-| **key?** 	| Geralmente utilizado em listas, onde cada elemento tem sua chave. 	| **string** 	|
 
 ## Exemplo
 
@@ -53,5 +45,14 @@ import { If } from '@platformbuilders/react-ui';
 >
   <h1>Renderização não permitida pelo If</h1>
 </If>
+
+## Atributos
+
+| Formato        | Conceito      | Tipo   |
+| ------|-----|-----|
+| **children**  	| Elementos/componentes a serem renderizados quando *condition* for **true**. 	| **React.ReactNode** 	|
+| **condition**  	| Condição que determinará se o *children* será efetivamente renderizado.	| **boolean** 	|
+| **key?** 	| Geralmente utilizado em listas, onde cada elemento tem sua chave. 	| **string** 	|
+
 
 <!-- Documentation end -->

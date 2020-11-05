@@ -1,41 +1,41 @@
 ---
-id: component.formError.concept
-title: Conceito
+id: component.formError
+title: FormError
 ---
 
 <!-- Component declaration begin -->
+
 import { useState } from 'react';
 import { FormError } from '@platformbuilders/react-ui';
 import { useFormik } from 'formik';
 
 export const FormErrorExample = () => {
-  const [error, setError] = useState(false);
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-    },
-    onSubmit: () => {
-      handleErrorSubmit();
-    }
-  });
-  function handleErrorSubmit(){
-    error === true? setError(false) : setError(true);
-  }
-  return(
-    <FormError
-      error={error? "Não foi possível enviar formulário" : ""}
-      children={
-        <form onSubmit={formik.handleSubmit}
-          name="Seus dados"
-          style={{
+const [error, setError] = useState(false);
+const formik = useFormik({
+initialValues: {
+name: '',
+email: '',
+},
+onSubmit: () => {
+handleErrorSubmit();
+}
+});
+function handleErrorSubmit(){
+error === true? setError(false) : setError(true);
+}
+return(
+<FormError
+error={error? "Não foi possível enviar formulário" : ""}
+children={
+<form onSubmit={formik.handleSubmit}
+name="Seus dados"
+style={{
             display: 'flex',
             flex: 1,
             flexDirection: 'column'
-          }}
-        >
-          <label htmlFor="name">Nome</label>
-          <input
+          }} >
+<label htmlFor="name">Nome</label>
+<input
             id="name"
             name="name"
             type="name"
@@ -43,13 +43,12 @@ export const FormErrorExample = () => {
             value={formik.values.name}
             placeholder="Seu nome"
           />
-          <label
-            htmlFor="email"
-            style={{marginTop: '10px'}}
-          >
-            Email
-          </label>
-          <input
+<label
+htmlFor="email"
+style={{marginTop: '10px'}} >
+Email
+</label>
+<input
             id="email"
             name="email"
             type="email"
@@ -57,13 +56,13 @@ export const FormErrorExample = () => {
             value={formik.values.email}
             placeholder="email"
           />
-          <button style={{marginTop: '15px'}} type="submit">
-            enviar
-          </button>
-        </form>
-      }
-    />
-  );
+<button style={{marginTop: '15px'}} type="submit">
+enviar
+</button>
+</form>
+}
+/>
+);
 }
 
 <!-- Component declaration end -->
@@ -72,17 +71,12 @@ export const FormErrorExample = () => {
 
 Esse componente tem como função auxiliar na manipulação, manutenção e padronização de formulários quando houverem erros dentro do mesmo.
 
-## Atributos
-
-| Formato        | Conceito      | Tipo   |
-| ------|-----|-----|
-| **error**  	| Declarado quando houver algum erro no formulário. 	| **boolean, string** 	|
-| **children**  	| Elementos filhos do formulário. 	| **React.ReactNode** 	|
-| **key?** 	| Geralmente utilizado em listas, onde cada elemento tem sua chave. 	| **string** 	|
-
 ## Exemplo
 
+<FormErrorExample />
+
 ### Fonte
+
 ```javascript
 import { useState } from 'react';
 import { FormError } from '@platformbuilders/react-ui';
@@ -97,21 +91,22 @@ export const FormErrorExample = () => {
     },
     onSubmit: () => {
       handleErrorSubmit();
-    }
+    },
   });
-  function handleErrorSubmit(){
-    error === true? setError(false) : setError(true);
+  function handleErrorSubmit() {
+    error === true ? setError(false) : setError(true);
   }
-  return(
+  return (
     <FormError
-      error={error? "Não foi possível enviar formulário" : ""}
+      error={error ? 'Não foi possível enviar formulário' : ''}
       children={
-        <form onSubmit={formik.handleSubmit}
+        <form
+          onSubmit={formik.handleSubmit}
           name="Seus dados"
           style={{
             display: 'flex',
             flex: 1,
-            flexDirection: 'column'
+            flexDirection: 'column',
           }}
         >
           <label htmlFor="name">Nome</label>
@@ -123,10 +118,7 @@ export const FormErrorExample = () => {
             value={formik.values.name}
             placeholder="Seu nome"
           />
-          <label
-            htmlFor="email"
-            style={{marginTop: '10px'}}
-          >
+          <label htmlFor="email" style={{ marginTop: '10px' }}>
             Email
           </label>
           <input
@@ -137,19 +129,23 @@ export const FormErrorExample = () => {
             value={formik.values.email}
             placeholder="email"
           />
-          <button style={{marginTop: '15px'}} type="submit">
+          <button style={{ marginTop: '15px' }} type="submit">
             enviar
           </button>
         </form>
       }
     />
   );
-}
-
+};
 ```
 
-### Visualização
+## Atributos
 
-<FormErrorExample />
+| Formato      | Conceito                                                          | Tipo                |
+| ------------ | ----------------------------------------------------------------- | ------------------- |
+| **error**    | Declarado quando houver algum erro no formulário.                 | **boolean, string** |
+| **children** | Elementos filhos do formulário.                                   | **React.ReactNode** |
+| **key?**     | Geralmente utilizado em listas, onde cada elemento tem sua chave. | **string**          |
+
 
 <!-- Documentation end -->
