@@ -1,9 +1,10 @@
 module.exports = {
   someSidebar: {
     Começando: ['introduction.introduction'],
-    Componentes: [{
+    Componentes: [
+      {
         Avatar: [
-          'component.avatar.concept',
+          'component.avatar',
           {
             Atributos: [
               'component.avatar.attributes.alt',
@@ -11,10 +12,11 @@ module.exports = {
               'component.avatar.attributes.key',
               'component.avatar.attributes.onPress',
               'component.avatar.attributes.src',
-              'component.avatar.attributes.variant'
+              'component.avatar.attributes.variant',
             ],
-          }
+          },
         ],
+<<<<<<< HEAD
         Button: [
           'component.button.concept',
         ],
@@ -51,7 +53,19 @@ module.exports = {
         Typography: [
           'component.typography.concept'
         ]
+=======
+>>>>>>> f1c45ac8744b5a3971a0498abd304e8ba1c9e58b
       },
+      'component.button',
+      'component.checkBox',
+      'component.formContainer',
+      'component.formError',
+      'component.icon',
+      'component.loadingIndicator',
+      'component.paper',
+      'component.Select',
+      'component.textInput',
+      'component.touchable',
     ],
   },
 };

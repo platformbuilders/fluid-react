@@ -1,9 +1,10 @@
 ---
-id: component.touchable.concept
-title: Conceito
+id: component.touchable
+title: Touchable
 ---
 
 <!-- Component declaration begin -->
+
 import { Touchable } from '@platformbuilders/react-ui';
 
 <!-- Component declaration end -->
@@ -12,18 +13,16 @@ import { Touchable } from '@platformbuilders/react-ui';
 
 Esse componente tem como função auxiliar na manipulação, manutenção e padronização de elementos "tocáveis" dentro de uma aplicação.
 
-## Atributos
-
-| Formato        | Conceito      | Tipo   |
-| ------|-----|-----|
-| **onPress** 	| Evento disparado quando componente é pressionado. Quando evocado, chama uma função. 	| **function** 	|
-| **children?**  	| Elementos filhos do componente. 	| **React.ReactNode** 	|
-| **key?** 	| Define a chave do componente. 	| **number, string** 	|
-
-
 ## Exemplo
 
+<Touchable
+onPress={() => {}}
+children={<h1>Touch me!</h1>}
+key="f4345525242345234224"
+/>
+
 ### Fonte
+
 ```javascript
 import { Touchable } from '@platformbuilders/react-ui';
 
@@ -31,15 +30,15 @@ import { Touchable } from '@platformbuilders/react-ui';
   onPress={() => {}}
   children={<h1>Touchable</h1>}
   key="f4345525242345234224"
-/>
+/>;
 ```
 
-### Visualização
+## Atributos
 
-<Touchable
-  onPress={() => {}}
-  children={<h1>Touch me!</h1>}
-  key="f4345525242345234224"
-/>
+| Formato       | Conceito                                                                            | Tipo                |
+| ------------- | ----------------------------------------------------------------------------------- | ------------------- |
+| **onPress**   | Evento disparado quando componente é pressionado. Quando evocado, chama uma função. | **function**        |
+| **children?** | Elementos filhos do componente.                                                     | **React.ReactNode** |
+| **key?**      | Define a chave do componente.                                                       | **number, string**  |
 
 <!-- Documentation end -->
