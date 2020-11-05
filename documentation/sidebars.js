@@ -41,6 +41,9 @@ module.exports = {
         ],
         Select: [
           'component.Select.concept'
+        ],
+        TextInput: [
+          'component.textInput.concept'
         ]
       },
     ],
