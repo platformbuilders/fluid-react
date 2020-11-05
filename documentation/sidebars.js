@@ -26,6 +26,7 @@ module.exports = {
       'component.paper',
       'component.Select',
       'component.textInput',
+      'component.touchable',
     ],
   },
 };
