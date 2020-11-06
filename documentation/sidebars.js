@@ -26,7 +26,12 @@ module.exports = {
       'component.paper',
       'component.Select',
       'component.textInput',
-      'component.typography'
+      {
+        Typography: [
+          'component.typography',
+          'component.typography.styleGuide'
+        ]
+      }
     ],
   },
 };
