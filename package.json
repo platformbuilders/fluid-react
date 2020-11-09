@@ -49,7 +49,7 @@
   },
   "peerDependencies": {
     "lottie-react-native": "3.5.0",
-    "react": ">=16.11.0",
+    "react": ">=16.13.0",
     "react-native": ">=0.63.2",
     "react-native-camera": ">=3.31.1",
     "react-native-checkbox": ">=2.0.0",
