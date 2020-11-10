@@ -1,4 +1,5 @@
 import { StyleProp, ViewStyle, TextStyle } from 'react-native';
+import { ReactNode } from 'react';
 import { ButtonVariants, TypographyVariants } from './Variants';
 import { TouchableType } from './TouchableType';
 
@@ -12,5 +13,5 @@ export type ButtonProps = {
   contrast?: boolean;
   variant?: ButtonVariants;
   typographyVariant?: TypographyVariants;
-  children?: string;
+  children?: string | ReactNode;
 } & TouchableType;
