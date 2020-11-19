@@ -25,7 +25,7 @@
     "test:coverage": "yarn test -- --coverage",
     "build": "rm -rf dist && yarn lint && tsc && rollup -c && yarn build:native",
     "build:native": "node scripts/moveNativeDirectories.js",
-    "prepublish": "in-publish && yarn build || echo 'Installed'",
+    "prepublish": "yarn build",
     "precommit": "yarn lint",
     "preversion": "yarn lint",
     "postversion": "git push && git push --tags",
