@@ -5,7 +5,7 @@ title: Touchable
 
 <!-- Component declaration begin -->
 
-import { Touchable } from '@platformbuilders/react-ui';
+import { Touchable } from '@platformbuilders/react-elements';
 
 <!-- Component declaration end -->
 
@@ -24,7 +24,7 @@ key="f4345525242345234224"
 ### Fonte
 
 ```javascript
-import { Touchable } from '@platformbuilders/react-ui';
+import { Touchable } from '@platformbuilders/react-elements';
 
 <Touchable
   onPress={() => {}}

@@ -5,7 +5,7 @@ title: Paper
 
 <!-- Component declaration begin -->
 
-import { Paper } from '@platformbuilders/react-ui';
+import { Paper } from '@platformbuilders/react-elements';
 
 <!-- Component declaration end -->
 
@@ -22,7 +22,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 ### Fonte
 
 ```javascript
-import { Paper } from '@platformbuilders/react-ui';
+import { Paper } from '@platformbuilders/react-elements';
 
 <Paper>Esse é um componente papel.</Paper>;
 ```

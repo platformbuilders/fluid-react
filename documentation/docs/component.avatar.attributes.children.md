@@ -5,7 +5,7 @@ title: children
 
 <!-- Component declaration begin -->
 
-import { Avatar } from '@platformbuilders/react-ui';
+import { Avatar } from '@platformbuilders/react-elements';
 const userName = "Gabriel Taborda Farias";
 
 <!-- Component declaration end -->
@@ -19,7 +19,7 @@ Aqui é declarado algum componente filho que é renderizado quando a imagem do *
 ### Fonte
 ```javascript
 //styles.ts
-import { Avatar } from '@platformbuilders/react-ui';
+import { Avatar } from '@platformbuilders/react-elements';
 
 const userName = "Gabriel Taborda Farias";
 

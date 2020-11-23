@@ -5,7 +5,7 @@ title: Button
 
 <!-- Component declaration begin -->
 
-import { Button } from '@platformbuilders/react-ui';
+import { Button } from '@platformbuilders/react-elements';
 
 <!-- Component declaration end -->
 
@@ -27,7 +27,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ### Fonte
 ```javascript
-import { Button } from '@platformbuilders/react-ui';
+import { Button } from '@platformbuilders/react-elements';
 
 function handleClickButton(){
   // YOUR_FUNCTION...

@@ -5,7 +5,7 @@ title: LoadingIndicator
 
 <!-- Component declaration begin -->
 
-import { LoadingIndicator } from '@platformbuilders/react-ui';
+import { LoadingIndicator } from '@platformbuilders/react-elements';
 
 <!-- Component declaration end -->
 
@@ -20,7 +20,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 ### Fonte
 
 ```javascript
-import { LoadingIndicator } from '@platformbuilders/react-ui';
+import { LoadingIndicator } from '@platformbuilders/react-elements';
 
 <LoadingIndicator />;
 ```

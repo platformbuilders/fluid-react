@@ -5,7 +5,7 @@ title: alt
 
 <!-- Component declaration begin -->
 
-import { Avatar } from '@platformbuilders/react-ui';
+import { Avatar } from '@platformbuilders/react-elements';
 const userName = "Gabriel Taborda Farias";
 
 <!-- Component declaration end -->
@@ -19,7 +19,7 @@ Esse atributo renderiza uma letra, ou a primeira letra de uma *string*, caso a i
 ### Fonte
 ```javascript
 //styles.ts
-import { Avatar } from '@platformbuilders/react-ui';
+import { Avatar } from '@platformbuilders/react-elements';
 
 const userName = "Gabriel Taborda Farias";
 

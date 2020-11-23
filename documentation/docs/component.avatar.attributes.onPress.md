@@ -5,7 +5,7 @@ title: onPress
 
 <!-- Component declaration begin -->
 
-import { Avatar } from '@platformbuilders/react-ui';
+import { Avatar } from '@platformbuilders/react-elements';
 import { FC, useState } from 'react';
 export const AvatarCounter = () => {
   const [count, setCount] = useState(0);
@@ -57,7 +57,7 @@ Esse atributo recebe uma função que é disparada quando o Avatar é pressionad
 ### Fonte
 
 ```javascript
-import { Avatar } from '@platformbuilders/react-ui';
+import { Avatar } from '@platformbuilders/react-elements';
 import { FC, useState } from 'react';
 
 export const AvatarCounter = () => {
