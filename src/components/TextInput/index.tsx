@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import TextInputMask from 'react-input-mask';
+import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
 import { FormError } from '..';
 
@@ -28,12 +29,20 @@ type Props = {
   onBlur?: (e: any) => void;
 };
 
-const TextInput: FC<Props> = ({ mask, maskType = '', error = '', ...rest }) => {
+const TextInput: FC<Props> = ({
+  mask,
+  maskType = '',
+  error = '',
+  onChange,
+  ...rest
+}) => {
   const renderTextInput = (): JSX.Element => {
     const hasMask = mask || maskType;
     const maskOption = Mask[maskType] || mask;
 
-    return hasMask ? (
+    return maskType === 'currency' ? (
+      <CurrencyInput {...rest} onChangeText={onChange} />
+    ) : hasMask ? (
       <TextInputMask mask={maskOption} {...rest}>
         {(inputProps: any): JSX.Element => (
           <Input margin="normal" {...inputProps} />
