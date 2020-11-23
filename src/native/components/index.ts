@@ -7,10 +7,11 @@ export { default as PasswordInput } from './TextInput/PasswordInput';
 export { default as Touchable } from './Touchable';
 export { default as Icon } from './Icon';
 export { default as Button } from './Button';
+export { default as FAB } from './FAB';
 // General
 export { default as If } from './If';
 export { default as Typography } from './Typography';
-export { default as CheckBox } from './CheckBox';
+export { default as Checkbox } from './CheckBox';
 export { default as LoadingIndicator } from './LoadingIndicator';
 export { default as Shadow } from './Shadow';
 export { default as DatePicker } from './DatePicker';
