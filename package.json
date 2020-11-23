@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,7 +25,7 @@
     "test:coverage": "yarn test -- --coverage",
     "build": "rm -rf dist && yarn lint && tsc && rollup -c && yarn build:native",
     "build:native": "node scripts/moveNativeDirectories.js",
-    "prepublish": "in-publish && yarn build || echo 'Installed'",
+    "prepublish": "yarn build",
     "precommit": "yarn lint",
     "preversion": "yarn lint",
     "postversion": "git push && git push --tags",
