@@ -160,7 +160,6 @@
     "mz": "^2.7.0",
     "prettier": "^2.1.2",
     "react-docgen-typescript-loader": "^3.7.2",
-    "react-intl-currency-input": "^0.2.5",
     "react-native": "^0.63.2",
     "react-native-camera": "^3.31.1",
     "react-native-fast-image": "8.3.2",
