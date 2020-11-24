@@ -21,7 +21,7 @@ type Props = {
   placeholder?: string;
   fullWidth?: boolean;
   name: string;
-  id?: string;
+  id: string;
   type: string;
   value: string | number | string[] | undefined;
   autoFocus?: boolean;

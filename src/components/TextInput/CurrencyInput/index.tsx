@@ -7,7 +7,7 @@ import { toOnlyNumbers } from '../../../utils/helpers';
 import { Bar, Input, Label, Wrapper } from './styles';
 
 type Props = {
-  id?: string;
+  id: string;
   name?: string;
   label?: string;
   value: string | number | string[] | undefined;

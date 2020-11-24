@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-// import IntlCurrencyInput from "react-intl-currency-input"
-import { getTheme, pxToRem } from '../../../utils/helpers';
+import { getTheme, ifStyle, pxToRem } from '../../../utils/helpers';
 
 const textColor = getTheme('text');
 const primaryMain = getTheme('primary.main');
 const smallSpacing = getTheme('smallSpacing');
 const failureColor = getTheme('failure');
+const hasError = ifStyle('selected');
 
 declare type StyleError = {
   error?: string | boolean;
@@ -22,7 +22,7 @@ export const Input = styled.input<StyleError>`
   width: ${pxToRem(300)};
   border: none;
   border-bottom: ${pxToRem(1)} solid ${textColor}80;
-  color: ${({ error }) => (error ? failureColor : textColor)};
+  color: ${hasError(failureColor, textColor)};
 
   :focus {
     outline: none;
@@ -58,7 +58,7 @@ export const Bar = styled.span<StyleError>`
     width: 0;
     bottom: ${pxToRem(1)};
     position: absolute;
-    background: ${({ error }) => (error ? failureColor : primaryMain)};
+    background: ${hasError(failureColor, primaryMain)};
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -66,17 +66,17 @@ export const Bar = styled.span<StyleError>`
 
   :before {
     left: 50%;
-    width: ${({ error }) => (error ? '50%' : 0)};
+    width: ${hasError('50%', 0)};
   }
 
   :after {
     right: 50%;
-    width: ${({ error }) => (error ? '50%' : 0)};
+    width: ${hasError('50%', 0)};
   }
 `;
 
 export const Label = styled.label<StyleError>`
-  color: ${({ error }) => (error ? failureColor : textColor)} !important;
+  color: ${hasError(failureColor, textColor)};
   font-size: ${pxToRem(18)};
   font-weight: normal;
   position: absolute;
