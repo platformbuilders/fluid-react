@@ -1,2 +1,7 @@
-export { getTheme } from '@platformbuilders/helpers';
+export {
+  getTheme,
+  ifStyle,
+  pxToRem,
+  toOnlyNumbers,
+} from '@platformbuilders/helpers';
 export { isString } from './checkType';
