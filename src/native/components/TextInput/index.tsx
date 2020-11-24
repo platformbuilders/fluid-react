@@ -9,7 +9,6 @@ import MaskedTextInput from './MaskedTextInput';
 import {
   Label,
   Wrapper,
-  TextInput as DefaultTextInput,
   BottomLine,
   InputAreaWrapper,
   Icon,
@@ -127,21 +126,15 @@ const TextInput: FC<TextInputType> = ({
       style: textStyle,
       onBlur: handleOnBlur,
       onFocus: handleOnFocus,
+      autoFocus,
       underlineColorAndroid: 'transparent',
       ...rest,
     };
 
-    return maskType ? (
+    return (
       <MaskedTextInput
         inputRef={inputRef}
-        maskType={maskType}
-        accessibilityLabel={accessibilityLabel || accessibility}
-        testID={testID || id}
-        {...textInputProps}
-      />
-    ) : (
-      <DefaultTextInput
-        ref={inputRef}
+        maskType={maskType || 'no-mask'}
         accessibilityLabel={accessibilityLabel || accessibility}
         testID={testID || id}
         {...textInputProps}
