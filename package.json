@@ -78,7 +78,7 @@
     "react-native-haptic": "^1.0.1",
     "react-native-image-picker": "^2.3.3",
     "react-native-markdown-display": "^6.1.6",
-    "react-native-masked-text": "^1.13.0",
+    "react-native-masked-text": "duspada/react-native-masked-text#feat/no-mask",
     "react-native-responsive-fontsize": "^0.4.3",
     "react-native-size-matters": "^0.3.0",
     "react-native-typography": "^1.4.1",

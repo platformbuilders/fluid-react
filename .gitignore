@@ -63,7 +63,9 @@ buck-out/
 # dist
 /native
 /dist
+/.yalc
 package-lock.json
+/yalc.lock
 
 # Android builds
 *.apk

@@ -13014,10 +13014,9 @@ react-native-markdown-display@^6.1.6:
     prop-types "^15.7.2"
     react-native-fit-image "^1.5.5"
 
-react-native-masked-text@^1.13.0:
+react-native-masked-text@duspada/react-native-masked-text#feat/no-mask:
   version "1.13.0"
-  resolved "https://registry.yarnpkg.com/react-native-masked-text/-/react-native-masked-text-1.13.0.tgz#533fde8c45ccbaa1d6b0df30bf19b84b4ace3de3"
-  integrity sha512-iMku5Ky6DP4fTRosjsYNJOhH8yoBQCzRALBdv1wVDKmCBQhhVE8RHr5EW4SNUjkYTZL473sDdEKl4NI948q9FQ==
+  resolved "https://codeload.github.com/duspada/react-native-masked-text/tar.gz/baf582cad2ade745e0dc248aab6ec1197acc0873"
   dependencies:
     date-and-time "0.9.0"
     tinymask "1.0.2"
