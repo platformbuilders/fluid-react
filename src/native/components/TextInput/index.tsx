@@ -47,6 +47,8 @@ const TextInput: FC<TextInputType> = ({
   onFocus = (): any => {},
   onChangeText = (): any => {},
   onPressIcon = (): any => {},
+  leftIcon = false,
+  iconColor,
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
@@ -183,6 +185,22 @@ const TextInput: FC<TextInputType> = ({
   const icon = iconName;
   const renderStatus = hasError ? InputStatus.Failure : status;
 
+  const renderIcon = (iconProp: string) => (
+    <Icon
+      id={`id_${iconProp}`}
+      accessibility={`icon_${accessibility}`}
+      size={iconSize}
+      name={iconProp || ''}
+      contrast={contrast}
+      error={hasError}
+      touchable={iconTouchableEnabled}
+      onPress={onPressIcon}
+      hitSlop={iconHitSlop}
+      leftIcon={leftIcon}
+      iconColor={iconColor}
+    />
+  );
+
   return (
     <Wrapper style={style} multiline={multiline}>
       <FormError
@@ -205,20 +223,9 @@ const TextInput: FC<TextInputType> = ({
           </Label>
         )}
         <InputAreaWrapper multiline={multiline}>
+          {leftIcon && !isEmpty(icon) && renderIcon(icon)}
           {renderTextInput(renderStatus)}
-          {!isEmpty(icon) && (
-            <Icon
-              id={`id_${icon}`}
-              accessibility={`icon_${accessibility}`}
-              size={iconSize}
-              name={icon || ''}
-              contrast={contrast}
-              error={hasError}
-              touchable={iconTouchableEnabled}
-              onPress={onPressIcon}
-              hitSlop={iconHitSlop}
-            />
-          )}
+          {!leftIcon && !isEmpty(icon) && renderIcon(icon)}
         </InputAreaWrapper>
         {!borderless && <BottomLine status={status} contrast={contrast} />}
       </FormError>

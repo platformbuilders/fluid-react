@@ -35,6 +35,8 @@ export interface TextInputType extends TextInputProps {
   onFocus?(x?: any): void;
   onSubmitEditing?(x?: any): void;
   placeholderTextColor?: string;
+  leftIcon?: boolean;
+  iconColor?: string;
 }
 
 export interface MaskedTextInputType extends TextInputType {

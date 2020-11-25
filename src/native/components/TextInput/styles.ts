@@ -30,6 +30,7 @@ type BottomLineProps = {
 // const placeholderVariant = (props: any) => getFontSize('subhead')(props);
 // const placeholderBigVariant = 'title4';
 
+const isLeftIcon = ifStyle('leftIcon');
 const isMultiline = ifStyle('multiline');
 const isCentered = ifStyle('centered');
 const hasLabel = ifStyle('label');
@@ -116,10 +117,15 @@ export const BottomLine = styled.View<BottomLineProps>`
 type IconProps = {
   contrast: boolean;
   error: boolean;
+  leftIcon: boolean;
+  iconColor?: string;
 };
-export const Icon = styled(DefaultIcon).attrs((props) => ({
+export const Icon = styled(DefaultIcon).attrs((props: IconProps) => ({
   color: hasError(
     failure(props),
-    isContrast(primaryContrast(props), primaryMain(props))(props),
+    props.iconColor ||
+      isContrast(primaryContrast(props), primaryMain(props))(props),
   )(props),
-}))<IconProps>``;
+}))<IconProps>`
+  padding-right: ${isLeftIcon(moderateScale(10), 0)}px;
+`;

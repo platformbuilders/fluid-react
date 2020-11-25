@@ -21,8 +21,11 @@ export const Wrapper = styled.View`
   border-radius: ${largeRadius};
 `;
 
-export const Input = styled(TextInput).attrs((props) => ({
-  iconColor: `${disabled(props)}`,
+type InputProps = {
+  iconColor?: string;
+};
+export const Input = styled(TextInput).attrs((props: InputProps) => ({
+  iconColor: `${props.iconColor || disabled(props)}`,
   iconTouchableEnabled: true,
   iconSize: moderateScale(26),
 }))`

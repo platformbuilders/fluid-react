@@ -9,6 +9,9 @@ type Props = {
   onClear?(): void;
   onFocus?(): void;
   onBlur?(): void;
+  leftIcon?: boolean;
+  iconColor?: string;
+  placeholder?: string;
 };
 
 const SearchInput: React.FC<Props> = ({
@@ -18,6 +21,9 @@ const SearchInput: React.FC<Props> = ({
   onClear = () => null,
   onFocus = () => null,
   onBlur = () => null,
+  leftIcon = false,
+  iconColor,
+  placeholder,
 }) => {
   const [searchText, setSearchText] = useState('');
   const [isSearching, setSearching] = useState(false);
@@ -36,7 +42,7 @@ const SearchInput: React.FC<Props> = ({
         autoCorrect={false}
         iconName={isFocused || !!searchText ? 'close' : 'magnify'}
         autoCompleteType="off"
-        placeholder={isSearching ? '' : 'Pesquise aqui'}
+        placeholder={isSearching ? '' : placeholder || 'Pesquise aqui'}
         onChangeText={(value: string): void => {
           setSearchText(value);
           onChange(value);
@@ -59,6 +65,8 @@ const SearchInput: React.FC<Props> = ({
             setSearching(false);
           }
         }}
+        leftIcon={leftIcon}
+        iconColor={iconColor}
       />
     </Wrapper>
   );

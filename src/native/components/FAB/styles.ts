@@ -1,26 +1,29 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 
-import { getTheme } from '../../utils/helpers';
+import { getTheme, ifStyle } from '../../utils/helpers';
 import Touchable from '../Touchable';
 import DefaultIcon from '../Icon';
 import Typography from '../Typography';
 
 const primaryContrast = getTheme('primary.contrast');
 const accentMain = getTheme('accent.main');
+const isRelative = ifStyle('relativePos');
 
 type WrapperProps = {
+  color?: string;
   size: number;
+  relativePos: boolean;
 };
 
 export const Wrapper = styled(Touchable)<WrapperProps>`
-  position: absolute;
-  width: ${({ size }): any => size}px;
-  height: ${({ size }): any => size}px;
+  position: ${isRelative('relative', 'absolute')};
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
   align-items: center;
   justify-content: center;
-  background-color: ${accentMain};
-  border-radius: ${({ size }): any => size / 2}px;
+  background-color: ${({ color }) => color || accentMain};
+  border-radius: ${({ size }) => size / 2}px;
   elevation: 8;
 `;
 
