@@ -8,11 +8,13 @@ type Props = {
   id: string;
   accessibility: string;
   onPress(): void;
+  color?: string;
   title?: string;
   size?: number;
   iconName?: string;
   iconColor?: string;
   iconSize?: number;
+  relativePos?: boolean;
 };
 
 const FAB: FC<Props> = ({
@@ -20,10 +22,12 @@ const FAB: FC<Props> = ({
   id,
   accessibility,
   title,
+  color,
   iconName,
   iconColor,
   iconSize,
   onPress,
+  relativePos = false,
   ...rest
 }) => (
   <Wrapper
@@ -31,6 +35,8 @@ const FAB: FC<Props> = ({
     accessibility={accessibility}
     onPress={onPress}
     size={size}
+    color={color}
+    relativePos={relativePos}
     {...rest}
   >
     <Icon

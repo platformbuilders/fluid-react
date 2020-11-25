@@ -12933,11 +12933,6 @@ react-inspector@^5.0.1:
     is-dom "^1.0.0"
     prop-types "^15.0.0"
 
-react-intl-currency-input@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/react-intl-currency-input/-/react-intl-currency-input-0.2.5.tgz#8d7ecb4dc40631a9c66c974dd175a8ae3df60480"
-  integrity sha512-yfFF3nZzNNO8SGY6KcTzlXHwjHjPthlt4OImW/4jpFshn5UH6CdFO0j9uQzXe/9F8VlLIGHBXIAvCQCGGuwonw==
-
 react-is@^16.12.0, react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

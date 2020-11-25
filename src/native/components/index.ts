@@ -19,3 +19,4 @@ export { default as Avatar } from './Avatar';
 export { default as Link } from './Link';
 export { default as Accordion } from './Accordion';
 export { default as RadioButton } from './RadioButton';
+export { default as SearchInput } from './SearchInput';
