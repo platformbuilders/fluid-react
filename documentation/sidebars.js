@@ -1,7 +1,7 @@
 module.exports = {
   someSidebar: {
     Web: [{
-      Começando: ['introduction.introduction'],
+      Começando: ['introduction.web'],
       Componentes: [
         {
           Avatar: [
@@ -35,9 +35,12 @@ module.exports = {
         }
       ],
     }],
-    Native: [
-      'native.component.avatar',
-      'native.component.button'
-    ]
+    Native: [{
+      Começando: [],
+      Componentes: [
+        'native.component.avatar',
+        'native.component.button'
+      ]
+    }]
   }  
 };

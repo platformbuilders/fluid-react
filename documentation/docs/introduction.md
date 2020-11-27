@@ -1,5 +1,5 @@
 ---
-id: introduction.introduction
+id: introduction.web
 title: Introdução
 sidebar_label: Introdução
 slug: /
