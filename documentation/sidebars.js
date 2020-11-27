@@ -36,7 +36,7 @@ module.exports = {
       ],
     }],
     Native: [{
-      Começando: [],
+      Começando: ['introduction.native'],
       Componentes: [
         'native.component.avatar',
         'native.component.button'
