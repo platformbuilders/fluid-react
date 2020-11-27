@@ -36,7 +36,8 @@ module.exports = {
       ],
     }],
     Native: [
-      'native.component.avatar'
+      'native.component.avatar',
+      'native.component.button'
     ]
   }  
 };
