@@ -33,7 +33,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
   key="0629bc9a136959d3c36d29df56c029881f834fcd"
   onPress={() => {}}
   onUpload={() => {}}
-  size={80}
+  size={moderateScale(80)}
   testID="61251953"
 />
 ```
