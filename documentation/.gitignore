@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Logs
-documentation/debug.log
+debug.log
