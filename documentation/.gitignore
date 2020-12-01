@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+*.cache
 
 # Misc
 .DS_Store
@@ -18,3 +19,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Logs
+documentation/debug.log
