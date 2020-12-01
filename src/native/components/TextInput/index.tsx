@@ -41,6 +41,7 @@ const TextInput: FC<TextInputType> = ({
   error = '',
   style = {},
   textStyle = {},
+  labelStyle = {},
   iconHitSlop = {},
   inputRef = useRef(null),
   onBlur = (): any => {},
@@ -214,7 +215,7 @@ const TextInput: FC<TextInputType> = ({
           <Label
             status={status}
             contrast={contrast}
-            style={labelAnimatedStyle}
+            style={[labelAnimatedStyle, labelStyle]}
             variant={isPlaceholder ? placeholderVariant : labelVariant}
             testID={`error_${id}`}
             accessibilityLabel={`Erro ${accessibility}`}
