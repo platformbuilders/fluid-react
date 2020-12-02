@@ -24,7 +24,6 @@ export const Wrapper = styled(Touchable)<WrapperProps>`
   justify-content: center;
   background-color: ${({ color }) => color || accentMain};
   border-radius: ${({ size }) => size / 2}px;
-  elevation: 8;
 `;
 
 interface IconProps {

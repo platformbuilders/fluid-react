@@ -37,6 +37,7 @@ export interface TextInputType extends TextInputProps {
   placeholderTextColor?: string;
   leftIcon?: boolean;
   iconColor?: string;
+  inputPadding?: number;
 }
 
 export interface MaskedTextInputType extends TextInputType {

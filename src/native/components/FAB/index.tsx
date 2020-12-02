@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { isEmpty } from 'lodash';
 import { moderateScale } from 'react-native-size-matters';
 import If from '../If';
+import Shadow from '../Shadow';
 import { Wrapper, Icon, Title } from './styles';
 
 type Props = {
@@ -15,6 +16,7 @@ type Props = {
   iconColor?: string;
   iconSize?: number;
   relativePos?: boolean;
+  hasShadow?: boolean;
 };
 
 const FAB: FC<Props> = ({
@@ -28,28 +30,31 @@ const FAB: FC<Props> = ({
   iconSize,
   onPress,
   relativePos = false,
+  hasShadow = false,
   ...rest
 }) => (
-  <Wrapper
-    id={id}
-    accessibility={accessibility}
-    onPress={onPress}
-    size={size}
-    color={color}
-    relativePos={relativePos}
-    {...rest}
-  >
-    <Icon
+  <Shadow hasShadow={hasShadow}>
+    <Wrapper
       id={id}
-      name={iconName || 'plus'}
       accessibility={accessibility}
-      iconColor={iconColor}
-      iconSize={iconSize}
-    />
-    <If condition={!isEmpty(title)}>
-      <Title>{title}</Title>
-    </If>
-  </Wrapper>
+      onPress={onPress}
+      size={size}
+      color={color}
+      relativePos={relativePos}
+      {...rest}
+    >
+      <Icon
+        id={id}
+        name={iconName || 'plus'}
+        accessibility={accessibility}
+        iconColor={iconColor}
+        iconSize={iconSize}
+      />
+      <If condition={!isEmpty(title)}>
+        <Title>{title}</Title>
+      </If>
+    </Wrapper>
+  </Shadow>
 );
 
 export default FAB;

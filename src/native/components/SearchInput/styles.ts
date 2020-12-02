@@ -10,26 +10,36 @@ const largeRadius = getTheme('largeRadius');
 
 const wrapperHeight = moderateScale(56);
 
-export const Wrapper = styled.View`
+type WrapperProps = {
+  height?: number;
+  inputPadding?: number;
+};
+
+export const Wrapper = styled.View<WrapperProps>`
   flex-direction: row;
   flex: 1;
-  height: ${wrapperHeight}px;
+  height: ${({ height }) => (height && `${height}px`) || `${wrapperHeight}px`};
   background-color: ${primaryContrast};
   align-items: center;
   justify-content: center;
-  padding-horizontal: ${largeSpacing};
+  padding-horizontal: ${({ inputPadding }) =>
+    (inputPadding && `${inputPadding}px`) || largeSpacing};
   border-radius: ${largeRadius};
 `;
 
 type InputProps = {
   iconColor?: string;
+  iconSize?: number;
+  inputHeight?: number | string;
+  inputPadding?: number;
 };
+
 export const Input = styled(TextInput).attrs((props: InputProps) => ({
   iconColor: `${props.iconColor || disabled(props)}`,
   iconTouchableEnabled: true,
-  iconSize: moderateScale(26),
-}))`
+  iconSize: props.iconSize || moderateScale(26),
+}))<InputProps>`
   width: 100%;
   padding: 0;
-  height: 90%;
+  height: ${({ inputHeight }) => inputHeight || '90%'};
 `;

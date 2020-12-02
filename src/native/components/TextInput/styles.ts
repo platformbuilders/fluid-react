@@ -15,6 +15,7 @@ import { TextInputType, InputStatus } from '../../types';
 
 type InputAreaWrapperProps = {
   multiline: boolean;
+  padding?: number;
 };
 
 type BottomLineProps = {
@@ -71,11 +72,10 @@ export const Wrapper = styled.View<WrapperProps>`
   justify-content: ${hasLabel('flex-end', 'flex-start')};
   padding-top: ${hasLabel(smallSpacing, 0)};
   position: relative;
-  justify-content: ${hasLabel('flex-end', 'flex-start')};
 `;
 
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
-  padding-top: ${smallSpacing};
+  padding-top: ${({ padding }) => (padding && `${padding}px`) || smallSpacing};
   flex-direction: row;
   align-items: center;
   justify-content: center;

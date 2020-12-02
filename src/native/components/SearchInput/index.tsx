@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
+import Shadow from '../Shadow';
 import { Input, Wrapper } from './styles';
 
 type Props = {
@@ -12,6 +13,10 @@ type Props = {
   leftIcon?: boolean;
   iconColor?: string;
   placeholder?: string;
+  wrapperHeight?: number;
+  inputPadding?: number;
+  iconSize?: number;
+  hasShadow?: boolean;
 };
 
 const SearchInput: React.FC<Props> = ({
@@ -24,6 +29,10 @@ const SearchInput: React.FC<Props> = ({
   leftIcon = false,
   iconColor,
   placeholder,
+  wrapperHeight,
+  inputPadding,
+  iconSize,
+  hasShadow = false,
 }) => {
   const [searchText, setSearchText] = useState('');
   const [isSearching, setSearching] = useState(false);
@@ -31,44 +40,48 @@ const SearchInput: React.FC<Props> = ({
   const ref = useRef<HTMLInputElement>(null);
 
   return (
-    <Wrapper>
-      <Input
-        inputRef={ref}
-        borderless
-        large={false}
-        id={id}
-        accessibility={accessibility}
-        autoCapitalize="none"
-        autoCorrect={false}
-        iconName={isFocused || !!searchText ? 'close' : 'magnify'}
-        autoCompleteType="off"
-        placeholder={isSearching ? '' : placeholder || 'Pesquise aqui'}
-        onChangeText={(value: string): void => {
-          setSearchText(value);
-          onChange(value);
-        }}
-        onPressIcon={(): void => {
-          setSearchText('');
-          onClear();
-          setSearching(false);
-          Keyboard.dismiss();
-        }}
-        value={searchText}
-        onFocus={() => {
-          setFocused(true);
-          onFocus();
-        }}
-        onBlur={(): void => {
-          onBlur();
-          setFocused(false);
-          if (!searchText) {
+    <Shadow hasShadow={hasShadow}>
+      <Wrapper height={wrapperHeight} inputPadding={inputPadding}>
+        <Input
+          inputRef={ref}
+          borderless
+          large={false}
+          id={id}
+          accessibility={accessibility}
+          autoCapitalize="none"
+          autoCorrect={false}
+          iconName={isFocused || !!searchText ? 'close' : 'magnify'}
+          autoCompleteType="off"
+          placeholder={isSearching ? '' : placeholder || 'Pesquise aqui'}
+          onChangeText={(value: string): void => {
+            setSearchText(value);
+            onChange(value);
+          }}
+          onPressIcon={(): void => {
+            setSearchText('');
+            onClear();
             setSearching(false);
-          }
-        }}
-        leftIcon={leftIcon}
-        iconColor={iconColor}
-      />
-    </Wrapper>
+            Keyboard.dismiss();
+          }}
+          value={searchText}
+          onFocus={() => {
+            setFocused(true);
+            onFocus();
+          }}
+          onBlur={(): void => {
+            onBlur();
+            setFocused(false);
+            if (!searchText) {
+              setSearching(false);
+            }
+          }}
+          leftIcon={leftIcon}
+          iconColor={iconColor}
+          iconSize={iconSize}
+          inputPadding={inputPadding}
+        />
+      </Wrapper>
+    </Shadow>
   );
 };
 
