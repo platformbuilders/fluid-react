@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
-import Shadow from '../Shadow';
 import { Input, Wrapper } from './styles';
 
 type Props = {
@@ -40,48 +39,50 @@ const SearchInput: React.FC<Props> = ({
   const ref = useRef<HTMLInputElement>(null);
 
   return (
-    <Shadow hasShadow={hasShadow}>
-      <Wrapper height={wrapperHeight} inputPadding={inputPadding}>
-        <Input
-          inputRef={ref}
-          borderless
-          large={false}
-          id={id}
-          accessibility={accessibility}
-          autoCapitalize="none"
-          autoCorrect={false}
-          iconName={isFocused || !!searchText ? 'close' : 'magnify'}
-          autoCompleteType="off"
-          placeholder={isSearching ? '' : placeholder || 'Pesquise aqui'}
-          onChangeText={(value: string): void => {
-            setSearchText(value);
-            onChange(value);
-          }}
-          onPressIcon={(): void => {
-            setSearchText('');
-            onClear();
+    <Wrapper
+      height={wrapperHeight}
+      inputPadding={inputPadding}
+      hasShadow={hasShadow}
+    >
+      <Input
+        inputRef={ref}
+        borderless
+        large={false}
+        id={id}
+        accessibility={accessibility}
+        autoCapitalize="none"
+        autoCorrect={false}
+        iconName={isFocused || !!searchText ? 'close' : 'magnify'}
+        autoCompleteType="off"
+        placeholder={isSearching ? '' : placeholder || 'Pesquise aqui'}
+        onChangeText={(value: string): void => {
+          setSearchText(value);
+          onChange(value);
+        }}
+        onPressIcon={(): void => {
+          setSearchText('');
+          onClear();
+          setSearching(false);
+          Keyboard.dismiss();
+        }}
+        value={searchText}
+        onFocus={() => {
+          setFocused(true);
+          onFocus();
+        }}
+        onBlur={(): void => {
+          onBlur();
+          setFocused(false);
+          if (!searchText) {
             setSearching(false);
-            Keyboard.dismiss();
-          }}
-          value={searchText}
-          onFocus={() => {
-            setFocused(true);
-            onFocus();
-          }}
-          onBlur={(): void => {
-            onBlur();
-            setFocused(false);
-            if (!searchText) {
-              setSearching(false);
-            }
-          }}
-          leftIcon={leftIcon}
-          iconColor={iconColor}
-          iconSize={iconSize}
-          inputPadding={inputPadding}
-        />
-      </Wrapper>
-    </Shadow>
+          }
+        }}
+        leftIcon={leftIcon}
+        iconColor={iconColor}
+        iconSize={iconSize}
+        inputPadding={inputPadding}
+      />
+    </Wrapper>
   );
 };
 

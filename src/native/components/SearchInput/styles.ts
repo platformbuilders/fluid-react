@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import TextInput from '../TextInput';
-import { getTheme } from '../../utils/helpers';
+import { getTheme, getShadow } from '../../utils/helpers';
 
 const disabled = getTheme('disabled.main');
 const primaryContrast = getTheme('primary.contrast');
@@ -13,18 +13,21 @@ const wrapperHeight = moderateScale(56);
 type WrapperProps = {
   height?: number;
   inputPadding?: number;
+  hasShadow?: boolean;
 };
 
 export const Wrapper = styled.View<WrapperProps>`
   flex-direction: row;
   flex: 1;
-  height: ${({ height }) => (height && `${height}px`) || `${wrapperHeight}px`};
+  height: ${({ height }) =>
+    (!!height && `${height}px`) || `${wrapperHeight}px`};
   background-color: ${primaryContrast};
   align-items: center;
   justify-content: center;
   padding-horizontal: ${({ inputPadding }) =>
-    (inputPadding && `${inputPadding}px`) || largeSpacing};
+    (!!inputPadding && `${inputPadding}px`) || largeSpacing};
   border-radius: ${largeRadius};
+  ${({ hasShadow }) => (hasShadow ? getShadow() : {})}
 `;
 
 type InputProps = {
@@ -41,5 +44,5 @@ export const Input = styled(TextInput).attrs((props: InputProps) => ({
 }))<InputProps>`
   width: 100%;
   padding: 0;
-  height: ${({ inputHeight }) => inputHeight || '90%'};
+  height: ${({ inputHeight }) => (!!inputHeight && inputHeight) || '90%'};
 `;
