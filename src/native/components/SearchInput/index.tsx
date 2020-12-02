@@ -12,6 +12,10 @@ type Props = {
   leftIcon?: boolean;
   iconColor?: string;
   placeholder?: string;
+  wrapperHeight?: number;
+  inputPadding?: number;
+  iconSize?: number;
+  hasShadow?: boolean;
 };
 
 const SearchInput: React.FC<Props> = ({
@@ -24,6 +28,10 @@ const SearchInput: React.FC<Props> = ({
   leftIcon = false,
   iconColor,
   placeholder,
+  wrapperHeight,
+  inputPadding,
+  iconSize,
+  hasShadow = false,
 }) => {
   const [searchText, setSearchText] = useState('');
   const [isSearching, setSearching] = useState(false);
@@ -31,7 +39,11 @@ const SearchInput: React.FC<Props> = ({
   const ref = useRef<HTMLInputElement>(null);
 
   return (
-    <Wrapper>
+    <Wrapper
+      height={wrapperHeight}
+      inputPadding={inputPadding}
+      hasShadow={hasShadow}
+    >
       <Input
         inputRef={ref}
         borderless
@@ -67,6 +79,8 @@ const SearchInput: React.FC<Props> = ({
         }}
         leftIcon={leftIcon}
         iconColor={iconColor}
+        iconSize={iconSize}
+        inputPadding={inputPadding}
       />
     </Wrapper>
   );

@@ -15,6 +15,7 @@ type Props = {
   iconColor?: string;
   iconSize?: number;
   relativePos?: boolean;
+  hasShadow?: boolean;
 };
 
 const FAB: FC<Props> = ({
@@ -28,6 +29,7 @@ const FAB: FC<Props> = ({
   iconSize,
   onPress,
   relativePos = false,
+  hasShadow = false,
   ...rest
 }) => (
   <Wrapper
@@ -37,6 +39,7 @@ const FAB: FC<Props> = ({
     size={size}
     color={color}
     relativePos={relativePos}
+    hasShadow={hasShadow}
     {...rest}
   >
     <Icon

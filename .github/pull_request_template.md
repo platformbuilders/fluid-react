@@ -15,6 +15,8 @@
 ## Checklist 🚨
 
 - [ ] Meu código segue o code style da Builders.
+- [ ] Testado no iOS
+- [ ] Testado no Android
 - [ ] Testado no Chrome
 - [ ] Testado no Firefox
 - [ ] Testado no Safari

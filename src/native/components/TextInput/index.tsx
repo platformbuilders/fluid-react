@@ -50,6 +50,7 @@ const TextInput: FC<TextInputType> = ({
   onPressIcon = (): any => {},
   leftIcon = false,
   iconColor,
+  inputPadding,
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
@@ -223,7 +224,7 @@ const TextInput: FC<TextInputType> = ({
             {label}
           </Label>
         )}
-        <InputAreaWrapper multiline={multiline}>
+        <InputAreaWrapper multiline={multiline} padding={inputPadding}>
           {leftIcon && !isEmpty(icon) && renderIcon(icon)}
           {renderTextInput(renderStatus)}
           {!leftIcon && !isEmpty(icon) && renderIcon(icon)}
