@@ -43,7 +43,7 @@ const TextInput: FC<Props> = ({
     const maskOption = Mask[maskType] || mask;
 
     return maskType === 'currency' ? (
-      <CurrencyInput {...rest} onChangeText={onChange} ref={ref} />
+      <CurrencyInput {...rest} onChangeText={onChange} />
     ) : hasMask ? (
       <TextInputMask ref={ref} mask={maskOption} onChange={onChange} {...rest}>
         {(inputProps: any): JSX.Element => (
@@ -51,13 +51,7 @@ const TextInput: FC<Props> = ({
         )}
       </TextInputMask>
     ) : (
-      <Input
-        ref={ref}
-        margin="normal"
-        onChange={onChange}
-        {...rest}
-        error={!!error}
-      />
+      <Input margin="normal" onChange={onChange} {...rest} error={!!error} />
     );
   };
   return (
