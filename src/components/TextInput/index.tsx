@@ -1,4 +1,4 @@
-import React, { FC, LegacyRef } from 'react';
+import React, { FC, RefObject } from 'react';
 import TextInputMask from 'react-input-mask';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
@@ -20,7 +20,7 @@ type Props = {
   error?: string | boolean;
   placeholder?: string;
   fullWidth?: boolean;
-  ref?: LegacyRef<TextInputMask>;
+  ref?: RefObject<TextInputMask>;
   name: string;
   id: string;
   type: string;
