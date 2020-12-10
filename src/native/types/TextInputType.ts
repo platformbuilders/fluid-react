@@ -1,3 +1,4 @@
+import { LegacyRef } from 'react';
 import {
   TextInputProps,
   StyleProp,
@@ -14,6 +15,7 @@ export interface TextInputType extends TextInputProps {
   accessibility: string;
   inputRef?: any;
   options?: any;
+  ref?: LegacyRef<any>;
   variant?: TypographyVariants;
   large?: boolean;
   borderless?: boolean;
