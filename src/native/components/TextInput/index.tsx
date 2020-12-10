@@ -28,6 +28,7 @@ const TextInput: FC<TextInputType> = ({
   borderless = false,
   multiline = false,
   autoFocus = false,
+  customFocus = true,
   allowFontScaling = false,
   keyboardType = 'default',
   iconSize = 20,
@@ -50,6 +51,7 @@ const TextInput: FC<TextInputType> = ({
   onPressIcon = (): any => {},
   leftIcon = false,
   iconColor,
+  inputPadding,
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
@@ -156,15 +158,15 @@ const TextInput: FC<TextInputType> = ({
   };
 
   const focusInputElement = (element: any) => {
-    const delay = isIOS() ? 0 : 5;
+    const delay = isIOS() ? 5 : 15;
     setTimeout(() => {
-      element.focus();
+      element?.focus();
     }, delay);
   };
 
   const checkFocus = () => {
     let element = inputRef?.current;
-    if (autoFocus) {
+    if (autoFocus && customFocus) {
       if (maskType) {
         // eslint-disable-next-line no-underscore-dangle
         element = inputRef?.current?._inputElement;
@@ -223,7 +225,7 @@ const TextInput: FC<TextInputType> = ({
             {label}
           </Label>
         )}
-        <InputAreaWrapper multiline={multiline}>
+        <InputAreaWrapper multiline={multiline} padding={inputPadding}>
           {leftIcon && !isEmpty(icon) && renderIcon(icon)}
           {renderTextInput(renderStatus)}
           {!leftIcon && !isEmpty(icon) && renderIcon(icon)}

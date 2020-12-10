@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 
-import { getTheme, ifStyle } from '../../utils/helpers';
+import { getShadow, getTheme, ifStyle } from '../../utils/helpers';
 import Touchable from '../Touchable';
 import DefaultIcon from '../Icon';
 import Typography from '../Typography';
@@ -14,6 +14,7 @@ type WrapperProps = {
   color?: string;
   size: number;
   relativePos: boolean;
+  hasShadow: boolean;
 };
 
 export const Wrapper = styled(Touchable)<WrapperProps>`
@@ -24,7 +25,7 @@ export const Wrapper = styled(Touchable)<WrapperProps>`
   justify-content: center;
   background-color: ${({ color }) => color || accentMain};
   border-radius: ${({ size }) => size / 2}px;
-  elevation: 8;
+  ${({ hasShadow }) => (hasShadow ? getShadow() : {})}
 `;
 
 interface IconProps {
