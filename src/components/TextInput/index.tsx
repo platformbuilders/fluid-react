@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import TextInputMask from 'react-input-mask';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
+import { TextInputType } from '../../types';
 import { FormError } from '..';
 
 enum Mask {
@@ -13,23 +14,7 @@ enum Mask {
   cellphone = '(99) 99999-9999',
 }
 
-type Props = {
-  mask?: string;
-  maskType?: string;
-  label?: string;
-  error?: string | boolean;
-  placeholder?: string;
-  fullWidth?: boolean;
-  name: string;
-  id: string;
-  type: string;
-  value: string | number | string[] | undefined;
-  autoFocus?: boolean;
-  onChange?: (value: any) => void;
-  onBlur?: (e: any) => void;
-};
-
-const TextInput: FC<Props> = ({
+const TextInput: FC<TextInputType> = ({
   mask,
   maskType = '',
   error = '',
