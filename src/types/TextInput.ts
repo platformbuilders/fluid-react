@@ -1,3 +1,6 @@
+import { RefObject } from 'react';
+import TextInputMask from 'react-input-mask';
+
 export type TextInputType = {
   mask?: string;
   maskType?: string;
@@ -8,6 +11,7 @@ export type TextInputType = {
   name: string;
   id: string;
   type: string;
+  ref?: RefObject<TextInputMask>;
   maxlength?: string;
   pattern?: string;
   value: string | number | string[] | undefined;
