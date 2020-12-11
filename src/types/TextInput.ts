@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { ChangeEvent, RefObject } from 'react';
 import TextInputMask from 'react-input-mask';
 
 export type TextInputType = {
@@ -16,6 +16,6 @@ export type TextInputType = {
   pattern?: string;
   value: string | number | string[] | undefined;
   autoFocus?: boolean;
-  onChange?: (value: any) => void;
-  onBlur?: (e: any) => void;
+  onChange?: (e: string | ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: ChangeEvent<HTMLInputElement | HTMLDivElement>) => void;
 };
