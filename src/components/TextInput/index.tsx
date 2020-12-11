@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject } from 'react';
 import TextInputMask from 'react-input-mask';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
@@ -20,6 +20,7 @@ type Props = {
   error?: string | boolean;
   placeholder?: string;
   fullWidth?: boolean;
+  ref?: RefObject<TextInputMask>;
   name: string;
   id: string;
   type: string;
@@ -34,6 +35,7 @@ const TextInput: FC<Props> = ({
   maskType = '',
   error = '',
   onChange,
+  ref,
   ...rest
 }) => {
   const renderTextInput = (): JSX.Element => {
@@ -43,7 +45,7 @@ const TextInput: FC<Props> = ({
     return maskType === 'currency' ? (
       <CurrencyInput {...rest} onChangeText={onChange} />
     ) : hasMask ? (
-      <TextInputMask mask={maskOption} onChange={onChange} {...rest}>
+      <TextInputMask ref={ref} mask={maskOption} onChange={onChange} {...rest}>
         {(inputProps: any): JSX.Element => (
           <Input margin="normal" {...inputProps} />
         )}
