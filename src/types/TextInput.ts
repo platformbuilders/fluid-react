@@ -16,6 +16,6 @@ export type TextInputType = {
   pattern?: string;
   value: string | number | string[] | undefined;
   autoFocus?: boolean;
-  onChange?: (e: string | ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: ChangeEvent<HTMLInputElement | HTMLDivElement>) => void;
 };

@@ -12,7 +12,7 @@ type Props = {
   label?: string;
   value: string | number | string[] | undefined;
   error?: string | boolean;
-  onChangeText?: (value: string) => void;
+  onChangeText?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const defaultMaskOptions = {
@@ -37,7 +37,10 @@ const CurrencyInputComponent: FC<Props> = ({
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChangeText && event.target.value) {
-      onChangeText(toOnlyNumbers(event.target.value));
+      onChangeText({
+        ...event,
+        target: { ...event.target, value: toOnlyNumbers(event.target.value) },
+      });
     }
   };
 
