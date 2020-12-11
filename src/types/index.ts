@@ -6,3 +6,4 @@ export * from './Button';
 export * from './Variants';
 export * from './Animations';
 export * from './Radius';
+export * from './TextInput';
