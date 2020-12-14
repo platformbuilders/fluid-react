@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Keyboard } from 'react-native';
+import { Keyboard, StyleProp, TextStyle, ViewStyle } from 'react-native';
 import { Input, Wrapper } from './styles';
 
 type Props = {
@@ -16,6 +16,10 @@ type Props = {
   inputPadding?: number;
   iconSize?: number;
   hasShadow?: boolean;
+  textStyle?: StyleProp<TextStyle>;
+  inputStyle?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
+  placeholderTextColor?: string;
 };
 
 const SearchInput: React.FC<Props> = ({
@@ -32,6 +36,10 @@ const SearchInput: React.FC<Props> = ({
   inputPadding,
   iconSize,
   hasShadow = false,
+  inputStyle,
+  containerStyle,
+  placeholderTextColor,
+  textStyle,
 }) => {
   const [searchText, setSearchText] = useState('');
   const [isSearching, setSearching] = useState(false);
@@ -43,8 +51,12 @@ const SearchInput: React.FC<Props> = ({
       height={wrapperHeight}
       inputPadding={inputPadding}
       hasShadow={hasShadow}
+      style={containerStyle}
     >
       <Input
+        textStyle={textStyle}
+        placeholderTextColor={placeholderTextColor}
+        style={inputStyle}
         inputRef={ref}
         borderless
         large={false}

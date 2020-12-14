@@ -4,7 +4,7 @@
     "target": "es6",
     "module": "es6",
     "lib": ["es6", "DOM"],
-    "types": ["react",  "jest"],
+    "types": ["react", "jest"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -35,5 +35,5 @@
   },
   "compileOnSave": true,
   "include": ["src", "src/native"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "documentation"]
 }

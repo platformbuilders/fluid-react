@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { FormError } from '../..';
@@ -12,7 +12,7 @@ type Props = {
   label?: string;
   value: string | number | string[] | undefined;
   error?: string | boolean;
-  onChangeText?: (value: any) => void;
+  onChangeText?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const defaultMaskOptions = {
@@ -35,9 +35,12 @@ const CurrencyInputComponent: FC<Props> = ({
 }) => {
   const currencyMask = createNumberMask(defaultMaskOptions);
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChangeText && event.target.value) {
-      onChangeText(toOnlyNumbers(event.target.value));
+      onChangeText({
+        ...event,
+        target: { ...event.target, value: toOnlyNumbers(event.target.value) },
+      });
     }
   };
 

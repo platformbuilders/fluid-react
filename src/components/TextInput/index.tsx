@@ -1,7 +1,8 @@
-import React, { FC, RefObject } from 'react';
+import React, { FC } from 'react';
 import TextInputMask from 'react-input-mask';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
+import { TextInputType } from '../../types';
 import { FormError } from '..';
 
 enum Mask {
@@ -13,29 +14,13 @@ enum Mask {
   cellphone = '(99) 99999-9999',
 }
 
-type Props = {
-  mask?: string;
-  maskType?: string;
-  label?: string;
-  error?: string | boolean;
-  placeholder?: string;
-  fullWidth?: boolean;
-  ref?: RefObject<any>;
-  name: string;
-  id: string;
-  type: string;
-  value: string | number | string[] | undefined;
-  autoFocus?: boolean;
-  onChange?: (value: any) => void;
-  onBlur?: (e: any) => void;
-};
-
-const TextInput: FC<Props> = ({
+const TextInput: FC<TextInputType> = ({
   mask,
   maskType = '',
   error = '',
   onChange,
   ref,
+  maxlength,
   ...rest
 }) => {
   const renderTextInput = (): JSX.Element => {
@@ -47,7 +32,12 @@ const TextInput: FC<Props> = ({
     ) : hasMask ? (
       <TextInputMask mask={maskOption} onChange={onChange} {...rest}>
         {(inputProps: any): JSX.Element => (
-          <Input ref={ref} margin="normal" {...inputProps} />
+          <Input
+            ref={ref}
+            margin="normal"
+            {...inputProps}
+            inputProps={{ maxLength: maxlength }}
+          />
         )}
       </TextInputMask>
     ) : (
@@ -57,6 +47,7 @@ const TextInput: FC<Props> = ({
         onChange={onChange}
         {...rest}
         error={!!error}
+        inputProps={{ maxLength: maxlength }}
       />
     );
   };
