@@ -20,7 +20,7 @@ type Props = {
   error?: string | boolean;
   placeholder?: string;
   fullWidth?: boolean;
-  ref?: RefObject<TextInputMask>;
+  ref?: RefObject<any>;
   name: string;
   id: string;
   type: string;
@@ -45,13 +45,19 @@ const TextInput: FC<Props> = ({
     return maskType === 'currency' ? (
       <CurrencyInput {...rest} onChangeText={onChange} />
     ) : hasMask ? (
-      <TextInputMask ref={ref} mask={maskOption} onChange={onChange} {...rest}>
+      <TextInputMask mask={maskOption} onChange={onChange} {...rest}>
         {(inputProps: any): JSX.Element => (
-          <Input margin="normal" {...inputProps} />
+          <Input ref={ref} margin="normal" {...inputProps} />
         )}
       </TextInputMask>
     ) : (
-      <Input margin="normal" onChange={onChange} {...rest} error={!!error} />
+      <Input
+        ref={ref}
+        margin="normal"
+        onChange={onChange}
+        {...rest}
+        error={!!error}
+      />
     );
   };
   return (
