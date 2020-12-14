@@ -38,6 +38,7 @@ module.exports = {
     Native: [{
       Começando: ['introduction.native'],
       Componentes: [
+        'native.component.accordion',
         'native.component.avatar',
         'native.component.button'
       ]
