@@ -24,7 +24,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 const [checked, setChecked] = useState(false);
 
 <CheckBox
-  accessibility="Caixa de seleção de ingredientes"
+  accessibility="Caixa de seleção"
   id="a823ha32t2"
   uncheckedCheckBoxColor="#519"
   checkedCheckBoxColor="#591"
@@ -36,7 +36,7 @@ const [checked, setChecked] = useState(false);
   error="Não marque esta opção!"
 />
 <CheckBox
-  accessibility="Caixa de seleção de ingredientes"
+  accessibility="Caixa de seleção"
   id="a823ha32t2"
   uncheckedCheckBoxColor="#519"
   checkedCheckBoxColor="#591"
