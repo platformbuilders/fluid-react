@@ -40,7 +40,8 @@ module.exports = {
       Componentes: [
         'native.component.accordion',
         'native.component.avatar',
-        'native.component.button'
+        'native.component.button',
+        'native.component.checkBox'
       ]
     }]
   }  
