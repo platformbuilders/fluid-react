@@ -20,6 +20,7 @@ type Props = {
   inputStyle?: StyleProp<TextStyle>;
   containerStyle?: StyleProp<ViewStyle>;
   placeholderTextColor?: string;
+  customClearAction?(): void;
 };
 
 const SearchInput: React.FC<Props> = ({
@@ -40,11 +41,20 @@ const SearchInput: React.FC<Props> = ({
   containerStyle,
   placeholderTextColor,
   textStyle,
+  customClearAction = () => {},
 }) => {
   const [searchText, setSearchText] = useState('');
   const [isSearching, setSearching] = useState(false);
   const [isFocused, setFocused] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
+
+  const clearBtn = (): void => {
+    setSearchText('');
+    onClear();
+    setSearching(false);
+    Keyboard.dismiss();
+    customClearAction();
+  };
 
   return (
     <Wrapper
@@ -71,12 +81,7 @@ const SearchInput: React.FC<Props> = ({
           setSearchText(value);
           onChange(value);
         }}
-        onPressIcon={(): void => {
-          setSearchText('');
-          onClear();
-          setSearching(false);
-          Keyboard.dismiss();
-        }}
+        onPressIcon={clearBtn}
         value={searchText}
         onFocus={() => {
           setFocused(true);
