@@ -51,9 +51,10 @@ export interface PinInputType {
   onChangeText: (text: string) => void;
   id?: string;
   accessibility?: string;
+  keyboardAppearance?: 'default' | 'light' | 'dark';
   caption?: string;
   value?: string;
-  onFulfill?(): void;
+  onFulfill?(text: string): void;
   onBackspace?(): void;
   password?: boolean;
   autoFocus?: boolean;
@@ -65,6 +66,7 @@ export interface PinInputType {
   cellSpacing?: number;
   codeLength?: number;
   cellSize?: number;
+  contrast?: boolean;
   placeholder?: string;
   error?: string | boolean;
   mask?: string | JSX.Element;
