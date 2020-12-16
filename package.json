@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
