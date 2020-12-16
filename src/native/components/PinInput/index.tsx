@@ -32,10 +32,8 @@ const PinInput: React.FC<PinInputType> = ({
   const theme = useContext(ThemeContext);
   const defaultStyle = defaultStyling(theme);
   const changeText = (text: string) => {
-    console.log('LOG: ~ changeText ~ text', text);
     onChangeText(text);
     if (text.length === codeLength) {
-      console.log('LOG: ~ changeText ~ onFulfill', text);
       onFulfill(text);
     }
   };
