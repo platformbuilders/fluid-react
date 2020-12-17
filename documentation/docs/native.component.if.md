@@ -16,7 +16,9 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ![button](../static/img/screenshots/if.jpg)
 
+:::info
 Não é exatamente um componente visual, está mais para um encapsulador de elementos JSX que renderiza os elementos filhos se a condição inserida for satisfeita.
+:::
 
 ### Fonte
 
