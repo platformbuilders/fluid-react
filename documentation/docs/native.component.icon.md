@@ -26,14 +26,12 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
   id="2r032178"
   name="corn"
   color="#f52"
-  size={50}
 />
 <Icon
   accessibility="Ícone de vaca"
   id="2r032179"
   name="cow"
   color="#61f"
-  size={50}
 />
 ```
 
