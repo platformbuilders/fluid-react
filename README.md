@@ -27,20 +27,38 @@ Here's how you add our dependencie to your project @platformbuilders/elements
 yarn add @platformbuilders/react-elements
 ```
 
-2. import the ThemeProvider from [styled-components](https://styled-components.com/docs/advanced) and provide the Theme following the ThemeType definition.
+2. Add to the end of the <head> tag in index.html
+
+```html
+  <head>
+    ...
+ <!-- jss-insertion-point -->
+ </head>
+ ```
+
+3. import the ThemeProvider from [styled-components](https://styled-components.com/docs/advanced) and provide the Theme following the ThemeType definition.
 
 ```jsx
+import { create } from 'jss';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 import { ThemeProvider } from 'styled-components';
 import { ThemeType } from '@platformbuilders/react-elements';
 
 const theme: ThemeType = { ... };
 
+const jss = create({
+  ...jssPreset(),
+  insertionPoint: 'jss-insertion-point',
+});
+
 <ThemeProvider theme={theme}>
-  <App />
+ <StylesProvider jss={jss}>
+      <App />
+  </StylesProvider>
 </ThemeProvider>
 ```
 
-3. use it
+4. use it
 
 ```jsx
 import { Button } from '@platformbuilders/react-elements';
