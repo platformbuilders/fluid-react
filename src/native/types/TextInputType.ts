@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import {
   TextInputProps,
   StyleProp,
@@ -14,6 +15,7 @@ export interface TextInputType extends TextInputProps {
   accessibility: string;
   inputRef?: any;
   options?: any;
+  ref?: RefObject<any>;
   variant?: TypographyVariants;
   large?: boolean;
   borderless?: boolean;
@@ -30,6 +32,7 @@ export interface TextInputType extends TextInputProps {
   iconHitSlop?: HitSlopType;
   labelStyle?: any;
   isPlaceholder?: boolean;
+  customFocus?: boolean;
   onPressIcon?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
@@ -37,6 +40,7 @@ export interface TextInputType extends TextInputProps {
   placeholderTextColor?: string;
   leftIcon?: boolean;
   iconColor?: string;
+  inputPadding?: number;
 }
 
 export interface MaskedTextInputType extends TextInputType {
@@ -47,9 +51,10 @@ export interface PinInputType {
   onChangeText: (text: string) => void;
   id?: string;
   accessibility?: string;
+  keyboardAppearance?: 'default' | 'light' | 'dark';
   caption?: string;
   value?: string;
-  onFulfill?(): void;
+  onFulfill?(text: string): void;
   onBackspace?(): void;
   password?: boolean;
   autoFocus?: boolean;
@@ -61,6 +66,7 @@ export interface PinInputType {
   cellSpacing?: number;
   codeLength?: number;
   cellSize?: number;
+  contrast?: boolean;
   placeholder?: string;
   error?: string | boolean;
   mask?: string | JSX.Element;

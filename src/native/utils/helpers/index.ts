@@ -10,3 +10,4 @@ export {
 export * from './generateHaptic';
 export * from './getByTypographyVariant';
 export * from './fontScale';
+export * from './shadow';

@@ -1,19 +1,21 @@
 import React, { FC } from 'react';
-import { View } from 'react-native';
+import { View as DefaultView } from 'react-native';
+import If from '../If';
+import { View } from './styles';
 
-const shadowStyle = {
-  shadowColor: '#212121',
-  shadowOffset: { width: 2, height: 2 },
-  shadowOpacity: 0.28,
-  shadowRadius: 2,
-  elevation: 2,
-  width: '100%',
+type Props = {
+  hasShadow?: boolean;
 };
 
-const Shadow: FC = ({ children, ...rest }) => (
-  <View style={shadowStyle} {...rest}>
-    {children}
-  </View>
+const Shadow: FC<Props> = ({ children, hasShadow = true, ...rest }) => (
+  <>
+    <If condition={hasShadow}>
+      <View {...rest}>{children}</View>
+    </If>
+    <If condition={!hasShadow}>
+      <DefaultView {...rest}>{children}</DefaultView>
+    </If>
+  </>
 );
 
 export default Shadow;
