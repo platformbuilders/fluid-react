@@ -41,7 +41,8 @@ module.exports = {
         'native.component.accordion',
         'native.component.avatar',
         'native.component.button',
-        'native.component.checkBox'
+        'native.component.checkBox',
+        'native.component.radioButton'
       ]
     }]
   }  
