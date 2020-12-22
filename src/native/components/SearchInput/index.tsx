@@ -20,6 +20,7 @@ type Props = {
   inputStyle?: StyleProp<TextStyle>;
   containerStyle?: StyleProp<ViewStyle>;
   placeholderTextColor?: string;
+  onSubmit?(): void;
 };
 
 const SearchInput: React.FC<Props> = ({
@@ -40,6 +41,7 @@ const SearchInput: React.FC<Props> = ({
   containerStyle,
   placeholderTextColor,
   textStyle,
+  onSubmit = () => null,
 }) => {
   const [searchText, setSearchText] = useState('');
   const [isSearching, setSearching] = useState(false);
@@ -93,6 +95,7 @@ const SearchInput: React.FC<Props> = ({
         iconColor={iconColor}
         iconSize={iconSize}
         inputPadding={inputPadding}
+        onSubmitEditing={onSubmit}
       />
     </Wrapper>
   );
