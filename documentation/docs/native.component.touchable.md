@@ -45,7 +45,6 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 | **accessibilityLabel**      | Define a palavra de acessibilidade.             | **string**  |
 | **children?**    | Elementos filhos do componente.                                                          | **string** |
 | **disabled?** | Define se o botão está pressionável ou não.       | **boolean** |
-| **contrast?**    | Define se é pra ter contraste.  | **boolean**   |
 | **children?** | Elementos filhos do componente.                                                     | **React.ReactNode** |
 | **haptic?** | Define o tipo de resposta tátil, podendo ser: **impact, notification, selection, impactLight, impactMedium, impactHeavy, notificationError, notificationSuccess, notificationWarning, undefined**. |  **string** |
 | **key?** 	| Define a chave do componente. 	| **number, string** 	|
