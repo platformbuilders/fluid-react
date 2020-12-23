@@ -42,7 +42,8 @@ module.exports = {
         'native.component.avatar',
         'native.component.button',
         'native.component.checkBox',
-        'native.component.fab'
+        'native.component.fab',
+        'native.component.touchable'
       ]
     }]
   }  
