@@ -21,6 +21,7 @@ type Props = {
   containerStyle?: StyleProp<ViewStyle>;
   placeholderTextColor?: string;
   onSubmit?(): void;
+  autoFocus?: boolean;
 };
 
 const SearchInput: React.FC<Props> = ({
@@ -42,6 +43,7 @@ const SearchInput: React.FC<Props> = ({
   placeholderTextColor,
   textStyle,
   onSubmit = () => null,
+  autoFocus = false,
 }) => {
   const [searchText, setSearchText] = useState('');
   const [isSearching, setSearching] = useState(false);
@@ -64,6 +66,7 @@ const SearchInput: React.FC<Props> = ({
         large={false}
         id={id}
         accessibility={accessibility}
+        autoFocus={autoFocus}
         autoCapitalize="none"
         autoCorrect={false}
         iconName={isFocused || !!searchText ? 'close' : 'magnify'}
@@ -82,7 +85,7 @@ const SearchInput: React.FC<Props> = ({
         value={searchText}
         onFocus={() => {
           setFocused(true);
-          onFocus();
+          if (!autoFocus) onFocus();
         }}
         onBlur={(): void => {
           onBlur();

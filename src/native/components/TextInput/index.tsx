@@ -2,7 +2,6 @@ import React, { FC, useState, useEffect, useCallback, useRef } from 'react';
 import { Animated } from 'react-native';
 import { isEmpty } from 'lodash';
 import { usePrevious } from '../../utils/hooks';
-import { isIOS } from '../../utils/helpers/isIOS';
 import { TextInputType, InputStatus, TypographyVariants } from '../../types';
 
 import MaskedTextInput from './MaskedTextInput';
@@ -28,7 +27,6 @@ const TextInput: FC<TextInputType> = ({
   borderless = false,
   multiline = false,
   autoFocus = false,
-  customFocus = true,
   allowFontScaling = false,
   keyboardType = 'default',
   iconSize = 20,
@@ -157,31 +155,9 @@ const TextInput: FC<TextInputType> = ({
     }
   };
 
-  const focusInputElement = (element: any) => {
-    const delay = isIOS() ? 5 : 15;
-    setTimeout(() => {
-      element?.focus();
-    }, delay);
-  };
-
-  const checkFocus = () => {
-    let element = inputRef?.current;
-    if (autoFocus && customFocus) {
-      if (maskType) {
-        // eslint-disable-next-line no-underscore-dangle
-        element = inputRef?.current?._inputElement;
-      }
-      focusInputElement(element);
-    }
-  };
-
   useEffect(() => {
     setAnimation();
   }, [value, previousValue]);
-
-  useEffect(() => {
-    checkFocus();
-  }, []); // mount only
 
   const hasError = !isEmpty(error);
 
