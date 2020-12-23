@@ -32,7 +32,6 @@ export interface TextInputType extends TextInputProps {
   iconHitSlop?: HitSlopType;
   labelStyle?: any;
   isPlaceholder?: boolean;
-  customFocus?: boolean;
   onPressIcon?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
