@@ -18,13 +18,11 @@ export const Icon: FC<IconType> = ({
   onPress = (): void => {},
   borderColor = '',
   backgroundColor = '',
-  ProjectIcons,
+  iconSets,
   ...rest
 }) => {
   const iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
-  const Svg = ProjectIcons
-    ? ProjectIcons[`Icon${iconName}`]
-    : Icons[`Icon${iconName}`];
+  const Svg = iconSets ? iconSets[`Icon${iconName}`] : Icons[`Icon${iconName}`];
 
   return (
     <Animated.View style={style}>
