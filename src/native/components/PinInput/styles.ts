@@ -56,9 +56,9 @@ type CaptionProps = {
   centered: boolean;
 };
 
-export const CaptionText = styled(Typography).attrs({ variant: 'footnote' })<
-  CaptionProps
->`
+export const CaptionText = styled(Typography).attrs({
+  variant: 'footnote',
+})<CaptionProps>`
   text-align: ${isCentered('center', 'left')};
   opacity: 0.67;
   font-weight: 300;
