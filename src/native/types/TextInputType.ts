@@ -74,5 +74,6 @@ export interface PinInputType {
   cellStyleFocused?: any;
   textStyle?: any;
   textStyleFocused?: any;
+  wrapperStyle?: StyleProp<TextStyle>;
   keyboardType?: KeyboardTypeOptions;
 }

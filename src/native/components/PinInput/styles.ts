@@ -13,7 +13,6 @@ const failure = getTheme('failure');
 const primaryMain = getTheme('primary.main');
 const disabledDark = getTheme('primary.Dark');
 const primaryContrast = getTheme('primary.contrast');
-const smallSpacing = getTheme('smallSpacing');
 const mediumSpacing = getTheme('mediumSpacing');
 
 export const defaultStyling = (theme?: ThemeType): any => ({
@@ -34,7 +33,6 @@ export const defaultStyling = (theme?: ThemeType): any => ({
 export const Wrapper = styled.View`
   align-items: center;
   flex-direction: row;
-  margin-bottom: ${smallSpacing};
 `;
 
 export const PinCodeInput = styled(DefaultCodeInput)``;
