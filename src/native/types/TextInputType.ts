@@ -32,7 +32,6 @@ export interface TextInputType extends TextInputProps {
   iconHitSlop?: HitSlopType;
   labelStyle?: any;
   isPlaceholder?: boolean;
-  customFocus?: boolean;
   onPressIcon?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
@@ -75,5 +74,6 @@ export interface PinInputType {
   cellStyleFocused?: any;
   textStyle?: any;
   textStyleFocused?: any;
+  wrapperStyle?: StyleProp<TextStyle>;
   keyboardType?: KeyboardTypeOptions;
 }

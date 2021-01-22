@@ -26,6 +26,7 @@ const PinInput: React.FC<PinInputType> = ({
   value,
   onChangeText,
   onFulfill = () => {},
+  wrapperStyle,
   ...rest
 }) => {
   const [hidePassword, setHidePassword] = useState(true);
@@ -37,9 +38,10 @@ const PinInput: React.FC<PinInputType> = ({
       onFulfill(text);
     }
   };
+
   return (
     <FormError centered={centered} error={error}>
-      <Wrapper>
+      <Wrapper style={wrapperStyle}>
         <PinCodeInput
           value={value}
           onTextChange={changeText}
