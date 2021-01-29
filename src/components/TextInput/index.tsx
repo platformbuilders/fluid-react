@@ -19,6 +19,7 @@ const TextInput: FC<TextInputType> = ({
   maskType = '',
   error = '',
   onChange,
+  onBlur,
   maxlength,
   ...rest
 }) => {
@@ -43,6 +44,7 @@ const TextInput: FC<TextInputType> = ({
         {...rest}
         margin="normal"
         onChange={onChange}
+        onBlur={onBlur}
         error={!!error}
         inputProps={{ maxLength: maxlength }}
       />
