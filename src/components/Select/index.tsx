@@ -12,7 +12,7 @@ type Props = {
   onChange(value: any): void;
   error?: string | string[];
   label?: string;
-  selectedValue?: string[] | number;
+  selectedValue?: string | string[] | number | number[];
   values: ValuesProps[];
 };
 
