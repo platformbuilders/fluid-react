@@ -43,6 +43,7 @@ module.exports = {
         'native.component.button',
         'native.component.checkBox',
         'native.component.fab',
+        'native.component.loadingIndicator',
         'native.component.pinInput',
         'native.component.radioButton',
         'native.component.searchButton',
