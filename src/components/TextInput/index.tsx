@@ -19,7 +19,7 @@ const TextInput: FC<TextInputType> = ({
   maskType = '',
   error = '',
   onChange,
-  ref,
+  onBlur,
   maxlength,
   ...rest
 }) => {
@@ -33,7 +33,6 @@ const TextInput: FC<TextInputType> = ({
       <TextInputMask mask={maskOption} onChange={onChange} {...rest}>
         {(inputProps: any): JSX.Element => (
           <Input
-            ref={ref}
             margin="normal"
             {...inputProps}
             inputProps={{ maxLength: maxlength }}
@@ -42,10 +41,10 @@ const TextInput: FC<TextInputType> = ({
       </TextInputMask>
     ) : (
       <Input
-        ref={ref}
+        {...rest}
         margin="normal"
         onChange={onChange}
-        {...rest}
+        onBlur={onBlur}
         error={!!error}
         inputProps={{ maxLength: maxlength }}
       />

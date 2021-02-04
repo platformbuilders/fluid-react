@@ -15,6 +15,7 @@ const PinInput: React.FC<PinInputType> = ({
   password = false,
   animated = false,
   centered = false,
+  contrast = false,
   mask = '•',
   codeLength = 4,
   cellSpacing = moderateScale(6),
@@ -24,19 +25,26 @@ const PinInput: React.FC<PinInputType> = ({
   error,
   value,
   onChangeText,
-  onFulfill,
+  onFulfill = () => {},
+  wrapperStyle,
   ...rest
 }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const theme = useContext(ThemeContext);
   const defaultStyle = defaultStyling(theme);
+  const changeText = (text: string) => {
+    onChangeText(text);
+    if (text.length === codeLength) {
+      onFulfill(text);
+    }
+  };
+
   return (
     <FormError centered={centered} error={error}>
-      <Wrapper>
+      <Wrapper style={wrapperStyle}>
         <PinCodeInput
           value={value}
-          onTextChange={onChangeText}
-          onFulfill={onFulfill}
+          onTextChange={changeText}
           password={password && hidePassword}
           mask={mask}
           codeLength={codeLength}
@@ -53,7 +61,7 @@ const PinInput: React.FC<PinInputType> = ({
             name={hidePassword ? 'eye' : 'eye-off'}
             size={iconSize}
             onPress={() => setHidePassword(!hidePassword)}
-            contrast={false}
+            contrast={contrast}
             error={false}
           />
         )}
