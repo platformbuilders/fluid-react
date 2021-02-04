@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StylesProvider } from '@material-ui/styles';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 import { getTheme } from '../../utils/helpers';
 
@@ -14,14 +13,12 @@ export const Wrapper = styled.div`
 `;
 
 const ColoredCheckbox = styled((props) => (
-  <StylesProvider injectFirst>
-    <Checkbox
-      color="default"
-      checked={props.checked}
-      onChange={props.onChange}
-      {...props}
-    />
-  </StylesProvider>
+  <Checkbox
+    color="default"
+    checked={props.checked}
+    onChange={props.onChange}
+    {...props}
+  />
 ))`
   color: ${primaryMain};
   & .Mui-checked {

@@ -32,7 +32,6 @@ export interface TextInputType extends TextInputProps {
   iconHitSlop?: HitSlopType;
   labelStyle?: any;
   isPlaceholder?: boolean;
-  customFocus?: boolean;
   onPressIcon?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
@@ -51,9 +50,10 @@ export interface PinInputType {
   onChangeText: (text: string) => void;
   id?: string;
   accessibility?: string;
+  keyboardAppearance?: 'default' | 'light' | 'dark';
   caption?: string;
   value?: string;
-  onFulfill?(): void;
+  onFulfill?(text: string): void;
   onBackspace?(): void;
   password?: boolean;
   autoFocus?: boolean;
@@ -65,6 +65,7 @@ export interface PinInputType {
   cellSpacing?: number;
   codeLength?: number;
   cellSize?: number;
+  contrast?: boolean;
   placeholder?: string;
   error?: string | boolean;
   mask?: string | JSX.Element;
@@ -73,5 +74,6 @@ export interface PinInputType {
   cellStyleFocused?: any;
   textStyle?: any;
   textStyleFocused?: any;
+  wrapperStyle?: StyleProp<TextStyle>;
   keyboardType?: KeyboardTypeOptions;
 }
