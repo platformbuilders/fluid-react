@@ -1,16 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
-import { StylesProvider } from '@material-ui/styles';
 import { TextField } from '@material-ui/core';
 import { getTheme } from '../../utils/helpers';
 
 const primaryMain = getTheme('primary.main');
 
-export const Input = styled((props) => (
-  <StylesProvider injectFirst>
-    <TextField {...props} />
-  </StylesProvider>
-))`
+export const Input = styled(TextField)`
   border-color: red;
   & label {
     font-size: 1em;

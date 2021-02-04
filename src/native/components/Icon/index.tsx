@@ -18,11 +18,11 @@ export const Icon: FC<IconType> = ({
   onPress = (): void => {},
   borderColor = '',
   backgroundColor = '',
+  iconSets,
   ...rest
 }) => {
-  // eslint-disable-next-line prettier/prettier
   const iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
-  const Svg = Icons[`Icon${iconName}`];
+  const Svg = iconSets ? iconSets[`Icon${iconName}`] : Icons[`Icon${iconName}`];
 
   return (
     <Animated.View style={style}>
