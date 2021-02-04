@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StylesProvider } from '@material-ui/styles';
 import { Button, CircularProgress } from '@material-ui/core';
 import { getTheme } from '../../utils/helpers';
 
@@ -10,9 +9,7 @@ const secondaryMain = getTheme('secondary.main');
 const secondaryContrast = getTheme('secondary.contrast');
 
 export const StyledButton = styled((props) => (
-  <StylesProvider injectFirst>
-    <Button {...props} secondary={undefined} />
-  </StylesProvider>
+  <Button {...props} secondary={undefined} />
 ))`
   min-width: 155px;
   border-radius: 50px;

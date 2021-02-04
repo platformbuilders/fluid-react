@@ -42,7 +42,10 @@ module.exports = {
         'native.component.avatar',
         'native.component.button',
         'native.component.checkBox',
-        'native.component.radioButton'
+        'native.component.fab',
+        'native.component.radioButton'        
+        'native.component.searchButton',
+        'native.component.touchable'
       ]
     }]
   }  
