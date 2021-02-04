@@ -12,6 +12,7 @@ export type TypographyVariants =
   | 'title3'
   | 'title4'
   | 'headline'
+  | 'callout'
   | 'body'
   | 'subhead'
   | 'footnote'

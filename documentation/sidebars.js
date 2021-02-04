@@ -43,7 +43,12 @@ module.exports = {
         'native.component.button',
         'native.component.checkBox',
         'native.component.fab',
-        'native.component.formError'
+        'native.component.formError',
+        'native.component.loadingIndicator',
+        'native.component.pinInput',
+        'native.component.radioButton',
+        'native.component.searchButton',
+        'native.component.touchable'
       ]
     }]
   }  
