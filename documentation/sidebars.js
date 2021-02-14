@@ -44,6 +44,7 @@ module.exports = {
         'native.component.checkBox',
         'native.component.fab',
         'native.component.formError',
+        'native.component.icon',
         'native.component.if',
         'native.component.link',
         'native.component.loadingIndicator',
