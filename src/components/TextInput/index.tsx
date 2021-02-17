@@ -17,9 +17,11 @@ enum Mask {
 const TextInput: FC<TextInputType> = ({
   mask,
   maskType = '',
+  formatChars,
   error = '',
   onChange,
   onBlur,
+  onFocus,
   maxlength,
   ...rest
 }) => {
@@ -30,7 +32,13 @@ const TextInput: FC<TextInputType> = ({
     return maskType === 'currency' ? (
       <CurrencyInput {...rest} onChangeText={onChange} />
     ) : hasMask ? (
-      <TextInputMask mask={maskOption} onChange={onChange} {...rest}>
+      <TextInputMask
+        mask={maskOption}
+        formatChars={formatChars}
+        onChange={onChange}
+        onFocus={onFocus}
+        {...rest}
+      >
         {(inputProps: any): JSX.Element => (
           <Input
             margin="normal"
@@ -45,6 +53,7 @@ const TextInput: FC<TextInputType> = ({
         margin="normal"
         onChange={onChange}
         onBlur={onBlur}
+        onFocus={onFocus}
         error={!!error}
         inputProps={{ maxLength: maxlength }}
       />

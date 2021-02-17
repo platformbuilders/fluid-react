@@ -3,6 +3,7 @@ import { ChangeEvent, FocusEvent } from 'react';
 export type TextInputType = {
   mask?: string;
   maskType?: string;
+  formatChars?: { [key: string]: string };
   label?: string;
   error?: string | boolean;
   placeholder?: string;
@@ -19,5 +20,8 @@ export type TextInputType = {
     e:
       | FocusEvent<HTMLInputElement | HTMLTextAreaElement>
       | ChangeEvent<HTMLDivElement>,
+  ) => void;
+  onFocus?: (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
 };
