@@ -30,12 +30,18 @@ const TextInput: FC<TextInputType> = ({
     const maskOption = Mask[maskType] || mask;
 
     return maskType === 'currency' ? (
-      <CurrencyInput {...rest} onChangeText={onChange} />
+      <CurrencyInput
+        {...rest}
+        onChangeText={onChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+      />
     ) : hasMask ? (
       <TextInputMask
         mask={maskOption}
         formatChars={formatChars}
         onChange={onChange}
+        onBlur={onBlur}
         onFocus={onFocus}
         {...rest}
       >
