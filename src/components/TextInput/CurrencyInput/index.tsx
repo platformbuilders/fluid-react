@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC } from 'react';
+import React, { ChangeEvent, FocusEvent, FC } from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { FormError } from '../..';
@@ -13,6 +13,8 @@ type Props = {
   value: string | number | string[] | undefined;
   error?: string | boolean;
   onChangeText?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: ((e: FocusEvent<HTMLInputElement>) => void) | undefined;
+  onFocus?: ((e: FocusEvent<HTMLInputElement>) => void) | undefined;
 };
 
 const defaultMaskOptions = {
@@ -31,6 +33,8 @@ const CurrencyInputComponent: FC<Props> = ({
   id,
   name,
   onChangeText,
+  onBlur,
+  onFocus,
   value,
 }) => {
   const currencyMask = createNumberMask(defaultMaskOptions);
@@ -54,6 +58,8 @@ const CurrencyInputComponent: FC<Props> = ({
           name={name}
           value={value}
           onChange={handleChange}
+          onBlur={onBlur}
+          onFocus={onFocus}
           render={(ref, props) => <Input ref={ref} error={error} {...props} />}
         />
         <Bar className="bar" error={error} />
