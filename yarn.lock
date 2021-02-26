@@ -1688,6 +1688,14 @@
     react "^16.13.1"
     react-dom "^16.13.1"
 
+"@platformbuilders/react-native-masked-text@^1.0.0":
+  version "1.0.0"
+  resolved "https://npm.pkg.github.com/download/@platformbuilders/react-native-masked-text/1.0.0/4a7e5e1c6e7bcf40b61f865a6b6f0aded4152da64c4b0c95aaef0ec1b3e79de3#78b4c205e64dcfac6e2c62c3d22ede7faded4e77"
+  integrity sha512-gsaW2gwDkXepZr25rYa1p/GYp0oVKdYCsbV8M+3FHF0sdJrV02mIAsy0dMHdF88BkmgPvrCBeYyoEzQulpsbDQ==
+  dependencies:
+    date-and-time "0.14.2"
+    tinymask "1.0.2"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.2":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"
@@ -6193,10 +6201,10 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-date-and-time@0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.9.0.tgz#1524579e56dc07675c640b41735a7665c0659240"
-  integrity sha512-4JybB6PbR+EebpFx/KyR5Ybl+TcdXMLIJkyYsCx3P4M4CWGMuDyFF19yh6TyasMAIF5lrsgIxiSHBXh2FFc7Fg==
+date-and-time@0.14.2:
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.14.2.tgz#a4266c3dead460f6c231fe9674e585908dac354e"
+  integrity sha512-EFTCh9zRSEpGPmJaexg7HTuzZHh6cnJj1ui7IGCFNXzd2QdpsNh05Db5TF3xzJm30YN+A8/6xHSuRcQqoc3kFA==
 
 dayjs@^1.8.15:
   version "1.9.8"
@@ -13136,13 +13144,6 @@ react-native-markdown-display@^6.1.6:
     markdown-it "^10.0.0"
     prop-types "^15.7.2"
     react-native-fit-image "^1.5.5"
-
-react-native-masked-text@duspada/react-native-masked-text:
-  version "1.13.0"
-  resolved "https://codeload.github.com/duspada/react-native-masked-text/tar.gz/298629bb4994c2c3bb4eebeeee4e93b74fc1194e"
-  dependencies:
-    date-and-time "0.9.0"
-    tinymask "1.0.2"
 
 react-native-responsive-fontsize@^0.4.3:
   version "0.4.3"

@@ -11,6 +11,9 @@ import {
   defaultStyling,
 } from './styles';
 
+const iconString = (hidePassword: boolean): string =>
+  hidePassword ? 'eye' : 'eye-off';
+
 const PinInput: React.FC<PinInputType> = ({
   password = false,
   animated = false,
@@ -56,9 +59,10 @@ const PinInput: React.FC<PinInputType> = ({
         />
         {password && (
           <Icon
-            id="code_input_icon"
-            accessibility="Exibir ou ocultar inputs"
-            name={hidePassword ? 'eye' : 'eye-off'}
+            accessibility={`Exibir ou ocultar inputs - ${iconString(
+              hidePassword,
+            )}`}
+            name={iconString(hidePassword)}
             size={iconSize}
             onPress={() => setHidePassword(!hidePassword)}
             contrast={contrast}
@@ -66,7 +70,11 @@ const PinInput: React.FC<PinInputType> = ({
           />
         )}
       </Wrapper>
-      {!!caption && <CaptionText centered={centered}>{caption}</CaptionText>}
+      {!!caption && (
+        <CaptionText accessibility={caption} centered={centered}>
+          {caption}
+        </CaptionText>
+      )}
     </FormError>
   );
 };

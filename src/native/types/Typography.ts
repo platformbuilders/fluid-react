@@ -26,6 +26,6 @@ export interface TypographyType {
   style?: StyleProp<TextStyle>;
   textRef?: any;
   id?: string;
-  accessibility?: string;
+  accessibility: string;
   numberOfLines?: number;
 }

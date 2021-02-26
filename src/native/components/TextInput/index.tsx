@@ -139,7 +139,7 @@ const TextInput: FC<TextInputType> = ({
         inputRef={inputRef}
         maskType={maskType || 'no-mask'}
         accessibilityLabel={accessibilityLabel || accessibility}
-        testID={testID || id}
+        testID={testID || id || accessibility}
         {...textInputProps}
       />
     );
@@ -183,7 +183,7 @@ const TextInput: FC<TextInputType> = ({
   return (
     <Wrapper style={style} multiline={multiline}>
       <FormError
-        id={id}
+        id={id || accessibility}
         accessibility={accessibility}
         centered={centered}
         error={error}
@@ -195,7 +195,7 @@ const TextInput: FC<TextInputType> = ({
             contrast={contrast}
             style={[labelAnimatedStyle, labelStyle]}
             variant={isPlaceholder ? placeholderVariant : labelVariant}
-            testID={`error_${id}`}
+            testID={`error_${id || accessibility}`}
             accessibilityLabel={`Erro ${accessibility}`}
           >
             {label}

@@ -3,7 +3,7 @@ import { Keyboard, StyleProp, TextStyle, ViewStyle } from 'react-native';
 import { Input, Wrapper } from './styles';
 
 type Props = {
-  id: string;
+  id?: string;
   accessibility: string;
   onChange(value: string): void;
   onClear?(): void;
@@ -64,7 +64,7 @@ const SearchInput: React.FC<Props> = ({
         inputRef={ref}
         borderless
         large={false}
-        id={id}
+        id={id || accessibility}
         accessibility={accessibility}
         autoFocus={autoFocus}
         autoCapitalize="none"
