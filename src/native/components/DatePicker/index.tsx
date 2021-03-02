@@ -29,7 +29,7 @@ interface Props {
   format?: string;
   dark?: boolean;
   status?: string;
-  id: string;
+  id?: string;
   accessibility: string;
 }
 
@@ -41,7 +41,7 @@ const DatePickerInput: FC<Props> = ({
   dark = false,
   editable = true,
   value = '',
-  testID = '',
+  testID,
   mode = 'date',
   androidMode = 'spinner',
   locale = 'pt-BR',
@@ -100,7 +100,11 @@ const DatePickerInput: FC<Props> = ({
     : DatePickerStyles;
 
   return (
-    <FormError id={id} accessibility={accessibility} error={error}>
+    <FormError
+      id={id || accessibility}
+      accessibility={accessibility}
+      error={error}
+    >
       <Label
         error={error || ''}
         style={labelAnimatedStyle}
@@ -119,7 +123,7 @@ const DatePickerInput: FC<Props> = ({
         date={date}
         customStyles={customStyles}
         maxDate={maxDate}
-        testID={testID}
+        testID={testID || accessibility}
         confirmBtnText={confirmBtnText}
         cancelBtnText={cancelBtnText}
         onDateChange={updateDate}

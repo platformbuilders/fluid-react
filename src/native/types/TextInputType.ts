@@ -5,7 +5,7 @@ import {
   TextStyle,
   KeyboardTypeOptions,
 } from 'react-native';
-import { TextInputMaskTypeProp } from 'react-native-masked-text';
+import { TextInputMaskTypeProp } from '@platformbuilders/react-native-masked-text';
 
 import { HitSlopType } from './Common';
 import { TypographyVariants } from './Variants';

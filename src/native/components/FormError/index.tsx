@@ -33,6 +33,7 @@ const FormError: FC<Props> = ({
           centered={centered}
           large={large}
           testID={`error_${id}`}
+          accessibility={`Erro ${accessibility || error}`}
           accessibilityLabel={`Erro ${accessibility || error}`}
           {...rest}
         >

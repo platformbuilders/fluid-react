@@ -12,7 +12,8 @@ const Typography: FC<TypographyType> = ({
   ...rest
 }) => (
   <Text
-    testID={id}
+    testID={id || accessibility}
+    accessibility={accessibility}
     accessibilityLabel={accessibility}
     ref={textRef}
     style={style}

@@ -8,13 +8,15 @@ const CommonTouchable: FC<TouchableType> = ({
   haptic = 'impact',
   disabled = false,
   accessibility,
+  accessibilityLabel,
+  testID,
   id,
   ...rest
 }) => (
   <TouchableOpacity
     {...rest}
-    accessibilityLabel={accessibility}
-    testID={id}
+    accessibilityLabel={accessibilityLabel || accessibility}
+    testID={testID || id || accessibility}
     disabled={disabled}
     onPress={(e): void => {
       generateHaptic(haptic);
