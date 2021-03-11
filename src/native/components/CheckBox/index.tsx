@@ -4,7 +4,7 @@ import FormError from '../FormError';
 import { Wrapper, defaultLabelStyle, containerStyle, CheckBox } from './styles';
 
 type Props = {
-  id: string;
+  id?: string;
   accessibility: string;
   checked?: boolean;
   label?: string;
@@ -32,10 +32,14 @@ const CheckboxComponent: FC<Props> = ({
   uncheckedCheckBoxColor,
   style,
 }) => (
-  <FormError id={id} accessibility={accessibility} error={error}>
+  <FormError
+    id={id || accessibility}
+    accessibility={accessibility}
+    error={error}
+  >
     <Wrapper style={style}>
       <CheckBox
-        testID={`check_${id}`}
+        testID={`check_${id || accessibility}`}
         accessibilityLabel={`Check ${accessibility}`}
         style={containerStyle}
         isChecked={checked}

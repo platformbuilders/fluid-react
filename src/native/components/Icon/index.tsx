@@ -27,10 +27,10 @@ export const Icon: FC<IconType> = ({
   return (
     <Animated.View style={style}>
       <Touchable
-        id={id}
+        id={id || accessibility}
         accessibility={accessibility || iconName}
         accessibilityLabel={accessibilityLabel || accessibility}
-        testID={testID || id}
+        testID={testID || id || accessibility}
         disabled={!touchable}
         onPress={onPress}
         {...rest}

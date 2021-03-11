@@ -14,10 +14,10 @@ const MaskedTextInput: FC<MaskedTextInputType> = ({
 }) => (
   <TextInput
     {...props}
-    id={id}
+    id={id || accessibility}
     status={status}
     accessibility={accessibility}
-    testID={id}
+    testID={id || accessibility}
     accessibilityLabel={accessibility}
     ref={inputRef}
     contrast={contrast}

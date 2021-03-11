@@ -20,10 +20,10 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <Touchable
-      id={id}
+      id={id || accessibility}
       accessibility={accessibility}
       accessibilityLabel={accessibilityLabel || accessibility}
-      testID={testID || id}
+      testID={testID || id || accessibility}
       disabled={loading || disabled}
       onPress={onPress}
       rounded={rounded}

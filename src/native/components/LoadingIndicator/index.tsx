@@ -6,11 +6,12 @@ const Loading: FC<LoadingType> = ({
   large = false,
   contrast = false,
   variant = 'circular',
+  accessibility,
   ...rest
 }) => (
   <Indicator
-    testID="loading"
-    accessibilityLabel="Aguarde"
+    testID={accessibility || 'loading'}
+    accessibilityLabel={accessibility || 'Aguarde'}
     variant={variant}
     contrast={contrast}
     style={large ? largeSize : smallSize}

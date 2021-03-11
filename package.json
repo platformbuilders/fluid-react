@@ -65,6 +65,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@platformbuilders/helpers": "^0.3.2",
+    "@platformbuilders/react-native-masked-text": "^1.0.0",
     "@types/react-text-mask": "^5.4.6",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "formik": "^2.1.6",
@@ -79,7 +80,6 @@
     "react-native-haptic": "^1.0.1",
     "react-native-image-picker": "2.3.4",
     "react-native-markdown-display": "^6.1.6",
-    "react-native-masked-text": "duspada/react-native-masked-text",
     "react-native-responsive-fontsize": "^0.4.3",
     "react-native-size-matters": "^0.3.0",
     "react-native-typography": "^1.4.1",

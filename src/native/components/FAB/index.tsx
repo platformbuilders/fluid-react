@@ -5,7 +5,7 @@ import If from '../If';
 import { Wrapper, Icon, Title } from './styles';
 
 type Props = {
-  id: string;
+  id?: string;
   accessibility: string;
   onPress(): void;
   color?: string;
@@ -33,7 +33,7 @@ const FAB: FC<Props> = ({
   ...rest
 }) => (
   <Wrapper
-    id={id}
+    id={id || accessibility}
     accessibility={accessibility}
     onPress={onPress}
     size={size}
@@ -43,14 +43,14 @@ const FAB: FC<Props> = ({
     {...rest}
   >
     <Icon
-      id={id}
+      id={`icon_${id || accessibility}`}
       name={iconName || 'plus'}
       accessibility={accessibility}
       iconColor={iconColor}
       iconSize={iconSize}
     />
     <If condition={!isEmpty(title)}>
-      <Title>{title}</Title>
+      <Title accessibility={title || ''}>{title}</Title>
     </If>
   </Wrapper>
 );

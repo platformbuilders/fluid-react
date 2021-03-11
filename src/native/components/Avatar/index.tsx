@@ -17,7 +17,7 @@ type Props = {
   size?: number;
   onPress?: (x: any) => void;
   onUpload?: (x: any) => any;
-  id: string;
+  id?: string;
   accessibility: string;
   accessibilityLabel?: string;
   testID?: string;
@@ -39,6 +39,7 @@ const Avatar: React.FC<Props> = React.forwardRef(
       ...rest
     },
     ref,
+    // eslint-disable-next-line sonarjs/cognitive-complexity
   ) => {
     const [uploadedImage, setUploadedImage] = useState<any>();
     const cameraRef = useRef<any>();
@@ -102,7 +103,7 @@ const Avatar: React.FC<Props> = React.forwardRef(
 
     return (
       <Wrapper
-        id={id}
+        id={id || accessibility}
         accessibility={accessibility}
         accessibilityLabel={accessibilityLabel || accessibility}
         testID={testID || id}

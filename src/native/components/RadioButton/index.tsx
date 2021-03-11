@@ -3,7 +3,7 @@ import If from '../If';
 import { Radio, CheckedRadio } from './styles';
 
 type Props = {
-  id: string;
+  id?: string;
   accessibility: string;
   radioButtonColor?: string;
   checkedRadioButtonColor?: string;
@@ -24,7 +24,7 @@ const RadioButton: React.FC<Props> = ({
   onPress = () => {},
 }) => (
   <Radio
-    id={id}
+    id={id || accessibility}
     accessibility={accessibility}
     onPress={onPress}
     radioButtonColor={radioButtonColor}

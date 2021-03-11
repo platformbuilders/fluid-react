@@ -1,7 +1,7 @@
 import { HapticFeedbackType } from 'react-native-haptic';
 
 export interface TouchableType {
-  id: string;
+  id?: string;
   accessibility: string;
   accessibilityLabel?: string;
   testID?: string;

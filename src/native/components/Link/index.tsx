@@ -21,16 +21,17 @@ const Link: FC<Props> = ({
   ...rest
 }) => (
   <Touchable
-    id={id}
+    id={id || accessibility}
     onPress={onPress}
     accessibility={accessibility}
     accessibilityLabel={accessibilityLabel || accessibility}
-    testID={testID || id}
+    testID={testID || id || accessibility}
     {...rest}
   >
     <Text
       testID={`text_${id}`}
       accessibilityLabel={`Texto ${accessibility}`}
+      accessibility={`Texto ${accessibility}`}
       style={style}
       variant={variant}
     >
