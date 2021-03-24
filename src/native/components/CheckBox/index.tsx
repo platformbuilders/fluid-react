@@ -8,7 +8,7 @@ type Props = {
   accessibility: string;
   checked?: boolean;
   label?: ReactElement | string;
-  labelBefore?: string;
+  labelBefore?: ReactElement | string;
   error?: string;
   onPress?(): void;
   labelStyle?: StyleProp<TextStyle>;
