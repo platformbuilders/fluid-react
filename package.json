@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.32",
+  "version": "0.0.48",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -65,7 +65,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@platformbuilders/helpers": "^0.3.2",
-    "@platformbuilders/react-native-masked-text": "^1.0.0",
+    "@platformbuilders/react-native-masked-text": "^1.0.2",
     "@types/react-text-mask": "^5.4.6",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "formik": "^2.1.6",
