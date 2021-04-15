@@ -13,11 +13,12 @@ type RadioProps = {
 };
 
 export const Radio = styled(Touchable)<RadioProps>`
-  width: ${({ size }) => moderateScale(size)}px;
-  height: ${({ size }) => moderateScale(size)}px;
-  border-radius: ${({ size }) => moderateScale(size / 2)}px;
+  width: ${({ size }: RadioProps) => moderateScale(size)}px;
+  height: ${({ size }: RadioProps) => moderateScale(size)}px;
+  border-radius: ${({ size }: RadioProps) => moderateScale(size / 2)}px;
   border: ${moderateScale(1)}px
-    ${({ radioButtonColor }): any => hasColor(radioButtonColor, textColor)};
+    ${({ radioButtonColor }: RadioProps): any =>
+      hasColor(radioButtonColor, textColor)};
   align-items: center;
   justify-content: center;
 `;
@@ -28,9 +29,12 @@ type CheckRadioProps = {
 };
 
 export const CheckedRadio = styled.View<CheckRadioProps>`
-  width: ${({ internalSize }) => moderateScale(internalSize)}px;
-  height: ${({ internalSize }) => moderateScale(internalSize)}px;
-  background-color: ${({ checkedRadioButtonColor }): any =>
+  width: ${({ internalSize }: CheckRadioProps) =>
+    moderateScale(internalSize)}px;
+  height: ${({ internalSize }: CheckRadioProps) =>
+    moderateScale(internalSize)}px;
+  background-color: ${({ checkedRadioButtonColor }: CheckRadioProps): any =>
     hasCheckedColor(checkedRadioButtonColor, textColor)};
-  border-radius: ${({ internalSize }) => moderateScale(internalSize / 2)}px;
+  border-radius: ${({ internalSize }: CheckRadioProps) =>
+    moderateScale(internalSize / 2)}px;
 `;

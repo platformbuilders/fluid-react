@@ -3,7 +3,7 @@ module.exports = {
   extends: [
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
+    'prettier',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
@@ -64,6 +64,7 @@ module.exports = {
     'promise/prefer-await-to-callbacks': 'error',
     'promise/prefer-await-to-then': 'error',
     'react/state-in-constructor': 'off',
+    '@typescript-eslint/indent': 'warn'
   },
   settings: {
     react: {

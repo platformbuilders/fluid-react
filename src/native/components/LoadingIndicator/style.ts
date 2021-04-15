@@ -51,7 +51,7 @@ export const largeSize = {
   height: moderateScale(120),
 };
 
-export const Indicator = styled(Animation).attrs((props) => ({
+export const Indicator = styled(Animation).attrs((props: any) => ({
   source: loadingVariant(props),
   autoPlay: true,
   loop: true,

@@ -1,8 +1,8 @@
 name: Docusaurus Firebase Deploy
 
 on:
-  push:
-    branches: [master]
+  release:
+    types: [published]
 
 jobs:
   build:

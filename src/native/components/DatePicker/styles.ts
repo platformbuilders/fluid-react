@@ -37,7 +37,7 @@ interface TextProps {
 export const TextLabel = styled.Text<TextProps>`
   line-height: 19px;
   padding-bottom: 15px;
-  color: ${(props): string =>
+  color: ${(props: TextProps): string =>
     props.dark ? primaryDark(props) : primaryContrast(props)};
 `;
 

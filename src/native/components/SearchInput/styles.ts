@@ -19,15 +19,15 @@ type WrapperProps = {
 export const Wrapper = styled.View<WrapperProps>`
   flex-direction: row;
   flex: 1;
-  height: ${({ height }) =>
+  height: ${({ height }: WrapperProps) =>
     (!!height && `${height}px`) || `${wrapperHeight}px`};
   background-color: ${primaryContrast};
   align-items: center;
   justify-content: center;
-  padding-horizontal: ${({ inputPadding }) =>
+  padding-horizontal: ${({ inputPadding }: WrapperProps) =>
     (!!inputPadding && `${inputPadding}px`) || largeSpacing};
   border-radius: ${largeRadius};
-  ${({ hasShadow }) => (hasShadow ? getShadow() : {})}
+  ${({ hasShadow }: WrapperProps) => (hasShadow ? getShadow() : {})}
 `;
 
 type InputProps = {
@@ -44,5 +44,6 @@ export const Input = styled(TextInput).attrs((props: InputProps) => ({
 }))<InputProps>`
   width: 100%;
   padding: 0;
-  height: ${({ inputHeight }) => (!!inputHeight && inputHeight) || '90%'};
+  height: ${({ inputHeight }: InputProps) =>
+    (!!inputHeight && inputHeight) || '90%'};
 `;
