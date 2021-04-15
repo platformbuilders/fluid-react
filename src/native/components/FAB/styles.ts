@@ -19,13 +19,13 @@ type WrapperProps = {
 
 export const Wrapper = styled(Touchable)<WrapperProps>`
   position: ${isRelative('relative', 'absolute')};
-  width: ${({ size }) => size}px;
-  height: ${({ size }) => size}px;
+  width: ${({ size }: WrapperProps) => size}px;
+  height: ${({ size }: WrapperProps) => size}px;
   align-items: center;
   justify-content: center;
-  background-color: ${({ color }) => color || accentMain};
-  border-radius: ${({ size }) => size / 2}px;
-  ${({ hasShadow }) => (hasShadow ? getShadow() : {})}
+  background-color: ${({ color }: WrapperProps) => color || accentMain};
+  border-radius: ${({ size }: WrapperProps) => size / 2}px;
+  ${({ hasShadow }: WrapperProps) => (hasShadow ? getShadow() : {})}
 `;
 
 interface IconProps {

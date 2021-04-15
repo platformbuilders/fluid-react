@@ -75,7 +75,7 @@ export const Wrapper = styled.View<WrapperProps>`
 `;
 
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
-  padding-top: ${({ padding }) =>
+  padding-top: ${({ padding }: InputAreaWrapperProps) =>
     (!!padding && `${padding}px`) || smallSpacing};
   flex-direction: row;
   align-items: center;

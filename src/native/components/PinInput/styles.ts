@@ -41,7 +41,7 @@ type IconProps = {
   contrast: boolean;
   error: boolean;
 };
-export const Icon = styled(DefaultIcon).attrs((props) => ({
+export const Icon = styled(DefaultIcon).attrs((props: IconProps) => ({
   color: hasError(
     failure(props),
     isContrast(primaryContrast(props), primaryMain(props))(props),

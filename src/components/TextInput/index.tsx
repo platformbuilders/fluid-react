@@ -39,7 +39,6 @@ const TextInput: FC<TextInputType> = ({
     ) : hasMask ? (
       <TextInputMask
         mask={maskOption}
-        formatChars={formatChars}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
