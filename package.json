@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -51,12 +51,12 @@
     "lottie-react-native": ">=3.5.0",
     "react": ">=16.13.0",
     "react-native": ">=0.63.2",
-    "@platformbuilders/react-native-masked-text": ">=1.1.0"
+    "@platformbuilders/react-native-masked-text": ">=1.1.1"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@platformbuilders/helpers": "^0.3.5",
-    "@platformbuilders/react-native-masked-text": "1.1.0",
+    "@platformbuilders/react-native-masked-text": "1.1.1",
     "@types/react-text-mask": "^5.4.7",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "formik": "^2.2.6",
