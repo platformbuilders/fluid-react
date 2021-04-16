@@ -1661,11 +1661,12 @@
     react "^16.13.1"
     react-dom "^16.13.1"
 
-"@platformbuilders/react-native-masked-text@1.0.1":
-  version "1.0.1"
-  resolved "https://npm.pkg.github.com/download/@platformbuilders/react-native-masked-text/1.0.1/3db197ad474fcc8431c6b27b71c03e7e9e4eb40221bbb11deb3d2ebb89d4668b#247f246dca7e3fafd38f8b70e53b8d3b0e692ad0"
-  integrity sha512-ev/0/QJKfmi2r2OTUaNkhnogOBCp9dy7TboBzR8m7Gp2Twf/Hjp9aHyDvxpJWS03a/XTXtNv6TxjBDCP0RwAyA==
+"@platformbuilders/react-native-masked-text@1.0.2":
+  version "1.0.2"
+  resolved "https://npm.pkg.github.com/download/@platformbuilders/react-native-masked-text/1.0.2/6c74770886a12168d85a56d0027b02b20a96d70508c16932db44f6d912b82936#e2bf70c975945a329ad7f454fa5a1e488e0d6d97"
+  integrity sha512-gvoSu5LC+jE1lpCCITKVDqKEYMbwD+cSmOOOCU2BYHn5Miz9L7qNBHVAptszoBiWbfKFyof327oc+EXtFwh8RA==
   dependencies:
+    date-and-time "^1.0.0"
     tinymask "1.0.2"
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
@@ -5868,6 +5869,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+date-and-time@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-1.0.0.tgz#0062394bdf6f44e961f0db00511cb19cdf3cc0a5"
+  integrity sha512-477D7ypIiqlXBkxhU7YtG9wWZJEQ+RUpujt2quTfgf4+E8g5fNUkB0QIL0bVyP5/TKBg8y55Hfa1R/c4bt3dEw==
 
 dayjs@^1.8.15:
   version "1.10.4"

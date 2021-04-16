@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,7 +25,6 @@
     "test:coverage": "yarn test -- --coverage",
     "build": "rm -rf dist && yarn lint && tsc && rollup -c && yarn build:native",
     "build:native": "node scripts/moveNativeDirectories.js",
-    "prepublish": "yarn build",
     "precommit": "yarn lint",
     "preversion": "yarn lint",
     "postversion": "git push && git push --tags",
@@ -55,7 +54,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@platformbuilders/helpers": "^0.3.5",
-    "@platformbuilders/react-native-masked-text": "1.0.1",
+    "@platformbuilders/react-native-masked-text": "1.0.2",
     "@types/react-text-mask": "^5.4.7",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "formik": "^2.2.6",
