@@ -1661,10 +1661,10 @@
     react "^16.13.1"
     react-dom "^16.13.1"
 
-"@platformbuilders/react-native-masked-text@1.0.2":
-  version "1.0.2"
-  resolved "https://npm.pkg.github.com/download/@platformbuilders/react-native-masked-text/1.0.2/6c74770886a12168d85a56d0027b02b20a96d70508c16932db44f6d912b82936#e2bf70c975945a329ad7f454fa5a1e488e0d6d97"
-  integrity sha512-gvoSu5LC+jE1lpCCITKVDqKEYMbwD+cSmOOOCU2BYHn5Miz9L7qNBHVAptszoBiWbfKFyof327oc+EXtFwh8RA==
+"@platformbuilders/react-native-masked-text@1.1.0":
+  version "1.1.0"
+  resolved "https://npm.pkg.github.com/download/@platformbuilders/react-native-masked-text/1.1.0/cda339c064e539cb0b28e3819a3bc367a22804b023f34a7b39e44e287a2a8aa9#46dc72aab2a23e28e28ea0321373459801ec45e0"
+  integrity sha512-NScUjoX4aWAwu5M8ABdMkZVVT0y1cOicUHtAmczeXXDEVHGr2IM4WU1YBVqibIOfH/NdpSW0HG54OOiBNCDbbw==
   dependencies:
     date-and-time "^1.0.0"
     tinymask "1.0.2"
