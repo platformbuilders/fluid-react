@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.47",
+  "version": "0.0.50",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "clean": "rm -rf ./node_modules && yarn install",
+    "clean": "rm -rf ./node_modules && rm -rf yarn.lock && rm -rf dist && rm -rf native && yarn install",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.{ts,tsx,js}\"",
     "lint": "tsc --noEmit && eslint 'src/**/*.{ts,tsx}' --fix",
     "test": "jest --passWithNoTests",
