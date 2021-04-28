@@ -13,7 +13,7 @@ type ErrorTextProps = {
   testID: string;
 };
 
-export const ErrorText = styled(Typography).attrs((props) => ({
+export const ErrorText = styled(Typography).attrs((props: ErrorTextProps) => ({
   variant: isLarge('footnote', 'caption2')(props),
 }))<ErrorTextProps>`
   color: ${getTheme('failure')};

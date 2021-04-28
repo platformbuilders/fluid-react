@@ -32,7 +32,7 @@ export default Home;
 | Name  | Required | Type | Default Value | Description 
 | ------------- | ------------- | ------------- |------------- |------------- |
 | checked  | false | boolean | false | enable/ disable |
-| label  | false | string | '' | label of checkbox |
+| label  | false | string / ReactElement | '' | label of checkbox |
 | labelBefore  | false | string | '' | text shown on the left side |
 | error  | false | string | '' | error message |
 | onPress  | false | function | () => null | handle checkbox |

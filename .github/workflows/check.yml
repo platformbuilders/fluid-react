@@ -10,12 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
-      - run: yarn install
-      # - name: Test
-      #   uses: borales/actions-yarn/@v2.0.0
-      #   with:
-      #     cmd: test
-      - run: yarn lint
+          node-version: '14.x'
+      - name: Install packages
+        run: yarn install
+      - name: Linter
+        run: yarn lint

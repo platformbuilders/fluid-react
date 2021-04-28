@@ -20,13 +20,13 @@ type WrapperProps = {
 };
 
 export const Wrapper = styled(Touchable)<WrapperProps>`
-  width: ${(props): number => props.size}px;
-  height: ${(props): number => props.size}px;
-  border-radius: ${(props): number => props.size / 2}px;
+  width: ${(props: WrapperProps): number => props.size}px;
+  height: ${(props: WrapperProps): number => props.size}px;
+  border-radius: ${(props: WrapperProps): number => props.size / 2}px;
   overflow: hidden;
-  border-width: ${(props): any =>
+  border-width: ${(props: WrapperProps): any =>
     showBorder(hasBorderWidth(props.borderWidth, '2'), '0')}px;
-  border-color: ${(props): any =>
+  border-color: ${(props: WrapperProps): any =>
     hasBorderColor(props.borderColor, accentMain)};
   position: relative;
 `;
@@ -38,9 +38,9 @@ type IconWrapperProps = {
 export const UploadIconWrapper = styled.View<IconWrapperProps>`
   align-items: center;
   justify-content: center;
-  width: ${(props): number => props.size / 4}px;
-  height: ${(props): number => props.size / 4}px;
-  border-radius: ${(props): number => props.size / 8}px;
+  width: ${(props: IconWrapperProps): number => props.size / 4}px;
+  height: ${(props: IconWrapperProps): number => props.size / 4}px;
+  border-radius: ${(props: IconWrapperProps): number => props.size / 8}px;
   position: absolute;
   z-index: 2;
   background-color: ${accentMain};
@@ -51,9 +51,9 @@ export const UploadIcon = styled(Icon).attrs({ name: 'camera' })`
 `;
 
 export const CameraView = styled(RNCamera)<{ size: number }>`
-  width: ${(props): number => props.size}px;
+  width: ${(props: any): number => props.size}px;
   height: 100%;
-  border-radius: ${(props): number => props.size / 2}px;
+  border-radius: ${(props: any): number => props.size / 2}px;
   overflow: hidden;
   border: ${showBorder('4px solid white', '')};
 `;

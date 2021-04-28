@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { StyleProp, ViewStyle, TextStyle } from 'react-native';
 import FormError from '../FormError';
 import { Wrapper, defaultLabelStyle, containerStyle, CheckBox } from './styles';
@@ -7,8 +7,8 @@ type Props = {
   id?: string;
   accessibility: string;
   checked?: boolean;
-  label?: string;
-  labelBefore?: string;
+  label?: ReactElement | string;
+  labelBefore?: ReactElement | string;
   error?: string;
   onPress?(): void;
   labelStyle?: StyleProp<TextStyle>;
