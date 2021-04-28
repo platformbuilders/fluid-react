@@ -57,7 +57,7 @@ const Avatar: React.FC<Props> = React.forwardRef(
         },
       };
       return new Promise((resolve) => {
-        ImagePicker.launchImageLibrary(options, (response) => {
+        ImagePicker.launchImageLibrary(options as any, (response: any) => {
           setUploadedImage(response.uri);
           if (onUpload) {
             onUpload(response.uri);
