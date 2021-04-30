@@ -20,3 +20,4 @@ export { default as Link } from './Link';
 export { default as Accordion } from './Accordion';
 export { default as RadioButton } from './RadioButton';
 export { default as SearchInput } from './SearchInput';
+export { default as DisplayVersion } from './DisplayVersion';
