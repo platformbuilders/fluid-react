@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import { StyleSheet, Animated } from 'react-native';
+import { ComponentType } from 'react';
 import {
   scaledFontSize,
   ifStyle,
@@ -83,14 +84,16 @@ export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   width: 100%;
 `;
 
-export const TextLabel = styled.Text`
+export const TextLabel = styled.Text<any>`
   font-size: ${getFontSize}px;
   line-height: ${getLineHeight}px;
   position: absolute;
   color: ${inputColor};
   top: ${LABEL_LOWER_STYLE.top}px;
 `;
-export const Label = Animated.createAnimatedComponent(TextLabel);
+export const Label = Animated.createAnimatedComponent<ComponentType<any>>(
+  TextLabel,
+);
 
 export const TextInput = styled.TextInput.attrs((props: TextInputType) => ({
   accessibilityLabel: props.accessibilityLabel || props.accessibility,
