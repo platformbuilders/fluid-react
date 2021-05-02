@@ -64,7 +64,8 @@ module.exports = {
     'promise/prefer-await-to-callbacks': 'error',
     'promise/prefer-await-to-then': 'error',
     'react/state-in-constructor': 'off',
-    '@typescript-eslint/indent': 'warn'
+    '@typescript-eslint/indent': 'warn',
+    '@typescript-eslint/comma-dangle': 'off'
   },
   settings: {
     react: {
