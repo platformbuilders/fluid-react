@@ -5,11 +5,12 @@ import { getTheme } from '../../utils/helpers';
 import Typography from '../Typography';
 
 const primaryMain = getTheme('primary.main');
+const smallSpacing = getTheme('smallSpacing');
 
 export const Text = styled(Typography).attrs({
   variant: 'subhead',
 })`
   color: ${primaryMain};
   text-align: center;
-  margin-vertical: 15px;
+  margin-vertical: ${smallSpacing};
 `;
