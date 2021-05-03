@@ -3,6 +3,7 @@ import DefaultDatePicker, {
   DatePickerCustomStylesProps,
 } from 'react-native-datepicker';
 import styled from 'styled-components/native';
+import { ComponentType } from 'react';
 import { getTheme, switchStyle } from '../../utils/helpers';
 import { InputStatus } from '../../types';
 
@@ -41,7 +42,9 @@ export const TextLabel = styled.Text<TextProps>`
     props.dark ? primaryDark(props) : primaryContrast(props)};
 `;
 
-export const Label = Animated.createAnimatedComponent(TextLabel);
+export const Label = Animated.createAnimatedComponent<ComponentType<any>>(
+  TextLabel,
+);
 
 interface DatePickerProps {
   customStyles?: DatePickerCustomStylesProps;
