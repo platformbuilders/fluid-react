@@ -7,8 +7,6 @@ export type ButtonProps = {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   rounded?: boolean;
-  secondary?: boolean;
-  tertiary?: boolean;
   loading?: boolean;
   contrast?: boolean;
   variant?: ButtonVariants;

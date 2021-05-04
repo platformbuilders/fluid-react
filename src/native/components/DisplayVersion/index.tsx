@@ -9,8 +9,9 @@ type Props = {
 
 const DisplayVersion: FC<Props> = ({ appVersion, buildVersion }) => (
   <Text accessibility="display-version">
-    `Versão ({appVersion}/{buildVersion}
-    )`
+    Versão {appVersion}
+    {!!buildVersion && '/'}
+    {buildVersion}
   </Text>
 );
 

@@ -1,6 +1,6 @@
 ---
 id: component.checkBox
-title: CheckBox
+title: Checkbox
 ---
 
 <!-- Component declaration begin -->
@@ -14,6 +14,7 @@ function handleCheck(){
 check === true ? setCheck(false) : setCheck(true);
 }
 return(
+
 <div>
 <Checkbox
         checked={check}

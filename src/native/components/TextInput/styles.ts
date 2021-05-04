@@ -61,7 +61,7 @@ export const LABEL_UPPER_STYLE = {
 };
 
 export const LABEL_LOWER_STYLE = {
-  top: 20,
+  top: 15,
   fontSize: scaledFontSize(18),
 };
 

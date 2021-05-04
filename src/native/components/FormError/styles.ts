@@ -5,6 +5,7 @@ import { getTheme, ifStyle } from '../../utils/helpers';
 
 const isCentered = ifStyle('centered');
 const isLarge = ifStyle('large');
+const failure = getTheme('failure');
 
 type ErrorTextProps = {
   centered: boolean;
@@ -14,9 +15,9 @@ type ErrorTextProps = {
 };
 
 export const ErrorText = styled(Typography).attrs((props: ErrorTextProps) => ({
-  variant: isLarge('footnote', 'caption2')(props),
+  variant: isLarge('footnote', 'footnote')(props),
 }))<ErrorTextProps>`
-  color: ${getTheme('failure')};
+  color: ${failure};
   text-align: ${isCentered('center', 'left')};
-  margin-top: ${isLarge(0, moderateScale(1))}px;
+  margin-top: ${isLarge(0, moderateScale(2))}px;
 `;
