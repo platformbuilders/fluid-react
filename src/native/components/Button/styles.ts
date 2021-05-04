@@ -17,6 +17,7 @@ const tertiaryContrast = getTheme('tertiary.contrast');
 const accentMain = getTheme('accent.main');
 const accentContrast = getTheme('accent.contrast');
 const buttonRadius = getTheme('buttonRadius');
+const minimumSpacing = getTheme('minimumSpacing');
 
 type ButtonWrapperProps = {
   rounded: boolean;
@@ -24,7 +25,7 @@ type ButtonWrapperProps = {
   disabled?: boolean;
 };
 
-const buttonSize = moderateScale(48);
+const buttonSize = moderateScale(45);
 
 const getBackgroundColor = (props: ButtonWrapperProps): string => {
   if (props.disabled) {
@@ -76,17 +77,16 @@ type TouchableProps = {
 };
 export const Touchable = styled(TouchableComponent)<TouchableProps>`
   border-radius: ${(props: TouchableProps): string =>
-    props.rounded ? '50px' : '0'};
+    props.rounded ? `${buttonSize / 2}px` : '0'};
 `;
 
 export const ButtonWrapper = styled.View<ButtonWrapperProps>`
   height: ${buttonSize}px;
   flex-direction: row;
   align-items: center;
-  margin-vertical: ${moderateScale(6)}px;
   min-width: ${moderateScale(180)}px;
   padding: ${(props: ButtonWrapperProps): string =>
-    props.rounded ? '0' : '10px 11px'};
+    props.rounded ? '0' : minimumSpacing(props)};
   border-radius: ${(props: ButtonWrapperProps): string =>
     props.rounded ? `${buttonSize / 2}px` : buttonRadius(props)};
   justify-content: center;
@@ -96,7 +96,7 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
     props.variant === 'flat' ? `1px solid ${getTextColor(props)}` : '0'};
 `;
 
-export const TextButton = styled(TypographyComponent)<TextButtonProps | any>`
+export const TextButton = styled(TypographyComponent)<TextButtonProps>`
   letter-spacing: 0.4px;
   color: ${getTextColor};
   font-weight: 500;

@@ -11,7 +11,7 @@ export { default as FAB } from './FAB';
 // General
 export { default as If } from './If';
 export { default as Typography } from './Typography';
-export { default as Checkbox } from './CheckBox';
+export { default as Checkbox } from './Checkbox';
 export { default as LoadingIndicator } from './LoadingIndicator';
 export { default as Shadow } from './Shadow';
 export { default as DatePicker } from './DatePicker';

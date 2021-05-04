@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.0.61",
+  "version": "0.1.0",
   "description": "Platform Builders Shared Components Library For React Web and Native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -41,8 +41,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "yarn pretty",
-      "yarn lint",
-      "yarn test"
+      "yarn lint"
     ]
   },
   "husky": {
