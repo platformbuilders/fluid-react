@@ -12,9 +12,9 @@ const Typography: FC<TypographyType> = ({
   ...rest
 }) => (
   <Text
-    testID={id || accessibility}
-    accessibility={accessibility}
-    accessibilityLabel={accessibility}
+    testID={id || accessibility || `${children}`}
+    accessibility={accessibility || `${children}`}
+    accessibilityLabel={accessibility || `${children}`}
     ref={textRef}
     style={style}
     variant={variant}
