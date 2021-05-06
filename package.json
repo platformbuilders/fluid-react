@@ -150,7 +150,7 @@
     "faker": "5.1.0",
     "file-loader": "6.1.0",
     "formik": "2.1.6",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "polished": "3.6.7",
     "husky": "4.3.0",
     "in-publish": "2.0.1",
