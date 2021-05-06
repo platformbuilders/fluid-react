@@ -223,10 +223,16 @@ const TextInput: FC<TextInputType> = ({
             <InputBorderedAreaWrapper>
               {!isEmpty(iconBordered) && renderIcon(iconBordered)}
               <InputBorderedColumnWrapper
+                hasLeftIcon={!isEmpty(iconBordered)}
                 multiline={multiline}
                 padding={inputPadding}
               >
-                <FixedLabel variant={fixedLabelVariant}>{label}</FixedLabel>
+                <FixedLabel
+                  hasLeftIcon={!isEmpty(iconBordered)}
+                  variant={fixedLabelVariant}
+                >
+                  {label}
+                </FixedLabel>
                 {renderTextInput(renderStatus)}
               </InputBorderedColumnWrapper>
               {!isEmpty(icon) && renderIcon(icon)}

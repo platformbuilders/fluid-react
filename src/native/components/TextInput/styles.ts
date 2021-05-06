@@ -27,8 +27,13 @@ type BorderedWrapperProps = {
   error?: boolean;
 };
 
+type InputBorderedColumnWrapperProps = {
+  hasLeftIcon?: boolean;
+};
+
 type FixedLabelProps = {
   variant: TypographyVariants;
+  hasLeftIcon?: boolean;
 };
 
 type BottomLineProps = {
@@ -55,6 +60,7 @@ const primaryContrast = getTheme('primary.contrast');
 const primaryMain = getTheme('primary.main');
 const minimumSpacing = getTheme('minimumSpacing');
 const smallSpacing = getTheme('smallSpacing');
+const largeSpacing = getTheme('largeSpacing');
 const mediumSpacing = getTheme('mediumSpacing');
 const success = getTheme('success');
 const textColor = getTheme('text');
@@ -120,15 +126,20 @@ export const InputBorderedAreaWrapper = styled.View`
   width: 100%;
 `;
 
-export const InputBorderedColumnWrapper = styled.View`
+export const InputBorderedColumnWrapper = styled.View<
+  InputBorderedColumnWrapperProps
+>`
   flex-direction: column;
-  width: 90%;
+  width: ${({ hasLeftIcon }: InputBorderedColumnWrapperProps) =>
+    hasLeftIcon ? '90%' : '96%'};
   margin-left: -${smallSpacing};
 `;
 
 export const FixedLabel = styled(Typography)<FixedLabelProps>`
   color: ${primaryMain};
   margin-bottom: ${minimumSpacing};
+  margin-left: ${({ hasLeftIcon }: FixedLabelProps) =>
+    hasLeftIcon ? '0' : `-${largeSpacing}`};
 `;
 
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
