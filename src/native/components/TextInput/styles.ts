@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import { StyleSheet, Animated } from 'react-native';
 import { ComponentType } from 'react';
+import { Typography } from '..';
 import {
   scaledFontSize,
   ifStyle,
@@ -11,12 +12,23 @@ import {
   getLineHeight,
 } from '../../utils/helpers';
 import DefaultIcon from '../Icon';
-
-import { TextInputType, InputStatus } from '../../types';
+import { TypographyVariants, TextInputType, InputStatus } from '../../types';
 
 type InputAreaWrapperProps = {
   multiline: boolean;
   padding?: number;
+};
+
+type BorderedWrapperProps = {
+  bordered?: boolean;
+  borderedHeight?: number;
+  borderedColor?: string;
+  borderedRadius?: number;
+  error?: boolean;
+};
+
+type FixedLabelProps = {
+  variant: TypographyVariants;
 };
 
 type BottomLineProps = {
@@ -41,6 +53,7 @@ const isContrast = ifStyle('contrast');
 const switchStatus = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');
 const primaryMain = getTheme('primary.main');
+const minimumSpacing = getTheme('minimumSpacing');
 const smallSpacing = getTheme('smallSpacing');
 const mediumSpacing = getTheme('mediumSpacing');
 const success = getTheme('success');
@@ -75,6 +88,49 @@ export const Wrapper = styled.View<WrapperProps>`
   position: relative;
 `;
 
+export const BorderedWrapper = styled.View<BorderedWrapperProps>`
+  ${({
+    bordered,
+    borderedColor,
+    borderedHeight,
+    borderedRadius,
+    error,
+    ...rest
+  }: BorderedWrapperProps) => {
+    const borderedStyle = `
+      justify-content: center;
+      border: 1px solid ${
+        error ? failure(rest) : borderedColor || primaryMain(rest)
+      };
+      height: ${borderedHeight}px;
+      border-radius: ${borderedRadius}px;
+      padding: ${smallSpacing(rest)};
+    `;
+
+    return `
+    border: 0;
+    ${bordered ? borderedStyle : ''}
+  `;
+  }}
+`;
+
+export const InputBorderedAreaWrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+`;
+
+export const InputBorderedColumnWrapper = styled.View`
+  flex-direction: column;
+  width: 90%;
+  margin-left: -${smallSpacing};
+`;
+
+export const FixedLabel = styled(Typography)<FixedLabelProps>`
+  color: ${primaryMain};
+  margin-bottom: ${minimumSpacing};
+`;
+
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   padding-top: ${({ padding }: InputAreaWrapperProps) =>
     (!!padding && `${padding}px`) || smallSpacing};
@@ -91,6 +147,7 @@ export const TextLabel = styled.Text<any>`
   color: ${inputColor};
   top: ${LABEL_LOWER_STYLE.top}px;
 `;
+
 export const Label = Animated.createAnimatedComponent<ComponentType<any>>(
   TextLabel,
 );
@@ -124,6 +181,7 @@ type IconProps = {
   leftIcon: boolean;
   iconColor?: string;
 };
+
 export const Icon = styled(DefaultIcon).attrs((props: IconProps) => ({
   color: hasError(
     failure(props),

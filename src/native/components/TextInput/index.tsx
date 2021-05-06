@@ -7,12 +7,16 @@ import { TextInputType, InputStatus, TypographyVariants } from '../../types';
 import MaskedTextInput from './MaskedTextInput';
 import {
   Label,
+  FixedLabel,
   Wrapper,
   BottomLine,
+  BorderedWrapper,
+  InputBorderedAreaWrapper,
   InputAreaWrapper,
   Icon,
   LABEL_UPPER_STYLE,
   LABEL_LOWER_STYLE,
+  InputBorderedColumnWrapper,
 } from './styles';
 import FormError from '../FormError';
 
@@ -33,6 +37,7 @@ const TextInput: FC<TextInputType> = ({
   iconTouchableEnabled = false,
   status = InputStatus.Default,
   maskType = null,
+  iconNameBordered = '',
   iconName = '',
   label = '',
   value = '',
@@ -50,6 +55,11 @@ const TextInput: FC<TextInputType> = ({
   leftIcon = false,
   iconColor,
   inputPadding,
+  bordered,
+  borderedHeight,
+  borderedColor,
+  borderedRadius,
+  fixedLabelVariant = 'caption',
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
@@ -162,6 +172,7 @@ const TextInput: FC<TextInputType> = ({
   const hasError = !isEmpty(error);
 
   const icon = iconName;
+  const iconBordered = iconNameBordered;
   const renderStatus = hasError ? InputStatus.Failure : status;
 
   const renderIcon = (iconProp: string) => (
@@ -189,24 +200,48 @@ const TextInput: FC<TextInputType> = ({
         error={error}
         large={large}
       >
-        {!centered && (
-          <Label
-            status={status}
-            contrast={contrast}
-            style={[labelAnimatedStyle, labelStyle]}
-            variant={isPlaceholder ? placeholderVariant : labelVariant}
-            testID={`error_${id || accessibility}`}
-            accessibilityLabel={`Erro ${accessibility}`}
-          >
-            {label}
-          </Label>
-        )}
-        <InputAreaWrapper multiline={multiline} padding={inputPadding}>
-          {leftIcon && !isEmpty(icon) && renderIcon(icon)}
-          {renderTextInput(renderStatus)}
-          {!leftIcon && !isEmpty(icon) && renderIcon(icon)}
-        </InputAreaWrapper>
-        {!borderless && <BottomLine status={status} contrast={contrast} />}
+        <BorderedWrapper
+          bordered={bordered}
+          borderedHeight={borderedHeight}
+          borderedColor={borderedColor}
+          borderedRadius={borderedRadius}
+          error={error}
+        >
+          {!centered && !bordered && (
+            <Label
+              status={status}
+              contrast={contrast}
+              style={[labelAnimatedStyle, labelStyle]}
+              variant={isPlaceholder ? placeholderVariant : labelVariant}
+              testID={`error_${id || accessibility}`}
+              accessibilityLabel={`Erro ${accessibility}`}
+            >
+              {label}
+            </Label>
+          )}
+          {bordered ? (
+            <InputBorderedAreaWrapper>
+              {!isEmpty(iconBordered) && renderIcon(iconBordered)}
+              <InputBorderedColumnWrapper
+                multiline={multiline}
+                padding={inputPadding}
+              >
+                <FixedLabel variant={fixedLabelVariant}>{label}</FixedLabel>
+                {renderTextInput(renderStatus)}
+              </InputBorderedColumnWrapper>
+              {!isEmpty(icon) && renderIcon(icon)}
+            </InputBorderedAreaWrapper>
+          ) : (
+            <InputAreaWrapper multiline={multiline}>
+              {bordered && <FixedLabel>{label}</FixedLabel>}
+              {leftIcon && !isEmpty(icon) && renderIcon(icon)}
+              {renderTextInput(renderStatus)}
+              {!leftIcon && !isEmpty(icon) && renderIcon(icon)}
+            </InputAreaWrapper>
+          )}
+
+          {!borderless && <BottomLine status={status} contrast={contrast} />}
+        </BorderedWrapper>
       </FormError>
     </Wrapper>
   );
