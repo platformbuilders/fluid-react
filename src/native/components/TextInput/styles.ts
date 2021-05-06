@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import { StyleSheet, Animated } from 'react-native';
 import { ComponentType } from 'react';
@@ -17,6 +17,14 @@ import { TextInputType, InputStatus } from '../../types';
 type InputAreaWrapperProps = {
   multiline: boolean;
   padding?: number;
+};
+
+type BorderedWrapperProps = {
+  bordered?: boolean;
+  borderedHeight?: number;
+  borderedColor?: string;
+  borderedRadius?: number;
+  error?: boolean;
 };
 
 type BottomLineProps = {
@@ -75,6 +83,54 @@ export const Wrapper = styled.View<WrapperProps>`
   position: relative;
 `;
 
+export const BorderedWrapper = styled.View<BorderedWrapperProps>`
+  ${({
+    bordered,
+    borderedColor,
+    borderedHeight,
+    borderedRadius,
+    error,
+  }: BorderedWrapperProps) => {
+    const borderedStyle = `
+      justify-content: center;
+      border: 1px solid ${borderedColor || '#000'};
+      height: ${borderedHeight}px;
+      border-radius: ${borderedRadius}px;
+      padding: 15px;
+    `;
+
+    return `
+    border: 0;
+    ${bordered ? borderedStyle : ''}
+    ${
+      error &&
+      css`
+        border-color: red;
+      `
+    }
+    
+  `;
+  }}
+`;
+
+export const InputBorderedAreaWrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+`;
+
+export const InputBorderedColumnWrapper = styled.View`
+  flex-direction: column;
+  width: 90%;
+  margin-left: -10px;
+`;
+
+export const FixedLabel = styled.Text<any>`
+  color: #4799bf;
+  margin-bottom: 8px;
+  font-size: 10px;
+`;
+
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   padding-top: ${({ padding }: InputAreaWrapperProps) =>
     (!!padding && `${padding}px`) || smallSpacing};
@@ -91,6 +147,7 @@ export const TextLabel = styled.Text<any>`
   color: ${inputColor};
   top: ${LABEL_LOWER_STYLE.top}px;
 `;
+
 export const Label = Animated.createAnimatedComponent<ComponentType<any>>(
   TextLabel,
 );
@@ -124,6 +181,7 @@ type IconProps = {
   leftIcon: boolean;
   iconColor?: string;
 };
+
 export const Icon = styled(DefaultIcon).attrs((props: IconProps) => ({
   color: hasError(
     failure(props),

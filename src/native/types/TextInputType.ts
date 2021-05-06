@@ -40,6 +40,11 @@ export interface TextInputType extends TextInputProps {
   leftIcon?: boolean;
   iconColor?: string;
   inputPadding?: number;
+  bordered?: boolean;
+  borderedHeight?: number;
+  borderedColor?: string;
+  borderedRadius?: number;
+  iconNameBordered?: string;
 }
 
 export interface MaskedTextInputType extends TextInputType {
