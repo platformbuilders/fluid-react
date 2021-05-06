@@ -45,6 +45,7 @@ export interface TextInputType extends TextInputProps {
   borderedColor?: string;
   borderedRadius?: number;
   iconNameBordered?: string;
+  fixedLabelVariant?: TypographyVariants;
 }
 
 export interface MaskedTextInputType extends TextInputType {

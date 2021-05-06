@@ -12,8 +12,7 @@ import {
   getLineHeight,
 } from '../../utils/helpers';
 import DefaultIcon from '../Icon';
-
-import { TextInputType, InputStatus } from '../../types';
+import { TypographyVariants, TextInputType, InputStatus } from '../../types';
 
 type InputAreaWrapperProps = {
   multiline: boolean;
@@ -26,6 +25,10 @@ type BorderedWrapperProps = {
   borderedColor?: string;
   borderedRadius?: number;
   error?: boolean;
+};
+
+type FixedLabelProps = {
+  variant: TypographyVariants;
 };
 
 type BottomLineProps = {
@@ -123,10 +126,9 @@ export const InputBorderedColumnWrapper = styled.View`
   margin-left: -${smallSpacing};
 `;
 
-export const FixedLabel = styled(Typography)`
+export const FixedLabel = styled(Typography)<FixedLabelProps>`
   color: ${primaryMain};
   margin-bottom: ${minimumSpacing};
-  font-size: ${smallSpacing};
 `;
 
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`

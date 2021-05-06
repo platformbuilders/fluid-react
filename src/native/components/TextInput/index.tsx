@@ -59,6 +59,7 @@ const TextInput: FC<TextInputType> = ({
   borderedHeight,
   borderedColor,
   borderedRadius,
+  fixedLabelVariant = 'caption',
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
@@ -225,7 +226,7 @@ const TextInput: FC<TextInputType> = ({
                 multiline={multiline}
                 padding={inputPadding}
               >
-                <FixedLabel>{label}</FixedLabel>
+                <FixedLabel variant={fixedLabelVariant}>{label}</FixedLabel>
                 {renderTextInput(renderStatus)}
               </InputBorderedColumnWrapper>
               {!isEmpty(icon) && renderIcon(icon)}
