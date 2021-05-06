@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import { StyleSheet, Animated } from 'react-native';
 import { ComponentType } from 'react';
+import { Typography } from '..';
 import {
   scaledFontSize,
   ifStyle,
@@ -49,6 +50,7 @@ const isContrast = ifStyle('contrast');
 const switchStatus = switchStyle('status');
 const primaryContrast = getTheme('primary.contrast');
 const primaryMain = getTheme('primary.main');
+const minimumSpacing = getTheme('minimumSpacing');
 const smallSpacing = getTheme('smallSpacing');
 const mediumSpacing = getTheme('mediumSpacing');
 const success = getTheme('success');
@@ -90,25 +92,21 @@ export const BorderedWrapper = styled.View<BorderedWrapperProps>`
     borderedHeight,
     borderedRadius,
     error,
+    ...rest
   }: BorderedWrapperProps) => {
     const borderedStyle = `
       justify-content: center;
-      border: 1px solid ${borderedColor || '#000'};
+      border: 1px solid ${
+        error ? failure(rest) : borderedColor || primaryMain(rest)
+      };
       height: ${borderedHeight}px;
       border-radius: ${borderedRadius}px;
-      padding: 15px;
+      padding: ${smallSpacing(rest)};
     `;
 
     return `
     border: 0;
     ${bordered ? borderedStyle : ''}
-    ${
-      error &&
-      css`
-        border-color: red;
-      `
-    }
-    
   `;
   }}
 `;
@@ -122,13 +120,13 @@ export const InputBorderedAreaWrapper = styled.View`
 export const InputBorderedColumnWrapper = styled.View`
   flex-direction: column;
   width: 90%;
-  margin-left: -10px;
+  margin-left: -${smallSpacing};
 `;
 
-export const FixedLabel = styled.Text<any>`
-  color: #4799bf;
-  margin-bottom: 8px;
-  font-size: 10px;
+export const FixedLabel = styled(Typography)`
+  color: ${primaryMain};
+  margin-bottom: ${minimumSpacing};
+  font-size: ${smallSpacing};
 `;
 
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
