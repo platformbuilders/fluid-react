@@ -20,7 +20,6 @@ type InputAreaWrapperProps = {
 };
 
 type BorderedWrapperProps = {
-  bordered?: boolean;
   borderedHeight?: number;
   borderedColor?: string;
   borderedRadius?: number;
@@ -96,7 +95,6 @@ export const Wrapper = styled.View<WrapperProps>`
 
 export const BorderedWrapper = styled.View<BorderedWrapperProps>`
   ${({
-    bordered,
     borderedColor,
     borderedHeight,
     borderedRadius,
@@ -115,7 +113,7 @@ export const BorderedWrapper = styled.View<BorderedWrapperProps>`
 
     return `
     border: 0;
-    ${bordered ? borderedStyle : ''}
+    ${borderedHeight ? borderedStyle : ''}
   `;
   }}
 `;

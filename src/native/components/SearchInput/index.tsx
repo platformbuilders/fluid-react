@@ -62,7 +62,7 @@ const SearchInput: React.FC<Props> = ({
         placeholderTextColor={placeholderTextColor}
         style={inputStyle}
         inputRef={ref}
-        borderless
+        bottomline
         large={false}
         id={id || accessibility}
         accessibility={accessibility}
