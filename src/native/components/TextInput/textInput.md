@@ -20,7 +20,6 @@ const Home: React.FC = () => {
         placeholder="Product Search "
         contrast
         centered
-        bottomline
         multiline
         iconTouchableEnabled
         iconName="barcode"
@@ -46,7 +45,7 @@ export default Home;
 | contrast | false | boolean | false  | color  |
 | inputRef | false | any |   | ref of input  |
 | centered | false | boolean | false  | center input |
-| bottomline | false | boolean | false  | hide border bottom |
+| withoutBottomline | false | boolean | false  | hide border bottom |
 | multiline | false | boolean | false  |  |
 | keyboardType | false | string | default  |  |
 | keyboardType | false | string | default  |  |

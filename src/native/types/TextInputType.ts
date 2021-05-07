@@ -18,7 +18,7 @@ export interface TextInputType extends TextInputProps {
   ref?: RefObject<any>;
   variant?: TypographyVariants;
   large?: boolean;
-  bottomline?: boolean;
+  withoutBottomline?: boolean;
   contrast?: boolean;
   centered?: boolean;
   iconSize?: number;
