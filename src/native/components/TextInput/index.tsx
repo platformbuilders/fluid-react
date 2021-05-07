@@ -28,7 +28,7 @@ const TextInput: FC<TextInputType> = ({
   large = false,
   contrast = false,
   centered = false,
-  borderless = false,
+  withoutBottomline,
   multiline = false,
   autoFocus = false,
   allowFontScaling = false,
@@ -55,7 +55,6 @@ const TextInput: FC<TextInputType> = ({
   leftIcon = false,
   iconColor,
   inputPadding,
-  bordered,
   borderedHeight,
   borderedColor,
   borderedRadius,
@@ -127,7 +126,7 @@ const TextInput: FC<TextInputType> = ({
       variant: textVariant,
       centered,
       contrast,
-      borderless,
+      withoutBottomline: false,
       multiline,
       value,
       keyboardType,
@@ -201,13 +200,12 @@ const TextInput: FC<TextInputType> = ({
         large={large}
       >
         <BorderedWrapper
-          bordered={bordered}
           borderedHeight={borderedHeight}
           borderedColor={borderedColor}
           borderedRadius={borderedRadius}
           error={error}
         >
-          {!centered && !bordered && (
+          {!centered && !borderedHeight && (
             <Label
               status={status}
               contrast={contrast}
@@ -219,7 +217,7 @@ const TextInput: FC<TextInputType> = ({
               {label}
             </Label>
           )}
-          {bordered ? (
+          {borderedHeight ? (
             <InputBorderedAreaWrapper>
               {!isEmpty(iconBordered) && renderIcon(iconBordered)}
               <InputBorderedColumnWrapper
@@ -239,14 +237,16 @@ const TextInput: FC<TextInputType> = ({
             </InputBorderedAreaWrapper>
           ) : (
             <InputAreaWrapper multiline={multiline}>
-              {bordered && <FixedLabel>{label}</FixedLabel>}
+              {borderedHeight && <FixedLabel>{label}</FixedLabel>}
               {leftIcon && !isEmpty(icon) && renderIcon(icon)}
               {renderTextInput(renderStatus)}
               {!leftIcon && !isEmpty(icon) && renderIcon(icon)}
             </InputAreaWrapper>
           )}
 
-          {!borderless && <BottomLine status={status} contrast={contrast} />}
+          {(!withoutBottomline || !borderedHeight) && (
+            <BottomLine status={status} contrast={contrast} />
+          )}
         </BorderedWrapper>
       </FormError>
     </Wrapper>

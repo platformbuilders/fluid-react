@@ -18,7 +18,7 @@ export interface TextInputType extends TextInputProps {
   ref?: RefObject<any>;
   variant?: TypographyVariants;
   large?: boolean;
-  borderless?: boolean;
+  withoutBottomline?: boolean;
   contrast?: boolean;
   centered?: boolean;
   iconSize?: number;
@@ -40,7 +40,6 @@ export interface TextInputType extends TextInputProps {
   leftIcon?: boolean;
   iconColor?: string;
   inputPadding?: number;
-  bordered?: boolean;
   borderedHeight?: number;
   borderedColor?: string;
   borderedRadius?: number;

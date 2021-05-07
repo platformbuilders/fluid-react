@@ -56,7 +56,6 @@ exports[`<TextInput /> should render textinput 1`] = `
       accessibility=""
       accessibilityLabel=""
       allowFontScaling={false}
-      borderless={false}
       centered={false}
       contrast={false}
       id="test"
