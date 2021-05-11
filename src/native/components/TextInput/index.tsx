@@ -58,7 +58,7 @@ const TextInput: FC<TextInputType> = ({
   borderedHeight,
   borderedColor,
   borderedRadius,
-  fixedLabelVariant = 'caption',
+  fixedLabelVariant = 'caption1',
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
