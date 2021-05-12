@@ -19,6 +19,8 @@ export const Icon: FC<IconType> = ({
   borderColor = '',
   backgroundColor = '',
   iconSets,
+  width,
+  height,
   ...rest
 }) => {
   const iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
@@ -38,8 +40,8 @@ export const Icon: FC<IconType> = ({
         <View>
           {Svg ? (
             <Svg
-              width={size}
-              height={size}
+              width={width || size}
+              height={height || size}
               color={color}
               borderColor={borderColor}
               backgroundColor={backgroundColor}

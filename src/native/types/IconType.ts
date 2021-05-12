@@ -11,4 +11,6 @@ export interface IconType extends TouchableType {
   backgroundColor?: string;
   hitSlop?: HitSlopType;
   iconSets?: any;
+  width?: number;
+  height?: number;
 }
