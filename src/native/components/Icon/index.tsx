@@ -40,8 +40,8 @@ export const Icon: FC<IconType> = ({
         <View>
           {Svg ? (
             <Svg
-              width={width || height ? width : size}
-              height={width || height ? height : size}
+              width={width || size}
+              height={height || size}
               color={color}
               borderColor={borderColor}
               backgroundColor={backgroundColor}
