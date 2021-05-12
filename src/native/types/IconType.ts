@@ -1,7 +1,8 @@
 import { TouchableType } from './TouchableType';
 import { HitSlopType } from './Common';
 
-export type FontAwesomeType =
+export type FontType =
+  | 'material'
   | 'fa-brands'
   | 'fa-light'
   | 'fa-regular'
@@ -19,5 +20,5 @@ export interface IconType extends TouchableType {
   iconSets?: any;
   width?: number;
   height?: number;
-  fontAwesomePro?: string;
+  type?: FontType;
 }
