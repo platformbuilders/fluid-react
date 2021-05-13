@@ -3,7 +3,8 @@ import { Animated, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { IconType } from '../../types';
 import Touchable from '../Touchable';
-import * as Icons from '../../assets/svg';
+import { FaBrands, FaRegular, FaLight, FaSolid } from './FontAwesomeProIcons';
+import * as SvgIcons from '../../assets/svg';
 
 export const Icon: FC<IconType> = ({
   id,
@@ -18,13 +19,26 @@ export const Icon: FC<IconType> = ({
   onPress = (): void => {},
   borderColor = '',
   backgroundColor = '',
+  type = 'material',
   iconSets,
   width,
   height,
   ...rest
 }) => {
   const iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
-  const Svg = iconSets ? iconSets[`Icon${iconName}`] : Icons[`Icon${iconName}`];
+  const Svg = iconSets
+    ? iconSets[`Icon${iconName}`]
+    : SvgIcons[`Icon${iconName}`];
+
+  const iconSet = {
+    material: MaterialIcons,
+    'fa-brands': FaBrands,
+    'fa-light': FaLight,
+    'fa-regular': FaRegular,
+    'fa-solid': FaSolid,
+  };
+
+  const IconComponent = iconSet[type];
 
   return (
     <Animated.View style={style}>
@@ -47,7 +61,7 @@ export const Icon: FC<IconType> = ({
               backgroundColor={backgroundColor}
             />
           ) : (
-            <MaterialIcons name={name} color={color} size={size} />
+            <IconComponent name={name} color={color} size={size} />
           )}
         </View>
       </Touchable>
