@@ -28,7 +28,7 @@ const TextInput: FC<TextInputType> = ({
   large = false,
   contrast = false,
   centered = false,
-  withoutBottomline,
+  withBottomline = false,
   multiline = false,
   autoFocus = false,
   allowFontScaling = false,
@@ -244,7 +244,7 @@ const TextInput: FC<TextInputType> = ({
             </InputAreaWrapper>
           )}
 
-          {(!withoutBottomline || !borderedHeight) && (
+          {(withBottomline || !!borderedHeight) && (
             <BottomLine status={status} contrast={contrast} />
           )}
         </BorderedWrapper>

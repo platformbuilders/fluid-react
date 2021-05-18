@@ -10,7 +10,7 @@ import { TextInputMaskTypeProp } from '@platformbuilders/react-native-masked-tex
 import { HitSlopType } from './Common';
 import { TypographyVariants } from './Variants';
 
-export interface TextInputType extends TextInputProps {
+export type TextInputType = {
   id: string;
   accessibility: string;
   inputRef?: any;
@@ -18,7 +18,7 @@ export interface TextInputType extends TextInputProps {
   ref?: RefObject<any>;
   variant?: TypographyVariants;
   large?: boolean;
-  withoutBottomline?: boolean;
+  withBottomline?: boolean;
   contrast?: boolean;
   centered?: boolean;
   iconSize?: number;
@@ -45,7 +45,7 @@ export interface TextInputType extends TextInputProps {
   borderedRadius?: number;
   iconNameBordered?: string;
   fixedLabelVariant?: TypographyVariants;
-}
+} & TextInputProps;
 
 export interface MaskedTextInputType extends TextInputType {
   maskType: TextInputMaskTypeProp;
