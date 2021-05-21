@@ -236,7 +236,7 @@ const TextInput: FC<TextInputType> = ({
               {!isEmpty(icon) && renderIcon(icon)}
             </InputBorderedAreaWrapper>
           ) : (
-            <InputAreaWrapper multiline={multiline}>
+            <InputAreaWrapper multiline={multiline} padding={inputPadding}>
               {borderedHeight && <FixedLabel>{label}</FixedLabel>}
               {leftIcon && !isEmpty(icon) && renderIcon(icon)}
               {renderTextInput(renderStatus)}
