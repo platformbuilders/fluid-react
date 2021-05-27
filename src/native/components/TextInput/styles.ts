@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { moderateScale } from 'react-native-size-matters';
 import { StyleSheet, Animated } from 'react-native';
 import { ComponentType } from 'react';
-import { Typography } from '..';
+import Typography from '../Typography';
 import {
   scaledFontSize,
   ifStyle,
@@ -49,6 +49,8 @@ type BottomLineProps = {
 // const placeholderBigVariant = 'title4';
 
 const isLeftIcon = ifStyle('leftIcon');
+const isRightIcon = ifStyle('rightIcon');
+const hasRightAndLeftIcon = ifStyle('rightAndLeftIcon');
 const isMultiline = ifStyle('multiline');
 const isCentered = ifStyle('centered');
 const hasLabel = ifStyle('label');
@@ -146,7 +148,12 @@ export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
+  padding-horizontal: ${hasRightAndLeftIcon(
+    moderateScale(40),
+    moderateScale(20),
+  )};
+  overflow: hidden;
 `;
 
 export const TextLabel = styled.Text<any>`
@@ -177,6 +184,7 @@ export const TextInput = styled.TextInput.attrs((props: TextInputType) => ({
   margin-top: ${isMultiline(mediumSpacing, 0)};
   font-size: ${getFontSize}px;
   line-height: ${getLineHeight}px;
+  width: 100%;
 `;
 
 export const BottomLine = styled.View<BottomLineProps>`
@@ -199,4 +207,5 @@ export const Icon = styled(DefaultIcon).attrs((props: IconProps) => ({
   )(props),
 }))<IconProps>`
   padding-right: ${isLeftIcon(moderateScale(10), 0)}px;
+  padding-left: ${isRightIcon(moderateScale(10), 0)}px;
 `;

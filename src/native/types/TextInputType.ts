@@ -45,6 +45,8 @@ export type TextInputType = {
   borderedRadius?: number;
   iconNameBordered?: string;
   fixedLabelVariant?: TypographyVariants;
+  rightIcon?: boolean;
+  rightIconName?: string;
 } & TextInputProps;
 
 export interface MaskedTextInputType extends TextInputType {

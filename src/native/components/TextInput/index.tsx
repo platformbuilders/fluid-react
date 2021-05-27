@@ -38,7 +38,7 @@ const TextInput: FC<TextInputType> = ({
   status = InputStatus.Default,
   maskType = null,
   iconNameBordered = '',
-  iconName = '',
+  iconName,
   label = '',
   value = '',
   placeholder = '',
@@ -53,6 +53,8 @@ const TextInput: FC<TextInputType> = ({
   onChangeText = (): any => {},
   onPressIcon = (): any => {},
   leftIcon = false,
+  rightIcon = false,
+  rightIconName = 'magnify',
   iconColor,
   inputPadding,
   borderedHeight,
@@ -186,6 +188,7 @@ const TextInput: FC<TextInputType> = ({
       onPress={onPressIcon}
       hitSlop={iconHitSlop}
       leftIcon={leftIcon}
+      rightIcon={rightIcon}
       iconColor={iconColor}
     />
   );
@@ -233,14 +236,22 @@ const TextInput: FC<TextInputType> = ({
                 </FixedLabel>
                 {renderTextInput(renderStatus)}
               </InputBorderedColumnWrapper>
-              {!isEmpty(icon) && renderIcon(icon)}
+              {!isEmpty(icon) && renderIcon(icon || '')}
             </InputBorderedAreaWrapper>
           ) : (
-            <InputAreaWrapper multiline={multiline} padding={inputPadding}>
+            <InputAreaWrapper
+              multiline={multiline}
+              padding={inputPadding}
+              rightAndLeftIcon={rightIcon && leftIcon}
+            >
               {borderedHeight && <FixedLabel>{label}</FixedLabel>}
-              {leftIcon && !isEmpty(icon) && renderIcon(icon)}
+              {leftIcon && !isEmpty(icon) && renderIcon(icon || '')}
               {renderTextInput(renderStatus)}
-              {!leftIcon && !isEmpty(icon) && renderIcon(icon)}
+              {rightIcon && renderIcon(rightIconName)}
+              {!leftIcon &&
+                !rightIcon &&
+                !isEmpty(icon) &&
+                renderIcon(icon || '')}
             </InputAreaWrapper>
           )}
 
