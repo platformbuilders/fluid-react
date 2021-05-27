@@ -52,6 +52,7 @@ const TextInput: FC<TextInputType> = ({
   onFocus = (): any => {},
   onChangeText = (): any => {},
   onPressIcon = (): any => {},
+  onRightIconPress = (): any => {},
   leftIcon = false,
   rightIcon = false,
   rightIconName = 'magnify',
@@ -176,7 +177,7 @@ const TextInput: FC<TextInputType> = ({
   const iconBordered = iconNameBordered;
   const renderStatus = hasError ? InputStatus.Failure : status;
 
-  const renderIcon = (iconProp: string) => (
+  const renderIcon = (iconProp: string, isRightIcon: boolean) => (
     <Icon
       id={`id_${iconProp}`}
       accessibility={`icon_${accessibility}`}
@@ -185,7 +186,7 @@ const TextInput: FC<TextInputType> = ({
       contrast={contrast}
       error={hasError}
       touchable={iconTouchableEnabled}
-      onPress={onPressIcon}
+      onPress={isRightIcon ? onRightIconPress : onPressIcon}
       hitSlop={iconHitSlop}
       leftIcon={leftIcon}
       rightIcon={rightIcon}
@@ -222,7 +223,7 @@ const TextInput: FC<TextInputType> = ({
           )}
           {borderedHeight ? (
             <InputBorderedAreaWrapper>
-              {!isEmpty(iconBordered) && renderIcon(iconBordered)}
+              {!isEmpty(iconBordered) && renderIcon(iconBordered, false)}
               <InputBorderedColumnWrapper
                 hasLeftIcon={!isEmpty(iconBordered)}
                 multiline={multiline}
@@ -236,7 +237,7 @@ const TextInput: FC<TextInputType> = ({
                 </FixedLabel>
                 {renderTextInput(renderStatus)}
               </InputBorderedColumnWrapper>
-              {!isEmpty(icon) && renderIcon(icon || '')}
+              {!isEmpty(icon) && renderIcon(icon || '', false)}
             </InputBorderedAreaWrapper>
           ) : (
             <InputAreaWrapper
@@ -245,13 +246,13 @@ const TextInput: FC<TextInputType> = ({
               rightAndLeftIcon={rightIcon && leftIcon}
             >
               {borderedHeight && <FixedLabel>{label}</FixedLabel>}
-              {leftIcon && !isEmpty(icon) && renderIcon(icon || '')}
+              {leftIcon && !isEmpty(icon) && renderIcon(icon || '', false)}
               {renderTextInput(renderStatus)}
-              {rightIcon && renderIcon(rightIconName)}
+              {rightIcon && renderIcon(rightIconName, true)}
               {!leftIcon &&
                 !rightIcon &&
                 !isEmpty(icon) &&
-                renderIcon(icon || '')}
+                renderIcon(icon || '', true)}
             </InputAreaWrapper>
           )}
 

@@ -152,7 +152,7 @@ export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   padding-horizontal: ${hasRightAndLeftIcon(
     moderateScale(40),
     moderateScale(20),
-  )};
+  )}px;
   overflow: hidden;
 `;
 

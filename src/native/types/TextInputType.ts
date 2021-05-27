@@ -33,6 +33,7 @@ export type TextInputType = {
   labelStyle?: any;
   isPlaceholder?: boolean;
   onPressIcon?(x?: any): void;
+  onRightIconPress?(x?: any): void;
   onBlur?(x?: any): void;
   onFocus?(x?: any): void;
   onSubmitEditing?(x?: any): void;
