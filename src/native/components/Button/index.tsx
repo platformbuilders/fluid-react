@@ -29,7 +29,7 @@ const Button: FC<ButtonProps> = ({
       rounded={rounded}
     >
       <ButtonWrapper
-        variant={variant}
+        buttonVariant={variant}
         style={style}
         disabled={disabled}
         rounded={rounded}
@@ -41,6 +41,7 @@ const Button: FC<ButtonProps> = ({
               style={textStyle}
               disabled={disabled}
               variant={typographyVariant}
+              buttonVariant={variant}
             >
               {children}
             </TextButton>

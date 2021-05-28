@@ -3,7 +3,7 @@ import { moderateScale } from 'react-native-size-matters';
 import TouchableComponent from '../Touchable';
 import TypographyComponent from '../Typography';
 import LoadingIndicator from '../LoadingIndicator';
-import { ButtonVariants } from '../../types';
+import { ButtonVariants, TypographyVariants } from '../../types';
 import { getTheme } from '../../utils/helpers';
 
 const disabledMain = getTheme('disabled.main');
@@ -21,7 +21,7 @@ const minimumSpacing = getTheme('minimumSpacing');
 
 type ButtonWrapperProps = {
   rounded: boolean;
-  variant: ButtonVariants;
+  buttonVariant: ButtonVariants;
   disabled?: boolean;
 };
 
@@ -31,7 +31,7 @@ const getBackgroundColor = (props: ButtonWrapperProps): string => {
   if (props.disabled) {
     return disabledMain(props);
   }
-  switch (props.variant) {
+  switch (props.buttonVariant) {
     case 'primary':
       return primaryMain(props);
     case 'secondary':
@@ -48,7 +48,8 @@ const getBackgroundColor = (props: ButtonWrapperProps): string => {
 };
 
 type TextButtonProps = {
-  variant: ButtonVariants;
+  buttonVariant: ButtonVariants;
+  variant?: TypographyVariants;
   disabled?: boolean;
 };
 
@@ -56,7 +57,7 @@ const getTextColor = (props: TextButtonProps): string => {
   if (props.disabled) {
     return disabledContrast(props);
   }
-  switch (props.variant) {
+  switch (props.buttonVariant) {
     case 'primary':
       return primaryContrast(props);
     case 'secondary':
@@ -93,7 +94,7 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
   background-color: ${getBackgroundColor};
   border-color: ${getTextColor};
   border: ${(props: ButtonWrapperProps) =>
-    props.variant === 'flat' ? `1px solid ${getTextColor(props)}` : '0'};
+    props.buttonVariant === 'flat' ? `1px solid ${getTextColor(props)}` : '0'};
 `;
 
 export const TextButton = styled(TypographyComponent)<TextButtonProps>`
