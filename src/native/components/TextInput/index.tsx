@@ -38,7 +38,7 @@ const TextInput: FC<TextInputType> = ({
   status = InputStatus.Default,
   maskType = null,
   iconNameBordered = '',
-  iconName = '',
+  iconName,
   label = '',
   value = '',
   placeholder = '',
@@ -52,7 +52,10 @@ const TextInput: FC<TextInputType> = ({
   onFocus = (): any => {},
   onChangeText = (): any => {},
   onPressIcon = (): any => {},
+  onRightIconPress = (): any => {},
   leftIcon = false,
+  rightIcon = false,
+  rightIconName = 'magnify',
   iconColor,
   inputPadding,
   borderedHeight,
@@ -174,7 +177,7 @@ const TextInput: FC<TextInputType> = ({
   const iconBordered = iconNameBordered;
   const renderStatus = hasError ? InputStatus.Failure : status;
 
-  const renderIcon = (iconProp: string) => (
+  const renderIcon = (iconProp: string, isRightIcon: boolean) => (
     <Icon
       id={`id_${iconProp}`}
       accessibility={`icon_${accessibility}`}
@@ -183,9 +186,10 @@ const TextInput: FC<TextInputType> = ({
       contrast={contrast}
       error={hasError}
       touchable={iconTouchableEnabled}
-      onPress={onPressIcon}
+      onPress={isRightIcon ? onRightIconPress : onPressIcon}
       hitSlop={iconHitSlop}
       leftIcon={leftIcon}
+      rightIcon={rightIcon}
       iconColor={iconColor}
     />
   );
@@ -219,7 +223,7 @@ const TextInput: FC<TextInputType> = ({
           )}
           {borderedHeight ? (
             <InputBorderedAreaWrapper>
-              {!isEmpty(iconBordered) && renderIcon(iconBordered)}
+              {!isEmpty(iconBordered) && renderIcon(iconBordered, false)}
               <InputBorderedColumnWrapper
                 hasLeftIcon={!isEmpty(iconBordered)}
                 multiline={multiline}
@@ -233,14 +237,22 @@ const TextInput: FC<TextInputType> = ({
                 </FixedLabel>
                 {renderTextInput(renderStatus)}
               </InputBorderedColumnWrapper>
-              {!isEmpty(icon) && renderIcon(icon)}
+              {!isEmpty(icon) && renderIcon(icon || '', false)}
             </InputBorderedAreaWrapper>
           ) : (
-            <InputAreaWrapper multiline={multiline} padding={inputPadding}>
+            <InputAreaWrapper
+              multiline={multiline}
+              padding={inputPadding}
+              rightAndLeftIcon={rightIcon && leftIcon}
+            >
               {borderedHeight && <FixedLabel>{label}</FixedLabel>}
-              {leftIcon && !isEmpty(icon) && renderIcon(icon)}
+              {leftIcon && !isEmpty(icon) && renderIcon(icon || '', false)}
               {renderTextInput(renderStatus)}
-              {!leftIcon && !isEmpty(icon) && renderIcon(icon)}
+              {rightIcon && renderIcon(rightIconName, true)}
+              {!leftIcon &&
+                !rightIcon &&
+                !isEmpty(icon) &&
+                renderIcon(icon || '', true)}
             </InputAreaWrapper>
           )}
 
