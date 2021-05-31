@@ -20,6 +20,7 @@ type InputAreaWrapperProps = {
 };
 
 type BorderedWrapperProps = {
+  borderedBackground: string;
   borderedHeight?: number;
   borderedColor?: string;
   borderedRadius?: number;
@@ -97,6 +98,7 @@ export const Wrapper = styled.View<WrapperProps>`
 
 export const BorderedWrapper = styled.View<BorderedWrapperProps>`
   ${({
+    borderedBackground,
     borderedColor,
     borderedHeight,
     borderedRadius,
@@ -108,6 +110,7 @@ export const BorderedWrapper = styled.View<BorderedWrapperProps>`
       border: 1px solid ${
         error ? failure(rest) : borderedColor || primaryMain(rest)
       };
+      background-color: ${borderedBackground || 'transparent'};
       height: ${borderedHeight}px;
       border-radius: ${borderedRadius}px;
       padding: ${smallSpacing(rest)};
@@ -130,21 +133,21 @@ export const InputBorderedColumnWrapper = styled.View<
   InputBorderedColumnWrapperProps
 >`
   flex-direction: column;
+  padding: 0 ${minimumSpacing};
   width: ${({ hasLeftIcon }: InputBorderedColumnWrapperProps) =>
-    hasLeftIcon ? '90%' : '96%'};
-  margin-left: -${smallSpacing};
+    hasLeftIcon ? '86%' : '92%'};
+  margin-left: ${({ hasLeftIcon }: InputBorderedColumnWrapperProps) =>
+    hasLeftIcon ? minimumSpacing : `-${largeSpacing}`};
 `;
 
 export const FixedLabel = styled(Typography)<FixedLabelProps>`
   color: ${primaryMain};
   margin-bottom: ${minimumSpacing};
-  margin-left: ${({ hasLeftIcon }: FixedLabelProps) =>
-    hasLeftIcon ? '0' : `-${largeSpacing}`};
 `;
 
 export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   padding-top: ${({ padding }: InputAreaWrapperProps) =>
-    (!!padding && `${padding}px`) || smallSpacing};
+    (!!padding && `${padding}px`) || minimumSpacing};
   flex-direction: row;
   align-items: center;
   justify-content: center;
