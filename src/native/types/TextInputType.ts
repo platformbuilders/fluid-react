@@ -42,7 +42,7 @@ export type TextInputType = {
   leftIcon?: boolean;
   iconColor?: string;
   inputPadding?: number;
-  borderedBackground?: string;
+  borderedBackgroundColor?: string;
   borderedHeight?: number;
   borderedColor?: string;
   borderedRadius?: number;

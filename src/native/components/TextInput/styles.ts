@@ -20,7 +20,7 @@ type InputAreaWrapperProps = {
 };
 
 type BorderedWrapperProps = {
-  borderedBackground: string;
+  borderedBackgroundColor: string;
   borderedHeight?: number;
   borderedColor?: string;
   borderedRadius?: number;
@@ -98,7 +98,7 @@ export const Wrapper = styled.View<WrapperProps>`
 
 export const BorderedWrapper = styled.View<BorderedWrapperProps>`
   ${({
-    borderedBackground,
+    borderedBackgroundColor,
     borderedColor,
     borderedHeight,
     borderedRadius,
@@ -110,7 +110,7 @@ export const BorderedWrapper = styled.View<BorderedWrapperProps>`
       border: 1px solid ${
         error ? failure(rest) : borderedColor || primaryMain(rest)
       };
-      background-color: ${borderedBackground || 'transparent'};
+      background-color: ${borderedBackgroundColor || 'transparent'};
       height: ${borderedHeight}px;
       border-radius: ${borderedRadius}px;
       padding: ${smallSpacing(rest)};

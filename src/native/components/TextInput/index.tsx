@@ -58,7 +58,7 @@ const TextInput: FC<TextInputType> = ({
   rightIconName = 'magnify',
   iconColor,
   inputPadding,
-  borderedBackground,
+  borderedBackgroundColor,
   borderedHeight,
   borderedColor,
   borderedRadius,
@@ -207,7 +207,7 @@ const TextInput: FC<TextInputType> = ({
         large={large}
       >
         <BorderedWrapper
-          borderedBackground={borderedBackground}
+          borderedBackgroundColor={borderedBackgroundColor}
           borderedHeight={borderedHeight}
           borderedColor={borderedColor}
           borderedRadius={borderedRadius}
