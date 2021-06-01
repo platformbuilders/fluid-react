@@ -58,10 +58,12 @@ const TextInput: FC<TextInputType> = ({
   rightIconName = 'magnify',
   iconColor,
   inputPadding,
+  borderedBackgroundColor,
   borderedHeight,
   borderedColor,
   borderedRadius,
-  fixedLabelVariant = 'caption1',
+  iconType = 'material',
+  fixedLabelVariant = 'caption2',
   ...rest
   // eslint-disable-next-line sonarjs/cognitive-complexity
 }) => {
@@ -179,6 +181,7 @@ const TextInput: FC<TextInputType> = ({
 
   const renderIcon = (iconProp: string, isRightIcon: boolean) => (
     <Icon
+      type={iconType}
       id={`id_${iconProp}`}
       accessibility={`icon_${accessibility}`}
       size={iconSize}
@@ -204,6 +207,7 @@ const TextInput: FC<TextInputType> = ({
         large={large}
       >
         <BorderedWrapper
+          borderedBackgroundColor={borderedBackgroundColor}
           borderedHeight={borderedHeight}
           borderedColor={borderedColor}
           borderedRadius={borderedRadius}
@@ -255,10 +259,7 @@ const TextInput: FC<TextInputType> = ({
                 renderIcon(icon || '', true)}
             </InputAreaWrapper>
           )}
-
-          {(withBottomline || !!borderedHeight) && (
-            <BottomLine status={status} contrast={contrast} />
-          )}
+          {withBottomline && <BottomLine status={status} contrast={contrast} />}
         </BorderedWrapper>
       </FormError>
     </Wrapper>
