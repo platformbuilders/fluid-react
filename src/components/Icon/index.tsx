@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import MaterialIcon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton';
 
 type IconSize = 'inherit' | 'default' | 'small' | 'large';
 

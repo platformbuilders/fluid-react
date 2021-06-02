@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { FormError } from '..';
-import { Wrapper, StyledCheckbox } from './styles';
+import { StyledCheckbox, Wrapper } from './styles';
 
 type Props = {
   onChange(value: any): void;

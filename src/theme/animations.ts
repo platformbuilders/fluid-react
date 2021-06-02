@@ -1,5 +1,5 @@
-import { Animations } from '../types';
 import LoadingAnimation from '../assets/animations/loading.json';
+import { Animations } from '../types';
 
 export default {
   circularLoading: LoadingAnimation,

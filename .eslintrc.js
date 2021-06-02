@@ -9,6 +9,16 @@ module.exports = {
     'plugin:sonarjs/recommended',
     'plugin:promise/recommended',
   ],
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: '.',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    useJSXTextNode: true,
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   plugins: [
     '@typescript-eslint',
     'react',
@@ -21,23 +31,20 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
     __DEV__: true,
-    window: true,
   },
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: '.',
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    useJSXTextNode: true,
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
+  ignorePatterns: [
+    'node_modules/',
+    'e2e',
+    '__mocks__',
+    'coverage',
+    '_templates',
+  ],
   rules: {
-    'import/no-cycle': 0,
-    'no-shadow': 0,
+    // @TODO: Remover essa regra assim que for feito o fix na lib do CheckBox
+    '@typescript-eslint/ban-ts-comment': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': 0,
+    'react/display-name': 0,
     '@typescript-eslint/member-delimiter-style': 0,
     '@typescript-eslint/no-empty-function': 0,
     '@typescript-eslint/no-explicit-any': 0,
@@ -83,11 +90,13 @@ module.exports = {
     'consistent-return': 0,
     'array-callback-return': 0,
     'react/jsx-props-no-spreading': 0,
+    'no-duplicate-imports': 'error',
     'promise/prefer-await-to-callbacks': 'error',
     'promise/prefer-await-to-then': 'error',
     'react/state-in-constructor': 'off',
-    '@typescript-eslint/indent': 'warn',
-    '@typescript-eslint/comma-dangle': 'off'
+    'react/no-unescaped-entities': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 0,
   },
   settings: {
     react: {

@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import TextInputMask from 'react-input-mask';
+import { FormError } from '..';
+import { TextInputType } from '../../types';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
-import { TextInputType } from '../../types';
-import { FormError } from '..';
 
 enum Mask {
   cep = '99999-999',
@@ -17,7 +17,6 @@ enum Mask {
 const TextInput: FC<TextInputType> = ({
   mask,
   maskType = '',
-  formatChars,
   error = '',
   onChange,
   onBlur,

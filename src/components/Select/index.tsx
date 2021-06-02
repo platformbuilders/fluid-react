@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
-import { Wrapper, MaterialSelect, Item } from './styles';
+import { Item, MaterialSelect, Wrapper } from './styles';
 
 type ValuesProps = {
   value: string | number;
