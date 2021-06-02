@@ -61,7 +61,6 @@ buck-out/
 /coverage
 
 # dist
-/native
 /dist
 /.yalc
 package-lock.json

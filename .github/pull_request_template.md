@@ -30,13 +30,5 @@
 
 ## Checklist 🧐
 
-<!-- mobile -->
-
-- [ ] Testado no iOS
-- [ ] Testado no Android
-<!-- web -->
 - [ ] Testado no Chrome
 - [ ] Testado no Safari
-- [ ] Testado no Firefox
-- [ ] Testado no Edge
-- [ ] Não gerou alerta ou erro no console
