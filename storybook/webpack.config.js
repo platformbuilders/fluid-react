@@ -2,7 +2,7 @@
 
 module.exports = {
   node: {
-    fs: 'empty'
+    fs: 'empty',
   },
   module: {
     rules: [
@@ -16,7 +16,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        loader: 'svg-inline-loader',
       },
       {
         test: /\.(ts|tsx)$/,
@@ -28,13 +28,7 @@ module.exports = {
             loader: require.resolve('react-docgen-typescript-loader'),
           },
         ],
-      }
+      },
     ],
-  },
-  resolve: {
-    alias: {
-    'react-native': 'react-native-web',
-    },
-    extensions: ['.web.js', '.js', '.ts', '.tsx'],
   },
 };

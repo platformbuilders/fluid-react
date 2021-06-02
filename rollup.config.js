@@ -44,19 +44,4 @@ const commonConfig = {
   ],
 };
 
-const nativeModulesConfig = {
-  ...baseConfig,
-  input: './src/native/index.ts',
-  output: [
-    {
-      file: 'native/index.js',
-      ...cjs,
-    },
-    {
-      file: 'native/index.esm.js',
-      ...esm,
-    },
-  ],
-};
-
-export default [nativeModulesConfig, commonConfig];
+export default [commonConfig];

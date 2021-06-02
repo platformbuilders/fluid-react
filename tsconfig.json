@@ -37,6 +37,6 @@
     }
   },
   "compileOnSave": true,
-  "include": ["src", "src/native"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist", "documentation"]
 }
