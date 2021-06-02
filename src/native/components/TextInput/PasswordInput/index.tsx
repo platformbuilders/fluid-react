@@ -18,9 +18,10 @@ const PasswordInput: FC<TextInputType> = (props) => {
   return (
     <TextInput
       secureTextEntry={hidePassword}
-      iconName={hidePassword ? 'eye' : 'eye-off'}
+      rightIcon
+      rightIconName={hidePassword ? 'eye' : 'eye-off'}
+      onRightIconPress={onPressShowPassword}
       iconTouchableEnabled
-      onPressIcon={onPressShowPassword}
       iconHitSlop={hitSlop}
       {...props}
     />
