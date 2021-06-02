@@ -1,11 +1,11 @@
 import React from 'react';
-import faker from 'faker';
 import { shallow } from 'enzyme';
+import faker from 'faker';
 import { ThemeProvider } from 'styled-components';
 
 import Button from '..';
-import { ButtonType as Props } from '../../../types';
 import { theme } from '../../../config/helpers';
+import { ButtonType as Props } from '../../../types';
 
 const defaultContent = 'Text';
 const defaultProps: Props = {

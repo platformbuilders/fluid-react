@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { StyledButton, LoadingIndicator } from './styles';
 import { ButtonType } from '../../types';
 import If from '../If';
+import { LoadingIndicator, StyledButton } from './styles';
 
 const Button: FC<ButtonType> = ({
   children,

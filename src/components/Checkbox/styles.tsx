@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FormControlLabel, Checkbox } from '@material-ui/core';
+import { Checkbox, FormControlLabel } from '@material-ui/core';
 import { getTheme } from '../../utils/helpers';
 
 const primaryMain = getTheme('primary.main');

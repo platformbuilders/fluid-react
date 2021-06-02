@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { CustomTypography } from './styles';
 import { TypographyType } from '../../types';
+import { CustomTypography } from './styles';
 
 const Typography: FC<TypographyType> = ({ variant, children, ...rest }) => (
   <CustomTypography variant={variant} {...rest}>

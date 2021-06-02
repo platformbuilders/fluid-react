@@ -1,6 +1,6 @@
 import React from 'react';
-import faker from 'faker';
 import { shallow } from 'enzyme';
+import faker from 'faker';
 import { ThemeProvider } from 'styled-components';
 
 import Avatar, { Props } from '..';

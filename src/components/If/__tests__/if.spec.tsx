@@ -1,6 +1,6 @@
 import React from 'react';
-import faker from 'faker';
 import { shallow } from 'enzyme';
+import faker from 'faker';
 
 import If from '../index';
 

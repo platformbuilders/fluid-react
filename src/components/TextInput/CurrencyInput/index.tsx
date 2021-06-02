@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, FC } from 'react';
+import React, { ChangeEvent, FC, FocusEvent } from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { FormError } from '../..';
