@@ -17,6 +17,8 @@ import { TypographyVariants, TextInputType, InputStatus } from '../../types';
 type InputAreaWrapperProps = {
   multiline: boolean;
   padding?: number;
+  rightIcon: boolean;
+  leftIcon: boolean;
 };
 
 type BorderedWrapperProps = {
@@ -41,17 +43,8 @@ type BottomLineProps = {
   status: string;
 };
 
-// const factor = 1.2;
-// const normalTextSize = moderateScale(16, factor);
-// const normalPlaceholderSize = moderateScale(14, factor);
-// const bigTextSize = moderateScale(24, factor);
-// const bigPlaceholderSize = moderateScale(20, factor);
-// const placeholderVariant = (props: any) => getFontSize('subhead')(props);
-// const placeholderBigVariant = 'title4';
-
 const isLeftIcon = ifStyle('leftIcon');
 const isRightIcon = ifStyle('rightIcon');
-const hasRightAndLeftIcon = ifStyle('rightAndLeftIcon');
 const isMultiline = ifStyle('multiline');
 const isCentered = ifStyle('centered');
 const hasLabel = ifStyle('label');
@@ -152,10 +145,10 @@ export const InputAreaWrapper = styled.View<InputAreaWrapperProps>`
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  padding-horizontal: ${hasRightAndLeftIcon(
-    moderateScale(40),
-    moderateScale(20),
-  )}px;
+  padding-left: ${({ leftIcon }: InputAreaWrapperProps) =>
+    leftIcon ? moderateScale(20) : 0}px;
+  padding-right: ${({ rightIcon }: InputAreaWrapperProps) =>
+    rightIcon ? moderateScale(20) : 0}px;
   overflow: hidden;
 `;
 

@@ -247,9 +247,9 @@ const TextInput: FC<TextInputType> = ({
             <InputAreaWrapper
               multiline={multiline}
               padding={inputPadding}
-              rightAndLeftIcon={rightIcon && leftIcon}
+              rightIcon={rightIcon}
+              leftIcon={leftIcon}
             >
-              {borderedHeight && <FixedLabel>{label}</FixedLabel>}
               {leftIcon && !isEmpty(icon) && renderIcon(icon || '', false)}
               {renderTextInput(renderStatus)}
               {rightIcon && renderIcon(rightIconName, true)}

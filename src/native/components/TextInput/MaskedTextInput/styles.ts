@@ -13,5 +13,5 @@ export const TextInput = styled(Input).attrs((props: Props) => ({
     ? props.placeholderTextColor
     : '#72727260',
 }))`
-  max-width: 100%;
+  flex: 1;
 `;
