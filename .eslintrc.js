@@ -1,22 +1,14 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    'airbnb-typescript',
     'plugin:@typescript-eslint/recommended',
-    'prettier',
+    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:sonarjs/recommended',
     'plugin:promise/recommended',
   ],
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
   plugins: [
     '@typescript-eslint',
     'react',
@@ -32,12 +24,14 @@ module.exports = {
     window: true,
   },
   parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: '.',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    useJSXTextNode: true,
     ecmaFeatures: {
       jsx: true,
     },
-    useJSXTextNode: true,
-    project: './tsconfig.json',
-    tsconfigRootDir: '.',
   },
   rules: {
     'import/no-cycle': 0,
@@ -52,6 +46,34 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/no-extraneous-dependencies': 0,
     'import/extensions': 0,
+    'import/order': [
+      'error',
+      {
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '~/**',
+            group: 'parent',
+            position: 'before',
+          },
+          {
+            pattern: '@*/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+    'sort-imports': ['error', { ignoreDeclarationSort: true }],
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
