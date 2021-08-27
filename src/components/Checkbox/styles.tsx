@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
 import { getTheme } from '../../utils/helpers';
 
-const primaryMain = getTheme('primary.main');
+const brandPrimaryMain = getTheme('brand.primary.main');
+const successMain = getTheme('success.main');
 
 export const Wrapper = styled.div`
   display: flex;
@@ -20,9 +21,9 @@ const ColoredCheckbox = styled((props) => (
     {...props}
   />
 ))`
-  color: ${primaryMain};
+  color: ${brandPrimaryMain};
   & .Mui-checked {
-    color: green;
+    color: ${successMain};
   }
 `;
 

@@ -10,8 +10,8 @@ module.exports = {
     'plugin:promise/recommended',
   ],
   parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: '.',
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
     ecmaVersion: 2020,
     sourceType: 'module',
     useJSXTextNode: true,

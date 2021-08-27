@@ -1,33 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button, CircularProgress } from '@material-ui/core';
+import { ButtonType } from '../../types';
 import { getTheme } from '../../utils/helpers';
 
-const primaryMain = getTheme('primary.main');
-const primaryContrast = getTheme('primary.contrast');
-const secondaryMain = getTheme('secondary.main');
-const secondaryContrast = getTheme('secondary.contrast');
+const brandPrimaryMain = getTheme('brand.primary.main');
+const brandPrimaryContrast = getTheme('brand.primary.contrast');
+const brandSecondaryMain = getTheme('brand.secondary.main');
+const brandSecondaryContrast = getTheme('brand.secondary.contrast');
 
-export const StyledButton = styled((props) => (
-  <Button {...props} secondary={undefined} />
-))`
+const getTextColor = (props: ButtonType) => {
+  return props.secondary
+    ? brandSecondaryContrast(props)
+    : brandPrimaryContrast(props);
+};
+
+const getBackgroundColor = (props: ButtonType) => {
+  return props.secondary ? brandSecondaryMain(props) : brandPrimaryMain(props);
+};
+
+export const StyledButton = styled((props) => <Button {...props} />)`
   min-width: 155px;
   border-radius: 50px;
   padding: 12px;
-  color: ${(props): string =>
-    props.secondary ? secondaryContrast(props) : primaryContrast(props)};
+  color: ${getTextColor};
   border: 0;
-  background: ${(props): string =>
-    props.secondary ? secondaryMain(props) : primaryMain(props)};
-  :hover {
-    background: ${(props): string =>
-      props.secondary ? secondaryMain(props) : primaryMain(props)};
-  }
+  background: ${getBackgroundColor};
 `;
 
 export const LoadingIndicator = styled((props) => (
   <CircularProgress {...props} secondary={undefined} size={20} />
 ))`
-  color: ${(props): string =>
-    props.secondary ? secondaryContrast(props) : primaryContrast(props)};
+  color: ${getTextColor};
 `;
