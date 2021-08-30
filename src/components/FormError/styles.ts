@@ -3,5 +3,5 @@ import { Typography } from '..';
 import { getTheme } from '../../utils/helpers';
 
 export const ErrorText = styled(Typography).attrs({ variant: 'caption' })`
-  color: ${getTheme('failure')};
+  color: ${getTheme('danger.main')};
 `;

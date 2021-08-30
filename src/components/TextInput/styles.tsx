@@ -2,18 +2,17 @@ import styled from 'styled-components';
 import { TextField } from '@material-ui/core';
 import { getTheme } from '../../utils/helpers';
 
-const primaryMain = getTheme('primary.main');
+const brandPrimaryMain = getTheme('brand.primary.main');
 
 export const Input = styled(TextField)`
-  border-color: red;
   & label {
     font-size: 1em;
   }
   & label.Mui-focused {
-    color: ${primaryMain};
+    color: ${brandPrimaryMain};
   }
   & .MuiInput-underline:after {
-    border-bottom-color: ${primaryMain};
+    border-bottom-color: ${brandPrimaryMain};
   }
 `;
 
