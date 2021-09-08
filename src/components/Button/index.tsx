@@ -9,18 +9,18 @@ const Button: FC<ButtonType> = ({
   onPress,
   loading = false,
   disabled = false,
-  secondary = false,
+  variant = 'primary',
   ...rest
 }) => (
   <StyledButton
     onClick={onPress}
+    variant={variant}
     disabled={disabled}
-    secondary={secondary || undefined}
     type={type || undefined}
     {...rest}
   >
     <If condition={!!loading}>
-      <LoadingIndicator secondary={secondary || undefined} />
+      <LoadingIndicator />
     </If>
     <If condition={!loading}>{children}</If>
   </StyledButton>
