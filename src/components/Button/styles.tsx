@@ -18,6 +18,8 @@ const dangerMain = getTheme('danger.main');
 const dangerContrast = getTheme('danger.contrast');
 const warningMain = getTheme('warning.main');
 const warningContrast = getTheme('warning.contrast');
+const spacingSm = getTheme('spacing.sm');
+const borderRadiusMax = getTheme('borderRadius.max');
 const isFlat = ifStyle('flat');
 const hasBorder = ifStyle('hasBorder');
 
@@ -74,8 +76,8 @@ export const StyledButton = styled((props) => (
   &.MuiButton-root {
     background-color: ${isFlat('transparent', getBackgroundColor)};
     min-width: 155px;
-    border-radius: 50px;
-    padding: 12px;
+    border-radius: ${borderRadiusMax}px;
+    padding: ${spacingSm}px;
     color: ${isFlat(getBackgroundColor, getTextColor)};
     border: ${hasBorder(1, 0)}px solid ${getBackgroundColor};
     :hover {
