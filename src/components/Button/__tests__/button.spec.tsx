@@ -37,7 +37,7 @@ describe('Component: Button', () => {
   test('snapshots with other props', () => {
     const component = shallow(
       <ThemeProvider theme={theme}>
-        <Button {...defaultProps} disabled secondary transparent>
+        <Button {...defaultProps} disabled variant="secondary" transparent>
           {defaultContent}
         </Button>
       </ThemeProvider>,
@@ -52,7 +52,13 @@ describe('Component: Button', () => {
 
     // when
     const component = shallow(
-      <Button {...defaultProps} type={typeMock} disabled secondary transparent>
+      <Button
+        {...defaultProps}
+        type={typeMock}
+        disabled
+        variant="secondary"
+        transparent
+      >
         {defaultContent}
       </Button>,
     );
@@ -62,7 +68,6 @@ describe('Component: Button', () => {
     const child = component.children();
 
     expect(wrapper.type).toEqual(typeMock);
-    expect(wrapper.secondary).toBeTruthy();
     expect(wrapper.transparent).toBeTruthy();
 
     expect(child.contains(defaultContent)).toEqual(true);
