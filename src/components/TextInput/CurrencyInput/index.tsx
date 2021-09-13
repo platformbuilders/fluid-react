@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FC, FocusEvent } from 'react';
 import MaskedInput from 'react-text-mask';
+import { InputVariants } from 'src';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { FormError } from '../..';
 import { toOnlyNumbers } from '../../../utils/helpers';
@@ -15,6 +16,7 @@ type Props = {
   onChangeText?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: ((e: FocusEvent<HTMLInputElement>) => void) | undefined;
   onFocus?: ((e: FocusEvent<HTMLInputElement>) => void) | undefined;
+  variant?: InputVariants;
 };
 
 const defaultMaskOptions = {
@@ -36,6 +38,7 @@ const CurrencyInputComponent: FC<Props> = ({
   onBlur,
   onFocus,
   value,
+  variant = 'standard',
 }) => {
   const currencyMask = createNumberMask(defaultMaskOptions);
 
@@ -60,7 +63,9 @@ const CurrencyInputComponent: FC<Props> = ({
           onChange={handleChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          render={(ref, props) => <Input ref={ref} error={error} {...props} />}
+          render={(ref, props) => (
+            <Input ref={ref} variant={variant} error={error} {...props} />
+          )}
         />
         <Bar className="bar" error={error} />
         <Label error={error}>{label}</Label>
