@@ -18,3 +18,4 @@ export { default as FormError } from './FormError';
 export { default as FormContainer } from './FormContainer';
 export { default as Checkbox } from './Checkbox';
 export { default as Select } from './Select';
+export { default as Autocomplete } from './Autocomplete';

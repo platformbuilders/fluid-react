@@ -21,6 +21,7 @@ const TextInput: FC<TextInputType> = ({
   onChange,
   onBlur,
   onFocus,
+  inputProps,
   maxlength,
   variant = 'standard',
   ...rest
@@ -49,7 +50,7 @@ const TextInput: FC<TextInputType> = ({
           <Input
             margin="normal"
             {...inputProps}
-            inputProps={{ maxLength: maxlength }}
+            inputProps={{ maxLength: maxlength, ...inputProps }}
             variant={variant}
           />
         )}
@@ -62,7 +63,7 @@ const TextInput: FC<TextInputType> = ({
         onBlur={onBlur}
         onFocus={onFocus}
         error={!!error}
-        inputProps={{ maxLength: maxlength }}
+        inputProps={{ maxLength: maxlength, ...inputProps }}
         variant={variant}
       />
     );

@@ -1,4 +1,5 @@
 import { ChangeEvent, FocusEvent } from 'react';
+import { InputBaseComponentProps } from '@material-ui/core';
 
 export type TextInputType = {
   mask?: string;
@@ -16,6 +17,7 @@ export type TextInputType = {
   value: string | number | string[] | undefined;
   autoFocus?: boolean;
   variant?: InputVariants;
+  inputProps?: InputBaseComponentProps;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (
     e:
