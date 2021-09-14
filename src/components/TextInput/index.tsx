@@ -22,6 +22,7 @@ const TextInput: FC<TextInputType> = ({
   onBlur,
   onFocus,
   maxlength,
+  variant = 'standard',
   ...rest
 }) => {
   const renderTextInput = (): JSX.Element => {
@@ -34,6 +35,7 @@ const TextInput: FC<TextInputType> = ({
         onChangeText={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
+        variant={variant}
       />
     ) : hasMask ? (
       <TextInputMask
@@ -48,6 +50,7 @@ const TextInput: FC<TextInputType> = ({
             margin="normal"
             {...inputProps}
             inputProps={{ maxLength: maxlength }}
+            variant={variant}
           />
         )}
       </TextInputMask>
@@ -60,6 +63,7 @@ const TextInput: FC<TextInputType> = ({
         onFocus={onFocus}
         error={!!error}
         inputProps={{ maxLength: maxlength }}
+        variant={variant}
       />
     );
   };

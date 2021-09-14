@@ -1,6 +1,6 @@
 import React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import markdown from './textInput.md';
 import TextInput from './index';
 
@@ -22,5 +22,6 @@ storiesOf('TextInput', module)
       fullWidth={boolean('fullWidth', false)}
       autoFocus={boolean('autoFocus', false)}
       maskType="cep"
+      variant="filled"
     />
   ));

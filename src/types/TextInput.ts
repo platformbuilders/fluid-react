@@ -15,6 +15,7 @@ export type TextInputType = {
   pattern?: string;
   value: string | number | string[] | undefined;
   autoFocus?: boolean;
+  variant?: InputVariants;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (
     e:
@@ -25,3 +26,5 @@ export type TextInputType = {
     e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
 };
+
+export type InputVariants = 'filled' | 'standard' | 'outlined';
