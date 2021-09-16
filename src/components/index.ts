@@ -7,6 +7,7 @@ export { default as Icon } from './Icon';
 export { default as Avatar } from './Avatar';
 export { default as Typography } from './Typography';
 export { default as LoadingIndicator } from './LoadingIndicator';
+export { default as Link } from './Link';
 
 // Buttons
 export { default as Button } from './Button';
