@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import markdown from './if.md';
+import markdown from './link.md';
 import Link from './index';
 
 storiesOf('Link', module)
@@ -14,4 +14,4 @@ storiesOf('Link', module)
       defaultViewport: '',
     },
   })
-  .add('Example', () => <Link onPress={() => { }}>Click Here</Link>);
+  .add('Example', () => <Link onPress={() => {}}>Click Here</Link>);
