@@ -16,6 +16,7 @@ export type TextInputType = {
   pattern?: string;
   value: string | number | string[] | undefined;
   autoFocus?: boolean;
+  multiline?: boolean;
   variant?: InputVariants;
   inputProps?: InputBaseComponentProps;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
