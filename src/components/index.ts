@@ -19,3 +19,4 @@ export { default as FormContainer } from './FormContainer';
 export { default as Checkbox } from './Checkbox';
 export { default as Select } from './Select';
 export { default as Autocomplete } from './Autocomplete';
+export { default as Switch } from './Switch';

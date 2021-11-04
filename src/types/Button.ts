@@ -1,7 +1,9 @@
+import { ColorsVariants } from 'src';
+
 export type ButtonType = {
   onPress(): void;
   type?: string;
-  variant?: ButtonVariants;
+  variant?: ColorsVariants;
   transparent?: boolean;
   flat?: boolean;
   hasBorder?: boolean;
@@ -9,12 +11,3 @@ export type ButtonType = {
   disabled?: boolean;
   children: string;
 };
-
-export type ButtonVariants =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'accent'
-  | 'danger'
-  | 'warning'
-  | 'info';
