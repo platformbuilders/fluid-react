@@ -74,4 +74,3 @@ variant="secondary"
 | **disabled**  	| Aqui vai desabilitar o componente 	| **boolean** 	|
 | **icon** 	| O icon mostrará quando o componente estiver unchecked	| **string** 	|
 | **checkedIcon** 	| O icon mostrará quando o componente estiver checked 	| **string** 	|
-| **onChange** 	| Aqui é retornodo os valores da lista em uma funçao  *function(event: React.SyntheticEvent, value: T | Array<\T>, reason: string, details?: string) => void*	| **string** 	|
