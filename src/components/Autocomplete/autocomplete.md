@@ -88,7 +88,7 @@ function handleGetOptionLabel(movie){
 | **options**  	| Array dos items a serem listados. 	| **array**
 | **renderInput**  	| Aqui vai renderiza o input, é passado uma função com o parametro sendo passado ao input 	| **function** 	|
 | **getOptionLabel** 	| Espera-se uma função para pegar o valor selecionado e retornar para label. 	| **string** 	|
-| **onChange** 	| Aqui é retornodo os valores da lista em uma funçao  *function(event: React.SyntheticEvent, value: T | Array<\T>, reason: string, details?: string) => void*	| **string** 	|
+| **onChange** 	| Aqui é retornodo os valores da lista em uma funçao  *function(event: React.SyntheticEvent, value: T | Array<\T>, reason: string, details?: string) => void*	| **function** 	|
 | **value** 	| O valor selecionado da lista. 	| **any** 	|
 
 *Para saber mais sobre as props aceitas podem entrar em* https://mui.com/api/autocomplete/#props

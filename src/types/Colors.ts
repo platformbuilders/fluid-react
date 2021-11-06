@@ -17,3 +17,12 @@ export type Colors = {
   tertiary: SubColor;
   accent: SubColor;
 };
+
+export type ColorsVariants =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'accent'
+  | 'danger'
+  | 'warning'
+  | 'info';
