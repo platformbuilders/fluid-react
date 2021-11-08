@@ -10,5 +10,16 @@ export type RadioProps = {
   size?: 'small' | 'medium';
   label?: string;
   labelPlacement?: string;
+  value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type RadioGroupProps = {
+  defaultValue?: any;
+  name?: string;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: string,
+  ) => void;
+  value?: any;
 };
