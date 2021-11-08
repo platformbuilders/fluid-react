@@ -38,7 +38,7 @@ label="Não"
 <!-- Component declaration end -->
 
 <!-- Documentation begin -->
-Esse componente tem como função auxiliar em resposta de sim ou não, ou ativar ou desativar uma funcionalidade
+Esse componente tem como função auxiliar em agrupar varios componentes Radio
 
 ## Exemplo
 

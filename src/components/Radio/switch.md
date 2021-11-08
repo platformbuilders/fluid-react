@@ -31,7 +31,7 @@ variant="secondary"
 <!-- Component declaration end -->
 
 <!-- Documentation begin -->
-Esse componente tem como função auxiliar em resposta de sim ou não, ou ativar ou desativar uma funcionalidade
+Esse componente tem como função auxiliar em resposta com varias opção de resposta mas o uma sera valida
 
 ## Exemplo
 
