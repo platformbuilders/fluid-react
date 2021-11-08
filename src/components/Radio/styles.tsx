@@ -1,18 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormControlLabel, Radio } from '@material-ui/core';
-
-type Props = {
-  id?: string;
-  checked?: boolean;
-  checkedIcon?: React.ReactNode;
-  // variant?: ColorsVariant;
-  disabled?: boolean;
-  icon?: React.ReactNode;
-  size?: 'small' | 'medium';
-  label?: string;
-  labelPlacement?: string;
-};
+import { RadioProps } from '../../types';
+import { getBackgroundColor } from '../../utils/helpers';
 
 export const StyledRadio = styled(({ label, labelPlacement, ...rest }) => (
   <FormControlLabel
@@ -20,4 +10,14 @@ export const StyledRadio = styled(({ label, labelPlacement, ...rest }) => (
     label={label}
     labelPlacement={labelPlacement}
   />
-))<Props>``;
+))<RadioProps>((props) => ({
+  '&.Mui-checked': {
+    color: getBackgroundColor(props),
+    '&:hover': {
+      backgroundColor: getBackgroundColor(props) + '70',
+    },
+  },
+  '&:hover': {
+    backgroundColor: getBackgroundColor(props) + '70',
+  },
+}));
