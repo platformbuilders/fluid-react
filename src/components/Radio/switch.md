@@ -1,25 +1,25 @@
 ---
-id: component.switch
-title: Switch
+id: component.radio
+title: Radio
 ---
 
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { Switch } from '@platformbuilders/react-elements';
+import { Radio } from '@platformbuilders/react-elements';
 
-export const SwitchExample = () => {
+export const RadioExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
 
 function handleIsAnonymous(e){
-setIsAnonymous(e.target.checked);
+setIsAnonymous(e.target.value);
 }
 
 return(
 <>
-<Switch
-title="Anônimo?"
-value={isAnonymous}
+<Radio
+label="Anônimo"
+checked={isAnonymous}
 onChange={handleIsAnonymous}
 variant="secondary"
 />
@@ -39,9 +39,9 @@ Esse componente tem como função auxiliar em resposta de sim ou não, ou ativar
 
 ```javascript
 import { useState } from 'react';
-import { Switch } from '@platformbuilders/react-elements';
+import { Radio } from '@platformbuilders/react-elements';
 
-export const SwitchExample = () => {
+export const RadioExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
 
 function handleIsAnonymous(e){
@@ -50,8 +50,8 @@ setIsAnonymous(e.target.checked);
 
 return(
 <>
-<Switch
-title="Anônimo?"
+<Radio
+label="Anônimo"
 value={isAnonymous}
 onChange={handleIsAnonymous}
 variant="secondary"
@@ -67,10 +67,13 @@ variant="secondary"
 
 | Formato        | Conceito      | Tipo   |
 | ------|-----|-----|
-| **value** 	| O valor true ou false. 	| **boolean** 	|
-| **onChange**  	| é uma função que recebe por parametro event, para acessar o valor basta acessar *event.target.value* que retorna uma *string* e *event.target.checked* retorna um *boolean*. 	| **func**
+| **value** 	| O valor é *any*. 	| **any** 	|
+| **onChange**  	| é uma função que recebe por parametro event, para acessar o valor basta acessar *event.target.value* que retorna uma *string*. 	| **func**
 | **label**  	| Aqui vai poder adicionar uma label ao lado do component 	| **boolean** 	|
 | **labelPlacement**  	| Aqui pode definir a posição da label, por default é end	| **string = 'top' | 'start' | 'bottom' | 'end'** 	|
 | **disabled**  	| Aqui vai desabilitar o componente 	| **boolean** 	|
-| **icon** 	| O icon mostrará quando o componente estiver unchecked	| **string** 	|
-| **checkedIcon** 	| O icon mostrará quando o componente estiver checked 	| **string** 	|
+| **variant** 	| Aqui sera usado as cores de acordo com theme, por padrão usa *primary*	| **string** 	|
+| **checked** 	| ira marcar caso o retornor for true	| **boolean** 	|
+| **size** 	| Ira determinar o tamanho do componente *small* ou *medium*	| **string** 	|
+| **icon** 	| O icon mostrará quando o componente estiver unchecked	| **Node** 	|
+| **checkedIcon** 	| O icon mostrará quando o componente estiver checked 	| **Node** 	|

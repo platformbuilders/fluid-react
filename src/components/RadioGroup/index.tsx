@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { RadioGroupProps } from '@material-ui/core';
+import { RadioGroupProps } from '../../types';
 import { StyledRadioGroup } from './styles';
 
 const RadioGroup: FC<RadioGroupProps> = (props) => {
