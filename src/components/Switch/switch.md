@@ -8,7 +8,7 @@ title: Switch
 import { useState } from 'react';
 import { Switch } from '@platformbuilders/react-elements';
 
-export const AutocompleteExample = () => {
+export const SwitchExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
 
 function handleIsAnonymous(e){
@@ -41,7 +41,7 @@ Esse componente tem como função auxiliar em resposta de sim ou não, ou ativar
 import { useState } from 'react';
 import { Switch } from '@platformbuilders/react-elements';
 
-export const AutocompleteExample = () => {
+export const SwitchExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
 
 function handleIsAnonymous(e){
