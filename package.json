@@ -148,8 +148,5 @@
     "react-lottie": ">=1.2.3",
     "react-router-dom": ">=5",
     "styled-components": ">=5"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
