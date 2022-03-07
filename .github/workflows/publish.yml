@@ -1,8 +1,10 @@
 name: Publish
 
 on: 
-  release:
-    types: [published]
+  push:
+    branches: [master]
+  # release:
+  #   types: [published]
 
 jobs:
   publish:
@@ -14,24 +16,24 @@ jobs:
         run: yarn install
       # Publish to npm
       # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-          registry-url: 'https://registry.npmjs.org/'
+      # - uses: actions/setup-node@v1
+      #   with:
+      #     node-version: '14.x'
+      #     registry-url: 'https://registry.npmjs.org/'
       - name: Publish
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       # Setup .npmrc file to publish to GitHub Packages
-      - uses: actions/setup-node@v1
-        with:
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@platformbuilders'
-      # Publish to GitHub Packages
-      - name: Set NPM Variables
-        run: echo "$PACKAGES_NPMRC" > .npmrc
-        env:
-          PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: actions/setup-node@v1
+      #   with:
+      #     registry-url: 'https://npm.pkg.github.com'
+      #     scope: '@platformbuilders'
+      # # Publish to GitHub Packages
+      # - name: Set NPM Variables
+      #   run: echo "$PACKAGES_NPMRC" > .npmrc
+      #   env:
+      #     PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
+      # - run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
