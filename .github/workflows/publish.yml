@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org/'
-      - name: Set NPM Variables
-        run: echo "$PACKAGES_NPMRC" > .npmrc
-        env:
-          PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
+#       - name: Set NPM Variables
+#         run: echo "$PACKAGES_NPMRC" > .npmrc
+#         env:
+#           PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
       - name: Install
         run: yarn install
       # Publish to npm
