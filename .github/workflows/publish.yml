@@ -1,10 +1,8 @@
 name: Publish
 
 on: 
-  push:
-    branches: [master]
-  # release:
-  #   types: [published]
+  release:
+    types: [published]
 
 jobs:
   publish:
@@ -25,7 +23,7 @@ jobs:
         run: yarn install
       # Publish to npm
       - name: Publish
-        run: yarn publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       # Setup .npmrc file to publish to GitHub Packages
@@ -34,6 +32,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@platformbuilders'
       # Publish to GitHub Packages
-      - run: yarn publish
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
