@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 export type ButtonType = {
   onPress(): void;
   type?: string;
@@ -8,6 +10,7 @@ export type ButtonType = {
   loading?: boolean;
   disabled?: boolean;
   children: string;
+  theme: DefaultTheme;
 };
 
 export type ButtonVariants =

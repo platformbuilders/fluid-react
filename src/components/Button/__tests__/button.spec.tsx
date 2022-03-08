@@ -11,6 +11,7 @@ const defaultContent = 'Text';
 const defaultProps: Props = {
   onPress: jest.fn(),
   children: defaultContent,
+  theme,
 };
 
 describe('Component: Button', () => {
