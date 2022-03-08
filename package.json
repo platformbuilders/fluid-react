@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/react-elements",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": false,
   "description": "Platform Builders Shared Components Library For React Web",
   "keywords": [
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@material-ui/core": "4.11.0",
-    "react-dom": "^17.0.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "react-text-mask": "5.4.3",
     "text-mask-addons": "3.8.0"
   },
@@ -72,7 +72,7 @@
     "@types/react": "16.9.49",
     "@types/react-input-mask": "2.0.5",
     "@types/react-lottie": "1.2.5",
-    "@types/react-router-dom": "5.1.5",
+    "@types/react-router-dom": "5.3.3",
     "@types/react-test-renderer": "16.9.3",
     "@types/react-text-mask": "5.4.6",
     "@types/styled-components": "5.1.4",
@@ -117,12 +117,13 @@
     "polished": "3.6.7",
     "prettier": "2.2.1",
     "prettierrc": "0.0.0-5",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-docgen-typescript-loader": "3.7.2",
+    "react-dom": "16.14.0",
     "react-input-mask": "2.0.4",
     "react-lottie": "1.2.3",
-    "react-router-dom": "5.2.0",
-    "react-test-renderer": "16.13.1",
+    "react-router-dom": "6.2.2",
+    "react-test-renderer": "16.14.0",
     "rmfr": "2.0.0",
     "rollup": "2.27.1",
     "rollup-plugin-typescript2": "0.27.2",
@@ -147,8 +148,5 @@
     "react-lottie": ">=1.2.3",
     "react-router-dom": ">=5",
     "styled-components": ">=5"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

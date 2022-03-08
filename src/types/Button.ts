@@ -1,9 +1,10 @@
 import { DefaultTheme } from 'styled-components';
+import { ColorsVariants } from './Colors';
 
 export type ButtonType = {
   onPress(): void;
   type?: string;
-  variant?: ButtonVariants;
+  variant?: ColorsVariants;
   transparent?: boolean;
   flat?: boolean;
   hasBorder?: boolean;
@@ -12,12 +13,3 @@ export type ButtonType = {
   children: string;
   theme: DefaultTheme;
 };
-
-export type ButtonVariants =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'accent'
-  | 'danger'
-  | 'warning'
-  | 'info';

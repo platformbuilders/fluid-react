@@ -7,3 +7,7 @@ export * from './Variants';
 export * from './Animations';
 export * from './Radius';
 export * from './TextInput';
+export * from './Autocomplete';
+export * from './Switch';
+export * from './Radio';
+export * from './Switch';
