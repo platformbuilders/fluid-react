@@ -10,14 +10,15 @@ export const StyledSwitch = styled(({ labelPlacement, label, ...rest }) => (
     labelPlacement={labelPlacement}
     label={label}
   />
-))<SwitchProps>((props) => ({
-  '& .MuiSwitch-switchBase.Mui-checked': {
-    color: getBackgroundColor(props),
-    '&:hover': {
-      backgroundColor: getBackgroundColor(props) + '70',
-    },
+))<SwitchProps>`
+  &.MuiSwitch-switchBase.Mui-checked {
+    color: ${getBackgroundColor};
+    &:hover {
+      background-color: ${getBackgroundColor}70;
+    }
+  }
+
+  &.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    background-color: ${getBackgroundColor},
   },
-  '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-    backgroundColor: getBackgroundColor(props),
-  },
-}));
+`;

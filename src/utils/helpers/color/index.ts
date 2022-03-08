@@ -15,7 +15,7 @@ const infoContrast = getTheme('info.contrast');
 const dangerContrast = getTheme('danger.contrast');
 const warningContrast = getTheme('warning.contrast');
 
-export const getBackgroundColor = (props: any): string => {
+export const getBackgroundColor = (props: any): string | number => {
   if (props.disabled) {
     return `${brandPrimary(props)}70`;
   }
@@ -39,7 +39,7 @@ export const getBackgroundColor = (props: any): string => {
   }
 };
 
-export const getTextColor = (props: any): string => {
+export const getTextColor = (props: any): string | number => {
   if (props.disabled) {
     return brandPrimaryContrast(props);
   }

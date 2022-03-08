@@ -1,4 +1,5 @@
-import { ColorsVariants } from 'src';
+import { DefaultTheme } from 'styled-components';
+import { ColorsVariants } from './Colors';
 
 export type ButtonType = {
   onPress(): void;
@@ -10,4 +11,5 @@ export type ButtonType = {
   loading?: boolean;
   disabled?: boolean;
   children: string;
+  theme: DefaultTheme;
 };

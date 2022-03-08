@@ -52,7 +52,7 @@
     "@babel/preset-env": "7.11.5",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
-    "@platformbuilders/helpers": "0.4.1",
+    "@platformbuilders/helpers": "0.4.2",
     "@rollup/plugin-image": "2.0.5",
     "@rollup/plugin-json": "4.1.0",
     "@storybook/addon-actions": "6.0.22",
@@ -139,7 +139,7 @@
     "typescript": "4.2.3"
   },
   "peerDependencies": {
-    "@platformbuilders/helpers": ">=0.3.5",
+    "@platformbuilders/helpers": "0.4.2",
     "formik": ">=2.1.6",
     "lodash": ">=4.17.20",
     "polished": ">=3.6.7",
