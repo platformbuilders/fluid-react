@@ -3215,7 +3215,7 @@ exports[`Component: Radio snapshots with another props 1`] = `
     label="Text"
     onChange={[MockFunction]}
     size="medium"
-    value="mint"
+    value="Facilitator Ergonomic copying"
   />
 </ContextProvider>
 `;

@@ -11,5 +11,5 @@ export type ButtonType = {
   loading?: boolean;
   disabled?: boolean;
   children: string;
-  theme: DefaultTheme;
+  theme?: DefaultTheme;
 };
