@@ -8,6 +8,7 @@ export { default as Avatar } from './Avatar';
 export { default as Typography } from './Typography';
 export { default as LoadingIndicator } from './LoadingIndicator';
 export { default as Link } from './Link';
+export { default as LazyWrapper } from './LazyWrapper';
 
 // Buttons
 export { default as Button } from './Button';

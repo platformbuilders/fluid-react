@@ -11,3 +11,4 @@ export * from './Autocomplete';
 export * from './Switch';
 export * from './Radio';
 export * from './Switch';
+export * from './LazyWrapper';
