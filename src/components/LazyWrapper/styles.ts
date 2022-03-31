@@ -4,8 +4,25 @@ import { CircularProgress } from '@material-ui/core';
 import { LazyWrapperProps } from '../../types';
 import { getTextColor } from '../../utils/helpers/color';
 
-export const Wrapper = styled(Fragment)`
-  width: 100%;
+export const Wrapper = styled(Fragment)``;
+
+export const LoadingIndicatorWrapper = styled.div<
+  Omit<LazyWrapperProps, 'loading'>
+>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${({ justifyLoadingIndicator }) =>
+    justifyLoadingIndicator &&
+    css`
+      justify-content: ${justifyLoadingIndicator};
+    `}
+  ${({ alignLoadingIndicator }) =>
+    alignLoadingIndicator &&
+    css`
+      align-items: ${alignLoadingIndicator};
+    `}
 `;
 
 export const LoadingIndicator = styled(CircularProgress)<LazyWrapperProps>`
