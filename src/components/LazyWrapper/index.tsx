@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 import { LazyWrapperProps } from '../../types';
 import If from '../If';
 import { LoadingIndicator, LoadingIndicatorWrapper, Wrapper } from './styles';
@@ -7,8 +7,8 @@ const LazyWrapper: FC<LazyWrapperProps> = ({
   loading = false,
   customLoadingIndicatorSize,
   customLoadingIndicator: CustomLoadingIndicator,
-  justifyLoadingIndicator,
-  alignLoadingIndicator,
+  justifyLoadingIndicator = 'flex-start',
+  alignLoadingIndicator = 'flex-start',
   customLoadingColor,
   children,
 }) => {
@@ -24,7 +24,7 @@ const LazyWrapper: FC<LazyWrapperProps> = ({
             customLoadingColor={customLoadingColor}
             size={customLoadingIndicatorSize ? customLoadingIndicatorSize : 20}
           >
-            <div />
+            <Fragment />
           </LoadingIndicator>
         </LoadingIndicatorWrapper>
       </If>

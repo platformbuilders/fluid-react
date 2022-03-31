@@ -10,19 +10,8 @@ export const LoadingIndicatorWrapper = styled.div<
   Omit<LazyWrapperProps, 'loading'>
 >`
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  ${({ justifyLoadingIndicator }) =>
-    justifyLoadingIndicator &&
-    css`
-      justify-content: ${justifyLoadingIndicator};
-    `}
-  ${({ alignLoadingIndicator }) =>
-    alignLoadingIndicator &&
-    css`
-      align-items: ${alignLoadingIndicator};
-    `}
+  justify-content: ${({ justifyLoadingIndicator }) => justifyLoadingIndicator};
+  align-items: ${({ alignLoadingIndicator }) => alignLoadingIndicator};
 `;
 
 export const LoadingIndicator = styled(CircularProgress)<LazyWrapperProps>`
