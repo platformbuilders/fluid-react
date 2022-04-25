@@ -36,7 +36,7 @@ const Select: FC<Props> = ({
     >
       {values.map((item) => (
         <Item
-          id={`${id}-option-${item.value}`}
+          id={id && `${id}-option-${item.value}`}
           key={item.value}
           value={item.value}
           {...rest}
