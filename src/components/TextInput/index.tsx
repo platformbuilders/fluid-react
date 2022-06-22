@@ -46,14 +46,16 @@ const TextInput: FC<TextInputType> = ({
         onFocus={onFocus}
         {...rest}
       >
-        {(inputProps: any): JSX.Element => (
-          <Input
-            margin="normal"
-            {...inputProps}
-            inputProps={{ maxLength: maxlength, ...inputProps }}
-            variant={variant}
-          />
-        )}
+        <>
+          {(inputProps: any): JSX.Element => (
+            <Input
+              margin="normal"
+              {...inputProps}
+              inputProps={{ maxLength: maxlength, ...inputProps }}
+              variant={variant}
+            />
+          )}
+        </>
       </TextInputMask>
     ) : (
       <Input
