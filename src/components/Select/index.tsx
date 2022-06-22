@@ -14,6 +14,7 @@ type Props = {
   label?: string;
   selectedValue?: string | string[] | number | number[];
   values: ValuesProps[];
+  id?: string;
 };
 
 const Select: FC<Props> = ({
@@ -22,17 +23,24 @@ const Select: FC<Props> = ({
   label = '',
   selectedValue,
   values,
+  id,
   ...rest
 }) => (
   <Wrapper error={error !== ''} {...rest}>
     <InputLabel>{label}</InputLabel>
     <MaterialSelect
+      id={id}
       value={selectedValue}
       onChange={(event: any): any => onChange(event.target.value)}
       {...rest}
     >
       {values.map((item) => (
-        <Item key={item.value} value={item.value} {...rest}>
+        <Item
+          id={id && `${id}-option-${item.value}`}
+          key={item.value}
+          value={item.value}
+          {...rest}
+        >
           {item.label}
         </Item>
       ))}
