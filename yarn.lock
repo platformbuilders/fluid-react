@@ -13778,15 +13778,7 @@ set-blocking@^2.0.0:
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==
 
-set-value@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/set-value/-/set-value-0.2.0.tgz#73b0a6825c158c6a16a82bbdc95775bf2a825fab"
-  integrity sha512-dJaeu7V8d1KwjePimg1oOpGp31cEw/uRcZlfL7wwemkr+A00ev/ZhikvSMiQ4hkf83d8JdY2AFoFmXsKzmHMSw==
-  dependencies:
-    isobject "^1.0.0"
-    noncharacters "^1.1.0"
-
-set-value@^2.0.0, set-value@^2.0.1:
+set-value@^0.2.0, set-value@^2.0.0, set-value@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/set-value/-/set-value-2.0.1.tgz#a18d40530e6f07de4228c7defe4227af8cad005b"
   integrity sha512-JxHc1weCN68wRY0fhCoXpyK55m/XPHafOmK4UWD7m2CI14GMcFypt4w/0+NV5f/ZMby2F6S2wwA7fgynh9gWSw==

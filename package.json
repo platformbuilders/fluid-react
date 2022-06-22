@@ -48,7 +48,8 @@
     "text-mask-addons": "3.8.0"
   },
   "resolutions": {
-    "minimist": "^1.2.6"
+    "minimist": "^1.2.6",
+    "set-value": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.11.6",
