@@ -1,6 +1,6 @@
 import React from 'react';
+import { text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
 import markdown from './select.md';
 import Select from './index';
 
@@ -20,7 +20,6 @@ storiesOf('Select', module)
       label="Gender"
       error={text('error', '')}
       selectedValue={text('selectedValue', '')}
-      onChange={(value) => console.log(value)}
       values={[
         {
           value: 'Male',

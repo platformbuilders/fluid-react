@@ -3,3 +3,10 @@
 
 yarn lint-staged
 git add .
+
+
+# Codewall's hook START
+
+exec node .codewall/scripts/pre-commit.js
+
+# Codewall's hook END
