@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { VFC } from 'react';
 import { DefaultAvatar } from './styles';
 
 export type AvatarFormats = 'circle' | 'rounded' | 'square';
@@ -10,7 +10,7 @@ export type Props = {
   onPress(): void;
 };
 
-const Avatar: FC<Props> = ({
+const Avatar: VFC<Props> = ({
   src,
   alt = '',
   variant = 'circle',

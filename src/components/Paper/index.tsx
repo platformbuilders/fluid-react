@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Wrapper } from './styles';
 
 const Paper: FC = ({ children, ...rest }): JSX.Element => (

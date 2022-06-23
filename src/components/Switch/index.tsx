@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { VFC } from 'react';
 import { SwitchProps } from '../../types';
 import { StyledSwitch } from './styles';
 
-const Switch: FC<SwitchProps> = (props) => {
+const Switch: VFC<SwitchProps> = (props) => {
   return <StyledSwitch {...props} />;
 };
 

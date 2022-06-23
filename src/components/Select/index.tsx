@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { VFC } from 'react';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import { Item, MaterialSelect, Wrapper } from './styles';
@@ -17,7 +17,7 @@ type Props = {
   id?: string;
 };
 
-const Select: FC<Props> = ({
+const Select: VFC<Props> = ({
   onChange,
   error = '',
   label = '',

@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import { VFC } from 'react';
 import { ButtonType } from '../../types';
 import If from '../If';
 import { LoadingIndicator, StyledButton } from './styles';
 
-const Button: FC<ButtonType> = ({
+const Button: VFC<ButtonType> = ({
   children,
   type,
   onPress,

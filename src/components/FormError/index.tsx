@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { isString } from '../../utils/helpers';
 import { ErrorText } from './styles';
 

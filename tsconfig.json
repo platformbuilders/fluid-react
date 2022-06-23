@@ -11,7 +11,7 @@
     "outDir": "dist",
     "importHelpers": true,
     "resolveJsonModule": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "skipLibCheck": true,
     /* Strict Type-Checking Options */
@@ -33,7 +33,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "paths": {
-      "tslib" : ["path/to/node_modules/tslib/tslib.d.ts"]
+      "react-input-mask" : ["./src/types/react-input-mask.d.ts"]
     }
   },
   "compileOnSave": true,

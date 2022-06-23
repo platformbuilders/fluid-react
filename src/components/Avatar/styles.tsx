@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import MaterialAvatar from '@material-ui/core/Avatar';
 import { Touchable } from '..';

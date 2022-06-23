@@ -1,4 +1,3 @@
-import React from 'react';
 import { Autocomplete as DefaultAutocomplete } from '@material-ui/lab';
 import { PropsAutocomplete } from '../../types';
 

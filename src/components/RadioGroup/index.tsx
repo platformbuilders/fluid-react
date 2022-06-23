@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { VFC } from 'react';
 import { RadioGroupProps } from '../../types';
 import { StyledRadioGroup } from './styles';
 
-const RadioGroup: FC<RadioGroupProps> = (props) => {
+const RadioGroup: VFC<RadioGroupProps> = (props) => {
   return <StyledRadioGroup {...props} />;
 };
 
