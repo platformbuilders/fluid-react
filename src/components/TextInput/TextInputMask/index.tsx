@@ -36,9 +36,6 @@ const TextInputMask: VFC<Partial<TextInputType & { maxLength: number }>> = ({
       {(inputMaskProps: any): JSX.Element => (
         <Input
           margin="normal"
-          onChange={onChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
           error={!!error}
           inputProps={inputProps}
           variant={variant}
