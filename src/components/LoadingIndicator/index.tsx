@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { VFC } from 'react';
 import Animation from 'react-lottie';
 import loading from '../../assets/animations/loading.json';
 
@@ -23,7 +23,7 @@ const defaultOptions = {
   },
 };
 
-const LoadingIndicator: FC<Props> = ({ size = 'medium' }): JSX.Element => (
+const LoadingIndicator: VFC<Props> = ({ size = 'medium' }): JSX.Element => (
   <Animation
     options={defaultOptions}
     isStopped={false}

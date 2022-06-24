@@ -25,9 +25,13 @@ export type TextInputType = {
       | FocusEvent<HTMLInputElement | HTMLTextAreaElement>
       | ChangeEvent<HTMLDivElement>,
   ) => void;
-  onFocus?: (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
+  onFocus?:
+    | ((
+        e:
+          | FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+          | ChangeEvent<HTMLDivElement>,
+      ) => void)
+    | undefined;
 };
 
 export type InputVariants = 'filled' | 'standard' | 'outlined';

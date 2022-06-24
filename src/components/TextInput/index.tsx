@@ -1,18 +1,9 @@
-import React, { FC } from 'react';
-import TextInputMask from 'react-input-mask';
+import { FC } from 'react';
 import { FormError } from '..';
 import { TextInputType } from '../../types';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
-
-enum Mask {
-  cep = '99999-999',
-  cpf = '999.999.999-99',
-  cnpj = '99.999.999/9999-99',
-  birthdate = '99/99/9999',
-  phone = '(99) 9999-9999',
-  cellphone = '(99) 99999-9999',
-}
+import TextInputMask from './TextInputMask';
 
 const TextInput: FC<TextInputType> = ({
   mask,
@@ -26,38 +17,38 @@ const TextInput: FC<TextInputType> = ({
   variant = 'standard',
   ...rest
 }) => {
-  const renderTextInput = (): JSX.Element => {
-    const hasMask = mask || maskType;
-    const maskOption = Mask[maskType] || mask;
+  const hasMask = mask || maskType;
 
-    return maskType === 'currency' ? (
-      <CurrencyInput
-        {...rest}
-        onChangeText={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        variant={variant}
-      />
-    ) : hasMask ? (
-      <TextInputMask
-        mask={maskOption}
-        onChange={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        {...rest}
-      >
-        <>
-          {(inputProps: any): JSX.Element => (
-            <Input
-              margin="normal"
-              {...inputProps}
-              inputProps={{ maxLength: maxlength, ...inputProps }}
-              variant={variant}
-            />
-          )}
-        </>
-      </TextInputMask>
-    ) : (
+  const renderTextInput = () => {
+    if (maskType === 'currency') {
+      return (
+        <CurrencyInput
+          {...rest}
+          onChangeText={onChange}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          variant={variant}
+        />
+      );
+    }
+
+    if (hasMask) {
+      return (
+        <TextInputMask
+          mask={mask}
+          maskType={maskType}
+          onChange={onChange}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          maxLength={maxlength ? parseInt(maxlength, 10) : 0}
+          variant={variant}
+          inputProps={inputProps}
+          {...rest}
+        />
+      );
+    }
+
+    return (
       <Input
         {...rest}
         margin="normal"
@@ -70,6 +61,7 @@ const TextInput: FC<TextInputType> = ({
       />
     );
   };
+
   return (
     <InputWrapper {...rest}>
       <FormError error={error}>{renderTextInput()}</FormError>

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { VFC } from 'react';
 import { FormError } from '..';
 import { StyledCheckbox, Wrapper } from './styles';
 
@@ -10,7 +10,7 @@ type Props = {
   name: string;
 };
 
-const Checkbox: FC<Props> = ({
+const Checkbox: VFC<Props> = ({
   checked,
   onChange,
   label,

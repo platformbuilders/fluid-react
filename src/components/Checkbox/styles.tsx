@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
 import { getTheme } from '../../utils/helpers';

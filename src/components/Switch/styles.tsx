@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { FormControlLabel, Switch } from '@material-ui/core';
 import { SwitchProps } from '../../types';

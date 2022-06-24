@@ -1,4 +1,3 @@
-import React from 'react';
 import { shallow } from 'enzyme';
 import faker from 'faker';
 import { ThemeProvider } from 'styled-components';

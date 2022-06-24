@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Button, CircularProgress } from '@material-ui/core';
 import { getTheme, ifStyle } from '../../utils/helpers';

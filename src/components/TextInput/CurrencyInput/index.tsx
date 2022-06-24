@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, FocusEvent } from 'react';
+import { ChangeEvent, FocusEvent, VFC } from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { FormError } from '../..';
@@ -29,7 +29,7 @@ const defaultMaskOptions = {
   decimalLimit: 2,
 };
 
-const CurrencyInputComponent: FC<Props> = ({
+const CurrencyInputComponent: VFC<Props> = ({
   error,
   label,
   id,
