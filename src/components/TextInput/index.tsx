@@ -35,15 +35,15 @@ const TextInput: FC<TextInputType> = ({
     if (hasMask) {
       return (
         <TextInputMask
+          {...rest}
           mask={mask}
           maskType={maskType}
           onChange={onChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          maxLength={maxlength ? parseInt(maxlength, 10) : 0}
+          error={!!error}
           variant={variant}
-          inputProps={inputProps}
-          {...rest}
+          inputProps={{ maxLength: maxlength, ...inputProps }}
         />
       );
     }
