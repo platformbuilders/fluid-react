@@ -1,8 +1,6 @@
 import { VFC } from 'react';
 import ReactInputMask from 'react-input-mask';
-
 import { TextInputType } from '../../../types';
-
 import { Input } from '../styles';
 
 enum Mask {
@@ -21,7 +19,7 @@ const TextInputMask: VFC<Partial<TextInputType & { maxLength: number }>> = ({
   onBlur,
   onFocus,
   inputProps,
-  maxLength,
+  error,
   variant = 'standard',
   ...rest
 }) => {
@@ -38,9 +36,14 @@ const TextInputMask: VFC<Partial<TextInputType & { maxLength: number }>> = ({
       {(inputMaskProps: any): JSX.Element => (
         <Input
           margin="normal"
-          {...inputMaskProps}
-          inputProps={{ maxLength, ...inputProps }}
+          onChange={onChange}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          error={!!error}
+          inputProps={inputProps}
           variant={variant}
+          {...inputMaskProps}
+          {...rest}
         />
       )}
     </ReactInputMask>
