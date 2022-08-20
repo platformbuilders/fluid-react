@@ -1,15 +1,23 @@
-import { DefaultTheme } from 'styled-components';
-import { ColorsVariants } from './Colors';
+import { ReactNode } from 'react';
+import {
+  ButtonVariants,
+  TypographyVariants,
+} from '@platformbuilders/theme-toolkit';
+import { TouchableType } from './TouchableType';
 
-export type ButtonType = {
-  onPress(): void;
-  type?: string;
-  variant?: ColorsVariants;
-  transparent?: boolean;
-  flat?: boolean;
-  hasBorder?: boolean;
+export type ButtonProps = {
+  style?: any;
+  textStyle?: any;
+  rounded?: boolean;
   loading?: boolean;
-  disabled?: boolean;
-  children: string;
-  theme?: DefaultTheme;
-};
+  contrast?: boolean;
+  flat?: boolean;
+  variant?: ButtonVariants;
+  typographyVariant?: TypographyVariants;
+  children?: string | ReactNode;
+  minWidth?: string | number;
+  maxWidth?: string | number;
+  leftIconName?: string;
+  rightIconName?: string;
+  hasBorder?: boolean;
+} & TouchableType;

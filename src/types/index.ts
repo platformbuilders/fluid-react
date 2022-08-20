@@ -10,3 +10,4 @@ export * from './Switch';
 export * from './Radio';
 export * from './Switch';
 export * from './LazyWrapper';
+export * from './TouchableType';

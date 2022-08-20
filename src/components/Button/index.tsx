@@ -1,11 +1,10 @@
 import { FC } from 'react';
-import { ButtonType } from '../../types';
+import { ButtonProps } from '../../types';
 import If from '../If';
 import { LoadingIndicator, StyledButton } from './styles';
 
-const Button: FC<ButtonType> = ({
+const Button: FC<ButtonProps> = ({
   children,
-  type,
   onPress,
   loading = false,
   disabled = false,
@@ -16,7 +15,6 @@ const Button: FC<ButtonType> = ({
     onClick={onPress}
     variant={variant}
     disabled={disabled}
-    type={type || undefined}
     {...rest}
   >
     <If condition={!!loading}>
