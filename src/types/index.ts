@@ -1,5 +1,4 @@
 export * from './User';
-export * from './Credentials';
 export * from './Colors';
 export * from './Button';
 export * from './Variants';
