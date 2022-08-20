@@ -3,10 +3,10 @@ import { ColorsVariants } from '..';
 export type RadioProps = {
   id?: string;
   checked?: boolean;
-  checkedIcon?: React.ReactNode;
+  checkedIcon?: JSX.Element;
   variant?: ColorsVariants;
   disabled?: boolean;
-  icon?: React.ReactNode;
+  icon?: JSX.Element;
   size?: 'small' | 'medium';
   label?: string;
   labelPlacement?: string;

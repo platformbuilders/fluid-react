@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { RadioProps } from '../../types';
 import { StyledRadio } from './styles';
 
-const Radio: VFC<RadioProps> = (props) => {
+const Radio: FC<RadioProps> = (props) => {
   return <StyledRadio {...props} />;
 };
 

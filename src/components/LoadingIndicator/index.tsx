@@ -1,5 +1,5 @@
-import { VFC } from 'react';
-import Animation from 'react-lottie';
+import { FC } from 'react';
+import Lottie from 'react-lottie';
 import loading from '../../assets/animations/loading.json';
 
 export enum Sizes {
@@ -23,8 +23,8 @@ const defaultOptions = {
   },
 };
 
-const LoadingIndicator: VFC<Props> = ({ size = 'medium' }): JSX.Element => (
-  <Animation
+const LoadingIndicator: FC<Props> = ({ size = 'medium' }): any => (
+  <Lottie
     options={defaultOptions}
     isStopped={false}
     isPaused={false}

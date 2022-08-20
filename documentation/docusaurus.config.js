@@ -1,5 +1,5 @@
 module.exports = {
-  title: '@platformbuilders/react-elements',
+  title: '@platformbuilders/fluid-react',
   tagline: `The perfect environment to learn and with the option to don't get your eyes burned down`,
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',

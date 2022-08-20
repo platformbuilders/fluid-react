@@ -6,7 +6,7 @@ title: Switch
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { Switch } from '@platformbuilders/react-elements';
+import { Switch } from '@platformbuilders/fluid-react';
 
 export const AutocompleteExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
@@ -39,7 +39,7 @@ Esse componente tem como função auxiliar em resposta de sim ou não, ou ativar
 
 ```javascript
 import { useState } from 'react';
-import { Switch } from '@platformbuilders/react-elements';
+import { Switch } from '@platformbuilders/fluid-react';
 
 export const AutocompleteExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
