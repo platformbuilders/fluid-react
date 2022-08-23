@@ -5,7 +5,7 @@ title: TextInput
 
 <!-- Component declaration begin -->
 
-import { TextInput } from '@platformbuilders/react-elements';
+import { TextInput } from '@platformbuilders/fluid-react';
 
 <!-- Component declaration end -->
 
@@ -25,7 +25,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 ### Fonte
 
 ```javascript
-import { TextInput } from '@platformbuilders/react-elements';
+import { TextInput } from '@platformbuilders/fluid-react';
 
 <TextInput name="birthday" type="number" value="" maskType="birthdate" />;
 ```

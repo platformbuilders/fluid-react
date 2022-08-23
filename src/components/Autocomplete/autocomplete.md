@@ -6,7 +6,7 @@ title: Autocomplete
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { Autocomplete, TextInput } from '@platformbuilders/react-elements';
+import { Autocomplete, TextInput } from '@platformbuilders/fluid-react';
 
 export const AutocompleteExample = () => {
 const [movieOption, setMovieOption] = useState({ title: 'The Avengers', year: 2012 });
@@ -51,7 +51,7 @@ Esse componente tem como função auxiliar na achar um item para selecionar em u
 
 ```javascript
 import { useState } from 'react';
-import { Autocomplete } from '@platformbuilders/react-elements';
+import { Autocomplete } from '@platformbuilders/fluid-react';
 
 
 

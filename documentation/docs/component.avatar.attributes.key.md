@@ -5,7 +5,7 @@ title: key
 
 <!-- Component declaration begin -->
 
-import { Avatar } from '@platformbuilders/react-elements';
+import { Avatar } from '@platformbuilders/fluid-react';
 
 <!-- Component declaration end -->
 
@@ -17,7 +17,7 @@ Muito utilizado em listas que renderizam um mesmo componente. A *key* ajuda na i
 
 ### Fonte
 ```javascript
-import { Avatar } from '@platformbuilders/react-elements';
+import { Avatar } from '@platformbuilders/fluid-react';
 
 const items = [
   {

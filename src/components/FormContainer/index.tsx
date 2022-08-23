@@ -1,4 +1,4 @@
-import { ReactNode, VFC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Formik, FormikHelpers, FormikValues } from 'formik';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
   ): void;
 };
 
-const FormContainer: VFC<Props> = ({
+const FormContainer: FC<Props> = ({
   validateOnChange,
   validationSchema,
   initialValues,

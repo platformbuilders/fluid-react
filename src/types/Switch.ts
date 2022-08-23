@@ -1,10 +1,10 @@
 import { ColorsVariants } from '..';
 
 export type SwitchProps = {
-  checkedIcon?: React.ReactNode;
+  checkedIcon?: JSX.Element;
   variant?: ColorsVariants;
   disabled?: boolean;
-  icon?: React.ReactNode;
+  icon?: JSX.Element;
   size?: 'small' | 'medium';
   value?: unknown;
   label?: string;

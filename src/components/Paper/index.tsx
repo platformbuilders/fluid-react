@@ -1,7 +1,11 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Wrapper } from './styles';
 
-const Paper: FC = ({ children, ...rest }): JSX.Element => (
+type Props = {
+  children?: React.ReactNode;
+};
+
+const Paper: FC<Props> = ({ children, ...rest }): JSX.Element => (
   <Wrapper {...rest}>{children}</Wrapper>
 );
 

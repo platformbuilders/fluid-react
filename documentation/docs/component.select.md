@@ -6,7 +6,7 @@ title: Select
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { Select } from '@platformbuilders/react-elements';
+import { Select } from '@platformbuilders/fluid-react';
 export const SelectExample = () => {
 const options = [
 {
@@ -54,7 +54,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ```javascript
 import { useState } from 'react';
-import { Select } from '@platformbuilders/react-elements';
+import { Select } from '@platformbuilders/fluid-react';
 
 export const SelectExample = () => {
   const options = [

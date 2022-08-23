@@ -5,7 +5,7 @@ title: Button
 
 <!-- Component declaration begin -->
 
-import { Button } from '@platformbuilders/react-elements';
+import { Button } from '@platformbuilders/fluid-react';
 
 <!-- Component declaration end -->
 
@@ -27,7 +27,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ### Fonte
 ```javascript
-import { Button } from '@platformbuilders/react-elements';
+import { Button } from '@platformbuilders/fluid-react';
 
 function handleClickButton(){
   // YOUR_FUNCTION...

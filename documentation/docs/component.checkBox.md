@@ -6,7 +6,7 @@ title: Checkbox
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { Checkbox } from '@platformbuilders/react-elements';
+import { Checkbox } from '@platformbuilders/fluid-react';
 
 export const CheckExample = () => {
 const [check, setCheck] = useState(false);
@@ -40,7 +40,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ```javascript
 import { useState } from 'react';
-import { Checkbox } from '@platformbuilders/react-elements';
+import { Checkbox } from '@platformbuilders/fluid-react';
 
 export const CheckExample = () => {
   const [check, setCheck] = useState(false);

@@ -15,4 +15,5 @@ export type TypographyVariants =
 
 export type TypographyType = {
   variant?: TypographyVariants;
+  children?: React.ReactNode;
 };
