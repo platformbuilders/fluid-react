@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import ReactInputMask from 'react-input-mask';
+import { TextField as TextInput } from '@material-ui/core';
 import { TextInputType } from '../../../types';
-import { Input } from '../styles';
+
+// import { Input as TextInput } from '../styles';
 
 enum Mask {
   cep = '99999-999',
@@ -21,6 +23,7 @@ const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
   inputProps,
   error,
   variant = 'standard',
+  style = {},
   ...rest
 }) => {
   const maskOption = Mask[maskType] || mask;
@@ -31,13 +34,14 @@ const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
+      {...rest}
     >
-      <Input
+      <TextInput
         margin="normal"
         error={!!error}
         inputProps={inputProps}
         variant={variant}
-        {...rest}
+        style={style}
       />
     </ReactInputMask>
   );

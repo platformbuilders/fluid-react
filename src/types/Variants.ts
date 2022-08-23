@@ -1,3 +1,5 @@
+// import { TypographyVariants as FluidTypographyVariants } from '@platformbuilders/theme-toolkit';
+
 export type TypographyVariants =
   | 'h1'
   | 'h2'

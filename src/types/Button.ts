@@ -1,12 +1,11 @@
 import { ReactNode } from 'react';
-import {
-  ButtonVariants,
-  TypographyVariants,
-} from '@platformbuilders/theme-toolkit';
-import { TouchableType } from './TouchableType';
+import { ButtonVariants } from '@platformbuilders/theme-toolkit';
+import { TouchableType as DefaultTouchable } from './TouchableType';
+import { TypographyVariants } from './Variants';
 
 export type ButtonProps = {
   style?: any;
+  type?: 'button' | 'submit' | 'reset';
   textStyle?: any;
   rounded?: boolean;
   loading?: boolean;
@@ -20,4 +19,4 @@ export type ButtonProps = {
   leftIconName?: string;
   rightIconName?: string;
   hasBorder?: boolean;
-} & TouchableType;
+} & DefaultTouchable;

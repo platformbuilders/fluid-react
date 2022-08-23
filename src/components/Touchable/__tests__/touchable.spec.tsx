@@ -7,6 +7,7 @@ import { theme } from '../../../config/helpers';
 
 const defaultContent = 'Text';
 const defaultProps: Props = {
+  accessibility: 'accessibility',
   onPress: jest.fn(),
 };
 

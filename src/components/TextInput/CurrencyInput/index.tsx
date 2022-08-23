@@ -5,7 +5,7 @@ import { FormError } from '../..';
 import { InputVariants } from '../../../types/TextInput';
 import { toOnlyNumbers } from '../../../utils/helpers';
 
-import { Bar, Input, Label, Wrapper } from './styles';
+import { Bar, Label, Wrapper } from './styles';
 
 type Props = {
   id: string;
@@ -38,7 +38,6 @@ const CurrencyInputComponent: FC<Props> = ({
   onBlur,
   onFocus,
   value,
-  variant = 'standard',
 }) => {
   const currencyMask = createNumberMask(defaultMaskOptions);
 
@@ -63,9 +62,7 @@ const CurrencyInputComponent: FC<Props> = ({
           onChange={handleChange}
           onBlur={onBlur}
           onFocus={onFocus}
-        >
-          <Input variant={variant} />
-        </MaskedInput>
+        />
         <Bar className="bar" error={error} />
         <Label error={error}>{label}</Label>
       </Wrapper>
