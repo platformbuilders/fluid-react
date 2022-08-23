@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import MaterialIcon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -18,7 +18,7 @@ export type Props = {
   color?: IconColor;
 };
 
-const Icon: VFC<Props> = ({
+const Icon: FC<Props> = ({
   name,
   color = 'inherit',
   size = 'default',

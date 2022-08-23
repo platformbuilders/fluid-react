@@ -5,7 +5,7 @@ title: Exemplo
 
 <!-- Component declaration begin -->
 
-import { Avatar } from '@platformbuilders/react-elements';
+import { Avatar } from '@platformbuilders/fluid-react';
 
 export function handleAvatarPress(){
   // YOUR_FUNCTION...
@@ -34,7 +34,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 ## Fonte
 
 ```javascript
-import { Avatar } from '@platformbuilders/react-elements';
+import { Avatar } from '@platformbuilders/fluid-react';
 
 const fullName = "Gabriel Taborda Farias";
 

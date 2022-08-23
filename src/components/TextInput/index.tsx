@@ -13,7 +13,6 @@ const TextInput: FC<TextInputType> = ({
   onBlur,
   onFocus,
   inputProps,
-  maxlength,
   variant = 'standard',
   ...rest
 }) => {
@@ -43,7 +42,7 @@ const TextInput: FC<TextInputType> = ({
           onFocus={onFocus}
           error={!!error}
           variant={variant}
-          inputProps={{ maxLength: maxlength, ...inputProps }}
+          inputProps={inputProps}
         />
       );
     }
@@ -56,7 +55,7 @@ const TextInput: FC<TextInputType> = ({
         onBlur={onBlur}
         onFocus={onFocus}
         error={!!error}
-        inputProps={{ maxLength: maxlength, ...inputProps }}
+        inputProps={inputProps}
         variant={variant}
       />
     );

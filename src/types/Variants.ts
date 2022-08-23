@@ -1,3 +1,5 @@
+// import { TypographyVariants as FluidTypographyVariants } from '@platformbuilders/theme-toolkit';
+
 export type TypographyVariants =
   | 'h1'
   | 'h2'
@@ -15,4 +17,5 @@ export type TypographyVariants =
 
 export type TypographyType = {
   variant?: TypographyVariants;
+  children?: React.ReactNode;
 };

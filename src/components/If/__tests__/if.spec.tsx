@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 import If from '../index';
 

@@ -1,16 +1,15 @@
 import { shallow } from 'enzyme';
-import faker from 'faker';
 import { ThemeProvider } from 'styled-components';
 
 import Button from '..';
 import { theme } from '../../../config/helpers';
-import { ButtonType as Props } from '../../../types';
+import { ButtonProps as Props } from '../../../types';
 
 const defaultContent = 'Text';
 const defaultProps: Props = {
+  accessibility: 'label',
   onPress: jest.fn(),
   children: defaultContent,
-  theme,
 };
 
 describe('Component: Button', () => {
@@ -37,7 +36,7 @@ describe('Component: Button', () => {
   test('snapshots with other props', () => {
     const component = shallow(
       <ThemeProvider theme={theme}>
-        <Button {...defaultProps} disabled variant="secondary" transparent>
+        <Button {...defaultProps} disabled variant="secondary">
           {defaultContent}
         </Button>
       </ThemeProvider>,
@@ -47,28 +46,15 @@ describe('Component: Button', () => {
   });
 
   test('check props default props', () => {
-    // should
-    const typeMock = faker.random.words();
-
     // when
     const component = shallow(
-      <Button
-        {...defaultProps}
-        type={typeMock}
-        disabled
-        variant="secondary"
-        transparent
-      >
+      <Button {...defaultProps} disabled variant="secondary">
         {defaultContent}
       </Button>,
     );
 
     // then
-    const wrapper = component.props();
     const child = component.children();
-
-    expect(wrapper.type).toEqual(typeMock);
-    expect(wrapper.transparent).toBeTruthy();
 
     expect(child.contains(defaultContent)).toEqual(true);
   });

@@ -1,7 +1,9 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import ReactInputMask from 'react-input-mask';
+import { TextField as TextInput } from '@material-ui/core';
 import { TextInputType } from '../../../types';
-import { Input } from '../styles';
+
+// import { Input as TextInput } from '../styles';
 
 enum Mask {
   cep = '99999-999',
@@ -12,7 +14,7 @@ enum Mask {
   cellphone = '(99) 99999-9999',
 }
 
-const TextInputMask: VFC<Partial<TextInputType & { maxLength: number }>> = ({
+const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
   mask,
   maskType = '',
   onChange,
@@ -21,6 +23,7 @@ const TextInputMask: VFC<Partial<TextInputType & { maxLength: number }>> = ({
   inputProps,
   error,
   variant = 'standard',
+  style = {},
   ...rest
 }) => {
   const maskOption = Mask[maskType] || mask;
@@ -33,16 +36,13 @@ const TextInputMask: VFC<Partial<TextInputType & { maxLength: number }>> = ({
       onFocus={onFocus}
       {...rest}
     >
-      {(inputMaskProps: any): JSX.Element => (
-        <Input
-          margin="normal"
-          error={!!error}
-          inputProps={inputProps}
-          variant={variant}
-          {...inputMaskProps}
-          {...rest}
-        />
-      )}
+      <TextInput
+        margin="normal"
+        error={!!error}
+        inputProps={inputProps}
+        variant={variant}
+        style={style}
+      />
     </ReactInputMask>
   );
 };

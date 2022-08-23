@@ -1,8 +1,14 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { CustomTouchable } from './styles';
 
 export type Props = {
-  onPress(): void;
+  id?: string;
+  accessibility: string;
+  accessibilityLabel?: string;
+  testID?: string;
+  disabled?: boolean;
+  onPress?: (param: any) => void;
+  children?: React.ReactNode;
 };
 
 const Touchable: FC<Props> = ({ children, onPress, ...rest }) => (

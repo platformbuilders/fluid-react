@@ -1,12 +1,12 @@
-import { ColorsVariants } from '..';
+import { ButtonVariants } from '@platformbuilders/theme-toolkit';
 
 export type RadioProps = {
   id?: string;
   checked?: boolean;
-  checkedIcon?: React.ReactNode;
-  variant?: ColorsVariants;
+  checkedIcon?: JSX.Element;
+  variant?: ButtonVariants;
   disabled?: boolean;
-  icon?: React.ReactNode;
+  icon?: JSX.Element;
   size?: 'small' | 'medium';
   label?: string;
   labelPlacement?: string;

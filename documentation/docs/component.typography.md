@@ -4,7 +4,7 @@ title: Typography
 ---
 
 <!-- Component declaration begin -->
-import { Typography } from '@platformbuilders/react-elements';
+import { Typography } from '@platformbuilders/fluid-react';
 
 <!-- Component declaration end -->
 
@@ -22,7 +22,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ### Fonte
 ```javascript
-import { Typography } from '@platformbuilders/react-elements';
+import { Typography } from '@platformbuilders/fluid-react';
 
 <Typography
   variant="overline"

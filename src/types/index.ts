@@ -1,14 +1,11 @@
-export * from './User';
-export * from './Credentials';
-export * from './Spacings';
-export * from './Colors';
 export * from './Button';
 export * from './Variants';
-export * from './Animations';
-export * from './Radius';
+
 export * from './TextInput';
 export * from './Autocomplete';
+export * from './Loading';
 export * from './Switch';
 export * from './Radio';
 export * from './Switch';
 export * from './LazyWrapper';
+export * from './TouchableType';

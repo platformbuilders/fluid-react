@@ -14,7 +14,7 @@
     "@docusaurus/core": "2.0.0-alpha.66",
     "@docusaurus/preset-classic": "2.0.0-alpha.66",
     "@mdx-js/react": "^1.5.8",
-    "@platformbuilders/react-elements": "0.0.3",
+    "@platformbuilders/fluid-react": "0.0.3",
     "@platformbuilders/react-ui": "^0.1.0",
     "clsx": "^1.1.1",
     "formik": "^2.2.1",
