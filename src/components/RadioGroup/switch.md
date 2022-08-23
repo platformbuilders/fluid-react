@@ -6,7 +6,7 @@ title: RadioGroup
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { Radio, RadioGroup, Typography } from '@platformbuilders/fluid-react';
+import { Radio, RadioGroup, Typography } from '@platformbuilders/react-elements';
 
 export const RadioGroupExample = () => {
 const [isAnonymous, setIsAnonymous] = useState('no');
@@ -46,7 +46,7 @@ Esse componente tem como função auxiliar em agrupar varios componentes Radio
 
 ```javascript
 import { useState } from 'react';
-import { Radio, RadioGroup, Typography } from '@platformbuilders/fluid-react';
+import { Radio, RadioGroup, Typography } from '@platformbuilders/react-elements';
 
 export const RadioGroupExample = () => {
 const [isAnonymous, setIsAnonymous] = useState('no');

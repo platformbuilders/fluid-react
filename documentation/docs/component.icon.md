@@ -5,7 +5,7 @@ title: Icon
 
 <!-- Component declaration begin -->
 
-import { Icon } from '@platformbuilders/fluid-react';
+import { Icon } from '@platformbuilders/react-elements';
 
 <!-- Component declaration end -->
 
@@ -18,7 +18,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 ### Fonte
 
 ```javascript
-import { Icon } from '@platformbuilders/fluid-react';
+import { Icon } from '@platformbuilders/react-elements';
 
 <Icon name="erroneousName" color="#fff" size="default" />;
 ```

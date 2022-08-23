@@ -5,7 +5,7 @@ title: Guia de estilo
 
 <!-- Component declaration begin -->
 
-import { Typography } from '@platformbuilders/fluid-react';
+import { Typography } from '@platformbuilders/react-elements';
 
 <!-- Component declaration end -->
 

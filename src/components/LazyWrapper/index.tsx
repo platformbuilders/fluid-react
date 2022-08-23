@@ -1,9 +1,9 @@
-import { FC, Fragment } from 'react';
+import { Fragment, VFC } from 'react';
 import { LazyWrapperProps } from '../../types';
 import If from '../If';
 import { LoadingIndicator, LoadingIndicatorWrapper, Wrapper } from './styles';
 
-const LazyWrapper: FC<LazyWrapperProps> = ({
+const LazyWrapper: VFC<LazyWrapperProps> = ({
   loading = false,
   customLoadingIndicatorSize,
   customLoadingIndicator: CustomLoadingIndicator,

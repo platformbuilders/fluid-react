@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
+import faker from 'faker';
 import { ThemeProvider } from 'styled-components';
-import { faker } from '@faker-js/faker';
 
 import FormError, { Props } from '..';
 import { theme } from '../../../config/helpers';

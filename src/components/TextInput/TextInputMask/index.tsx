@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { VFC } from 'react';
 import ReactInputMask from 'react-input-mask';
 import { TextInputType } from '../../../types';
 import { Input } from '../styles';
@@ -12,7 +12,7 @@ enum Mask {
   cellphone = '(99) 99999-9999',
 }
 
-const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
+const TextInputMask: VFC<Partial<TextInputType & { maxLength: number }>> = ({
   mask,
   maskType = '',
   onChange,
@@ -31,14 +31,18 @@ const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
+      {...rest}
     >
-      <Input
-        margin="normal"
-        error={!!error}
-        inputProps={inputProps}
-        variant={variant}
-        {...rest}
-      />
+      {(inputMaskProps: any): JSX.Element => (
+        <Input
+          margin="normal"
+          error={!!error}
+          inputProps={inputProps}
+          variant={variant}
+          {...inputMaskProps}
+          {...rest}
+        />
+      )}
     </ReactInputMask>
   );
 };

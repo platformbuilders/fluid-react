@@ -6,7 +6,7 @@ title: variant
 <!-- Component declaration begin -->
 
 import styled from 'styled-components';
-import { Avatar } from '@platformbuilders/fluid-react';
+import { Avatar } from '@platformbuilders/react-elements';
 
 export const AvatarCircle = styled(Avatar).attrs({
   variant: 'circle',
@@ -59,7 +59,7 @@ Renderiza em forma de círculo.
 ```javascript
 //styles.ts
 import styled from 'styled-components';
-import { Avatar } from '@platformbuilders/fluid-react';
+import { Avatar } from '@platformbuilders/react-elements';
 
 export const AvatarCircle = styled(Avatar).attrs({
   variant: 'circle',
@@ -82,7 +82,7 @@ Renderiza em um formato quadrado, porém, com os vértices arredondados.
 ```javascript
 //styles.ts
 import styled from 'styled-components';
-import { Avatar } from '@platformbuilders/fluid-react';
+import { Avatar } from '@platformbuilders/react-elements';
 
 export const AvatarRound = styled(Avatar).attrs({
   variant: 'rounded',
@@ -105,7 +105,7 @@ Renderiza em um formato quadrado.
 ```javascript
 //styles.ts
 import styled from 'styled-components';
-import { Avatar } from '@platformbuilders/fluid-react';
+import { Avatar } from '@platformbuilders/react-elements';
 
 export const AvatarSquare = styled(Avatar).attrs({
   variant: 'square',

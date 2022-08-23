@@ -1,4 +1,8 @@
-export { getTheme, ifStyle, pxToRem } from '@platformbuilders/theme-toolkit';
-export { toOnlyNumbers } from '@platformbuilders/helpers';
+export {
+  getTheme,
+  ifStyle,
+  pxToRem,
+  toOnlyNumbers,
+} from '@platformbuilders/helpers';
 export { isString } from './checkType';
 export * from './color';

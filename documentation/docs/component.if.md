@@ -5,7 +5,7 @@ title: If
 
 <!-- Component declaration begin -->
 
-import { If } from '@platformbuilders/fluid-react';
+import { If } from '@platformbuilders/react-elements';
 
 <!-- Component declaration end -->
 
@@ -17,7 +17,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ### Fonte
 ```javascript
-import { If } from '@platformbuilders/fluid-react';
+import { If } from '@platformbuilders/react-elements';
 
 <If
   condition={true}
