@@ -5,7 +5,7 @@ title: FormContainer
 
 <!-- Component declaration begin -->
 
-import { FormContainer } from '@platformbuilders/fluid-react';
+import { FormContainer } from '@platformbuilders/react-elements';
 import { useFormik } from 'formik';
 
 export const FormExample = () => {
@@ -72,7 +72,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 ### Fonte
 
 ```javascript
-import { FormContainer } from '@platformbuilders/fluid-react';
+import { FormContainer } from '@platformbuilders/react-elements';
 import { useFormik } from 'formik';
 
 const formik = useFormik({

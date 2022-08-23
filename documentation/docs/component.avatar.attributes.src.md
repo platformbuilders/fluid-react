@@ -5,7 +5,7 @@ title: src
 
 <!-- Component declaration begin -->
 
-import { Avatar } from '@platformbuilders/fluid-react';
+import { Avatar } from '@platformbuilders/react-elements';
 import { default as Favicon } from '../static/img/favicon.ico';
 
 <!-- Component declaration end -->

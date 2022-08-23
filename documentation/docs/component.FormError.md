@@ -6,7 +6,7 @@ title: FormError
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { FormError } from '@platformbuilders/fluid-react';
+import { FormError } from '@platformbuilders/react-elements';
 import { useFormik } from 'formik';
 
 export const FormErrorExample = () => {
@@ -79,7 +79,7 @@ Esse componente tem como função auxiliar na manipulação, manutenção e padr
 
 ```javascript
 import { useState } from 'react';
-import { FormError } from '@platformbuilders/fluid-react';
+import { FormError } from '@platformbuilders/react-elements';
 import { useFormik } from 'formik';
 
 export const FormErrorExample = () => {

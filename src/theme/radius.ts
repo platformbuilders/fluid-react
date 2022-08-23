@@ -1,4 +1,4 @@
-import { pxToRem } from '@platformbuilders/theme-toolkit';
+import { pxToRem } from '@platformbuilders/helpers';
 import { Radius } from '../types';
 
 export default {

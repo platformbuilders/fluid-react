@@ -6,7 +6,7 @@ title: Radio
 <!-- Component declaration begin -->
 
 import { useState } from 'react';
-import { Radio } from '@platformbuilders/fluid-react';
+import { Radio } from '@platformbuilders/react-elements';
 
 export const RadioExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
@@ -39,7 +39,7 @@ Esse componente tem como função auxiliar em resposta com varias opção de res
 
 ```javascript
 import { useState } from 'react';
-import { Radio } from '@platformbuilders/fluid-react';
+import { Radio } from '@platformbuilders/react-elements';
 
 export const RadioExample = () => {
 const [isAnonymous, setIsAnonymous] = useState(false);
