@@ -3,8 +3,10 @@ import {
   ButtonVariants,
   ThemeProps,
   TypographyVariants,
+  getTheme,
+  ifStyle,
+  pxToRem,
 } from '@platformbuilders/theme-toolkit';
-import { getTheme, ifStyle } from '../../utils/helpers';
 import DefaultIcon from '../Icon';
 import LoadingIndicator from '../LoadingIndicator';
 import TouchableComponent from '../Touchable';
@@ -30,16 +32,15 @@ const minimumSpacing = getTheme('spacing.xs');
 const smallSpacing = getTheme('spacing.sm');
 const isLeftIcon = ifStyle('leftIcon');
 const isRightIcon = ifStyle('rightIcon');
+const isDisabled = ifStyle('disabled');
 const hasBorder = ifStyle('hasBorder');
-const isFlat = ifStyle('flat');
 
 type ButtonWrapperProps = {
   rounded: boolean;
   hasBorder: boolean;
-  flat: boolean;
   buttonVariant: ButtonVariants;
   disabled?: boolean;
-  style: any;
+  style?: any;
   minWidth?: string | number;
   maxWidth?: string | number;
 } & ThemeProps;
@@ -78,7 +79,6 @@ type TextButtonProps = {
   buttonVariant: ButtonVariants;
   variant?: TypographyVariants;
   disabled?: boolean;
-  flat?: boolean;
   style: any;
 } & ThemeProps;
 
@@ -110,6 +110,34 @@ const getTextColor = (props: TextButtonProps): string => {
   }
 };
 
+const getHoverColor = (props: any): string => {
+  if (props.disabled) {
+    return `${brandPrimaryContrast(props)}`;
+  }
+  switch (props.buttonVariant) {
+    case 'primary':
+      return `${brandPrimary(props)}`;
+    case 'secondary':
+      return `${brandSecondary(props)}`;
+    case 'tertiary':
+      return `${brandTertiaryContrast(props)}`;
+    case 'accent':
+      return `${brandAccentContrast(props)}`;
+    case 'danger':
+      return `${dangerContrast(props)}`;
+    case 'info':
+      return `${infoContrast(props)}`;
+    case 'warning':
+      return `${warningContrast(props)}`;
+    case 'invert':
+      return `${brandPrimary(props)}`;
+    case 'flat':
+      return `${brandPrimary(props)}`;
+    default:
+      return `${brandPrimaryContrast(props)}`;
+  }
+};
+
 type TouchableProps = {
   rounded: boolean;
 } & ThemeProps;
@@ -120,6 +148,7 @@ export const Touchable = styled(TouchableComponent)<TouchableProps>`
 `;
 
 export const ButtonWrapper = styled.div<ButtonWrapperProps>`
+  cursor: ${isDisabled('not-allowed', 'pointer')};
   height: ${buttonSize}px;
   flex-direction: row;
   align-items: center;
@@ -132,15 +161,21 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   border-radius: ${(props: ButtonWrapperProps): any =>
     props.rounded ? buttonSize / 2 : buttonRadius(props)}px;
   justify-content: center;
-  background-color: ${isFlat('transparent', getBackgroundColor)};
+  background-color: ${getBackgroundColor};
   border-color: ${getBackgroundColor};
   border-width: ${hasBorder(borderWidthSmall, '0')}px;
+  transition: all 0.2s ease-in-out;
+  && {
+    :hover {
+      background-color: ${getHoverColor};
+    }
+  }
 `;
 
 export const TextButton = styled(TypographyComponent)<any>`
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  color: ${isFlat(getBackgroundColor, getTextColor)};
+  color: ${getTextColor};
   font-weight: bold;
 `;
 
@@ -148,7 +183,7 @@ export const Loading = styled(LoadingIndicator).attrs({
   variant: 'button',
 })`
   align-self: center;
-  width: 55px;
+  width: ${pxToRem(55)}px;
 `;
 
 type IconProps = {

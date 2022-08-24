@@ -7,12 +7,10 @@ import pkg from './package.json';
 const cjs = {
   exports: 'named',
   format: 'cjs',
-  sourcemap: true,
 };
 
 const esm = {
   format: 'esm',
-  sourcemap: true,
 };
 
 const baseConfig = {
