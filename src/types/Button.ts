@@ -10,7 +10,6 @@ export type ButtonProps = {
   rounded?: boolean;
   loading?: boolean;
   contrast?: boolean;
-  flat?: boolean;
   variant?: ButtonVariants;
   typographyVariant?: TypographyVariants;
   children?: string | ReactNode;

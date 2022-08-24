@@ -9,20 +9,17 @@ const Button: FC<ButtonProps> = ({
   accessibility,
   accessibilityLabel,
   testID,
-  style = [{}],
   textStyle = {},
   disabled = false,
   rounded = false,
   loading = false,
   contrast = false,
-  flat = false,
   hasBorder = false,
   variant = 'primary',
-  typographyVariant = 'body1',
-  minWidth,
-  maxWidth,
+  typographyVariant = 'button',
   rightIconName,
   leftIconName,
+  ...rest
 }) => {
   return (
     <Touchable
@@ -37,40 +34,26 @@ const Button: FC<ButtonProps> = ({
       <ButtonWrapper
         hasBorder={hasBorder}
         buttonVariant={variant}
-        style={style}
         disabled={disabled}
         rounded={rounded}
-        minWidth={minWidth}
-        maxWidth={maxWidth}
-        flat={flat}
+        {...rest}
       >
         {loading && <Loading contrast={contrast} />}
         {!loading && (
           <>
             {!!leftIconName && (
-              <Icon
-                accessibility=""
-                name={leftIconName as string}
-                style={style}
-                leftIcon
-              />
+              <Icon accessibility="" name={leftIconName as string} leftIcon />
             )}
             <TextButton
               style={textStyle}
               disabled={disabled}
-              flat={flat}
               variant={typographyVariant}
               buttonVariant={variant}
             >
               {children}
             </TextButton>
             {!!rightIconName && (
-              <Icon
-                accessibility=""
-                name={rightIconName as string}
-                style={style}
-                rightIcon
-              />
+              <Icon accessibility="" name={rightIconName as string} rightIcon />
             )}
           </>
         )}
