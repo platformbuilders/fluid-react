@@ -33,7 +33,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "paths": {
-      "react-input-mask" : ["./src/types/react-input-mask.d.ts"]
+      "react-input-mask": ["./src/types/react-input-mask.d.ts"]
     }
   },
   "compileOnSave": true,
