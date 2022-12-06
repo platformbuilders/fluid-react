@@ -3,6 +3,7 @@ import { InputBaseComponentProps } from '@material-ui/core';
 
 export type TextInputType = {
   style?: any;
+  textInputStyle?: any;
   mask?: string;
   maskType?: string;
   formatChars?: { [key: string]: string };

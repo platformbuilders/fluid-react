@@ -18,7 +18,7 @@ type IndicatorProps = {
   contrast: boolean;
   variant: LoadingVariants;
   testID: string;
-  accessibilityLabel: string;
+  ['aria-label']: string;
 } & ThemeProps;
 
 const loadingVariant = (

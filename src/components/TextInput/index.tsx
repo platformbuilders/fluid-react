@@ -14,6 +14,8 @@ const TextInput: FC<TextInputType> = ({
   onFocus,
   inputProps,
   variant = 'standard',
+  style,
+  textInputStyle,
   ...rest
 }) => {
   const hasMask = mask || maskType;
@@ -50,19 +52,16 @@ const TextInput: FC<TextInputType> = ({
     return (
       <Input
         {...rest}
-        margin="normal"
+        style={textInputStyle}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
-        error={!!error}
-        inputProps={inputProps}
-        variant={variant}
       />
     );
   };
 
   return (
-    <InputWrapper {...rest}>
+    <InputWrapper style={style}>
       <FormError error={error}>{renderTextInput()}</FormError>
     </InputWrapper>
   );

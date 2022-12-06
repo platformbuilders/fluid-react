@@ -3,11 +3,10 @@ import { toNumber } from 'lodash';
 import { toOnlyNumbers } from '@platformbuilders/helpers';
 import { getTheme } from '@platformbuilders/theme-toolkit';
 
-const baseFontSize = 16;
-
 export const getFontSize = (props: any): number => {
+  const baseSize = toNumber(getTheme(`fontSizes.md`)(props));
   const fontSizeFromTheme = getTheme(`fontSizes.${props.variant}`)(props);
-  return toNumber(fontSizeFromTheme) || baseFontSize;
+  return toNumber(fontSizeFromTheme) || baseSize;
 };
 
 export const getLineHeight = (props: any): number => {

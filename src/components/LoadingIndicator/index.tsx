@@ -11,7 +11,7 @@ const Loading: FC<LoadingType> = ({
 }) => (
   <Indicator
     testID={accessibility || 'loading'}
-    accessibilityLabel={accessibility || 'Aguarde'}
+    aria-label={accessibility || 'Aguarde'}
     variant={variant}
     contrast={contrast}
     style={large ? largeSize : smallSize}
