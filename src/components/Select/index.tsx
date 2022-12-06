@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import { Item, MaterialSelect, Wrapper } from './styles';
@@ -9,6 +9,7 @@ type ValuesProps = {
 };
 
 type Props = {
+  className?: string;
   onChange(value: any): void;
   error?: string | string[];
   label?: string;
@@ -17,7 +18,8 @@ type Props = {
   id?: string;
 };
 
-const Select: VFC<Props> = ({
+const Select: FC<Props> = ({
+  className,
   onChange,
   error = '',
   label = '',
@@ -26,7 +28,7 @@ const Select: VFC<Props> = ({
   id,
   ...rest
 }) => (
-  <Wrapper error={error !== ''} {...rest}>
+  <Wrapper className={className} error={error !== ''} {...rest}>
     <InputLabel>{label}</InputLabel>
     <MaterialSelect
       id={id}
@@ -48,4 +50,5 @@ const Select: VFC<Props> = ({
     <FormHelperText>{error}</FormHelperText>
   </Wrapper>
 );
+
 export default Select;

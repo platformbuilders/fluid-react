@@ -3,33 +3,35 @@ import { ButtonProps } from '../../types';
 import { ButtonWrapper, Icon, Loading, TextButton, Touchable } from './styles';
 
 const Button: FC<ButtonProps> = ({
-  id,
-  children,
-  onPress,
   accessibility,
   accessibilityLabel,
+  children,
+  className,
+  contrast = false,
+  disabled = false,
+  hasBorder = false,
+  id,
+  leftIconName,
+  loading = false,
+  onPress,
+  rightIconName,
+  rounded = false,
   testID,
   textStyle = {},
-  disabled = false,
-  rounded = false,
-  loading = false,
-  contrast = false,
-  hasBorder = false,
-  variant = 'primary',
   typographyVariant = 'button',
-  rightIconName,
-  leftIconName,
+  variant = 'primary',
   ...rest
 }) => {
   return (
     <Touchable
-      id={id || accessibility}
       accessibility={accessibility}
       accessibilityLabel={accessibilityLabel || accessibility}
-      testID={testID || id || accessibility}
+      className={className}
       disabled={loading || disabled}
+      id={id || accessibility}
       onPress={onPress}
       rounded={rounded}
+      testID={testID || id || accessibility}
     >
       <ButtonWrapper
         hasBorder={hasBorder}

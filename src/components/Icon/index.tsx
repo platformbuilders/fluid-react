@@ -13,18 +13,20 @@ type IconColor =
   | 'disabled';
 
 export type Props = {
+  className?: string;
   name: string;
   size?: IconSize;
   color?: IconColor;
 };
 
 const Icon: FC<Props> = ({
+  className,
   name,
   color = 'inherit',
   size = 'default',
   ...rest
 }): JSX.Element => (
-  <IconButton color="inherit" edge="start" {...rest}>
+  <IconButton className={className} color="inherit" edge="start" {...rest}>
     <MaterialIcon color={color} fontSize={size}>
       {name}
     </MaterialIcon>

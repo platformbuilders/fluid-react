@@ -3,17 +3,27 @@ import { isString } from '../../utils/helpers';
 import { ErrorText } from './styles';
 
 export type Props = {
+  className?: string;
   children?: React.ReactNode;
   error: string | boolean | undefined;
 };
 
-const FormError: FC<Props> = ({ children, error, ...rest }): JSX.Element => {
+const FormError: FC<Props> = ({
+  className,
+  children,
+  error,
+  ...rest
+}): JSX.Element => {
   const isErrorValid = isString(error);
 
   return (
     <>
       {children}
-      {isErrorValid && <ErrorText {...rest}>{error}</ErrorText>}
+      {isErrorValid && (
+        <ErrorText className={className} {...rest}>
+          {error}
+        </ErrorText>
+      )}
     </>
   );
 };

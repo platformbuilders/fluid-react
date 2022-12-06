@@ -15,6 +15,7 @@ export const linearLoading = getTheme('linearLoading');
 export const contrastLinearLoading = getTheme('contrastLinearLoading');
 
 type IndicatorProps = {
+  className?: string;
   contrast: boolean;
   variant: LoadingVariants;
   testID: string;

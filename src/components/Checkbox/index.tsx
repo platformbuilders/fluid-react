@@ -3,21 +3,23 @@ import { FormError } from '..';
 import { StyledCheckbox, Wrapper } from './styles';
 
 type Props = {
-  onChange(value: any): void;
+  checked: boolean;
+  className?: string;
   error?: string | boolean | undefined;
   label: string;
-  checked: boolean;
   name: string;
+  onChange(value: any): void;
 };
 
 const Checkbox: FC<Props> = ({
+  className,
   checked,
   onChange,
   label,
   name,
   error,
 }): JSX.Element => (
-  <Wrapper>
+  <Wrapper className={className}>
     <FormError error={error}>
       <StyledCheckbox
         label={label}

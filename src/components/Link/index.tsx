@@ -3,9 +3,9 @@ import { FC } from 'react';
 import { LinkProps } from '../../types/Link';
 import { CustomLink } from './styles';
 
-const Link: FC<LinkProps> = ({ onPress, children, ...rest }) => {
+const Link: FC<LinkProps> = ({ className, onPress, children, ...rest }) => {
   return (
-    <CustomLink onClick={onPress} {...rest}>
+    <CustomLink className={className} onClick={onPress} {...rest}>
       {children}
     </CustomLink>
   );

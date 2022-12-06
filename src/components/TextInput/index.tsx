@@ -6,13 +6,14 @@ import { Input, InputWrapper } from './styles';
 import TextInputMask from './TextInputMask';
 
 const TextInput: FC<TextInputType> = ({
+  className,
+  error = '',
+  inputProps,
   mask,
   maskType = '',
-  error = '',
-  onChange,
   onBlur,
+  onChange,
   onFocus,
-  inputProps,
   variant = 'standard',
   ...rest
 }) => {
@@ -62,7 +63,7 @@ const TextInput: FC<TextInputType> = ({
   };
 
   return (
-    <InputWrapper {...rest}>
+    <InputWrapper className={className} {...rest}>
       <FormError error={error}>{renderTextInput()}</FormError>
     </InputWrapper>
   );

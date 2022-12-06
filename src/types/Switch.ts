@@ -1,6 +1,7 @@
 import { ButtonVariants } from '@platformbuilders/theme-toolkit';
 
 export type SwitchProps = {
+  className?: string;
   checkedIcon?: JSX.Element;
   variant?: ButtonVariants;
   disabled?: boolean;

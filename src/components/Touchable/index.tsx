@@ -2,17 +2,18 @@ import React, { FC } from 'react';
 import { CustomTouchable } from './styles';
 
 export type Props = {
-  id?: string;
   accessibility: string;
   accessibilityLabel?: string;
-  testID?: string;
-  disabled?: boolean;
-  onPress?: (param: any) => void;
   children?: React.ReactNode;
+  className?: string;
+  disabled?: boolean;
+  id?: string;
+  onPress?: (param: any) => void;
+  testID?: string;
 };
 
-const Touchable: FC<Props> = ({ children, onPress, ...rest }) => (
-  <CustomTouchable onClick={onPress} {...rest}>
+const Touchable: FC<Props> = ({ children, className, onPress, ...rest }) => (
+  <CustomTouchable className={className} onClick={onPress} {...rest}>
     {children}
   </CustomTouchable>
 );

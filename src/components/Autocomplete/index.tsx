@@ -6,10 +6,11 @@ const Autocomplete = <
   Multiple extends boolean | undefined = undefined,
   DisableClearable extends boolean | undefined = undefined,
   FreeSolo extends boolean | undefined = undefined,
->(
-  props: PropsAutocomplete<T, Multiple, DisableClearable, FreeSolo>,
-): JSX.Element => {
-  return <DefaultAutocomplete {...props} />;
+>({
+  className,
+  ...rest
+}: PropsAutocomplete<T, Multiple, DisableClearable, FreeSolo>): JSX.Element => {
+  return <DefaultAutocomplete className={className} {...rest} />;
 };
 
 export default Autocomplete;

@@ -2,6 +2,7 @@ import { ChangeEvent, FocusEvent } from 'react';
 import { InputBaseComponentProps } from '@material-ui/core';
 
 export type TextInputType = {
+  className?: string;
   style?: any;
   mask?: string;
   maskType?: string;

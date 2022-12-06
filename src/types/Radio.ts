@@ -1,20 +1,22 @@
 import { ButtonVariants } from '@platformbuilders/theme-toolkit';
 
 export type RadioProps = {
-  id?: string;
   checked?: boolean;
   checkedIcon?: JSX.Element;
-  variant?: ButtonVariants;
+  className?: string;
   disabled?: boolean;
   icon?: JSX.Element;
-  size?: 'small' | 'medium';
+  id?: string;
   label?: string;
   labelPlacement?: string;
-  value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  size?: 'small' | 'medium';
+  value?: string;
+  variant?: ButtonVariants;
 };
 
 export type RadioGroupProps = {
+  className?: string;
   defaultValue?: any;
   name?: string;
   onChange?: (
