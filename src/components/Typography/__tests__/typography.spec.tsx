@@ -24,7 +24,7 @@ describe('Component: Typography', () => {
     // when
     const mockContent = faker.random.word();
     const component = shallow(
-      <Typography {...defaultProps} variant="h1">
+      <Typography {...defaultProps} variant="xl">
         {mockContent}
       </Typography>,
     );

@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
-import { ButtonVariants } from '@platformbuilders/theme-toolkit';
+import {
+  ButtonVariants,
+  TypographyVariants,
+} from '@platformbuilders/theme-toolkit';
 import { TouchableType as DefaultTouchable } from './TouchableType';
-import { TypographyVariants } from './Variants';
 
 export type ButtonProps = {
   style?: any;

@@ -7,7 +7,6 @@ const Button: FC<ButtonProps> = ({
   children,
   onPress,
   accessibility,
-  accessibilityLabel,
   testID,
   textStyle = {},
   disabled = false,
@@ -16,7 +15,7 @@ const Button: FC<ButtonProps> = ({
   contrast = false,
   hasBorder = false,
   variant = 'primary',
-  typographyVariant = 'button',
+  typographyVariant = 'md',
   rightIconName,
   leftIconName,
   ...rest
@@ -25,7 +24,6 @@ const Button: FC<ButtonProps> = ({
     <Touchable
       id={id || accessibility}
       accessibility={accessibility}
-      accessibilityLabel={accessibilityLabel || accessibility}
       testID={testID || id || accessibility}
       disabled={loading || disabled}
       onPress={onPress}

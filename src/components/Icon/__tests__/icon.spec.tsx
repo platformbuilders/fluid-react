@@ -1,10 +1,10 @@
 import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 
-import Icon, { Props } from '..';
+import Icon, { IconType } from '..';
 import { theme } from '../../../config/helpers';
 
-const defaultProps: Props = {
+const defaultProps: IconType = {
   name: 'any_name',
 };
 

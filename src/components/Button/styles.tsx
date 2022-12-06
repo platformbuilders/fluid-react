@@ -174,9 +174,7 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
 
 export const TextButton = styled(TypographyComponent)<any>`
   letter-spacing: 0.4px;
-  text-transform: uppercase;
   color: ${getTextColor};
-  font-weight: bold;
 `;
 
 export const Loading = styled(LoadingIndicator).attrs({

@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { TypographyType } from '../../types';
-import { CustomTypography } from './styles';
+import { Text } from './styles';
 
 const Typography: FC<TypographyType> = ({ variant, children, ...rest }) => (
-  <CustomTypography variant={variant} {...rest}>
+  <Text variant={variant} {...rest}>
     {children}
-  </CustomTypography>
+  </Text>
 );
 
 export default Typography;
