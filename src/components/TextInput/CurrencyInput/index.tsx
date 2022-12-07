@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, FocusEvent } from 'react';
+import { ChangeEvent, FocusEvent } from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { FormError } from '../..';
@@ -29,7 +29,7 @@ const defaultMaskOptions = {
   decimalLimit: 2,
 };
 
-const CurrencyInputComponent: FC<Props> = ({
+const CurrencyInputComponent = ({
   error,
   label,
   id,
@@ -38,7 +38,7 @@ const CurrencyInputComponent: FC<Props> = ({
   onBlur,
   onFocus,
   value,
-}) => {
+}: Props) => {
   const currencyMask = createNumberMask(defaultMaskOptions);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

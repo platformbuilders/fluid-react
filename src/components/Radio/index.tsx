@@ -1,8 +1,7 @@
-import { FC } from 'react';
 import { RadioProps } from '../../types';
 import { StyledRadio } from './styles';
 
-const Radio: FC<RadioProps> = ({ className, ...rest }) => {
+const Radio = ({ className, ...rest }: RadioProps) => {
   return <StyledRadio className={className} {...rest} />;
 };
 

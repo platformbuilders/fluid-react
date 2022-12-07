@@ -6,7 +6,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-const Paper: FC<Props> = ({ className, children, ...rest }): JSX.Element => (
+const Paper: FC<Props> = ({ className, children, ...rest }) => (
   <Wrapper className={className} {...rest}>
     {children}
   </Wrapper>

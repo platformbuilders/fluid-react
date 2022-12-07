@@ -7,7 +7,7 @@
 import React from 'react';
 import { If } from '@platformbuilders/react-ui';
 
-const Home: React.FC = () => {
+const Home = () => {
    <If condition={true}>
       <h1>Hello</h1>
    </If>

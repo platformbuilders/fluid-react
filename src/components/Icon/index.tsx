@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import MaterialIcon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -19,13 +18,13 @@ export type Props = {
   color?: IconColor;
 };
 
-const Icon: FC<Props> = ({
+const Icon = ({
   className,
   name,
   color = 'inherit',
   size = 'default',
   ...rest
-}): JSX.Element => (
+}: Props) => (
   <IconButton className={className} color="inherit" edge="start" {...rest}>
     <MaterialIcon color={color} fontSize={size}>
       {name}

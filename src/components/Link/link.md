@@ -7,7 +7,7 @@
 import React from 'react';
 import { Link } from '@platformbuilders/react-ui';
 
-const Home: React.FC = () => {
+const Home = () => {
    <Link onPress={() => {}}>
       Click here
    </Link>

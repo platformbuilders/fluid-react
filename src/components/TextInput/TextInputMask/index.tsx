@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import ReactInputMask from 'react-input-mask';
 import { TextField as TextInput } from '@material-ui/core';
 import { TextInputType } from '../../../types';
@@ -14,7 +13,9 @@ enum Mask {
   cellphone = '(99) 99999-9999',
 }
 
-const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
+type Props = Partial<TextInputType & { maxLength: number }>;
+
+const TextInputMask = ({
   mask,
   maskType = '',
   onChange,
@@ -25,7 +26,7 @@ const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
   variant = 'standard',
   style = {},
   ...rest
-}) => {
+}: Props) => {
   const maskOption = Mask[maskType] || mask;
 
   return (

@@ -1,11 +1,10 @@
-import { FC } from 'react';
 import { FormError } from '..';
 import { TextInputType } from '../../types';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
 import TextInputMask from './TextInputMask';
 
-const TextInput: FC<TextInputType> = ({
+const TextInput = ({
   className,
   error = '',
   inputProps,
@@ -16,7 +15,7 @@ const TextInput: FC<TextInputType> = ({
   onFocus,
   variant = 'standard',
   ...rest
-}) => {
+}: TextInputType) => {
   const hasMask = mask || maskType;
 
   const renderTextInput = () => {

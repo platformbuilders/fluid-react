@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { FormError } from '..';
 import { StyledCheckbox, Wrapper } from './styles';
 
@@ -11,14 +10,14 @@ type Props = {
   onChange(value: any): void;
 };
 
-const Checkbox: FC<Props> = ({
+const Checkbox = ({
   className,
   checked,
   onChange,
   label,
   name,
   error,
-}): JSX.Element => (
+}: Props) => (
   <Wrapper className={className}>
     <FormError error={error}>
       <StyledCheckbox

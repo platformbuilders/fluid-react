@@ -19,7 +19,7 @@ const FormContainer: FC<Props> = ({
   onSubmit,
   children,
   ...rest
-}): JSX.Element => (
+}) => (
   <Formik
     validateOnChange={validateOnChange}
     validationSchema={validationSchema}

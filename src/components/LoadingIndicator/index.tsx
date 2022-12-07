@@ -1,14 +1,13 @@
-import { FC } from 'react';
 import { LoadingType } from '../../types';
 import { Indicator, largeSize, smallSize } from './style';
 
-const Loading: FC<LoadingType> = ({
+const Loading = ({
   large = false,
   contrast = false,
   variant = 'circular',
   accessibility,
   ...rest
-}) => (
+}: LoadingType) => (
   <Indicator
     testID={accessibility || 'loading'}
     accessibilityLabel={accessibility || 'Aguarde'}

@@ -9,7 +9,7 @@ const Autocomplete = <
 >({
   className,
   ...rest
-}: PropsAutocomplete<T, Multiple, DisableClearable, FreeSolo>): JSX.Element => {
+}: PropsAutocomplete<T, Multiple, DisableClearable, FreeSolo>) => {
   return <DefaultAutocomplete className={className} {...rest} />;
 };
 

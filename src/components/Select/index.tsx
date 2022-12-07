@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import { Item, MaterialSelect, Wrapper } from './styles';
@@ -18,7 +17,7 @@ type Props = {
   id?: string;
 };
 
-const Select: FC<Props> = ({
+const Select = ({
   className,
   onChange,
   error = '',
@@ -27,7 +26,7 @@ const Select: FC<Props> = ({
   values,
   id,
   ...rest
-}) => (
+}: Props) => (
   <Wrapper className={className} error={error !== ''} {...rest}>
     <InputLabel>{label}</InputLabel>
     <MaterialSelect

@@ -8,12 +8,7 @@ export type Props = {
   error: string | boolean | undefined;
 };
 
-const FormError: FC<Props> = ({
-  className,
-  children,
-  error,
-  ...rest
-}): JSX.Element => {
+const FormError: FC<Props> = ({ className, children, error, ...rest }) => {
   const isErrorValid = isString(error);
 
   return (

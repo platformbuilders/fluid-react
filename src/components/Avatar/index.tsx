@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { DefaultAvatar } from './styles';
 
 export type AvatarFormats = 'circle' | 'rounded' | 'square';
@@ -11,14 +10,14 @@ export type Props = {
   onPress(): void;
 };
 
-const Avatar: FC<Props> = ({
+const Avatar = ({
   className,
   src,
   alt = '',
   variant = 'circle',
   onPress,
   ...rest
-}): JSX.Element => (
+}: Props) => (
   <DefaultAvatar
     className={className}
     alt={alt}
