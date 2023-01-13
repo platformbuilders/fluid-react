@@ -7,7 +7,6 @@ const Button: FC<ButtonProps> = ({
   children,
   onPress,
   accessibility,
-  testID,
   textStyle = {},
   disabled = false,
   rounded = false,
@@ -24,10 +23,8 @@ const Button: FC<ButtonProps> = ({
     <Touchable
       id={id || accessibility}
       accessibility={accessibility}
-      testID={testID || id || accessibility}
       disabled={loading || disabled}
       onPress={onPress}
-      rounded={rounded}
     >
       <ButtonWrapper
         hasBorder={hasBorder}

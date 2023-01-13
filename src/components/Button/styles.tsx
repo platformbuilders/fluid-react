@@ -138,14 +138,7 @@ const getHoverColor = (props: any): string => {
   }
 };
 
-type TouchableProps = {
-  rounded: boolean;
-} & ThemeProps;
-
-export const Touchable = styled(TouchableComponent)<TouchableProps>`
-  border-radius: ${(props: TouchableProps): any =>
-    props.rounded ? buttonSize / 2 : buttonRadius(props)}px;
-`;
+export const Touchable = styled(TouchableComponent)``;
 
 export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   cursor: ${isDisabled('not-allowed', 'pointer')};
