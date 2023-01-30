@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "es6",
-    "module": "es6",
-    "lib": ["es6", "DOM"],
+    "target": "es2016",
+    "module": "ESNext",
+    "lib": ["es2016", "DOM"],
     "types": ["react", "jest"],
     "declaration": true,
     "declarationMap": true,

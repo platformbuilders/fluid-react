@@ -1,45 +1,48 @@
-import typescript from 'rollup-plugin-typescript2';
-import json from '@rollup/plugin-json';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
+import dts from 'rollup-plugin-dts';
+
+// To handle css files
+import postcss from 'rollup-plugin-postcss';
+
+import { terser } from 'rollup-plugin-terser';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import image from '@rollup/plugin-image';
 
-import pkg from './package.json';
+const packageJson = require('./package.json');
 
-const cjs = {
-  exports: 'named',
-  format: 'cjs',
-};
+export default [
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        file: packageJson.main,
+        format: 'cjs',
+        sourcemap: true,
+      },
+      {
+        file: packageJson.module,
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      typescript({ tsconfig: './tsconfig.json' }),
+      postcss(),
 
-const esm = {
-  format: 'esm',
-};
+      terser(),
+      image(),
+    ],
+  },
+  {
+    input: 'dist/esm/types/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    plugins: [dts()],
 
-const baseConfig = {
-  plugins: [
-    json(),
-    image(),
-    typescript({
-      typescript: require('typescript'),
-    }),
-  ],
-  external: [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {}),
-  ],
-};
-
-const commonConfig = {
-  ...baseConfig,
-  input: './src/index.ts',
-  output: [
-    {
-      file: 'dist/index.js',
-      ...cjs,
-    },
-    {
-      file: 'dist/index.esm.js',
-      ...esm,
-    },
-  ],
-};
-
-export default [commonConfig];
+    external: [/\.css$/], // telling rollup anything that is .css aren't part of type exports
+  },
+];

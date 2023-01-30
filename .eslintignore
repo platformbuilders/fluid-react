@@ -2,4 +2,7 @@
 storybook
 dist
 node_modules
-*.d.ts
+*.d.t
+
+# Ignores config root files
+*.js
