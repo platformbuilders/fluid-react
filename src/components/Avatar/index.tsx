@@ -7,6 +7,7 @@ export type Props = {
   src: string;
   alt?: string;
   variant?: AvatarFormats;
+  className?: string;
   onPress(): void;
 };
 
@@ -15,6 +16,7 @@ const Avatar: FC<Props> = ({
   alt = '',
   variant = 'circle',
   onPress,
+  className,
   ...rest
 }): JSX.Element => (
   <DefaultAvatar
@@ -22,6 +24,7 @@ const Avatar: FC<Props> = ({
     src={src}
     variant={variant}
     onPress={onPress}
+    className={className}
     {...rest}
   />
 );

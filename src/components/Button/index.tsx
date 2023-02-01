@@ -17,6 +17,9 @@ const Button: FC<ButtonProps> = ({
   typographyVariant = 'md',
   rightIconName,
   leftIconName,
+  className,
+  classNameIcon,
+  classNameText,
   ...rest
 }) => {
   return (
@@ -31,24 +34,36 @@ const Button: FC<ButtonProps> = ({
         buttonVariant={variant}
         disabled={disabled}
         rounded={rounded}
+        className={className}
         {...rest}
       >
         {loading && <Loading contrast={contrast} />}
         {!loading && (
           <>
             {!!leftIconName && (
-              <Icon accessibility="" name={leftIconName as string} leftIcon />
+              <Icon
+                accessibility=""
+                className={classNameIcon}
+                name={leftIconName as string}
+                leftIcon
+              />
             )}
             <TextButton
               style={textStyle}
               disabled={disabled}
               variant={typographyVariant}
               buttonVariant={variant}
+              className={classNameText}
             >
               {children}
             </TextButton>
             {!!rightIconName && (
-              <Icon accessibility="" name={rightIconName as string} rightIcon />
+              <Icon
+                className={classNameIcon}
+                accessibility=""
+                name={rightIconName as string}
+                rightIcon
+              />
             )}
           </>
         )}

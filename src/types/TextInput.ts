@@ -21,6 +21,8 @@ export type TextInputType = {
   multiline?: boolean;
   variant?: InputVariants;
   inputProps?: InputBaseComponentProps;
+  className?: string;
+  classNameWrapper?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (
     e:

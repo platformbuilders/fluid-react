@@ -15,6 +15,8 @@ type Props = {
   selectedValue?: string | string[] | number | number[];
   values: ValuesProps[];
   id?: string;
+  className?: string;
+  classNameItem?: string;
 };
 
 const Select: VFC<Props> = ({
@@ -24,6 +26,8 @@ const Select: VFC<Props> = ({
   selectedValue,
   values,
   id,
+  className,
+  classNameItem,
   ...rest
 }) => (
   <Wrapper error={error !== ''} {...rest}>
@@ -32,6 +36,7 @@ const Select: VFC<Props> = ({
       id={id}
       value={selectedValue}
       onChange={(event: any): any => onChange(event.target.value)}
+      className={className}
       {...rest}
     >
       {values.map((item) => (
@@ -40,6 +45,7 @@ const Select: VFC<Props> = ({
           key={item.value}
           value={item.value}
           {...rest}
+          className={classNameItem}
         >
           {item.label}
         </Item>

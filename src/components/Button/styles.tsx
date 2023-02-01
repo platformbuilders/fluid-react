@@ -140,7 +140,9 @@ const getHoverColor = (props: any): string => {
 
 export const Touchable = styled(TouchableComponent)``;
 
-export const ButtonWrapper = styled.div<ButtonWrapperProps>`
+export const ButtonWrapper = styled.div.attrs((props) => ({
+  className: props.className,
+}))<ButtonWrapperProps>`
   cursor: ${isDisabled('not-allowed', 'pointer')};
   height: ${buttonSize}px;
   flex-direction: row;
@@ -182,10 +184,12 @@ type IconProps = {
   leftIcon?: boolean;
   buttonVariant: ButtonVariants;
   style: any;
+  className?: string;
 } & ThemeProps;
 
 export const Icon = styled(DefaultIcon).attrs((props: IconProps) => ({
   color: getTextColor(props),
+  className: props.className,
 }))<IconProps>`
   margin-right: ${isLeftIcon(smallSpacing, 0)}px;
   margin-left: ${isRightIcon(smallSpacing, 0)}px;

@@ -5,7 +5,9 @@ import { getTheme } from '../../utils/helpers';
 const brandPrimaryMain = getTheme('brand.primary.main');
 const successMain = getTheme('success.main');
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div.attrs((props) => ({
+  className: props.className,
+}))`
   display: flex;
   flex-direction: column;
   width: 100%;

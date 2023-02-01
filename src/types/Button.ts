@@ -20,4 +20,7 @@ export type ButtonProps = {
   leftIconName?: string;
   rightIconName?: string;
   hasBorder?: boolean;
+  className?: string;
+  classNameIcon?: string;
+  classNameText?: string;
 } & DefaultTouchable;

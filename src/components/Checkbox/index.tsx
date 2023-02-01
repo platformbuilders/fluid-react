@@ -8,6 +8,7 @@ type Props = {
   label: string;
   checked: boolean;
   name: string;
+  className?: string;
 };
 
 const Checkbox: FC<Props> = ({
@@ -16,8 +17,9 @@ const Checkbox: FC<Props> = ({
   label,
   name,
   error,
+  className,
 }): JSX.Element => (
-  <Wrapper>
+  <Wrapper className={className}>
     <FormError error={error}>
       <StyledCheckbox
         label={label}
