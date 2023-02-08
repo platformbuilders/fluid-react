@@ -5,3 +5,5 @@ import { getTheme } from '../../utils/helpers';
 export const ErrorText = styled(Typography).attrs({ variant: 'xs' })`
   color: ${getTheme('danger.main')};
 `;
+
+export const Wrapper = styled.div``;

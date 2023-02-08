@@ -39,7 +39,6 @@ const CurrencyInputComponent: FC<Props> = ({
   onFocus,
   value,
   className,
-  classNameWrapper,
 }) => {
   const currencyMask = createNumberMask(defaultMaskOptions);
 
@@ -54,7 +53,7 @@ const CurrencyInputComponent: FC<Props> = ({
 
   return (
     <FormError error={error}>
-      <Wrapper className={classNameWrapper}>
+      <Wrapper className={className}>
         <MaskedInput
           mask={currencyMask}
           placeholder="R$ 0,00"
@@ -64,7 +63,6 @@ const CurrencyInputComponent: FC<Props> = ({
           onChange={handleChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          className={className}
         />
         <Bar className="bar" error={error} />
         <Label error={error}>{label}</Label>

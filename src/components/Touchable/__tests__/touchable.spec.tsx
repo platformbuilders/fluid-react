@@ -2,11 +2,11 @@ import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
 
-import Touchable, { Props } from '..';
+import Touchable, { TouchableProps } from '..';
 import { theme } from '../../../config/helpers';
 
 const defaultContent = 'Text';
-const defaultProps: Props = {
+const defaultProps: TouchableProps = {
   accessibility: 'accessibility',
   onPress: jest.fn(),
 };

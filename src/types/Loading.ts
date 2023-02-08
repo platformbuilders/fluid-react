@@ -5,4 +5,5 @@ export interface LoadingType {
   contrast?: boolean;
   variant?: LoadingVariants;
   accessibility?: string;
+  className?: string;
 }

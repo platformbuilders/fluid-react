@@ -12,6 +12,7 @@ export type RadioProps = {
   labelPlacement?: string;
   value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 };
 
 export type RadioGroupProps = {
@@ -22,4 +23,5 @@ export type RadioGroupProps = {
     value: string,
   ) => void;
   value?: any;
+  className?: string;
 };

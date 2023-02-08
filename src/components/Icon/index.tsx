@@ -17,6 +17,7 @@ export type IconType = {
   size?: IconSize;
   color?: IconColor;
   accessibility?: string;
+  className?: string;
 };
 
 const Icon: FC<IconType> = ({
@@ -24,9 +25,16 @@ const Icon: FC<IconType> = ({
   color = 'inherit',
   size = 'default',
   accessibility,
+  className,
   ...rest
 }): JSX.Element => (
-  <IconButton aria-label={accessibility} color="inherit" edge="start" {...rest}>
+  <IconButton
+    className={className}
+    aria-label={accessibility}
+    color="inherit"
+    edge="start"
+    {...rest}
+  >
     <MaterialIcon color={color} fontSize={size}>
       {name}
     </MaterialIcon>

@@ -17,7 +17,6 @@ const TextInput: FC<TextInputType> = ({
   style,
   textInputStyle,
   className,
-  classNameWrapper,
   ...rest
 }) => {
   const hasMask = mask || maskType;
@@ -32,7 +31,6 @@ const TextInput: FC<TextInputType> = ({
           onFocus={onFocus}
           variant={variant}
           className={className}
-          classNameWrapper={classNameWrapper}
         />
       );
     }

@@ -10,4 +10,5 @@ export type SwitchProps = {
   label?: string;
   labelPlacement?: 'top' | 'start' | 'bottom' | 'end';
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 };

@@ -55,3 +55,5 @@ export const Indicator = styled(Animation).attrs((props: any) => ({
     },
   },
 }))<IndicatorProps>``;
+
+export const Wrapper = styled.div``;
