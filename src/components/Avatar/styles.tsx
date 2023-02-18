@@ -7,8 +7,9 @@ export const DefaultAvatar = styled(
     <Touchable
       accessibility={accessibility || 'Foto ou Avatar'}
       onPress={onPress}
+      className={className}
     >
-      <MaterialAvatar className={className} {...rest} />
+      <MaterialAvatar {...rest} />
     </Touchable>
   ),
 )``;

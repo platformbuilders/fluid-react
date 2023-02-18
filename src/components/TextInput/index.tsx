@@ -47,6 +47,7 @@ const TextInput: FC<TextInputType> = ({
           error={!!error}
           variant={variant}
           inputProps={inputProps}
+          className={className}
         />
       );
     }
