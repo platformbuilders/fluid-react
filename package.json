@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/fluid-react",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": false,
   "description": "Builders React for Fluid Design System",
   "keywords": [
@@ -58,6 +58,7 @@
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
     "@faker-js/faker": "^7.4.0",
+    "@platformbuilders/eslint-config-builders": "^0.1.2",
     "@platformbuilders/helpers": "^0.5.0",
     "@rollup/plugin-image": "2.1.1",
     "@rollup/plugin-json": "4.1.0",
