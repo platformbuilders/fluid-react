@@ -15,6 +15,9 @@ export { default as TextInput } from './TextInput';
 export { default as FormError } from './FormError';
 export { default as Checkbox } from './Checkbox';
 export { default as Select } from './Select';
-export { default as Autocomplete } from './Autocomplete';
 export { default as Switch } from './Switch';
 export { default as Radio } from './Radio';
+
+//Material
+export { RadioGroup } from '@material-ui/core';
+export { Autocomplete } from '@material-ui/lab';

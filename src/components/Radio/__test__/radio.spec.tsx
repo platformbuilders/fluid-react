@@ -1,7 +1,5 @@
 import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
-import { faker } from '@faker-js/faker';
-
 import Radio from '..';
 import { theme } from '../../../config/helpers';
 import { RadioProps as Props } from '../../../types';
@@ -24,7 +22,7 @@ describe('Component: Radio', () => {
   });
 
   test('snapshots with another props', () => {
-    const valueMock = faker.random.words();
+    const valueMock = 'TEXT';
     const component = shallow(
       <ThemeProvider theme={theme}>
         <Radio {...defaultProps} size="medium" value={valueMock} />

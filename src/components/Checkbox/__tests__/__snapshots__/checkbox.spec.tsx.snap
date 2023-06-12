@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Checkbox snapshots with default props 1`] = `
+<ContextProvider
+  value={Object {}}
+>
+  <Checkbox
+    checked={false}
+    label="Text"
+    name="Text"
+    onChange={[MockFunction]}
+  />
+</ContextProvider>
+`;

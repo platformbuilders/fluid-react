@@ -63,14 +63,28 @@ describe('Component: Button', () => {
     // should
     const mockFunction = jest.fn();
     const component = shallow(
-      <Button {...defaultProps} onPress={mockFunction} />,
+      <Button {...defaultProps} onPress={mockFunction}>
+        {defaultContent}
+      </Button>,
     );
 
     // when
     expect(mockFunction).not.toHaveBeenCalled();
-    component.simulate('click');
+    component.props().onPress();
 
     // then
     expect(mockFunction).toHaveBeenCalled();
+  });
+  test('should not call onPress when pressed', () => {
+    // should
+    const mockFunction = jest.fn();
+    const component = shallow(
+      <Button {...defaultProps} disabled onPress={mockFunction}>
+        {defaultContent}
+      </Button>,
+    );
+
+    component.simulate('click');
+    expect(mockFunction).not.toHaveBeenCalled();
   });
 });

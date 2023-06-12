@@ -29,7 +29,11 @@ const ColoredCheckbox = styled((props) => (
 export const StyledCheckbox = styled((props) => (
   <FormControlLabel
     control={
-      <ColoredCheckbox checked={props.checked} onChange={props.onChange} />
+      <ColoredCheckbox
+        checked={props.checked}
+        onChange={props.onChange}
+        {...props}
+      />
     }
     label={props.label}
   />

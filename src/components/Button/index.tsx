@@ -23,7 +23,7 @@ const Button: FC<ButtonProps> = ({
     <Touchable
       id={id || accessibility}
       accessibility={accessibility}
-      disabled={loading || disabled}
+      // disabled={loading || disabled}
       onPress={onPress}
     >
       <ButtonWrapper
