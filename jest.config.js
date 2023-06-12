@@ -8,6 +8,7 @@ module.exports = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
+    '!<rootDir>/src/**/styles.{ts,tsx}',
     '!<rootDir>/src/config/*',
     '!<rootDir>/src/enums/*',
     '!<rootDir>/src/index.ts',
@@ -15,7 +16,6 @@ module.exports = {
     '!<rootDir>/src/types/index.ts',
     '!<rootDir>/src/components/index.ts',
     '<rootDir>/src/utils/helpers/checkType/*',
-    '!<rootDir>/src/utils/helpers/color/*',
     '!**/*.d.ts'
   ],
   testMatch: [
