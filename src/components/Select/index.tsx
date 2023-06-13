@@ -8,7 +8,7 @@ type ValuesProps = {
   label: string;
 };
 
-type Props = {
+export type SelectProps = {
   onChange(value: any): void;
   error?: string | string[];
   label?: string;
@@ -17,7 +17,7 @@ type Props = {
   id?: string;
 };
 
-const Select: VFC<Props> = ({
+const Select: VFC<SelectProps> = ({
   onChange,
   error = '',
   label = '',

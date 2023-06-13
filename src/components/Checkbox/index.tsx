@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { FormError } from '..';
 import { StyledCheckbox, Wrapper } from './styles';
 
-type Props = {
+export type CheckboxProps = {
   onChange(value: any): void;
   error?: string | boolean | undefined;
   label: string;
@@ -10,7 +10,7 @@ type Props = {
   name: string;
 };
 
-const Checkbox: FC<Props> = ({
+const Checkbox: FC<CheckboxProps> = ({
   checked,
   onChange,
   label,
@@ -20,6 +20,7 @@ const Checkbox: FC<Props> = ({
   <Wrapper>
     <FormError error={error}>
       <StyledCheckbox
+        className="fluid-checkbox"
         label={label}
         name={name}
         checked={checked}

@@ -1,9 +1,24 @@
-import { FC } from 'react';
+import styled from 'styled-components';
+import { FormControlLabel, Radio } from '@material-ui/core';
 import { RadioProps } from '../../types';
-import { StyledRadio } from './styles';
+import { getBackgroundColor } from '../../utils/helpers/color';
 
-const Radio: FC<RadioProps> = (props) => {
-  return <StyledRadio {...props} />;
-};
+export default styled(({ label, labelPlacement, value, ...rest }) => (
+  <FormControlLabel
+    control={<Radio {...rest} />}
+    label={label}
+    labelPlacement={labelPlacement}
+    value={value}
+  />
+))<RadioProps>`
+  &.MuiRadio-colorSecondary.Mui-checked {
+    color: ${getBackgroundColor} !important;
+    &:hover {
+      background-color: ${getBackgroundColor}70 !important;
+    }
+  }
 
-export default Radio;
+  &.MuiRadio-colorSecondary.Mui-checked + .MuiRadio-track {
+    background-color: ${getBackgroundColor} !important;
+  }
+`;

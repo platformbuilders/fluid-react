@@ -1,9 +1,23 @@
-import { VFC } from 'react';
+import styled from 'styled-components';
+import { FormControlLabel, Switch } from '@material-ui/core';
 import { SwitchProps } from '../../types';
-import { StyledSwitch } from './styles';
+import { getBackgroundColor } from '../../utils/helpers/color';
 
-const Switch: VFC<SwitchProps> = (props) => {
-  return <StyledSwitch {...props} />;
-};
+export default styled(({ labelPlacement, label, ...rest }) => (
+  <FormControlLabel
+    control={<Switch {...rest} />}
+    labelPlacement={labelPlacement}
+    label={label}
+  />
+))<SwitchProps>`
+  &.MuiSwitch-switchBase.Mui-checked {
+    color: ${getBackgroundColor};
+    &:hover {
+      background-color: ${getBackgroundColor}70;
+    }
+  }
 
-export default Switch;
+  &.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    background-color: ${getBackgroundColor};
+  }
+`;

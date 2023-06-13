@@ -32,7 +32,7 @@ describe('Component: Typography', () => {
     // then
     const { variant } = component.props();
 
-    expect(variant).toEqual('h1');
+    expect(variant).toEqual('xl');
     expect(component.children().text()).toEqual(mockContent);
   });
 });

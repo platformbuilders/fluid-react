@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Select snapshots with default props 1`] = `
+<ContextProvider
+  value={Object {}}
+>
+  <Select
+    label="Gender"
+    onChange={[MockFunction]}
+    selectedValue="Male"
+    values={
+      Array [
+        Object {
+          "label": "Male",
+          "value": "Male",
+        },
+        Object {
+          "label": "Female",
+          "value": "Female",
+        },
+      ]
+    }
+  />
+</ContextProvider>
+`;

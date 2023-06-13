@@ -8,11 +8,14 @@ module.exports = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
+    '!<rootDir>/src/**/styles.{ts,tsx}',
     '!<rootDir>/src/config/*',
+    '!<rootDir>/src/enums/*',
+    '!<rootDir>/src/index.ts',
     '!<rootDir>/src/theme/index.ts',
     '!<rootDir>/src/types/index.ts',
     '!<rootDir>/src/components/index.ts',
-    '!<rootDir>/src/utils/helpers/index.ts',
+    '<rootDir>/src/utils/helpers/checkType/*',
     '!**/*.d.ts'
   ],
   testMatch: [
@@ -25,7 +28,7 @@ module.exports = {
     '/coverage/',
     '/dist/'
   ],
-  testEnvironment: 'jsdom',
+  testEnvironment: 'node',
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFilesAfterEnv: ['<rootDir>/src/config/jest.setup.ts', 'jest-canvas-mock'],
   transform: {

@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component: Typography snapshots 1`] = `
+exports[`Component: Link snapshots with default props 1`] = `
 <ContextProvider
   value={Object {}}
 >
-  <Typography>
+  <Link
+    onPress={[MockFunction]}
+  >
     Text
-  </Typography>
+  </Link>
 </ContextProvider>
 `;
