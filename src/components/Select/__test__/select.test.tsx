@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import Select, { SelectProps as Props } from '../index';
 
 const defaultProps: Props = {

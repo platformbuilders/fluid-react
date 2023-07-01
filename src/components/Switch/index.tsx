@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FormControlLabel, Switch } from '@material-ui/core';
 import { SwitchProps } from '../../types';
-import { getBackgroundColor } from '../../utils/helpers/color';
+import { getBackgroundColor } from '../../utils';
 
 export default styled(({ labelPlacement, label, ...rest }) => (
   <FormControlLabel

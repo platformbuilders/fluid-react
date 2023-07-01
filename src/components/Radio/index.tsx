@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FormControlLabel, Radio } from '@material-ui/core';
 import { RadioProps } from '../../types';
-import { getBackgroundColor } from '../../utils/helpers/color';
+import { getBackgroundColor } from '../../utils';
 
 export default styled(({ label, labelPlacement, value, ...rest }) => (
   <FormControlLabel

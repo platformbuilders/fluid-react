@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import Radio from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import { RadioProps as Props } from '../../../types';
 
 const defaultContent = 'Text';

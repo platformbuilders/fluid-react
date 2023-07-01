@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 
 import Button from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import { ButtonProps as Props } from '../../../types';
 
 const defaultContent = 'Text';

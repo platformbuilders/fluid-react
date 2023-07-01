@@ -26,7 +26,7 @@ const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
   style = {},
   ...rest
 }) => {
-  const maskOption = Mask[maskType] || mask;
+  const maskOption = (Mask[maskType as keyof typeof Mask] as any) || mask;
 
   return (
     <ReactInputMask

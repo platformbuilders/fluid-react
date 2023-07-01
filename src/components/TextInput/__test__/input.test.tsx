@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import { TextInputType } from '../../../types';
 import TextInput from '../index';
 import TextInputMask from '../TextInputMask';

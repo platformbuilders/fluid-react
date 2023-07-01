@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FormError } from '..';
+import FormError from '../FormError';
 import { StyledCheckbox, Wrapper } from './styles';
 
 export type CheckboxProps = {

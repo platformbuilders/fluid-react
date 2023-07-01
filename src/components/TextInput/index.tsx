@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { FormError } from '..';
 import { TextInputType } from '../../types';
+import FormError from '../FormError';
 import CurrencyInput from './CurrencyInput';
 import { Input, InputWrapper } from './styles';
 import TextInputMask from './TextInputMask';

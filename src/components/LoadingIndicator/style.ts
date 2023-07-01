@@ -23,7 +23,7 @@ type IndicatorProps = {
 
 const loadingVariant = (
   props: IndicatorProps,
-): string | number | AnimationObject | { uri: string } => {
+): string | number | AnimationObject | { uri: string } | null => {
   const { variant, contrast } = props;
   switch (variant) {
     case 'button':

@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
 
 import Typography from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import { TypographyType as Props } from '../../../types';
 
 const defaultContent = 'Text';

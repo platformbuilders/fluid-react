@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 
 import Checkbox, { CheckboxProps } from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 
 const defaultProps: CheckboxProps = {
   checked: false,

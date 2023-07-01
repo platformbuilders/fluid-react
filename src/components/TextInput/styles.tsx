@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { TextField } from '@material-ui/core';
-import { getTheme } from '../../utils/helpers';
+import { getTheme } from '@platformbuilders/theme-toolkit';
 
 const brandPrimaryMain = getTheme('brand.primary.main');
 

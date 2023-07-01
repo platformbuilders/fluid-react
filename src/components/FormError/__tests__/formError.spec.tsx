@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
 
 import FormError, { Props } from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 
 const defaultContent = 'Text';
 const defaultProps: Props = {

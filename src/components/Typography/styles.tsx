@@ -1,6 +1,10 @@
 import styled from 'styled-components';
-import { TypographyType, getTheme } from '@platformbuilders/theme-toolkit';
-import { getFontSize, getLineHeight } from '../../utils/helpers';
+import {
+  getFontSize,
+  getLineHeight,
+  getTheme,
+} from '@platformbuilders/theme-toolkit';
+import { TypographyType } from '../../types';
 
 export const Text = styled.p<TypographyType>`
   color: ${getTheme('text.main')};
