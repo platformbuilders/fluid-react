@@ -5,6 +5,7 @@ import { getTheme } from '@platformbuilders/theme-toolkit';
 const brandPrimaryMain = getTheme('brand.primary.main');
 
 export const Input = styled(TextField)`
+  margin-bottom: 0 !important;
   & label {
     font-size: 1em;
   }

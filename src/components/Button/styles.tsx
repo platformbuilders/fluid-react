@@ -33,9 +33,7 @@ type ButtonWrapperProps = {
 
 const buttonSize = 45;
 
-export const Touchable = styled(TouchableComponent)``;
-
-export const ButtonWrapper = styled.div<ButtonWrapperProps>`
+export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   cursor: ${isDisabled('not-allowed', 'pointer')};
   height: ${buttonSize}px;
   flex-direction: row;
