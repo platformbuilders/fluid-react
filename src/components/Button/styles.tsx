@@ -32,7 +32,7 @@ const hasBorder = ifStyle('hasBorder');
 type ButtonWrapperProps = {
   rounded: boolean;
   hasBorder: boolean;
-  buttonVariant: ButtonVariants;
+  variant: ButtonVariants;
   disabled?: boolean;
   style?: any;
   minWidth?: string | number;

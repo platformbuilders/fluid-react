@@ -28,7 +28,7 @@ const Button: FC<ButtonProps> = ({
     >
       <ButtonWrapper
         hasBorder={hasBorder}
-        buttonVariant={variant}
+        variant={variant}
         disabled={disabled}
         rounded={rounded}
         {...rest}
