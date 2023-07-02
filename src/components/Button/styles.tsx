@@ -6,21 +6,13 @@ import {
   ifStyle,
   pxToRem,
 } from '@platformbuilders/theme-toolkit';
-import { getBackgroundColor, getTextColor } from '../../utils';
+import { getBackgroundColor, getHoverColor, getTextColor } from '../../utils';
 import DefaultIcon from '../Icon';
 import LoadingIndicator from '../LoadingIndicator';
 import TouchableComponent from '../Touchable';
 import TypographyComponent from '../Typography';
 
 const borderWidthSmall = getTheme('borderWidth.sm');
-const brandPrimary = getTheme('brand.primary.main');
-const brandPrimaryContrast = getTheme('brand.primary.contrast');
-const brandSecondary = getTheme('brand.secondary.main');
-const brandTertiaryContrast = getTheme('brand.tertiary.contrast');
-const brandAccentContrast = getTheme('brand.accent.contrast');
-const infoContrast = getTheme('info.contrast');
-const dangerContrast = getTheme('danger.contrast');
-const warningContrast = getTheme('warning.contrast');
 const buttonRadius = getTheme('borderRadius.sm');
 const minimumSpacing = getTheme('spacing.xs');
 const smallSpacing = getTheme('spacing.sm');
@@ -40,34 +32,6 @@ type ButtonWrapperProps = {
 } & ThemeProps;
 
 const buttonSize = 45;
-
-const getHoverColor = (props: any): string => {
-  if (props.disabled) {
-    return `${brandPrimaryContrast(props)}`;
-  }
-  switch (props.buttonVariant) {
-    case 'primary':
-      return `${brandPrimary(props)}`;
-    case 'secondary':
-      return `${brandSecondary(props)}`;
-    case 'tertiary':
-      return `${brandTertiaryContrast(props)}`;
-    case 'accent':
-      return `${brandAccentContrast(props)}`;
-    case 'danger':
-      return `${dangerContrast(props)}`;
-    case 'info':
-      return `${infoContrast(props)}`;
-    case 'warning':
-      return `${warningContrast(props)}`;
-    case 'invert':
-      return `${brandPrimary(props)}`;
-    case 'flat':
-      return `${brandPrimary(props)}`;
-    default:
-      return `${brandPrimaryContrast(props)}`;
-  }
-};
 
 export const Touchable = styled(TouchableComponent)``;
 

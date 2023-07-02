@@ -34,6 +34,26 @@ describe('<LoadingIndicator />', () => {
     expect(render).toMatchSnapshot();
   });
 
+  it('should render LoadingIndicator large with variant', () => {
+    const render = shallow(
+      <ThemeProvider theme={theme}>
+        <LoadingIndicator large variant="linear" />
+      </ThemeProvider>,
+    );
+
+    expect(render).toMatchSnapshot();
+  });
+
+  it('should render LoadingIndicator large contrast with variant', () => {
+    const render = shallow(
+      <ThemeProvider theme={theme}>
+        <LoadingIndicator large contrast variant="linear" />
+      </ThemeProvider>,
+    );
+
+    expect(render).toMatchSnapshot();
+  });
+
   it('should render LoadingIndicator with variant', () => {
     const render = shallow(
       <ThemeProvider theme={theme}>
@@ -47,7 +67,7 @@ describe('<LoadingIndicator />', () => {
   it('should render LoadingIndicator with accessibility', () => {
     const render = shallow(
       <ThemeProvider theme={theme}>
-        <LoadingIndicator accessibility="" />
+        <LoadingIndicator accessibility="testing" />
       </ThemeProvider>,
     );
 

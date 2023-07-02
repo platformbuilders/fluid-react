@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FormControlLabel, Switch } from '@material-ui/core';
 import { SwitchProps } from '../../types';
-import { getBackgroundColor } from '../../utils';
+import { getBackgroundColor, getHoverColor } from '../../utils';
 
 export default styled(({ labelPlacement, label, ...rest }) => (
   <FormControlLabel
@@ -13,7 +13,7 @@ export default styled(({ labelPlacement, label, ...rest }) => (
   &.MuiSwitch-switchBase.Mui-checked {
     color: ${getBackgroundColor};
     &:hover {
-      background-color: ${getBackgroundColor}70;
+      background-color: ${getHoverColor};
     }
   }
 
