@@ -74,7 +74,6 @@
     "@types/jest": "28.1.7",
     "@types/lodash": "4.14.184",
     "@types/moment": "2.13.0",
-    "@types/numeral": "2.0.2",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/react-input-mask": "3.0.1",
