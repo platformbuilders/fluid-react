@@ -1,4 +1,4 @@
-name: check
+name: test
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  check:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,5 +19,5 @@ jobs:
           PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
       - name: Install packages
         run: yarn install
-      - name: Linter
-        run: yarn lint
+      - name: Test
+        run: yarn test --coverage
