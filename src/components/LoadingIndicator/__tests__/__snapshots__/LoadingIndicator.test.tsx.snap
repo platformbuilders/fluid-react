@@ -16,6 +16,7 @@ exports[`<LoadingIndicator /> should render LoadingIndicator correctly 1`] = `
       viewBox="0 0 500 500"
       width="500"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <clippath
@@ -90,6 +91,7 @@ exports[`<LoadingIndicator /> should render LoadingIndicator large contrast with
       viewBox="0 0 400 400"
       width="400"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <clippath
@@ -267,6 +269,7 @@ exports[`<LoadingIndicator /> should render LoadingIndicator large with variant 
       viewBox="0 0 400 400"
       width="400"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <clippath
@@ -444,6 +447,7 @@ exports[`<LoadingIndicator /> should render LoadingIndicator with accessibility 
       viewBox="0 0 500 500"
       width="500"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <clippath
@@ -518,6 +522,7 @@ exports[`<LoadingIndicator /> should render LoadingIndicator with contrast 1`] =
       viewBox="0 0 160 160"
       width="160"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <clippath
@@ -748,6 +753,7 @@ exports[`<LoadingIndicator /> should render LoadingIndicator with large 1`] = `
       viewBox="0 0 500 500"
       width="500"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <clippath
@@ -822,6 +828,7 @@ exports[`<LoadingIndicator /> should render LoadingIndicator with variant 1`] = 
       viewBox="0 0 400 400"
       width="400"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <clippath

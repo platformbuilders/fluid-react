@@ -47,6 +47,7 @@ exports[`Component: Button snapshots with loading 1`] = `
         viewBox="0 0 375 375"
         width="375"
         xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <defs>
           <clippath
