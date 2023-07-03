@@ -1,6 +1,6 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
+import { render } from '@testing-library/react';
 
 import FormError, { Props } from '..';
 import theme from '../../../theme';
@@ -12,17 +12,17 @@ const defaultProps: Props = {
 
 describe('Component: FormError', () => {
   test('snapshots with default props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <FormError {...defaultProps}>{defaultContent}</FormError>
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('snapshots with error props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <FormError {...defaultProps} error="Error text">
           {defaultContent}
@@ -30,17 +30,18 @@ describe('Component: FormError', () => {
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('should render the component when the condition is truthy', () => {
     const errorMock = faker.random.words(10);
-    const component = shallow(
+    const { getByText } = render(
       <FormError {...defaultProps} error={errorMock}>
         {defaultContent}
       </FormError>,
     );
+    expect(getByText(defaultContent)).toBeInTheDocument();
 
-    expect(component.contains(defaultContent)).toEqual(true);
+    // expect(component.contains(defaultContent)).toEqual(true);
   });
 });

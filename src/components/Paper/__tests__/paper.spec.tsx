@@ -1,6 +1,6 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
+import { render } from '@testing-library/react';
 
 import Paper from '..';
 import theme from '../../../theme';
@@ -10,21 +10,23 @@ const defaultProps = {};
 
 describe('Component: Paper', () => {
   test('snapshots', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Paper {...defaultProps}>{defaultContent}</Paper>
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('check props', () => {
     // when
     const mockContent = faker.random.word();
-    const component = shallow(<Paper {...defaultProps}>{mockContent}</Paper>);
+    const { getByText } = render(
+      <Paper {...defaultProps}>{mockContent}</Paper>,
+    );
 
     // then
-    expect(component.children().text()).toEqual(mockContent);
+    expect(getByText(mockContent)).toBeInTheDocument();
   });
 });

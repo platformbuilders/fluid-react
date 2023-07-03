@@ -4,7 +4,6 @@
     "target": "esnext",
     "module": "ESNext",
     "lib": ["esnext", "DOM"],
-
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -33,6 +32,7 @@
     "types": [
       "react",
       "jest",
+      "@testing-library/jest-dom"
     ],
     "typeRoots": [
       "./node_modules/@types",

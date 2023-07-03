@@ -1,6 +1,7 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
-import theme from '../../../theme';
+import { fireEvent, render } from '@testing-library/react';
+
+import { theme } from '../../../config/helpers';
 import Select, { SelectProps as Props } from '../index';
 
 const defaultProps: Props = {
@@ -21,12 +22,12 @@ const defaultProps: Props = {
 
 describe('Component: Select', () => {
   test('snapshots with default props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Select {...defaultProps} />
       </ThemeProvider>,
     );
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('should change value to female', () => {
@@ -34,11 +35,11 @@ describe('Component: Select', () => {
     const handleChange = jest.fn();
 
     // when
-    const component = shallow(
+    const { getByRole } = render(
       <Select id="select-test" {...defaultProps} onChange={handleChange} />,
     );
-    component.find('#select-test').simulate('change', {
-      target: { name: 'value', value: 'Female' },
+    fireEvent.change(getByRole('textbox', { hidden: true }), {
+      target: { value: 'Female' },
     });
     expect(handleChange).toHaveBeenCalled();
   });

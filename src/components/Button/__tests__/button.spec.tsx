@@ -1,5 +1,5 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
+import { fireEvent, render } from '@testing-library/react';
 
 import Button from '..';
 import theme from '../../../theme';
@@ -14,27 +14,27 @@ const defaultProps: Props = {
 
 describe('Component: Button', () => {
   test('snapshots with default props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Button {...defaultProps} />
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('snapshots with loading', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Button {...defaultProps} loading />
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('snapshots with other props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Button {...defaultProps} disabled variant="secondary">
           {defaultContent}
@@ -42,27 +42,24 @@ describe('Component: Button', () => {
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('check props default props', () => {
     // when
-    const component = shallow(
+    const { getByText } = render(
       <Button {...defaultProps} disabled variant="secondary">
         {defaultContent}
       </Button>,
     );
 
-    // then
-    const child = component.children();
-
-    expect(child.contains(defaultContent)).toEqual(true);
+    expect(getByText(defaultContent)).toBeInTheDocument();
   });
 
   test('should call onPress when pressed', () => {
     // should
     const mockFunction = jest.fn();
-    const component = shallow(
+    const { getByRole } = render(
       <Button {...defaultProps} onPress={mockFunction}>
         {defaultContent}
       </Button>,
@@ -70,21 +67,20 @@ describe('Component: Button', () => {
 
     // when
     expect(mockFunction).not.toHaveBeenCalled();
-    component.props().onPress();
-
+    fireEvent.click(getByRole('button'));
     // then
     expect(mockFunction).toHaveBeenCalled();
   });
   test('should not call onPress when pressed', () => {
     // should
     const mockFunction = jest.fn();
-    const component = shallow(
+    const { getByRole } = render(
       <Button {...defaultProps} disabled onPress={mockFunction}>
         {defaultContent}
       </Button>,
     );
 
-    component.simulate('click');
+    fireEvent.click(getByRole('button'));
     expect(mockFunction).not.toHaveBeenCalled();
   });
 });

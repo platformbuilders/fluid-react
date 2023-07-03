@@ -1,6 +1,6 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
+import { fireEvent, render } from '@testing-library/react';
 
 import Touchable, { Props } from '..';
 import theme from '../../../theme';
@@ -13,30 +13,30 @@ const defaultProps: Props = {
 
 describe('Component: Touchable', () => {
   test('snapshots', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Touchable {...defaultProps}>{defaultContent}</Touchable>
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('check props', () => {
     // when
     const mockContent = faker.random.word();
-    const component = shallow(
+    const { getByText } = render(
       <Touchable {...defaultProps}>{mockContent}</Touchable>,
     );
 
     // then
-    expect(component.children().text()).toEqual(mockContent);
+    expect(getByText(mockContent)).toBeInTheDocument();
   });
 
   test('should call onPress when clicked', () => {
     // should
     const mockFunction = jest.fn();
-    const component = shallow(
+    const { getByRole } = render(
       <Touchable {...defaultProps} onPress={mockFunction}>
         {defaultContent}
       </Touchable>,
@@ -44,7 +44,7 @@ describe('Component: Touchable', () => {
 
     // when
     expect(mockFunction).not.toHaveBeenCalled();
-    component.simulate('click');
+    fireEvent.click(getByRole('button'));
 
     // then
     expect(mockFunction).toHaveBeenCalled();
