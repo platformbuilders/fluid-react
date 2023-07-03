@@ -1,12 +1,25 @@
-name: Check
+name: check
 
 on:
   pull_request:
+    branches:
+      - master
 
 jobs:
-  call-workflow:
-    uses: platformbuilders/actions-workflows/.github/workflows/check-react.yml@main
-    secrets:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+      - name: Set NPM Variables
+        run: echo "$PACKAGES_NPMRC" > .npmrc
+        env:
+          PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
+      - name: Install packages
+        run: yarn install
+      - name: Test
+        run: yarn test
+      - name: Linter
+        run: yarn lint
