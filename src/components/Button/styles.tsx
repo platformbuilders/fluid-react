@@ -19,11 +19,12 @@ const smallSpacing = getTheme('spacing.sm');
 const isLeftIcon = ifStyle('leftIcon');
 const isRightIcon = ifStyle('rightIcon');
 const isDisabled = ifStyle('disabled');
-const hasBorder = ifStyle('hasBorder');
+const hasBorder = ifStyle('$hasBorder');
+const isRounded = ifStyle('$rounded');
 
 type ButtonWrapperProps = {
-  rounded: boolean;
-  hasBorder: boolean;
+  $rounded: boolean;
+  $hasBorder: boolean;
   variant: ButtonVariants;
   disabled?: boolean;
   style?: any;
@@ -42,10 +43,8 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
     `${minWidth || '180px'}`};
   max-width: ${({ maxWidth }: ButtonWrapperProps) => maxWidth || '100%'};
   overflow: hidden;
-  padding: ${(props: ButtonWrapperProps): string =>
-    props.rounded ? '0' : `${minimumSpacing(props)}px`};
-  border-radius: ${(props: ButtonWrapperProps): any =>
-    props.rounded ? buttonSize / 2 : buttonRadius(props)}px;
+  padding: ${isRounded(0, minimumSpacing)}px;
+  border-radius: ${isRounded(buttonSize / 2, buttonRadius)}px;
   justify-content: center;
   background-color: ${getBackgroundColor};
   border-color: ${getBackgroundColor};

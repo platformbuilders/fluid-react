@@ -25,9 +25,9 @@ const Button: FC<ButtonProps> = ({
       accessibility={accessibility}
       disabled={loading || disabled}
       onPress={onPress}
-      hasBorder={hasBorder}
+      $hasBorder={hasBorder}
+      $rounded={rounded}
       variant={variant}
-      rounded={rounded}
       {...rest}
     >
       {loading && <Loading contrast={contrast} />}

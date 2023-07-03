@@ -1,7 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 import markdown from './button.md';
 import Button from './index';
 
@@ -19,7 +19,6 @@ storiesOf('Button', module)
     <Button
       onPress={action('clicked')}
       loading={boolean('loading', false)}
-      secondary={boolean('secondary', false)}
       transparent={boolean('transparent', false)}
       disabled={boolean('disabled', false)}
     >
