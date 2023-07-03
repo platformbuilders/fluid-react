@@ -8,7 +8,7 @@ const dangerMain = getTheme('danger.main');
 const warningMain = getTheme('warning.main');
 const brandPrimaryContrast = getTheme('brand.primary.contrast');
 
-export const opacityHover = '70';
+export const opacityHover = '80';
 
 export const getHoverColor = (props: any): string => {
   if (props.disabled) {
