@@ -9,7 +9,7 @@ exports[`Component: Avatar snapshots with default props 1`] = `
     type="button"
   >
     <div
-      class="MuiAvatar-root MuiAvatar-circular sc-kgflAQ"
+      class="MuiAvatar-root MuiAvatar-circle sc-gsnTZi"
     >
       <img
         alt=""
@@ -33,7 +33,7 @@ exports[`Component: Avatar snapshots with other props 1`] = `
     type="button"
   >
     <div
-      class="MuiAvatar-root MuiAvatar-square sc-kgflAQ"
+      class="MuiAvatar-root MuiAvatar-square sc-gsnTZi"
     >
       <img
         alt="alt text"

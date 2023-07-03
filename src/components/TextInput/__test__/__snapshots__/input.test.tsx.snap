@@ -3,10 +3,10 @@
 exports[`Component: TextInput snapshots with default props 1`] = `
 <div>
   <div
-    class="sc-iqcoie ctLMsJ"
+    class="sc-iBkjds kTwfzk"
   >
     <div
-      class="MuiFormControl-root MuiTextField-root sc-kDDrLX jcJYyX"
+      class="MuiFormControl-root MuiTextField-root sc-gKXOVf dmttbZ"
     >
       <label
         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -30,9 +30,6 @@ exports[`Component: TextInput snapshots with default props 1`] = `
         />
       </div>
     </div>
-    <p
-      class="sc-hKMtZM lolqcI sc-crXcEl gnJqjt"
-    />
   </div>
 </div>
 `;

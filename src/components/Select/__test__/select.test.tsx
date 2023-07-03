@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { fireEvent, render } from '@testing-library/react';
 
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import Select, { SelectProps as Props } from '../index';
 
 const defaultProps: Props = {

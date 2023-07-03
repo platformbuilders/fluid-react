@@ -4,20 +4,17 @@ exports[`Component: Button snapshots with default props 1`] = `
 <div>
   <button
     accessibility="label"
-    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM"
+    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM hIQjTr"
     id="label"
     tabindex="0"
     type="button"
+    variant="primary"
   >
-    <div
-      class="sc-eCYdqJ dwMPY"
+    <p
+      class="sc-dkzDqf euTQOV sc-eCYdqJ hdUKZG"
     >
-      <p
-        class="sc-dkzDqf fURbKH sc-jSMfEi iOWbTN"
-      >
-        Text
-      </p>
-    </div>
+      Text
+    </p>
     <span
       class="MuiTouchRipple-root"
     />
@@ -29,22 +26,93 @@ exports[`Component: Button snapshots with loading 1`] = `
 <div>
   <button
     accessibility="label"
-    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM Mui-disabled"
+    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM byTfPA Mui-disabled"
     disabled=""
     id="label"
     tabindex="-1"
     type="button"
+    variant="primary"
   >
     <div
-      class="sc-eCYdqJ dwMPY"
+      aria-label="animation"
+      role="button"
+      style="width: 60px; height: 60px; overflow: hidden; margin: 0px auto; outline: none;"
+      tabindex="0"
+      title=""
     >
-      <div
-        aria-label="animation"
-        role="button"
-        style="width: 60px; height: 60px; overflow: hidden; margin: 0px auto; outline: none;"
-        tabindex="0"
-        title=""
-      />
+      <svg
+        height="375"
+        preserveAspectRatio="xMidYMid slice"
+        style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+        viewBox="0 0 375 375"
+        width="375"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <clippath
+            id="__lottie_element_2"
+          >
+            <rect
+              height="375"
+              width="375"
+              x="0"
+              y="0"
+            />
+          </clippath>
+        </defs>
+        <g
+          clip-path="url(#__lottie_element_2)"
+        >
+          <g
+            opacity="1"
+            style="display: block;"
+            transform="matrix(1,0,0,1,223.83999633789062,205.83999633789062)"
+          >
+            <g
+              opacity="1"
+              transform="matrix(1,0,0,1,-100.83999633789062,-18.84000015258789)"
+            >
+              <path
+                d=" M0,-21.65999984741211 C11.954154014587402,-21.65999984741211 21.65999984741211,-11.954154014587402 21.65999984741211,0 C21.65999984741211,11.954154014587402 11.954154014587402,21.65999984741211 0,21.65999984741211 C-11.954154014587402,21.65999984741211 -21.65999984741211,11.954154014587402 -21.65999984741211,0 C-21.65999984741211,-11.954154014587402 -11.954154014587402,-21.65999984741211 0,-21.65999984741211z"
+                fill="rgb(255,255,255)"
+                fill-opacity="1"
+              />
+            </g>
+          </g>
+          <g
+            opacity="1"
+            style="display: block;"
+            transform="matrix(1,0,0,1,287.8399963378906,205.83999633789062)"
+          >
+            <g
+              opacity="1"
+              transform="matrix(1,0,0,1,-100.83999633789062,-18.84000015258789)"
+            >
+              <path
+                d=" M0,-21.65999984741211 C11.954154014587402,-21.65999984741211 21.65999984741211,-11.954154014587402 21.65999984741211,0 C21.65999984741211,11.954154014587402 11.954154014587402,21.65999984741211 0,21.65999984741211 C-11.954154014587402,21.65999984741211 -21.65999984741211,11.954154014587402 -21.65999984741211,0 C-21.65999984741211,-11.954154014587402 -11.954154014587402,-21.65999984741211 0,-21.65999984741211z"
+                fill="rgb(255,255,255)"
+                fill-opacity="1"
+              />
+            </g>
+          </g>
+          <g
+            opacity="1"
+            style="display: block;"
+            transform="matrix(1,0,0,1,351.8399963378906,205.83999633789062)"
+          >
+            <g
+              opacity="1"
+              transform="matrix(1,0,0,1,-100.83999633789062,-18.84000015258789)"
+            >
+              <path
+                d=" M0,-21.65999984741211 C11.954154014587402,-21.65999984741211 21.65999984741211,-11.954154014587402 21.65999984741211,0 C21.65999984741211,11.954154014587402 11.954154014587402,21.65999984741211 0,21.65999984741211 C-11.954154014587402,21.65999984741211 -21.65999984741211,11.954154014587402 -21.65999984741211,0 C-21.65999984741211,-11.954154014587402 -11.954154014587402,-21.65999984741211 0,-21.65999984741211z"
+                fill="rgb(255,255,255)"
+                fill-opacity="1"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
     </div>
   </button>
 </div>
@@ -54,23 +122,19 @@ exports[`Component: Button snapshots with other props 1`] = `
 <div>
   <button
     accessibility="label"
-    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM Mui-disabled"
+    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM byTfPA Mui-disabled"
     disabled=""
     id="label"
     tabindex="-1"
     type="button"
+    variant="secondary"
   >
-    <div
-      class="sc-eCYdqJ hOWcwL"
+    <p
+      class="sc-dkzDqf euTQOV sc-eCYdqJ hdUKZG"
       disabled=""
     >
-      <p
-        class="sc-dkzDqf fURbKH sc-jSMfEi iOWbTN"
-        disabled=""
-      >
-        Text
-      </p>
-    </div>
+      Text
+    </p>
   </button>
 </div>
 `;

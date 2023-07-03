@@ -3,7 +3,7 @@
 exports[`Component: Paper snapshots 1`] = `
 <div>
   <div
-    class="MuiPaper-root sc-bczRLJ gVFgOV MuiPaper-elevation1 MuiPaper-rounded"
+    class="MuiPaper-root sc-bczRLJ gqNlvu MuiPaper-elevation1 MuiPaper-rounded"
   >
     Text
   </div>

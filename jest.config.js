@@ -24,7 +24,6 @@ module.exports = {
     '!<rootDir>/src/theme/index.ts',
     '!<rootDir>/src/types/index.ts',
     '!<rootDir>/src/components/index.ts',
-    '<rootDir>/src/utils/helpers/checkType/*',
     '!**/*.d.ts',
   ],
   testMatch: ['**/__tests__/**/*.+(ts|tsx)', '**/?(*.)+(spec|test).+(ts|tsx)'],

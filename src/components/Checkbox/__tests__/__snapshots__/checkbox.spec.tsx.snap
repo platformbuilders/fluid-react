@@ -3,14 +3,14 @@
 exports[`Component: Checkbox snapshots with default props 1`] = `
 <div>
   <div
-    class="sc-hHLeRK gKZlEA"
+    class="sc-dkzDqf hSgqxi"
   >
     <label
       class="MuiFormControlLabel-root"
     >
       <span
         aria-disabled="false"
-        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root sc-dmRaPn koDzZy sc-kgflAQ fluid-checkbox"
+        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root sc-hKMtZM dQXgIx sc-eCYdqJ fluid-checkbox"
         label="Text"
       >
         <span

@@ -27,7 +27,7 @@
     "prepublish": "yarn build",
     "storybook": "start-storybook -p 9009 -c storybook",
     "storybook:build": "rimraf storybook-static; build-storybook -c storybook",
-    "test": "jest --passWithNoTests",
+    "test": "jest --collect-coverage",
     "test:coverage": "yarn test -- --coverage",
     "test:watch": "yarn test -- --watch",
     "preversion": "yarn test && yarn lint",

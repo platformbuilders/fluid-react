@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { fireEvent, render } from '@testing-library/react';
 
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import { TextInputType } from '../../../types';
 import CurrencyInput from '../CurrencyInput';
 import TextInput from '../index';
