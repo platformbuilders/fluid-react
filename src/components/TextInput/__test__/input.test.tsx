@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import { TextInputType } from '../../../types';
 import TextInput from '../index';
 import TextInputMask from '../TextInputMask';
@@ -33,7 +33,7 @@ describe('Component: TextInput', () => {
     const component = shallow(
       <TextInput {...defaultProps} onChange={handleChange} />,
     );
-    component.find(defaultProps.id).simulate('change', {
+    component.find(`#${defaultProps.id}`).simulate('change', {
       target: { name: 'value', value: 'Input' },
     });
     expect(handleChange).toHaveBeenCalled();
@@ -46,9 +46,11 @@ describe('Component: TextInput', () => {
     const component = shallow(
       <TextInputMask {...defaultProps} maskType="cep" value="58071000" />,
     );
-    component.find(defaultProps.id).simulate('change', {
+    component.find(`#${defaultProps.id}`).simulate('change', {
       target: { name: 'value', value: '58071000' },
     });
-    expect(component.find(defaultProps.id).props().value).toBe('58071000');
+    expect(component.find(`#${defaultProps.id}`).props().value).toBe(
+      '58071000',
+    );
   });
 });

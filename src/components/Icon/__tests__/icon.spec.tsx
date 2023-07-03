@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 
 import Icon, { IconType } from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 
 const defaultProps: IconType = {
   name: 'any_name',

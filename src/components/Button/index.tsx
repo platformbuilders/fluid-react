@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ButtonProps } from '../../types';
-import { ButtonWrapper, Icon, Loading, TextButton, Touchable } from './styles';
+import { Icon, Loading, TextButton, Touchable } from './styles';
 
 const Button: FC<ButtonProps> = ({
   id,
@@ -25,34 +25,30 @@ const Button: FC<ButtonProps> = ({
       accessibility={accessibility}
       disabled={loading || disabled}
       onPress={onPress}
+      $hasBorder={hasBorder}
+      $rounded={rounded}
+      variant={variant}
+      {...rest}
     >
-      <ButtonWrapper
-        hasBorder={hasBorder}
-        buttonVariant={variant}
-        disabled={disabled}
-        rounded={rounded}
-        {...rest}
-      >
-        {loading && <Loading contrast={contrast} />}
-        {!loading && (
-          <>
-            {!!leftIconName && (
-              <Icon accessibility="" name={leftIconName as string} leftIcon />
-            )}
-            <TextButton
-              style={textStyle}
-              disabled={disabled}
-              variant={typographyVariant}
-              buttonVariant={variant}
-            >
-              {children}
-            </TextButton>
-            {!!rightIconName && (
-              <Icon accessibility="" name={rightIconName as string} rightIcon />
-            )}
-          </>
-        )}
-      </ButtonWrapper>
+      {loading && <Loading contrast={contrast} />}
+      {!loading && (
+        <>
+          {!!leftIconName && (
+            <Icon accessibility="" name={leftIconName as string} leftIcon />
+          )}
+          <TextButton
+            style={textStyle}
+            disabled={disabled}
+            variant={typographyVariant}
+            buttonVariant={variant}
+          >
+            {children}
+          </TextButton>
+          {!!rightIconName && (
+            <Icon accessibility="" name={rightIconName as string} rightIcon />
+          )}
+        </>
+      )}
     </Touchable>
   );
 };

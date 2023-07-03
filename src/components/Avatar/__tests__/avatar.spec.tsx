@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
 
 import Avatar, { Props } from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 
 const defaultProps: Props = {
   src: 'some_url',

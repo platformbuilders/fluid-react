@@ -1,9 +1,9 @@
 import { ChangeEvent, FC, FocusEvent } from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
-import { FormError } from '../..';
+import { toOnlyNumbers } from '@platformbuilders/helpers';
 import { InputVariants } from '../../../types/TextInput';
-import { toOnlyNumbers } from '../../../utils/helpers';
+import FormError from '../../FormError';
 
 import { Bar, Label, Wrapper } from './styles';
 

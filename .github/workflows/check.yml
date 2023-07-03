@@ -12,9 +12,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
-          registry-url: 'https://registry.npmjs.org/'
+          node-version: '18.x'
+      - name: Set NPM Variables
+        run: echo "$PACKAGES_NPMRC" > .npmrc
+        env:
+          PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
       - name: Install packages
         run: yarn install
+      - name: Test
+        run: yarn test
       - name: Linter
         run: yarn lint

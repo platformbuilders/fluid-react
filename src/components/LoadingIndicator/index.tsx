@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { LoadingType } from '../../types';
-import { Indicator, largeSize, smallSize } from './style';
+import { Indicator, largeSize, smallSize } from './styles';
 
 const Loading: FC<LoadingType> = ({
   large = false,

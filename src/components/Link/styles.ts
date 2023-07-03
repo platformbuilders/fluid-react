@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from '@material-ui/core';
-import { getTheme } from '../../utils/helpers';
+import { getTheme } from '@platformbuilders/theme-toolkit';
 
 const primary = getTheme('brand.primary.main');
 

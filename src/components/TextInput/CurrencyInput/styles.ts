@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { TextField } from '@material-ui/core';
-import { getTheme, ifStyle, pxToRem } from '../../../utils/helpers';
+import { getTheme, ifStyle, pxToRem } from '@platformbuilders/theme-toolkit';
 
 const textColor = getTheme('text');
 const primaryMain = getTheme('primary.main');

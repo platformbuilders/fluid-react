@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 
 import Link from '..';
-import { theme } from '../../../config/helpers';
+import theme from '../../../theme';
 import { LinkProps as Props } from '../../../types/Link';
 
 const defaultContent = 'Text';

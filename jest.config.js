@@ -5,6 +5,14 @@ module.exports = {
   verbose: true,
   automock: false,
   collectCoverage: true,
+  coverageThreshold: {
+    global: {
+      branches: 65,
+      functions: 60,
+      lines: 75,
+      statements: 75,
+    },
+  },
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
@@ -16,28 +24,24 @@ module.exports = {
     '!<rootDir>/src/types/index.ts',
     '!<rootDir>/src/components/index.ts',
     '<rootDir>/src/utils/helpers/checkType/*',
-    '!**/*.d.ts'
+    '!**/*.d.ts',
   ],
-  testMatch: [
-    '**/__tests__/**/*.+(ts|tsx)',
-    '**/?(*.)+(spec|test).+(ts|tsx)'
-  ],
+  testMatch: ['**/__tests__/**/*.+(ts|tsx)', '**/?(*.)+(spec|test).+(ts|tsx)'],
   coverageDirectory: 'coverage',
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/coverage/',
-    '/dist/'
-  ],
+  testPathIgnorePatterns: ['/node_modules/', '/coverage/', '/dist/'],
   testEnvironment: 'node',
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  setupFilesAfterEnv: ['<rootDir>/src/config/jest.setup.ts', 'jest-canvas-mock'],
+  setupFilesAfterEnv: [
+    '<rootDir>/src/config/jest.setup.ts',
+    'jest-canvas-mock',
+  ],
   transform: {
     ...tsjPreset.transform,
-    '^.+\\.(ts|tsx)$': 'ts-jest'
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   globals: {
     'ts-jest': {
       babelConfig: true,
     },
   },
-}
+};

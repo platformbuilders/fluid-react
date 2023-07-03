@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import MaterialAvatar from '@material-ui/core/Avatar';
-import { Touchable } from '..';
+import Touchable from '../Touchable';
 
 export const DefaultAvatar = styled(({ onPress, accessibility, ...rest }) => (
   <Touchable

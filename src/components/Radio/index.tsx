@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FormControlLabel, Radio } from '@material-ui/core';
 import { RadioProps } from '../../types';
-import { getBackgroundColor } from '../../utils/helpers/color';
+import { getBackgroundColor, getHoverColor } from '../../utils';
 
 export default styled(({ label, labelPlacement, value, ...rest }) => (
   <FormControlLabel
@@ -14,7 +14,7 @@ export default styled(({ label, labelPlacement, value, ...rest }) => (
   &.MuiRadio-colorSecondary.Mui-checked {
     color: ${getBackgroundColor} !important;
     &:hover {
-      background-color: ${getBackgroundColor}70 !important;
+      background-color: ${getHoverColor} !important;
     }
   }
 
