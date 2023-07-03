@@ -1,6 +1,6 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import { faker } from '@faker-js/faker';
+import { render } from '@testing-library/react';
 
 import Typography from '..';
 import theme from '../../../theme';
@@ -11,28 +11,26 @@ const defaultProps: Props = {};
 
 describe('Component: Typography', () => {
   test('snapshots', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Typography {...defaultProps}>{defaultContent}</Typography>
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('check props', () => {
     // when
     const mockContent = faker.random.word();
-    const component = shallow(
+    const { getByText } = render(
       <Typography {...defaultProps} variant="xl">
         {mockContent}
       </Typography>,
     );
 
     // then
-    const { variant } = component.props();
 
-    expect(variant).toEqual('xl');
-    expect(component.children().text()).toEqual(mockContent);
+    expect(getByText(mockContent)).toBeInTheDocument();
   });
 });

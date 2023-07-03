@@ -1,5 +1,5 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
+import { fireEvent, render } from '@testing-library/react';
 
 import Checkbox, { CheckboxProps } from '..';
 import theme from '../../../theme';
@@ -13,43 +13,25 @@ const defaultProps: CheckboxProps = {
 
 describe('Component: Checkbox', () => {
   test('snapshots with default props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Checkbox {...defaultProps} />
       </ThemeProvider>,
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
-
-  // test('check props default props', () => {
-  //   // when
-  //   const component = shallow(
-  //     <Button {...defaultProps} disabled variant="secondary">
-  //       {defaultContent}
-  //     </Button>,
-  //   );
-
-  //   // then
-  //   const child = component.children();
-
-  //   expect(child.contains(defaultContent)).toEqual(true);
-  // });
 
   test('should call onPress when pressed', () => {
     // should
     const mockFunction = jest.fn();
-    const component = shallow(
+    const { getByRole } = render(
       <Checkbox {...defaultProps} onChange={mockFunction} />,
     );
 
-    // when
     expect(mockFunction).not.toHaveBeenCalled();
-    component
-      .find('.fluid-checkbox')
-      .at(0)
-      .simulate('change', { target: { name: 'checked', value: true } });
-    // then
+
+    fireEvent.click(getByRole('checkbox'));
     expect(mockFunction).toHaveBeenCalled();
   });
 });

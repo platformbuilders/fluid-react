@@ -1,7 +1,9 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
+import { fireEvent, render } from '@testing-library/react';
+
 import theme from '../../../theme';
 import { TextInputType } from '../../../types';
+import CurrencyInput from '../CurrencyInput';
 import TextInput from '../index';
 import TextInputMask from '../TextInputMask';
 
@@ -17,40 +19,38 @@ const defaultProps: TextInputType = {
 
 describe('Component: TextInput', () => {
   test('snapshots with default props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <TextInput {...defaultProps} />
       </ThemeProvider>,
     );
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('should change value input to Input', () => {
-    // should
     const handleChange = jest.fn();
 
-    // when
-    const component = shallow(
+    const { getByRole } = render(
       <TextInput {...defaultProps} onChange={handleChange} />,
     );
-    component.find(`#${defaultProps.id}`).simulate('change', {
-      target: { name: 'value', value: 'Input' },
-    });
+    fireEvent.change(getByRole('textbox'), { target: { value: 'Input' } });
     expect(handleChange).toHaveBeenCalled();
   });
 
   test('should change value with mask', () => {
-    // should
-
-    // when
-    const component = shallow(
+    const { getByRole } = render(
       <TextInputMask {...defaultProps} maskType="cep" value="58071000" />,
     );
-    component.find(`#${defaultProps.id}`).simulate('change', {
-      target: { name: 'value', value: '58071000' },
-    });
-    expect(component.find(`#${defaultProps.id}`).props().value).toBe(
-      '58071000',
+
+    fireEvent.change(getByRole('textbox'), { target: { value: '58071000' } });
+
+    expect(getByRole('textbox')).toHaveValue('58071-000');
+  });
+  test('should change value with currency', () => {
+    const { getByRole } = render(
+      <CurrencyInput {...defaultProps} value="1200" />,
     );
+
+    expect(getByRole('textbox')).toHaveValue('R$ 1.200');
   });
 });

@@ -1,5 +1,6 @@
-import { shallow } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
+import { fireEvent, render } from '@testing-library/react';
+
 import Radio from '..';
 import theme from '../../../theme';
 import { RadioProps as Props } from '../../../types';
@@ -13,22 +14,22 @@ const defaultProps: Props = {
 
 describe('Component: Radio', () => {
   test('snapshots with default props', () => {
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Radio {...defaultProps} />
       </ThemeProvider>,
     );
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('snapshots with another props', () => {
     const valueMock = 'TEXT';
-    const component = shallow(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <Radio {...defaultProps} size="medium" value={valueMock} />
       </ThemeProvider>,
     );
-    expect(component).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('should call onChange when pressed', () => {
@@ -36,13 +37,13 @@ describe('Component: Radio', () => {
     const handleChange = jest.fn();
 
     // when
-    const component = shallow(
+    const { getByRole } = render(
       <Radio onChange={handleChange} variant="secondary" />,
     );
 
     // then
     expect(handleChange).not.toHaveBeenCalled();
-    component.simulate('change');
+    fireEvent.click(getByRole('radio'));
     expect(handleChange).toHaveBeenCalled();
   });
 });
