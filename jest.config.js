@@ -7,10 +7,10 @@ module.exports = {
   collectCoverage: true,
   coverageThreshold: {
     global: {
-      branches: 65,
-      functions: 60,
-      lines: 75,
-      statements: 75,
+      branches: 80,
+      functions: 90,
+      lines: 90,
+      statements: 95,
     },
   },
   roots: ['<rootDir>/src'],
@@ -28,13 +28,12 @@ module.exports = {
   ],
   testMatch: ['**/__tests__/**/*.+(ts|tsx)', '**/?(*.)+(spec|test).+(ts|tsx)'],
   coverageDirectory: 'coverage',
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/coverage/',
-    '/dist/'
-  ],
+  testPathIgnorePatterns: ['/node_modules/', '/coverage/', '/dist/'],
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/src/config/jest.setup.ts', 'jest-canvas-mock'],
+  setupFilesAfterEnv: [
+    '<rootDir>/src/config/jest.setup.ts',
+    'jest-canvas-mock',
+  ],
   transform: {
     ...tsjPreset.transform,
     '^.+\\.(ts|tsx)$': 'ts-jest',
