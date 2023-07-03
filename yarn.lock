@@ -2226,19 +2226,19 @@
     eslint-plugin-react "^7.32.0"
     eslint-plugin-sonarjs "^0.18.0"
 
-"@platformbuilders/helpers@0.8.2", "@platformbuilders/helpers@^0.8.2":
+"@platformbuilders/helpers@0.8.2":
   version "0.8.2"
   resolved "https://npm.pkg.github.com/download/@platformbuilders/helpers/0.8.2/d9986f1b926f8408ae6b22a4d8724d79878370f7#d9986f1b926f8408ae6b22a4d8724d79878370f7"
   integrity sha512-wgt1u47aY5CfnNXS/V7rqCMxItWzK/H8sPtN3Lhenanj8lZH1vNttLsi+10ckzKKIPM962DLTGj14XMnQoGkLg==
   dependencies:
     lint-staged "^13.2.2"
 
-"@platformbuilders/theme-toolkit@0.2.1":
-  version "0.2.1"
-  resolved "https://npm.pkg.github.com/download/@platformbuilders/theme-toolkit/0.2.1/93e41840c8d770f3cc8d9f6b7a9e30be6aa0462c#93e41840c8d770f3cc8d9f6b7a9e30be6aa0462c"
-  integrity sha512-R70+otLmLN8dNGz6hhGcPAfTXMXBA8VpEZQTc1jhVXoqHoYeAEsjHkESCHxGiCjtoNH26nHEqaQHsL+hpwD31A==
+"@platformbuilders/theme-toolkit@0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@platformbuilders/theme-toolkit/-/theme-toolkit-0.2.6.tgz#532a712bcce6d43cee76f90f4a0d0a913250dffb"
+  integrity sha512-uoRf3D2dszihYYHF/KP1iC6Gc0uzeri16/bw6ZVlBeDdFFDZbSc7RFcXePbU6Hg6hbuN7n4bSVB0g0Wyg5qhBQ==
   dependencies:
-    "@platformbuilders/helpers" "^0.8.2"
+    "@platformbuilders/helpers" "0.8.2"
     lodash "4.17.21"
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
@@ -3221,7 +3221,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/enzyme-adapter-react-16@^1.0.6":
+"@types/enzyme-adapter-react-16@1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@types/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.0.6.tgz#8aca7ae2fd6c7137d869b6616e696d21bb8b0cec"
   integrity sha512-VonDkZ15jzqDWL8mPFIQnnLtjwebuL9YnDkqeCDYnB4IVgwUm0mwKkqhrxLL6mb05xm7qqa3IE95m8CZE9imCg==
@@ -6964,7 +6964,7 @@ entities@^4.2.0, entities@^4.4.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-4.5.0.tgz#5d268ea5e7113ec74c4d033b79ea5a35a488fb48"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
 
-enzyme-adapter-react-16@^1.15.7:
+enzyme-adapter-react-16@1.15.7:
   version "1.15.7"
   resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.15.7.tgz#a737e6d8e2c147e9da5acf957755be7634f76201"
   integrity sha512-LtjKgvlTc/H7adyQcj+aq0P0H07LDL480WQl1gU512IUyaDo/sbOaNDdZsJXYW2XaoPqrLLE9KbZS+X2z6BASw==
@@ -11651,7 +11651,7 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha512-Y1wZESM7VUThYY+4W+X4ySH2maqcA+p7UR+w8VWNWVAd6lwuXXWz/w/Cz43J/dI2I+PS6wD5N+bJUF+gjWvIqg==
 
-numeral@^2.0.6:
+numeral@2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/numeral/-/numeral-2.0.6.tgz#4ad080936d443c2561aed9f2197efffe25f4e506"
   integrity sha512-qaKRmtYPZ5qdw4jWJD6bxEf1FJEqllJrwxCLIm0sQU/A7v2/czigzOb+C2uSiFsa9lBUzeH7M1oK+Q+OLxL3kA==
@@ -12143,7 +12143,7 @@ pascalcase@^0.1.1:
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
   integrity sha512-XHXfu/yOQRy9vYOtUDVMN60OEJjW013GoObG1o+xwQTpB9eYJX/BjXMsdW13ZDPruFhYYn0AG22w0xgQMwl3Nw==
 
-patch-package@^7.0.0:
+patch-package@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/patch-package/-/patch-package-7.0.0.tgz#5c646b6b4b4bf37e5184a6950777b21dea6bb66e"
   integrity sha512-eYunHbnnB2ghjTNc5iL1Uo7TsGMuXk0vibX3RFcE/CdVdXzmdbMsG/4K4IgoSuIkLTI5oHrMQk4+NkFqSed0BQ==

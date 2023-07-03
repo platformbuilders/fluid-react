@@ -46,7 +46,7 @@
   "dependencies": {
     "@material-ui/core": "4.12.4",
     "@material-ui/lab": "4.0.0-alpha.60",
-    "@platformbuilders/theme-toolkit": "0.2.1",
+    "@platformbuilders/theme-toolkit": "0.2.6",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "enzyme-adapter-react-16": "1.15.7",
     "numeral": "2.0.6",
