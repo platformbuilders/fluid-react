@@ -4,10 +4,10 @@ import { render } from '@testing-library/react';
 
 import Typography from '..';
 import theme from '../../../theme';
-import { TypographyType as Props } from '../../../types';
+import { TypographyTypeProps } from '../../../types';
 
 const defaultContent = 'Text';
-const defaultProps: Props = {};
+const defaultProps: TypographyTypeProps = {};
 
 describe('Component: Typography', () => {
   test('snapshots', () => {

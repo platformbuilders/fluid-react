@@ -4,10 +4,15 @@ import {
   getLineHeight,
   getTheme,
 } from '@platformbuilders/theme-toolkit';
-import { TypographyType } from '../../types';
+import { TypographyTypeStyleProps } from '../../types';
 
-export const Text = styled.p<TypographyType>`
+export const Text = styled.p<TypographyTypeStyleProps>`
   color: ${getTheme('text.main')};
   font-size: ${getFontSize}px;
-  line-height: ${getLineHeight}px;
+  line-height: ${(props) => {
+    return getLineHeight({
+      ...props,
+      lineHeightVariant: props.$lineHeightVariant,
+    });
+  }}px;
 `;

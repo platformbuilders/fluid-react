@@ -59,7 +59,8 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
 
 export const TextButton = styled(TypographyComponent)<any>`
   letter-spacing: 0.4px;
-  color: ${(props) => getTextColor({ ...props, variant: props.buttonVariant })};
+  color: ${(props) =>
+    getTextColor({ ...props, variant: props.$buttonVariant })};
 `;
 
 export const Loading = styled(LoadingIndicator).attrs({
