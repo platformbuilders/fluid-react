@@ -1,10 +1,17 @@
 import { PropsWithChildren } from 'react';
 import { TypographyVariants } from '@platformbuilders/theme-toolkit';
 
-export type TypographyType = PropsWithChildren<{
+type TypographyTypeBase = PropsWithChildren<{
   variant?: TypographyVariants;
-  lineHeightVariant?: TypographyVariants;
   id?: string;
   accessibility?: string;
   numberOfLines?: number;
 }>;
+
+export type TypographyTypeProps = TypographyTypeBase & {
+  lineHeightVariant?: TypographyVariants;
+};
+
+export type TypographyTypeStyleProps = TypographyTypeBase & {
+  $lineHeightVariant?: TypographyVariants;
+};

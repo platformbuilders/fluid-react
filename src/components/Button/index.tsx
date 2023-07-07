@@ -40,7 +40,7 @@ const Button: FC<ButtonProps> = ({
             style={textStyle}
             disabled={disabled}
             variant={typographyVariant}
-            buttonVariant={variant}
+            $buttonVariant={variant}
           >
             {children}
           </TextButton>
