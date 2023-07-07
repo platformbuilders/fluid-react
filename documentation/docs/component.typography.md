@@ -35,8 +35,9 @@ import { Typography } from '@platformbuilders/fluid-react';
 
 | Formato        | Conceito      | Tipo   |
 | ------|-----|-----|
-| **children?**  	| Elementos filhos do componente. 	| **React.ReactNode** 	|
-| **key?** 	| Define a chave do componente. 	| **number, string** 	|
-| **variant?** 	| É o que define a variação do que seria uma tag de texto em HTML, podendo ser: *button, caption, h1, h2, h3, h4, h5, h6, subtitle1, subtitle2, body1, body2, overline* . | **function** 	|
+| **children?**  	| Elementos filhos do componente. 	| **React.ReactNode** |
+| **key?** | Define a chave do componente. | **number, string** |
+| **variant?** | É o que define a variação do estilo, podendo ser: *min, xxs, xs, sm, md, lg, xl, xxl, max* . | **function** |
+| **as?** | Define a tag a ser renderizada ex: h1, h2, h3, h4, h5, h6, p, span entre outras tags | **string** |
 
 <!-- Documentation end -->
