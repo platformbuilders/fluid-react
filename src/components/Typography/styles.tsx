@@ -13,5 +13,5 @@ export const Text = styled.p<TypographyTypeStyleProps>`
     getLineHeight({
       ...props,
       lineHeightVariant: props.$lineHeightVariant,
-    })}}px;
+    })}px;
 `;

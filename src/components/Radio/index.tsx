@@ -11,6 +11,9 @@ export default styled(({ label, labelPlacement, value, ...rest }) => (
     value={value}
   />
 ))<RadioProps>`
+  &.MuiRadio-root {
+    color: ${getBackgroundColor} !important;
+  }
   &.MuiRadio-colorSecondary.Mui-checked {
     color: ${getBackgroundColor} !important;
     &:hover {

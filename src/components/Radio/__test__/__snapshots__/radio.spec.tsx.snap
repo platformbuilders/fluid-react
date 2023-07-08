@@ -7,7 +7,7 @@ exports[`Component: Radio snapshots with another props 1`] = `
   >
     <span
       aria-disabled="false"
-      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary sc-bczRLJ ipTTdR PrivateSwitchBase-checked-9 Mui-checked MuiIconButton-colorSecondary"
+      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary sc-bczRLJ csSvjg PrivateSwitchBase-checked-9 Mui-checked MuiIconButton-colorSecondary"
     >
       <span
         class="MuiIconButton-label"
@@ -63,7 +63,7 @@ exports[`Component: Radio snapshots with default props 1`] = `
   >
     <span
       aria-disabled="false"
-      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root MuiRadio-colorSecondary sc-bczRLJ ipTTdR PrivateSwitchBase-checked-2 Mui-checked MuiIconButton-colorSecondary"
+      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root MuiRadio-colorSecondary sc-bczRLJ csSvjg PrivateSwitchBase-checked-2 Mui-checked MuiIconButton-colorSecondary"
     >
       <span
         class="MuiIconButton-label"
