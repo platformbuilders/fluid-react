@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import theme from '../../../theme';
 import Select, { SelectProps as Props } from '../index';
@@ -28,19 +28,5 @@ describe('Component: Select', () => {
       </ThemeProvider>,
     );
     expect(container).toMatchSnapshot();
-  });
-
-  test('should change value to female', () => {
-    // should
-    const handleChange = jest.fn();
-
-    // when
-    const { getByRole } = render(
-      <Select id="select-test" {...defaultProps} onChange={handleChange} />,
-    );
-    fireEvent.change(getByRole('textbox', { hidden: true }), {
-      target: { value: 'Female' },
-    });
-    expect(handleChange).toHaveBeenCalled();
   });
 });

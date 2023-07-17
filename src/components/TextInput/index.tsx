@@ -12,7 +12,6 @@ const TextInput: FC<TextInputType> = ({
   onChange,
   onBlur,
   onFocus,
-  inputProps,
   variant = 'standard',
   style,
   textInputStyle,
@@ -44,7 +43,6 @@ const TextInput: FC<TextInputType> = ({
           onFocus={onFocus}
           error={!!error}
           variant={variant}
-          inputProps={inputProps}
         />
       );
     }

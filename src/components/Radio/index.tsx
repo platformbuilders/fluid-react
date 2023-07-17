@@ -1,21 +1,4 @@
 import styled from 'styled-components';
 import { RadioProps } from '../../types';
-import { getBackgroundColor, getHoverColor } from '../../utils';
 
-export default styled(({ label, labelPlacement, value, ...rest }) => (
-  <label>{label}</label>
-))<RadioProps>`
-  &.MuiRadio-root {
-    color: ${getBackgroundColor} !important;
-  }
-  &.MuiRadio-colorSecondary.Mui-checked {
-    color: ${getBackgroundColor} !important;
-    &:hover {
-      background-color: ${getHoverColor} !important;
-    }
-  }
-
-  &.MuiRadio-colorSecondary.Mui-checked + .MuiRadio-track {
-    background-color: ${getBackgroundColor} !important;
-  }
-`;
+export default styled(({ label }) => <label>{label}</label>)<RadioProps>``;

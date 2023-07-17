@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   margin-bottom: 10px;
 `;
 
-export const StyledCheckbox = styled((props) => (
+export const StyledCheckbox = styled(() => (
   <label>
     <input type="checkbox" />
     <span>Checkbox</span>

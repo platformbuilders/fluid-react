@@ -2,10 +2,10 @@
 
 exports[`Component: Link snapshots with default props 1`] = `
 <div>
-  <a
-    class="MuiTypography-root MuiLink-root MuiLink-underlineHover sc-bczRLJ kkjvlF MuiTypography-colorPrimary"
+  <p
+    class="sc-bcHOTY ekHfuD"
   >
     Text
-  </a>
+  </p>
 </div>
 `;

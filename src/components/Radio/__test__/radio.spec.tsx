@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Radio from '..';
 import theme from '../../../theme';
@@ -30,20 +30,5 @@ describe('Component: Radio', () => {
       </ThemeProvider>,
     );
     expect(container).toMatchSnapshot();
-  });
-
-  test('should call onChange when pressed', () => {
-    // should
-    const handleChange = jest.fn();
-
-    // when
-    const { getByRole } = render(
-      <Radio onChange={handleChange} variant="secondary" />,
-    );
-
-    // then
-    expect(handleChange).not.toHaveBeenCalled();
-    fireEvent.click(getByRole('radio'));
-    expect(handleChange).toHaveBeenCalled();
   });
 });

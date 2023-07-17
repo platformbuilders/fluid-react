@@ -3,33 +3,17 @@
 exports[`Component: TextInput snapshots with default props 1`] = `
 <div>
   <div
-    class="sc-iBkjds kTwfzk"
+    class="sc-iBIYEh jwUgMC"
   >
-    <div
-      class="MuiFormControl-root MuiTextField-root sc-gKXOVf dmttbZ"
-    >
-      <label
-        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
-        data-shrink="false"
-        for="input-test"
-        id="input-test-label"
-      >
-        Input
-      </label>
-      <div
-        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
-      >
-        <input
-          aria-invalid="false"
-          class="MuiInputBase-input MuiInput-input"
-          id="input-test"
-          name="input"
-          placeholder="Input"
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
+    <input
+      class="sc-gLfKCG crKNlw"
+      id="input-test"
+      label="Input"
+      name="input"
+      placeholder="Input"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
