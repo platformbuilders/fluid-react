@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import ReactInputMask from 'react-input-mask';
-import { TextField as TextInput } from '@material-ui/core';
 import { TextInputType } from '../../../types';
 
 // import { Input as TextInput } from '../styles';
@@ -20,7 +19,6 @@ const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
   onChange,
   onBlur,
   onFocus,
-  inputProps,
   error,
   variant = 'standard',
   style = {},
@@ -36,13 +34,7 @@ const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
       onFocus={onFocus}
       {...rest}
     >
-      <TextInput
-        margin="normal"
-        error={!!error}
-        inputProps={inputProps}
-        variant={variant}
-        style={style}
-      />
+      <input style={style} />
     </ReactInputMask>
   );
 };

@@ -33,9 +33,7 @@ const Button: FC<ButtonProps> = ({
       {loading && <Loading contrast={contrast} />}
       {!loading && (
         <>
-          {!!leftIconName && (
-            <Icon accessibility="" name={leftIconName as string} leftIcon />
-          )}
+          {!!leftIconName && <Icon />}
           <TextButton
             style={textStyle}
             disabled={disabled}
@@ -44,9 +42,7 @@ const Button: FC<ButtonProps> = ({
           >
             {children}
           </TextButton>
-          {!!rightIconName && (
-            <Icon accessibility="" name={rightIconName as string} rightIcon />
-          )}
+          {!!rightIconName && <Icon />}
         </>
       )}
     </Touchable>

@@ -1,7 +1,6 @@
 export * from './Button';
 
 export * from './TextInput';
-export * from './Autocomplete';
 export * from './Loading';
 export * from './Switch';
 export * from './Radio';

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { TextField } from '@material-ui/core';
 import { getTheme, ifStyle, pxToRem } from '@platformbuilders/theme-toolkit';
 
 const textColor = getTheme('text');
@@ -16,7 +15,7 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const Input = styled(TextField)<StyleError>`
+export const Input = styled.input<StyleError>`
   font-size: ${pxToRem(16)};
   padding: ${smallSpacing} 0;
   display: block;

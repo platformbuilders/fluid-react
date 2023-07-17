@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { DefaultAvatar } from './styles';
+import * as RadixAvatar from '@radix-ui/react-avatar';
 
 export type AvatarFormats = 'circle' | 'rounded' | 'square';
 
@@ -10,20 +10,11 @@ export type Props = {
   onPress(): void;
 };
 
-const Avatar: FC<Props> = ({
-  src,
-  alt = '',
-  variant = 'circle',
-  onPress,
-  ...rest
-}): JSX.Element => (
-  <DefaultAvatar
-    alt={alt}
-    src={src}
-    variant={variant}
-    onPress={onPress}
-    {...rest}
-  />
+const Avatar: FC<Props> = (): JSX.Element => (
+  <RadixAvatar.Root>
+    <RadixAvatar.Image />
+    <RadixAvatar.Fallback />
+  </RadixAvatar.Root>
 );
 
 export default Avatar;

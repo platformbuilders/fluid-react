@@ -1,7 +1,5 @@
-import { VFC } from 'react';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import InputLabel from '@material-ui/core/InputLabel';
-import { Item, MaterialSelect, Wrapper } from './styles';
+import { FC } from 'react';
+import { Item, StyledSelect, Wrapper } from './styles';
 
 type ValuesProps = {
   value: string | number;
@@ -17,7 +15,7 @@ export type SelectProps = {
   id?: string;
 };
 
-const Select: VFC<SelectProps> = ({
+const Select: FC<SelectProps> = ({
   onChange,
   error = '',
   label = '',
@@ -26,11 +24,10 @@ const Select: VFC<SelectProps> = ({
   id,
   ...rest
 }) => (
-  <Wrapper error={error !== ''} {...rest}>
-    <InputLabel>{label}</InputLabel>
-    <MaterialSelect
+  <Wrapper {...rest}>
+    <label>{label}</label>
+    <StyledSelect
       id={id}
-      value={selectedValue}
       onChange={(event: any): any => onChange(event.target.value)}
       {...rest}
     >
@@ -38,14 +35,13 @@ const Select: VFC<SelectProps> = ({
         <Item
           id={id && `${id}-option-${item.value}`}
           key={item.value}
-          value={item.value}
           {...rest}
         >
           {item.label}
         </Item>
       ))}
-    </MaterialSelect>
-    <FormHelperText>{error}</FormHelperText>
+    </StyledSelect>
+    <p>{error}</p>
   </Wrapper>
 );
 export default Select;

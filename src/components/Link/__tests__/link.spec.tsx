@@ -3,10 +3,9 @@ import { fireEvent, render } from '@testing-library/react';
 
 import Link from '..';
 import theme from '../../../theme';
-import { LinkProps as Props } from '../../../types/Link';
 
 const defaultContent = 'Text';
-const defaultProps: Props = {
+const defaultProps: any = {
   onPress: jest.fn(),
   children: defaultContent,
 };

@@ -1,17 +1,14 @@
 import styled from 'styled-components';
-import FormControl from '@material-ui/core/FormControl';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
 
-export const Wrapper = styled(FormControl)``;
+export const Wrapper = styled.div``;
 
-export const MaterialSelect = styled(Select)`
+export const StyledSelect = styled.select`
   .MuiSelect-select {
     width: calc(100% - 32px) !important;
   }
 `;
 
-export const Item = styled(MenuItem)`
+export const Item = styled.div`
   .MuiListItem-root {
     width: 100% !important;
   }

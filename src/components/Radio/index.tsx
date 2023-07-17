@@ -1,15 +1,9 @@
 import styled from 'styled-components';
-import { FormControlLabel, Radio } from '@material-ui/core';
 import { RadioProps } from '../../types';
 import { getBackgroundColor, getHoverColor } from '../../utils';
 
 export default styled(({ label, labelPlacement, value, ...rest }) => (
-  <FormControlLabel
-    control={<Radio {...rest} />}
-    label={label}
-    labelPlacement={labelPlacement}
-    value={value}
-  />
+  <label>{label}</label>
 ))<RadioProps>`
   &.MuiRadio-root {
     color: ${getBackgroundColor} !important;

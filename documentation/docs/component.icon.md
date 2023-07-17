@@ -23,19 +23,11 @@ import { Icon } from '@platformbuilders/fluid-react';
 <Icon name="erroneousName" color="#fff" size="default" />;
 ```
 
-### Visualização
-
-> O componente Icon tem dependência com o _@material-ui/core_ portanto quando um ícone não é encontrado, as duas primeiras letras do nome declarado são renderizadas.
-
 <Icon
   name="erroneousName"
   color="#fff"
   size="default"
 />
-
-## Ícones
-
-Para saber os ícones possíveis do _@material-ui/core_, podemos consultar [aqui](https://material-ui.com/pt/components/material-icons/).
 
 ## Atributos
 

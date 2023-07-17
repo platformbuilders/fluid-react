@@ -70,16 +70,14 @@ export const Loading = styled(LoadingIndicator).attrs({
   width: ${pxToRem(55)}px;
 `;
 
-type IconProps = {
-  rightIcon?: boolean;
-  leftIcon?: boolean;
-  buttonVariant: ButtonVariants;
-  style: any;
-} & ThemeProps;
+// type IconProps = {
+//   rightIcon?: boolean;
+//   leftIcon?: boolean;
+//   buttonVariant: ButtonVariants;
+//   style: any;
+// } & ThemeProps;
 
-export const Icon = styled(DefaultIcon).attrs((props: IconProps) => ({
-  color: getTextColor(props),
-}))<IconProps>`
+export const Icon = styled(DefaultIcon)`
   margin-right: ${isLeftIcon(smallSpacing, 0)}px;
   margin-left: ${isRightIcon(smallSpacing, 0)}px;
 `;
