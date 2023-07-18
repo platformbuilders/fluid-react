@@ -46,7 +46,6 @@
   "dependencies": {
     "@platformbuilders/helpers": "0.10.2",
     "@platformbuilders/theme-toolkit": "0.2.6",
-    "@radix-ui/react-avatar": "^1.0.3",
     "lottie-web": "^5.12.2",
     "numeral": "2.0.6",
     "patch-package": "7.0.2",
