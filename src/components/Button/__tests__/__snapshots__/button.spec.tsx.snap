@@ -9,8 +9,7 @@ exports[`Component: Button snapshots with default props 1`] = `
     variant="primary"
   >
     <p
-      class="sc-gsMHZj bWuTyU sc-hLljAB cvQGLR"
-      variant="md"
+      class="sc-gsMHZj lbQZYp sc-hLljAB cvQGLR"
     >
       Text
     </p>
@@ -40,9 +39,8 @@ exports[`Component: Button snapshots with other props 1`] = `
     variant="secondary"
   >
     <p
-      class="sc-gsMHZj bWuTyU sc-hLljAB cvQGLR"
+      class="sc-gsMHZj lbQZYp sc-hLljAB cvQGLR"
       disabled=""
-      variant="md"
     >
       Text
     </p>
