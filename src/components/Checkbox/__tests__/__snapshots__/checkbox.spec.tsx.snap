@@ -9,7 +9,7 @@ exports[`Component: Checkbox snapshots with default props 1`] = `
       class="sc-hLljAB UvrDT"
     >
       <input
-        class="sc-eDgayY ialZSi"
+        class="sc-eDgayY kmSUE"
         name="Text"
         type="checkbox"
       />

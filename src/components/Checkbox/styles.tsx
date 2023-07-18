@@ -72,8 +72,6 @@ export const CheckboxRoot = styled.label`
 
 export const Check = styled.input`
   appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
   z-index: -1;
   position: absolute;
   left: -10px;
