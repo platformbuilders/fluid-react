@@ -46,13 +46,92 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   padding: ${isRounded(0, minimumSpacing)}px;
   border-radius: ${isRounded(buttonSize / 2, buttonRadius)}px;
   justify-content: center;
-  background-color: ${getBackgroundColor};
   border-color: ${getBackgroundColor};
   border-width: ${hasBorder(borderWidthSmall, '0')}px;
   transition: all 0.2s ease-in-out;
+
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  background-color: ${getBackgroundColor};
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  font-family: var(
+    --pure-material-font,
+    'Roboto',
+    'Segoe UI',
+    BlinkMacSystemFont,
+    system-ui,
+    -apple-system
+  );
+  outline: none;
+
   && {
-    :hover {
+    ::-moz-focus-inner {
+      border: none;
+    }
+    ::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    ::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      padding: 50%;
+      width: 32px; /* Safari */
+      height: 32px; /* Safari */
+      background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
+      transition: opacity 1s, transform 0.5s;
+    }
+    :hover,
+    :focus {
       background-color: ${getHoverColor};
+    }
+    :hover::before {
+      opacity: 0.08;
+    }
+    :focus::before {
+      opacity: 0.24;
+    }
+    :hover:focus::before {
+      opacity: 0.3;
+    }
+    :active {
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+    :active::after {
+      opacity: 0.32;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0s;
+    }
+    :disabled {
+      color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+      background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
+      box-shadow: none;
+      cursor: initial;
+    }
+    :disabled::before {
+      opacity: 0;
+    }
+    :disabled::after {
+      opacity: 0;
     }
   }
 `;
