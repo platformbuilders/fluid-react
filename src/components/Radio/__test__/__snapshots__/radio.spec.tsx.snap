@@ -2,16 +2,42 @@
 
 exports[`Component: Radio snapshots with another props 1`] = `
 <div>
-  <label>
-    Text
-  </label>
+  <div
+    class="sc-bcHOTY czukwj"
+  >
+    <input
+      class="sc-gsMHZj kErQid"
+      id="id1"
+      name="group1"
+      type="radio"
+    />
+    <label
+      class="sc-dkHyXG hMzduA"
+      for="id1"
+    >
+      TEXT
+    </label>
+  </div>
 </div>
 `;
 
 exports[`Component: Radio snapshots with default props 1`] = `
 <div>
-  <label>
-    Text
-  </label>
+  <div
+    class="sc-bcHOTY czukwj"
+  >
+    <input
+      class="sc-gsMHZj kErQid"
+      id="id1"
+      name="group1"
+      type="radio"
+    />
+    <label
+      class="sc-dkHyXG hMzduA"
+      for="id1"
+    >
+      Text
+    </label>
+  </div>
 </div>
 `;
