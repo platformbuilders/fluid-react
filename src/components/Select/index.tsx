@@ -1,47 +1,73 @@
 import { FC } from 'react';
-import { Item, StyledSelect, Wrapper } from './styles';
+import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
+import {
+  Icon,
+  ScrollDownButton,
+  ScrollUpButton,
+  Value,
+} from '@radix-ui/react-select';
+import {
+  PlaceholderText,
+  StyledContent,
+  StyledItem,
+  StyledItemText,
+  StyledTrigger,
+  StyledViewPort,
+  Wrapper,
+} from './styles';
 
-type ValuesProps = {
-  value: string | number;
-  label: string;
+type Options = {
+  option: string;
+  value: string;
 };
 
-export type SelectProps = {
-  onChange(value: any): void;
-  error?: string | string[];
+type Props = {
+  id: string;
+  options: Options[];
+  disabled?: boolean;
+  helperMessage?: string;
   label?: string;
-  selectedValue?: string | string[] | number | number[];
-  values: ValuesProps[];
-  id?: string;
+  placeholder?: string;
+  onValueChange: (value: string) => void;
+  defaultValue?: string;
+  value?: string;
 };
 
-const Select: FC<SelectProps> = ({
-  onChange,
-  error = '',
-  label = '',
-  selectedValue,
-  values,
-  id,
-  ...rest
+const Select: FC<Props> = ({
+  options,
+  disabled = false,
+  placeholder,
+  onValueChange,
+  value,
+  defaultValue,
 }) => (
-  <Wrapper {...rest}>
-    <label>{label}</label>
-    <StyledSelect
-      id={id}
-      onChange={(event: any): any => onChange(event.target.value)}
-      {...rest}
-    >
-      {values.map((item) => (
-        <Item
-          id={id && `${id}-option-${item.value}`}
-          key={item.value}
-          {...rest}
-        >
-          {item.label}
-        </Item>
-      ))}
-    </StyledSelect>
-    <p>{error}</p>
+  <Wrapper
+    onValueChange={onValueChange}
+    defaultValue={defaultValue}
+    value={value}
+  >
+    <StyledTrigger aria-label="select" disabled={disabled}>
+      <Value placeholder={<PlaceholderText>{placeholder}</PlaceholderText>} />
+      <Icon>
+        <ChevronDownIcon />
+      </Icon>
+    </StyledTrigger>
+    <StyledContent side="top" position="popper">
+      <ScrollUpButton>
+        <ChevronUpIcon />
+      </ScrollUpButton>
+      <StyledViewPort>
+        {options.map((item) => (
+          <StyledItem value={item.value} key={item.value}>
+            <StyledItemText>{item.option}</StyledItemText>
+          </StyledItem>
+        ))}
+      </StyledViewPort>
+      <ScrollDownButton>
+        <ChevronDownIcon />
+      </ScrollDownButton>
+    </StyledContent>
   </Wrapper>
 );
+
 export default Select;

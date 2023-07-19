@@ -2,20 +2,20 @@ import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 
 import theme from '../../../theme';
-import Select, { SelectProps as Props } from '../index';
+import Select from '../index';
 
-const defaultProps: Props = {
-  label: 'Gender',
+const defaultProps = {
+  id: 'gender',
   selectedValue: 'Male',
-  onChange: jest.fn(),
-  values: [
+  onValueChange: jest.fn(),
+  options: [
     {
       value: 'Male',
-      label: 'Male',
+      option: 'Male',
     },
     {
       value: 'Female',
-      label: 'Female',
+      option: 'Female',
     },
   ],
 };
