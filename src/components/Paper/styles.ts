@@ -5,8 +5,10 @@ import { getTheme } from '@platformbuilders/theme-toolkit';
 const cardBorderRadius = getTheme('borderRadius.md');
 const spacingMd = getTheme('spacing.md');
 
+export type ElevationVariants = keyof typeof BoxShadowVariants;
+
 interface WrapperProps {
-  elevation?: keyof typeof BoxShadowVariants;
+  elevation?: ElevationVariants;
   square?: boolean;
 }
 

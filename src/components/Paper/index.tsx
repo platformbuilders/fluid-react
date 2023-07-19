@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
-import { BoxShadowVariants } from 'src/enums';
-import { Wrapper } from './styles';
+import { type ElevationVariants, Wrapper } from './styles';
 
 type Props = {
   children?: React.ReactNode;
-  elevation?: keyof typeof BoxShadowVariants;
+  elevation?: ElevationVariants;
   square?: boolean;
 };
 
