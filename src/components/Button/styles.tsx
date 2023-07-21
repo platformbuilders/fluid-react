@@ -7,7 +7,6 @@ import {
   pxToRem,
 } from '@platformbuilders/theme-toolkit';
 import { getBackgroundColor, getHoverColor, getTextColor } from '../../utils';
-import DefaultIcon from '../Icon';
 import LoadingIndicator from '../LoadingIndicator';
 import TouchableComponent from '../Touchable';
 import TypographyComponent from '../Typography';
@@ -15,9 +14,6 @@ import TypographyComponent from '../Typography';
 const borderWidthSmall = getTheme('borderWidth.sm');
 const buttonRadius = getTheme('borderRadius.sm');
 const minimumSpacing = getTheme('spacing.xs');
-const smallSpacing = getTheme('spacing.sm');
-const isLeftIcon = ifStyle('leftIcon');
-const isRightIcon = ifStyle('rightIcon');
 const isDisabled = ifStyle('disabled');
 const hasBorder = ifStyle('$hasBorder');
 const isRounded = ifStyle('$rounded');
@@ -51,7 +47,7 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   transition: all 0.2s ease-in-out;
 
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   box-sizing: border-box;
   vertical-align: middle;
   text-align: center;
@@ -60,14 +56,6 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   background-color: ${getBackgroundColor};
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  font-family: var(
-    --pure-material-font,
-    'Roboto',
-    'Segoe UI',
-    BlinkMacSystemFont,
-    system-ui,
-    -apple-system
-  );
   outline: none;
 
   && {
@@ -136,6 +124,14 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   }
 `;
 
+export const LeftIconWrapper = styled.div`
+  margin-right 12px;
+`;
+
+export const RightIconWrapper = styled.div`
+  margin-left 12px;
+`;
+
 export const TextButton = styled(TypographyComponent)<any>`
   letter-spacing: 0.4px;
   color: ${(props) =>
@@ -147,16 +143,4 @@ export const Loading = styled(LoadingIndicator).attrs({
 })`
   align-self: center;
   width: ${pxToRem(55)}px;
-`;
-
-// type IconProps = {
-//   rightIcon?: boolean;
-//   leftIcon?: boolean;
-//   buttonVariant: ButtonVariants;
-//   style: any;
-// } & ThemeProps;
-
-export const Icon = styled(DefaultIcon)`
-  margin-right: ${isLeftIcon(smallSpacing, 0)}px;
-  margin-left: ${isRightIcon(smallSpacing, 0)}px;
 `;
