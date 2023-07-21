@@ -1,67 +1,75 @@
 import { FC } from 'react';
 import { TextInputType } from '../../types';
-import FormError from '../FormError';
 import CurrencyInput from './CurrencyInput';
-import { Input, InputWrapper } from './styles';
+import { Input, Label, Message, PlaceholderLabel, Wrapper } from './styles';
 import TextInputMask from './TextInputMask';
 
 const TextInput: FC<TextInputType> = ({
   mask,
-  maskType = '',
+  maskType,
   error = '',
   onChange,
   onBlur,
   onFocus,
   variant = 'standard',
   style,
+  label,
   textInputStyle,
+  value,
   ...rest
 }) => {
-  const hasMask = mask || maskType;
-
-  const renderTextInput = () => {
-    if (maskType === 'currency') {
-      return (
-        <CurrencyInput
-          {...rest}
-          onChangeText={onChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          variant={variant}
-        />
-      );
-    }
-
-    if (hasMask) {
-      return (
-        <TextInputMask
-          {...rest}
-          mask={mask}
-          maskType={maskType}
-          onChange={onChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          error={!!error}
-          variant={variant}
-        />
-      );
-    }
-
-    return (
-      <Input
-        {...rest}
-        style={textInputStyle}
-        onChange={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
-      />
-    );
-  };
+  const hasValue = typeof value === 'string' && value?.length > 0;
+  const hasMessage = typeof error === 'string' && error.length > 0;
+  const isCurrency = maskType === 'currency';
 
   return (
-    <InputWrapper style={style}>
-      <FormError error={error}>{renderTextInput()}</FormError>
-    </InputWrapper>
+    <Wrapper style={style}>
+      <Label>
+        {isCurrency ? (
+          <>
+            <CurrencyInput
+              {...rest}
+              value={value}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              onFocus={onFocus}
+              variant={variant}
+            />
+            <PlaceholderLabel $hasValue={hasValue || isCurrency}>
+              {label}
+            </PlaceholderLabel>
+            {hasMessage ? <Message>{error}</Message> : null}
+          </>
+        ) : mask || maskType ? (
+          <TextInputMask
+            {...rest}
+            mask={mask}
+            maskType={maskType}
+            onChange={onChange}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            error={!!error}
+            label={label}
+            hasValue={hasValue}
+            hasMessage={hasMessage}
+          />
+        ) : (
+          <>
+            <Input
+              {...rest}
+              style={textInputStyle}
+              onChange={onChange}
+              onBlur={onBlur}
+              onFocus={onFocus}
+            />
+            <PlaceholderLabel $hasValue={hasValue || isCurrency}>
+              {label}
+            </PlaceholderLabel>
+            {hasMessage ? <Message>{error}</Message> : null}
+          </>
+        )}
+      </Label>
+    </Wrapper>
   );
 };
 
