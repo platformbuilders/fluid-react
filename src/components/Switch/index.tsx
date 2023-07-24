@@ -1,23 +1,20 @@
-import styled from 'styled-components';
-import { FormControlLabel, Switch } from '@material-ui/core';
-import { SwitchProps } from '../../types';
-import { getBackgroundColor, getHoverColor } from '../../utils';
+import { ChangeEvent, FC } from 'react';
+import { Input, Label, Wrapper } from './styles';
 
-export default styled(({ labelPlacement, label, ...rest }) => (
-  <FormControlLabel
-    control={<Switch {...rest} />}
-    labelPlacement={labelPlacement}
-    label={label}
-  />
-))<SwitchProps>`
-  &.MuiSwitch-switchBase.Mui-checked {
-    color: ${getBackgroundColor};
-    &:hover {
-      background-color: ${getHoverColor};
-    }
-  }
+type Props = {
+  id: string;
+  label: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  checked?: boolean;
+};
 
-  &.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
-    background-color: ${getBackgroundColor};
-  }
-`;
+const Switch: FC<Props> = ({ id, label, onChange, checked = false }) => (
+  <Wrapper>
+    <Input type="checkbox" id={id} onChange={onChange} />
+    <Label htmlFor={id} checked={checked}>
+      {label}
+    </Label>
+  </Wrapper>
+);
+
+export default Switch;

@@ -30,16 +30,13 @@ yarn add @platformbuilders/fluid-react
 2. import the ThemeProvider from [styled-components](https://styled-components.com/docs/advanced) and provide the Theme following the ThemeType definition.
 
 ```jsx
-import { StylesProvider } from '@material-ui/core/styles';
 import { ThemeProvider } from 'styled-components';
 import { ThemeType } from '@platformbuilders/fluid-react';
 
 const theme: ThemeType = { ... };
 
 <ThemeProvider theme={theme}>
- <StylesProvider injectFirst>
-      <App />
-  </StylesProvider>
+  <App />
 </ThemeProvider>
 ```
 

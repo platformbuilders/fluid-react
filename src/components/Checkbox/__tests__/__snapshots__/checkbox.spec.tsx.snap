@@ -3,43 +3,18 @@
 exports[`Component: Checkbox snapshots with default props 1`] = `
 <div>
   <div
-    class="sc-dkzDqf hSgqxi"
+    class="sc-dkHyXG cCEhaY"
   >
     <label
-      class="MuiFormControlLabel-root"
+      class="sc-hLljAB UvrDT"
     >
+      <input
+        class="sc-eDgayY kmSUE"
+        name="Text"
+        type="checkbox"
+      />
       <span
-        aria-disabled="false"
-        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root sc-hKMtZM dQXgIx sc-eCYdqJ fluid-checkbox"
-        label="Text"
-      >
-        <span
-          class="MuiIconButton-label"
-        >
-          <input
-            class="PrivateSwitchBase-input-4"
-            data-indeterminate="false"
-            name="Text"
-            type="checkbox"
-            value=""
-          />
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </span>
-      <span
-        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+        class="sc-jTkTEj gMbGwE"
       >
         Text
       </span>

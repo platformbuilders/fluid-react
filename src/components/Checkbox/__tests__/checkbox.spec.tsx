@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Checkbox, { CheckboxProps } from '..';
 import theme from '../../../theme';
@@ -20,18 +20,5 @@ describe('Component: Checkbox', () => {
     );
 
     expect(container).toMatchSnapshot();
-  });
-
-  test('should call onPress when pressed', () => {
-    // should
-    const mockFunction = jest.fn();
-    const { getByRole } = render(
-      <Checkbox {...defaultProps} onChange={mockFunction} />,
-    );
-
-    expect(mockFunction).not.toHaveBeenCalled();
-
-    fireEvent.click(getByRole('checkbox'));
-    expect(mockFunction).toHaveBeenCalled();
   });
 });

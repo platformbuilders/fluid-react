@@ -4,14 +4,9 @@ exports[`Component: Touchable snapshots 1`] = `
 <div>
   <button
     accessibility="accessibility"
-    class="MuiButtonBase-root sc-bczRLJ"
-    tabindex="0"
-    type="button"
+    class="sc-bcHOTY"
   >
     Text
-    <span
-      class="MuiTouchRipple-root"
-    />
   </button>
 </div>
 `;

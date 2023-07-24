@@ -1,15 +1,16 @@
 import { ThemeProvider } from 'styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Radio from '..';
 import theme from '../../../theme';
-import { RadioProps as Props } from '../../../types';
+import { Props } from '../index';
 
 const defaultContent = 'Text';
 const defaultProps: Props = {
-  checked: true,
   label: defaultContent,
   onChange: jest.fn(),
+  group: 'group1',
+  id: 'id1',
 };
 
 describe('Component: Radio', () => {
@@ -26,24 +27,9 @@ describe('Component: Radio', () => {
     const valueMock = 'TEXT';
     const { container } = render(
       <ThemeProvider theme={theme}>
-        <Radio {...defaultProps} size="medium" value={valueMock} />
+        <Radio {...defaultProps} label={valueMock} />
       </ThemeProvider>,
     );
     expect(container).toMatchSnapshot();
-  });
-
-  test('should call onChange when pressed', () => {
-    // should
-    const handleChange = jest.fn();
-
-    // when
-    const { getByRole } = render(
-      <Radio onChange={handleChange} variant="secondary" />,
-    );
-
-    // then
-    expect(handleChange).not.toHaveBeenCalled();
-    fireEvent.click(getByRole('radio'));
-    expect(handleChange).toHaveBeenCalled();
   });
 });

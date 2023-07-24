@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import ReactInputMask from 'react-input-mask';
-import { TextField as TextInput } from '@material-ui/core';
+import ReactInputMask, { Props } from 'react-input-mask';
 import { TextInputType } from '../../../types';
 
-// import { Input as TextInput } from '../styles';
+import { Input, Message, PlaceholderLabel } from '../styles';
 
 enum Mask {
   cep = '99999-999',
@@ -14,37 +13,40 @@ enum Mask {
   cellphone = '(99) 99999-9999',
 }
 
-const TextInputMask: FC<Partial<TextInputType & { maxLength: number }>> = ({
+const TextInputMask: FC<
+  Partial<
+    TextInputType & {
+      maxLength: number;
+      hasValue: boolean;
+      hasMessage: boolean;
+    }
+  >
+> = ({
   mask,
   maskType = '',
   onChange,
   onBlur,
   onFocus,
-  inputProps,
   error,
-  variant = 'standard',
   style = {},
+  hasValue = false,
+  hasMessage = false,
+  label,
   ...rest
-}) => {
-  const maskOption = (Mask[maskType as keyof typeof Mask] as any) || mask;
-
-  return (
-    <ReactInputMask
-      mask={maskOption}
-      onChange={onChange}
-      onBlur={onBlur}
-      onFocus={onFocus}
-      {...rest}
-    >
-      <TextInput
-        margin="normal"
-        error={!!error}
-        inputProps={inputProps}
-        variant={variant}
-        style={style}
-      />
-    </ReactInputMask>
-  );
-};
+}) => (
+  <ReactInputMask
+    mask={(Mask[maskType as keyof typeof Mask] || mask) as Props['mask']}
+    onChange={onChange}
+    onBlur={onBlur}
+    onFocus={onFocus}
+    {...rest}
+  >
+    <>
+      <Input style={style} />
+      <PlaceholderLabel $hasValue={hasValue}>{label}</PlaceholderLabel>
+      {hasMessage ? <Message>{error}</Message> : null}
+    </>
+  </ReactInputMask>
+);
 
 export default TextInputMask;

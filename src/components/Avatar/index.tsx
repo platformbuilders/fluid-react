@@ -1,29 +1,18 @@
 import { FC } from 'react';
-import { DefaultAvatar } from './styles';
 
-export type AvatarFormats = 'circle' | 'rounded' | 'square';
+import { type AvatarVariants, Image, Wrapper } from './styles';
 
 export type Props = {
   src: string;
-  alt?: string;
-  variant?: AvatarFormats;
-  onPress(): void;
+  alt: string;
+  variant?: AvatarVariants;
+  onClick(): void;
 };
 
-const Avatar: FC<Props> = ({
-  src,
-  alt = '',
-  variant = 'circle',
-  onPress,
-  ...rest
-}): JSX.Element => (
-  <DefaultAvatar
-    alt={alt}
-    src={src}
-    variant={variant}
-    onPress={onPress}
-    {...rest}
-  />
+const Avatar: FC<Props> = ({ src, onClick, alt, variant }) => (
+  <Wrapper $variant={variant}>
+    <Image alt={alt} src={src} onClick={onClick} />
+  </Wrapper>
 );
 
 export default Avatar;

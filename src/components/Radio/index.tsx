@@ -1,27 +1,19 @@
-import styled from 'styled-components';
-import { FormControlLabel, Radio } from '@material-ui/core';
-import { RadioProps } from '../../types';
-import { getBackgroundColor, getHoverColor } from '../../utils';
+import { ChangeEvent, FC } from 'react';
 
-export default styled(({ label, labelPlacement, value, ...rest }) => (
-  <FormControlLabel
-    control={<Radio {...rest} />}
-    label={label}
-    labelPlacement={labelPlacement}
-    value={value}
-  />
-))<RadioProps>`
-  &.MuiRadio-root {
-    color: ${getBackgroundColor} !important;
-  }
-  &.MuiRadio-colorSecondary.Mui-checked {
-    color: ${getBackgroundColor} !important;
-    &:hover {
-      background-color: ${getHoverColor} !important;
-    }
-  }
+import { Input, Label, Wrapper } from './styles';
 
-  &.MuiRadio-colorSecondary.Mui-checked + .MuiRadio-track {
-    background-color: ${getBackgroundColor} !important;
-  }
-`;
+export type Props = {
+  id: string;
+  label: string;
+  group: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
+
+const Radio: FC<Props> = ({ onChange, id, label, group }) => (
+  <Wrapper>
+    <Input onChange={onChange} id={id} name={group} type="radio" />
+    <Label htmlFor={id}>{label}</Label>
+  </Wrapper>
+);
+
+export default Radio;

@@ -10,7 +10,7 @@ exports[`Component: FormError snapshots with error props 1`] = `
 <div>
   Text
   <p
-    class="sc-bczRLJ rqMxj sc-gsnTZi cpVCcT"
+    class="sc-bcHOTY cHHOmB sc-gsMHZj cioUri"
   >
     Error text
   </p>

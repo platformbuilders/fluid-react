@@ -3,15 +3,13 @@
 exports[`<LoadingIndicator /> should render LoadingIndicator correctly 1`] = `
 <div>
   <div
-    aria-label="animation"
-    role="button"
-    style="width: 60px; height: 60px; overflow: hidden; margin: 0px auto; outline: none;"
-    tabindex="0"
-    title=""
+    aria-label="Aguarde..."
+    id="loading"
+    style="width: 60px; height: 60px;"
   >
     <svg
       height="500"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
       viewBox="0 0 500 500"
       width="500"
@@ -78,15 +76,13 @@ exports[`<LoadingIndicator /> should render LoadingIndicator correctly 1`] = `
 exports[`<LoadingIndicator /> should render LoadingIndicator large contrast with variant 1`] = `
 <div>
   <div
-    aria-label="animation"
-    role="button"
-    style="width: 120px; height: 120px; overflow: hidden; margin: 0px auto; outline: none;"
-    tabindex="0"
-    title=""
+    aria-label="Aguarde..."
+    id="loading"
+    style="width: 120px; height: 120px;"
   >
     <svg
       height="400"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
       viewBox="0 0 400 400"
       width="400"
@@ -256,15 +252,13 @@ exports[`<LoadingIndicator /> should render LoadingIndicator large contrast with
 exports[`<LoadingIndicator /> should render LoadingIndicator large with variant 1`] = `
 <div>
   <div
-    aria-label="animation"
-    role="button"
-    style="width: 120px; height: 120px; overflow: hidden; margin: 0px auto; outline: none;"
-    tabindex="0"
-    title=""
+    aria-label="Aguarde..."
+    id="loading"
+    style="width: 120px; height: 120px;"
   >
     <svg
       height="400"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
       viewBox="0 0 400 400"
       width="400"
@@ -434,15 +428,13 @@ exports[`<LoadingIndicator /> should render LoadingIndicator large with variant 
 exports[`<LoadingIndicator /> should render LoadingIndicator with accessibility 1`] = `
 <div>
   <div
-    aria-label="animation"
-    role="button"
-    style="width: 60px; height: 60px; overflow: hidden; margin: 0px auto; outline: none;"
-    tabindex="0"
-    title=""
+    aria-label="testing"
+    id="loading"
+    style="width: 60px; height: 60px;"
   >
     <svg
       height="500"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
       viewBox="0 0 500 500"
       width="500"
@@ -509,15 +501,13 @@ exports[`<LoadingIndicator /> should render LoadingIndicator with accessibility 
 exports[`<LoadingIndicator /> should render LoadingIndicator with contrast 1`] = `
 <div>
   <div
-    aria-label="animation"
-    role="button"
-    style="width: 60px; height: 60px; overflow: hidden; margin: 0px auto; outline: none;"
-    tabindex="0"
-    title=""
+    aria-label="Aguarde..."
+    id="loading"
+    style="width: 60px; height: 60px;"
   >
     <svg
       height="160"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
       viewBox="0 0 160 160"
       width="160"
@@ -740,15 +730,13 @@ exports[`<LoadingIndicator /> should render LoadingIndicator with contrast 1`] =
 exports[`<LoadingIndicator /> should render LoadingIndicator with large 1`] = `
 <div>
   <div
-    aria-label="animation"
-    role="button"
-    style="width: 120px; height: 120px; overflow: hidden; margin: 0px auto; outline: none;"
-    tabindex="0"
-    title=""
+    aria-label="Aguarde..."
+    id="loading"
+    style="width: 120px; height: 120px;"
   >
     <svg
       height="500"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
       viewBox="0 0 500 500"
       width="500"
@@ -815,15 +803,13 @@ exports[`<LoadingIndicator /> should render LoadingIndicator with large 1`] = `
 exports[`<LoadingIndicator /> should render LoadingIndicator with variant 1`] = `
 <div>
   <div
-    aria-label="animation"
-    role="button"
-    style="width: 60px; height: 60px; overflow: hidden; margin: 0px auto; outline: none;"
-    tabindex="0"
-    title=""
+    aria-label="Aguarde..."
+    id="loading"
+    style="width: 60px; height: 60px;"
   >
     <svg
       height="400"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
       viewBox="0 0 400 400"
       width="400"

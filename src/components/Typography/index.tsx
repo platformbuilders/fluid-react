@@ -6,9 +6,15 @@ const Typography: FC<TypographyTypeProps> = ({
   variant = 'md',
   lineHeightVariant = 'min',
   children,
+  as,
   ...rest
 }) => (
-  <Text variant={variant} $lineHeightVariant={lineHeightVariant} {...rest}>
+  <Text
+    as={as}
+    $variant={variant}
+    $lineHeightVariant={lineHeightVariant}
+    {...rest}
+  >
     {children}
   </Text>
 );

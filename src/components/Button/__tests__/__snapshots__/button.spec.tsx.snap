@@ -4,20 +4,19 @@ exports[`Component: Button snapshots with default props 1`] = `
 <div>
   <button
     accessibility="label"
-    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM hIQjTr"
+    class="sc-bcHOTY sc-dkHyXG fbeDli"
     id="label"
-    tabindex="0"
-    type="button"
     variant="primary"
   >
-    <p
-      class="sc-dkzDqf euTQOV sc-eCYdqJ hdUKZG"
+    <div
+      class="sc-hLljAB kTfqqi"
     >
-      Text
-    </p>
-    <span
-      class="MuiTouchRipple-root"
-    />
+      <p
+        class="sc-gsMHZj lbQZYp sc-eDgayY eeIbkX"
+      >
+        Text
+      </p>
+    </div>
   </button>
 </div>
 `;
@@ -26,23 +25,19 @@ exports[`Component: Button snapshots with loading 1`] = `
 <div>
   <button
     accessibility="label"
-    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM byTfPA Mui-disabled"
+    class="sc-bcHOTY sc-dkHyXG MCyZZ"
     disabled=""
     id="label"
-    tabindex="-1"
-    type="button"
     variant="primary"
   >
     <div
-      aria-label="animation"
-      role="button"
-      style="width: 60px; height: 60px; overflow: hidden; margin: 0px auto; outline: none;"
-      tabindex="0"
-      title=""
+      aria-label="Aguarde..."
+      id="loading"
+      style="width: 60px; height: 60px;"
     >
       <svg
         height="375"
-        preserveAspectRatio="xMidYMid slice"
+        preserveAspectRatio="xMidYMid meet"
         style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
         viewBox="0 0 375 375"
         width="375"
@@ -123,19 +118,21 @@ exports[`Component: Button snapshots with other props 1`] = `
 <div>
   <button
     accessibility="label"
-    class="MuiButtonBase-root sc-gsnTZi sc-hKMtZM byTfPA Mui-disabled"
+    class="sc-bcHOTY sc-dkHyXG MCyZZ"
     disabled=""
     id="label"
-    tabindex="-1"
-    type="button"
     variant="secondary"
   >
-    <p
-      class="sc-dkzDqf euTQOV sc-eCYdqJ hdUKZG"
-      disabled=""
+    <div
+      class="sc-hLljAB kTfqqi"
     >
-      Text
-    </p>
+      <p
+        class="sc-gsMHZj lbQZYp sc-eDgayY eeIbkX"
+        disabled=""
+      >
+        Text
+      </p>
+    </div>
   </button>
 </div>
 `;

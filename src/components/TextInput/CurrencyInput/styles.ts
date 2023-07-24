@@ -1,89 +1,35 @@
+import ReactMaskedInput from 'react-text-mask';
 import styled from 'styled-components';
-import { TextField } from '@material-ui/core';
-import { getTheme, ifStyle, pxToRem } from '@platformbuilders/theme-toolkit';
 
-const textColor = getTheme('text');
-const primaryMain = getTheme('primary.main');
-const smallSpacing = getTheme('smallSpacing');
-const failureColor = getTheme('failure');
-const hasError = ifStyle('selected');
+import { PlaceholderLabel } from '../styles';
 
-declare type StyleError = {
-  error?: string | boolean;
-};
-
-export const Wrapper = styled.div`
-  position: relative;
-`;
-
-export const Input = styled(TextField)<StyleError>`
-  font-size: ${pxToRem(16)};
-  padding: ${smallSpacing} 0;
-  display: block;
-  width: ${pxToRem(300)};
+export const MaskedInput = styled(ReactMaskedInput)`
   border: none;
-  border-bottom: ${pxToRem(1)} solid ${textColor}80;
-  color: ${hasError(failureColor, textColor)};
+  border-bottom: 0.125rem solid rgba(19, 19, 21, 0.6);
+  width: 100%;
+  height: 3.5rem;
+  font-size: 1.0625rem;
+  padding-left: 0.875rem;
+  line-height: 147.6%;
+  padding-top: 0.825rem;
+  padding-bottom: 0.5rem;
 
-  :focus {
+  &:hover {
+    background: rgba(73, 133, 224, 0.12);
+    border-color: #121212;
+  }
+
+  &:focus {
+    border-color: #1e4bd1;
     outline: none;
   }
 
-  :focus ~ label {
-    top: ${pxToRem(-20)};
-    font-size: ${pxToRem(14)};
-    color: ${primaryMain};
+  &:focus + ${PlaceholderLabel} {
+    top: 0;
+    font-size: 0.9375rem;
+    margin-bottom: 40px;
+    color: #1e4bd1;
   }
 
-  :valid ~ label {
-    top: ${pxToRem(-20)};
-    font-size: ${pxToRem(14)};
-  }
-
-  :focus ~ .bar:before,
-  :focus ~ .bar:after {
-    width: 50%;
-  }
-`;
-
-export const Bar = styled.span<StyleError>`
-  position: absolute;
-  bottom: ${pxToRem(-1)};
-  display: block;
-  width: 100%;
-
-  :before,
-  :after {
-    content: '';
-    height: ${pxToRem(2)};
-    width: 0;
-    bottom: ${pxToRem(1)};
-    position: absolute;
-    background: ${hasError(failureColor, primaryMain)};
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-  }
-
-  :before {
-    left: 50%;
-    width: ${hasError('50%', 0)};
-  }
-
-  :after {
-    right: 50%;
-    width: ${hasError('50%', 0)};
-  }
-`;
-
-export const Label = styled.label<StyleError>`
-  color: ${hasError(failureColor, textColor)};
-  font-size: ${pxToRem(18)};
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  top: ${pxToRem(10)};
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
+  background: #eff1f2;
 `;

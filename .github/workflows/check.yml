@@ -3,7 +3,9 @@ name: check
 on:
   pull_request:
     branches:
-      - master
+      - '*'
+      - '*/*'
+      - '**'
 
 jobs:
   call-workflow:

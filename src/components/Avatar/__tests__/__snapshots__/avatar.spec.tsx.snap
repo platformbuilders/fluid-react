@@ -2,48 +2,28 @@
 
 exports[`Component: Avatar snapshots with default props 1`] = `
 <div>
-  <button
-    accessibility="Foto ou Avatar"
-    class="MuiButtonBase-root sc-bczRLJ"
-    tabindex="0"
-    type="button"
+  <span
+    class="sc-bcHOTY gxBRdO"
   >
-    <div
-      class="MuiAvatar-root MuiAvatar-circle sc-gsnTZi"
-    >
-      <img
-        alt=""
-        class="MuiAvatar-img"
-        src="some_url"
-      />
-    </div>
-    <span
-      class="MuiTouchRipple-root"
+    <img
+      alt="some image"
+      class="sc-gsMHZj JeiII"
+      src="some_url"
     />
-  </button>
+  </span>
 </div>
 `;
 
 exports[`Component: Avatar snapshots with other props 1`] = `
 <div>
-  <button
-    accessibility="Foto ou Avatar"
-    class="MuiButtonBase-root sc-bczRLJ"
-    tabindex="0"
-    type="button"
+  <span
+    class="sc-bcHOTY gxBRdO"
   >
-    <div
-      class="MuiAvatar-root MuiAvatar-square sc-gsnTZi"
-    >
-      <img
-        alt="alt text"
-        class="MuiAvatar-img"
-        src="some_url"
-      />
-    </div>
-    <span
-      class="MuiTouchRipple-root"
+    <img
+      alt="alt text"
+      class="sc-gsMHZj JeiII"
+      src="some_url"
     />
-  </button>
+  </span>
 </div>
 `;

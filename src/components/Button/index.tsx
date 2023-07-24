@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { ButtonProps } from '../../types';
-import { Icon, Loading, TextButton, Touchable } from './styles';
+import Icons from '../Icons';
+import { ContentWrapper, Loading, TextButton, Touchable } from './styles';
 
 const Button: FC<ButtonProps> = ({
   id,
@@ -15,10 +16,13 @@ const Button: FC<ButtonProps> = ({
   hasBorder = false,
   variant = 'primary',
   typographyVariant = 'md',
-  rightIconName,
   leftIconName,
+  rightIconName,
   ...rest
 }) => {
+  const LeftIcon = leftIconName ? Icons[leftIconName] : undefined;
+  const RightIcon = rightIconName ? Icons[rightIconName] : undefined;
+
   return (
     <Touchable
       id={id || accessibility}
@@ -30,12 +34,11 @@ const Button: FC<ButtonProps> = ({
       variant={variant}
       {...rest}
     >
-      {loading && <Loading contrast={contrast} />}
-      {!loading && (
-        <>
-          {!!leftIconName && (
-            <Icon accessibility="" name={leftIconName as string} leftIcon />
-          )}
+      {loading ? (
+        <Loading contrast={contrast} />
+      ) : (
+        <ContentWrapper $buttonVariant={variant}>
+          {LeftIcon ? <LeftIcon /> : null}
           <TextButton
             style={textStyle}
             disabled={disabled}
@@ -44,10 +47,8 @@ const Button: FC<ButtonProps> = ({
           >
             {children}
           </TextButton>
-          {!!rightIconName && (
-            <Icon accessibility="" name={rightIconName as string} rightIcon />
-          )}
-        </>
+          {RightIcon ? <RightIcon /> : null}
+        </ContentWrapper>
       )}
     </Touchable>
   );

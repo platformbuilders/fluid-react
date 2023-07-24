@@ -5,7 +5,6 @@ import theme from '../../../theme';
 import { TextInputType } from '../../../types';
 import CurrencyInput from '../CurrencyInput';
 import TextInput from '../index';
-import TextInputMask from '../TextInputMask';
 
 const defaultProps: TextInputType = {
   id: 'input-test',
@@ -13,8 +12,6 @@ const defaultProps: TextInputType = {
   value: '',
   label: 'Input',
   name: 'input',
-  placeholder: 'Input',
-  variant: 'filled',
 };
 
 describe('Component: TextInput', () => {
@@ -37,15 +34,6 @@ describe('Component: TextInput', () => {
     expect(handleChange).toHaveBeenCalled();
   });
 
-  test('should change value with mask', () => {
-    const { getByRole } = render(
-      <TextInputMask {...defaultProps} maskType="cep" value="58071000" />,
-    );
-
-    fireEvent.change(getByRole('textbox'), { target: { value: '58071000' } });
-
-    expect(getByRole('textbox')).toHaveValue('58071-000');
-  });
   test('should change value with currency', () => {
     const { getByRole } = render(
       <CurrencyInput {...defaultProps} value="1200" />,

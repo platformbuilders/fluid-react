@@ -1,11 +1,9 @@
 import { ChangeEvent, FC, FocusEvent } from 'react';
-import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { toOnlyNumbers } from '@platformbuilders/helpers';
 import { InputVariants } from '../../../types/TextInput';
-import FormError from '../../FormError';
 
-import { Bar, Label, Wrapper } from './styles';
+import { MaskedInput } from './styles';
 
 type Props = {
   id: string;
@@ -30,8 +28,6 @@ const defaultMaskOptions = {
 };
 
 const CurrencyInputComponent: FC<Props> = ({
-  error,
-  label,
   id,
   name,
   onChangeText,
@@ -51,22 +47,16 @@ const CurrencyInputComponent: FC<Props> = ({
   };
 
   return (
-    <FormError error={error}>
-      <Wrapper>
-        <MaskedInput
-          mask={currencyMask}
-          placeholder="R$ 0,00"
-          id={id}
-          name={name}
-          value={value}
-          onChange={handleChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
-        />
-        <Bar className="bar" error={error} />
-        <Label error={error}>{label}</Label>
-      </Wrapper>
-    </FormError>
+    <MaskedInput
+      mask={currencyMask}
+      placeholder="R$ 0,00"
+      id={id}
+      name={name}
+      value={value}
+      onChange={handleChange}
+      onBlur={onBlur}
+      onFocus={onFocus}
+    />
   );
 };
 
