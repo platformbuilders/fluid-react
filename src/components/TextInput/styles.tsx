@@ -60,5 +60,4 @@ export const Label = styled.label``;
 export const Wrapper = styled.div`
   margin-bottom: 1.5rem;
   position: relative;
-  width: 20.4375rem;
 `;
