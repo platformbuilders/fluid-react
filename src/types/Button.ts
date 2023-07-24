@@ -3,6 +3,7 @@ import {
   ButtonVariants,
   TypographyVariants,
 } from '@platformbuilders/theme-toolkit';
+import RadixIcon from '@radix-ui/react-icons';
 import { TouchableType as DefaultTouchable } from './TouchableType';
 
 export type ButtonProps = {
@@ -17,7 +18,7 @@ export type ButtonProps = {
   children?: string | ReactNode;
   minWidth?: string | number;
   maxWidth?: string | number;
-  leftIconName?: string;
-  rightIconName?: string;
+  leftIconName?: keyof typeof RadixIcon;
+  rightIconName?: keyof typeof RadixIcon;
   hasBorder?: boolean;
 } & DefaultTouchable;

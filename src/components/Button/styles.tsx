@@ -11,6 +11,7 @@ import LoadingIndicator from '../LoadingIndicator';
 import TouchableComponent from '../Touchable';
 import TypographyComponent from '../Typography';
 
+const spacingMd = getTheme('spacing.md');
 const borderWidthSmall = getTheme('borderWidth.sm');
 const buttonRadius = getTheme('borderRadius.sm');
 const minimumSpacing = getTheme('spacing.xs');
@@ -124,12 +125,15 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   }
 `;
 
-export const LeftIconWrapper = styled.div`
-  margin-right 12px;
-`;
+export const ContentWrapper = styled.div<any>`
+  display: flex;
+  align-items: center;
+  gap: ${spacingMd}px;
 
-export const RightIconWrapper = styled.div`
-  margin-left 12px;
+  svg {
+    color: ${(props) =>
+      getTextColor({ ...props, variant: props.$buttonVariant })};
+  }
 `;
 
 export const TextButton = styled(TypographyComponent)<any>`

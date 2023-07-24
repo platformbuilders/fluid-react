@@ -1,13 +1,7 @@
 import { FC } from 'react';
 import { ButtonProps } from '../../types';
 import Icons from '../Icons';
-import {
-  LeftIconWrapper,
-  Loading,
-  RightIconWrapper,
-  TextButton,
-  Touchable,
-} from './styles';
+import { ContentWrapper, Loading, TextButton, Touchable } from './styles';
 
 const Button: FC<ButtonProps> = ({
   id,
@@ -43,12 +37,8 @@ const Button: FC<ButtonProps> = ({
       {loading ? (
         <Loading contrast={contrast} />
       ) : (
-        <>
-          {LeftIcon ? (
-            <LeftIconWrapper>
-              <LeftIcon />
-            </LeftIconWrapper>
-          ) : null}
+        <ContentWrapper $buttonVariant={variant}>
+          {LeftIcon ? <LeftIcon /> : null}
           <TextButton
             style={textStyle}
             disabled={disabled}
@@ -57,12 +47,8 @@ const Button: FC<ButtonProps> = ({
           >
             {children}
           </TextButton>
-          {RightIcon ? (
-            <RightIconWrapper>
-              <RightIcon />
-            </RightIconWrapper>
-          ) : null}
-        </>
+          {RightIcon ? <RightIcon /> : null}
+        </ContentWrapper>
       )}
     </Touchable>
   );

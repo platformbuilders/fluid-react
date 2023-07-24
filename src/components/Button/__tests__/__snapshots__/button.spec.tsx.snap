@@ -8,11 +8,15 @@ exports[`Component: Button snapshots with default props 1`] = `
     id="label"
     variant="primary"
   >
-    <p
-      class="sc-gsMHZj lbQZYp sc-jTkTEj gKMLeG"
+    <div
+      class="sc-hLljAB kTfqqi"
     >
-      Text
-    </p>
+      <p
+        class="sc-gsMHZj lbQZYp sc-eDgayY eeIbkX"
+      >
+        Text
+      </p>
+    </div>
   </button>
 </div>
 `;
@@ -119,12 +123,16 @@ exports[`Component: Button snapshots with other props 1`] = `
     id="label"
     variant="secondary"
   >
-    <p
-      class="sc-gsMHZj lbQZYp sc-jTkTEj gKMLeG"
-      disabled=""
+    <div
+      class="sc-hLljAB kTfqqi"
     >
-      Text
-    </p>
+      <p
+        class="sc-gsMHZj lbQZYp sc-eDgayY eeIbkX"
+        disabled=""
+      >
+        Text
+      </p>
+    </div>
   </button>
 </div>
 `;
