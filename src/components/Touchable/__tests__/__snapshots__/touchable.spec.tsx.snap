@@ -4,7 +4,7 @@ exports[`Component: Touchable snapshots 1`] = `
 <div>
   <button
     accessibility="accessibility"
-    class="sc-bcHOTY"
+    class="sc-bczSft"
   >
     Text
   </button>

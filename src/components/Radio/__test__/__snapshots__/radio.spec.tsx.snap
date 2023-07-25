@@ -3,16 +3,16 @@
 exports[`Component: Radio snapshots with another props 1`] = `
 <div>
   <div
-    class="sc-bcHOTY czukwj"
+    class="sc-bczSft kLwboj"
   >
     <input
-      class="sc-gsMHZj kErQid"
+      class="sc-gsnScm fiZOva"
       id="id1"
       name="group1"
       type="radio"
     />
     <label
-      class="sc-dkHyXG hMzduA"
+      class="sc-dkzCjb eAeedi"
       for="id1"
     >
       TEXT
@@ -24,16 +24,16 @@ exports[`Component: Radio snapshots with another props 1`] = `
 exports[`Component: Radio snapshots with default props 1`] = `
 <div>
   <div
-    class="sc-bcHOTY czukwj"
+    class="sc-bczSft kLwboj"
   >
     <input
-      class="sc-gsMHZj kErQid"
+      class="sc-gsnScm fiZOva"
       id="id1"
       name="group1"
       type="radio"
     />
     <label
-      class="sc-dkHyXG hMzduA"
+      class="sc-dkzCjb eAeedi"
       for="id1"
     >
       Text

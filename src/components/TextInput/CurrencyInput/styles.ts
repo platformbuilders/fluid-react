@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { PlaceholderLabel } from '../styles';
 
-export const MaskedInput = styled(ReactMaskedInput)`
+export const MaskedInput = styled(ReactMaskedInput as any)`
   border: none;
   border-bottom: 0.125rem solid rgba(19, 19, 21, 0.6);
   width: 100%;

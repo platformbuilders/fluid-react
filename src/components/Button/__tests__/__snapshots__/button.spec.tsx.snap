@@ -4,15 +4,15 @@ exports[`Component: Button snapshots with default props 1`] = `
 <div>
   <button
     accessibility="label"
-    class="sc-bcHOTY sc-dkHyXG fbeDli"
+    class="sc-bczSft sc-dkzCjb hfoVcs"
     id="label"
     variant="primary"
   >
     <div
-      class="sc-hLljAB kTfqqi"
+      class="sc-hKMtDE TuChh"
     >
       <p
-        class="sc-gsMHZj lbQZYp sc-eDgayY eeIbkX"
+        class="sc-gsnScm jGvetK sc-eCYdKt enAfnx"
       >
         Text
       </p>
@@ -25,7 +25,7 @@ exports[`Component: Button snapshots with loading 1`] = `
 <div>
   <button
     accessibility="label"
-    class="sc-bcHOTY sc-dkHyXG MCyZZ"
+    class="sc-bczSft sc-dkzCjb ibvGYj"
     disabled=""
     id="label"
     variant="primary"
@@ -118,16 +118,16 @@ exports[`Component: Button snapshots with other props 1`] = `
 <div>
   <button
     accessibility="label"
-    class="sc-bcHOTY sc-dkHyXG MCyZZ"
+    class="sc-bczSft sc-dkzCjb ibvGYj"
     disabled=""
     id="label"
     variant="secondary"
   >
     <div
-      class="sc-hLljAB kTfqqi"
+      class="sc-hKMtDE TuChh"
     >
       <p
-        class="sc-gsMHZj lbQZYp sc-eDgayY eeIbkX"
+        class="sc-gsnScm jGvetK sc-eCYdKt enAfnx"
         disabled=""
       >
         Text
