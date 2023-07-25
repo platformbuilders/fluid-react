@@ -8,3 +8,4 @@ export * from './Switch';
 export * from './LazyWrapper';
 export * from './Typography';
 export * from './TouchableType';
+export * from './Select';

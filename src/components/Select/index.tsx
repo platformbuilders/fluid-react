@@ -6,6 +6,7 @@ import {
   ScrollUpButton,
   Value,
 } from '@radix-ui/react-select';
+import { SelectOptions } from '../../types';
 import {
   PlaceholderText,
   StyledContent,
@@ -16,14 +17,9 @@ import {
   Wrapper,
 } from './styles';
 
-type Options = {
-  option: string;
-  value: string;
-};
-
 type Props = {
   id: string;
-  options: Options[];
+  options: SelectOptions[];
   disabled?: boolean;
   helperMessage?: string;
   label?: string;
