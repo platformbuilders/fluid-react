@@ -6,7 +6,7 @@ import theme from '../../../theme';
 const defaultProps: Props = {
   src: 'some_url',
   alt: 'some image',
-  onClick: jest.fn(),
+  onPress: jest.fn(),
 };
 
 describe('Component: Avatar', () => {

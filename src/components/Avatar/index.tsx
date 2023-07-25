@@ -6,12 +6,12 @@ export type Props = {
   src: string;
   alt: string;
   variant?: AvatarVariants;
-  onClick(): void;
+  onPress(): void;
 };
 
-const Avatar: FC<Props> = ({ src, onClick, alt, variant }) => (
+const Avatar: FC<Props> = ({ src, onPress, alt, variant }) => (
   <Wrapper $variant={variant}>
-    <Image alt={alt} src={src} onClick={onClick} />
+    <Image alt={alt} src={src} onClick={onPress} />
   </Wrapper>
 );
 
