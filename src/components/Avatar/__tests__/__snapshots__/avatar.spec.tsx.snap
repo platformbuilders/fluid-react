@@ -3,11 +3,11 @@
 exports[`Component: Avatar snapshots with default props 1`] = `
 <div>
   <span
-    class="sc-bcHOTY gxBRdO"
+    class="sc-bczSft kMguGK"
   >
     <img
       alt="some image"
-      class="sc-gsMHZj JeiII"
+      class="sc-gsnScm fsXMdr"
       src="some_url"
     />
   </span>
@@ -17,11 +17,11 @@ exports[`Component: Avatar snapshots with default props 1`] = `
 exports[`Component: Avatar snapshots with other props 1`] = `
 <div>
   <span
-    class="sc-bcHOTY gxBRdO"
+    class="sc-bczSft kMguGK"
   >
     <img
       alt="alt text"
-      class="sc-gsMHZj JeiII"
+      class="sc-gsnScm fsXMdr"
       src="some_url"
     />
   </span>

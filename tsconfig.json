@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "target": "esnext",
+    "target": "ESNext",
     "module": "ESNext",
-    "lib": ["esnext", "DOM"],
+    "lib": ["ESNext", "DOM"],
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
+    "declarationMap": false,
+    "sourceMap": false,
     "outDir": "dist",
     "importHelpers": true,
     "resolveJsonModule": true,
@@ -14,6 +14,7 @@
     "baseUrl": ".",
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -28,6 +29,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "noEmit": false,
     "ignoreDeprecations": "5.0",
     "types": [
       "react",
@@ -41,14 +43,11 @@
   },
   "compileOnSave": true,
   "include": [
-    "images.d.ts",
-    "src",
-    "DevelopmentApp",
-    "index.js",
+    "src/**/*"
   ],
   "exclude": [
     "src/**/*.spec.{ts,tsx}",
-    "DevelopmentApp/**/*.spec.{ts,tsx}",
+    "src/**/*.test.{ts,tsx}",
     "node_modules",
     "dist",
     "documentation",

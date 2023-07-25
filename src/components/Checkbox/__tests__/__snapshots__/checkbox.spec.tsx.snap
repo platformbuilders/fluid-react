@@ -3,18 +3,18 @@
 exports[`Component: Checkbox snapshots with default props 1`] = `
 <div>
   <div
-    class="sc-dkHyXG cCEhaY"
+    class="sc-dkzCjb lrTZW"
   >
     <label
-      class="sc-hLljAB UvrDT"
+      class="sc-hKMtDE cZbInw"
     >
       <input
-        class="sc-eDgayY kmSUE"
+        class="sc-eCYdKt bKUPjq"
         name="Text"
         type="checkbox"
       />
       <span
-        class="sc-jTkTEj gMbGwE"
+        class="sc-jSMdHm gZhhHO"
       >
         Text
       </span>

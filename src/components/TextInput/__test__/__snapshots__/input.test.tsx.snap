@@ -3,19 +3,19 @@
 exports[`Component: TextInput snapshots with default props 1`] = `
 <div>
   <div
-    class="sc-eDgayY fqsojs"
+    class="sc-eCYdKt hSGTba"
   >
     <label
-      class="sc-hLljAB"
+      class="sc-hKMtDE"
     >
       <input
-        class="sc-gsMHZj konwDo"
+        class="sc-gsnScm lmkUye"
         id="input-test"
         name="input"
         type="text"
       />
       <span
-        class="sc-bcHOTY YaqFw"
+        class="sc-bczSft cNBLmY"
       >
         Input
       </span>

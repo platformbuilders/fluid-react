@@ -7,7 +7,7 @@ exports[`Component: Select snapshots with default props 1`] = `
     aria-controls="radix-:r0:"
     aria-expanded="false"
     aria-label="select"
-    class="sc-gsMHZj cvBSef"
+    class="sc-gsnScm OWEuI"
     data-placeholder=""
     data-state="closed"
     dir="ltr"
@@ -18,7 +18,7 @@ exports[`Component: Select snapshots with default props 1`] = `
       style="pointer-events: none;"
     >
       <span
-        class="sc-iBIYEh bbiqel"
+        class="sc-iBkiHk dXHVdA"
       />
     </span>
     <span
