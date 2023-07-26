@@ -3,22 +3,15 @@ import { ChangeEvent, FocusEvent } from 'react';
 export type TextInputType = {
   style?: any;
   textInputStyle?: any;
-  mask?: string;
-  maskType?: string;
-  formatChars?: { [key: string]: string };
+  maskOptions?: any;
   label: string;
-  error?: string | boolean;
-  fullWidth?: boolean;
+  message?: string;
   name: string;
   id: string;
-  type?: string;
-  maxlength?: string;
-  pattern?: string;
-  value: string | number | string[] | undefined;
+  maxLength?: number;
+  value: string;
   autoFocus?: boolean;
-  multiline?: boolean;
-  variant?: InputVariants;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: Partial<ChangeEvent<any>>) => void;
   onBlur?: (
     e:
       | FocusEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,5 +25,3 @@ export type TextInputType = {
       ) => void)
     | undefined;
 };
-
-export type InputVariants = 'filled' | 'standard' | 'outlined';

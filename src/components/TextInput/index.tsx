@@ -1,73 +1,68 @@
-import { FC } from 'react';
+import { ChangeEvent, FC, RefObject, useRef } from 'react';
+import { IMaskMixin } from 'react-imask';
+
 import { TextInputType } from '../../types';
-import CurrencyInput from './CurrencyInput';
 import { Input, Label, Message, PlaceholderLabel, Wrapper } from './styles';
-import TextInputMask from './TextInputMask';
+
+const InputMask = IMaskMixin(({ inputRef, ...props }) => (
+  <Input {...props} ref={inputRef as RefObject<HTMLInputElement> | undefined} />
+));
 
 const TextInput: FC<TextInputType> = ({
-  mask,
-  maskType,
-  error = '',
+  message,
   onChange,
   onBlur,
   onFocus,
-  variant = 'standard',
   style,
   label,
   textInputStyle,
   value,
-  ...rest
+  id,
+  name,
+  maxLength,
+  autoFocus,
+  maskOptions,
 }) => {
-  const hasValue = typeof value === 'string' && value?.length > 0;
-  const hasMessage = typeof error === 'string' && error.length > 0;
-  const isCurrency = maskType === 'currency';
+  const hasValue = value?.length > 0;
+
+  const onAccept = (_, __, event?: InputEvent | undefined) => {
+    onChange(event as Partial<ChangeEvent<any>>);
+  };
+
+  const ref = useRef(null);
+  const inputRef = useRef(null);
 
   return (
     <Wrapper style={style}>
       <Label>
-        {isCurrency ? (
-          <>
-            <CurrencyInput
-              {...rest}
-              value={value}
-              onChangeText={onChange}
-              onBlur={onBlur}
-              onFocus={onFocus}
-              variant={variant}
-            />
-            <PlaceholderLabel $hasValue={hasValue || isCurrency}>
-              {label}
-            </PlaceholderLabel>
-            {hasMessage ? <Message>{error}</Message> : null}
-          </>
-        ) : mask || maskType ? (
-          <TextInputMask
-            {...rest}
-            mask={mask}
-            maskType={maskType}
-            onChange={onChange}
-            onBlur={onBlur}
-            onFocus={onFocus}
-            error={!!error}
-            label={label}
-            hasValue={hasValue}
-            hasMessage={hasMessage}
+        {maskOptions ? (
+          <InputMask
+            {...maskOptions}
+            id={id}
+            name={name}
+            data-testid={id}
+            style={textInputStyle}
+            ref={ref}
+            inputRef={inputRef}
+            onAccept={onAccept}
+            autoFocus={autoFocus}
           />
         ) : (
-          <>
-            <Input
-              {...rest}
-              style={textInputStyle}
-              onChange={onChange}
-              onBlur={onBlur}
-              onFocus={onFocus}
-            />
-            <PlaceholderLabel $hasValue={hasValue || isCurrency}>
-              {label}
-            </PlaceholderLabel>
-            {hasMessage ? <Message>{error}</Message> : null}
-          </>
+          <Input
+            id={id}
+            data-testid={id}
+            name={name}
+            value={value}
+            style={textInputStyle}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            onChange={onChange}
+            maxLength={maxLength}
+            autoFocus={autoFocus}
+          />
         )}
+        <PlaceholderLabel $hasValue={hasValue}>{label}</PlaceholderLabel>
+        {message ? <Message>{message}</Message> : null}
       </Label>
     </Wrapper>
   );

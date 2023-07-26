@@ -10,14 +10,15 @@ exports[`Component: TextInput snapshots with default props 1`] = `
     >
       <input
         class="sc-gsnScm lmkUye"
+        data-testid="input-test"
         id="input-test"
-        name="input"
-        type="text"
+        name="inputTest"
+        value=""
       />
       <span
         class="sc-bczSft cNBLmY"
       >
-        Input
+        label
       </span>
     </label>
   </div>
