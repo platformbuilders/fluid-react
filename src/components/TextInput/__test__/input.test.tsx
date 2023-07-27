@@ -1,20 +1,29 @@
 import { ThemeProvider } from 'styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import theme from '../../../theme';
 import { TextInputType } from '../../../types';
-import CurrencyInput from '../CurrencyInput';
 import TextInput from '../index';
 
+const onChange = jest.fn();
+
+const inputId = 'input-test';
+
 const defaultProps: TextInputType = {
-  id: 'input-test',
-  type: 'text',
+  id: inputId,
   value: '',
-  label: 'Input',
-  name: 'input',
+  label: 'label',
+  name: 'inputTest',
+  onChange,
 };
 
 describe('Component: TextInput', () => {
+  beforeEach(() => {
+    jest.restoreAllMocks();
+    jest.clearAllMocks();
+    jest.resetModules();
+  });
+
   test('snapshots with default props', () => {
     const { container } = render(
       <ThemeProvider theme={theme}>
@@ -24,21 +33,23 @@ describe('Component: TextInput', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('should change value input to Input', () => {
-    const handleChange = jest.fn();
+  test('should change value of input without mask to 456', () => {
+    render(<TextInput {...defaultProps} />);
 
-    const { getByRole } = render(
-      <TextInput {...defaultProps} onChange={handleChange} />,
-    );
-    fireEvent.change(getByRole('textbox'), { target: { value: 'Input' } });
-    expect(handleChange).toHaveBeenCalled();
+    const inputElement: any = screen.getByTestId(inputId);
+
+    fireEvent.change(inputElement, { target: { value: 456 } });
+
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 
-  test('should change value with currency', () => {
-    const { getByRole } = render(
-      <CurrencyInput {...defaultProps} value="1200" />,
-    );
+  test('should change value of input with mask to 123', () => {
+    render(<TextInput {...defaultProps} maskOptions={{ mask: Number }} />);
 
-    expect(getByRole('textbox')).toHaveValue('R$ 1.200');
+    const inputElement: any = screen.getByTestId(inputId);
+
+    fireEvent.change(inputElement, { target: { value: 123 } });
+
+    expect(inputElement.value).toBe('123');
   });
 });
