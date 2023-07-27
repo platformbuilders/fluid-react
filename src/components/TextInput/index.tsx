@@ -1,15 +1,27 @@
-import { ChangeEvent, FC, RefObject, useRef } from 'react';
-import { IMaskMixin } from 'react-imask';
+import { ChangeEvent, FC, Ref, RefObject, useRef } from 'react';
+import { IMaskMixin, ReactElementProps } from 'react-imask';
 
 import { TextInputType } from '../../types';
 import { Input, Label, Message, PlaceholderLabel, Wrapper } from './styles';
 
-const InputMask = IMaskMixin(({ inputRef, ...props }) => (
-  <Input {...props} ref={inputRef as RefObject<HTMLInputElement> | undefined} />
-));
+type InputMaskProps = ReactElementProps<any> & {
+  inputRef: Ref<any>;
+  hasError?: boolean;
+};
+
+const InputMask = IMaskMixin(
+  ({ inputRef, hasError, ...props }: InputMaskProps) => (
+    <Input
+      {...props}
+      $hasError={!!hasError}
+      ref={inputRef as RefObject<HTMLInputElement> | undefined}
+    />
+  ),
+);
 
 const TextInput: FC<TextInputType> = ({
   message,
+  error,
   onChange,
   onBlur,
   onFocus,
@@ -24,6 +36,7 @@ const TextInput: FC<TextInputType> = ({
   maskOptions,
 }) => {
   const hasValue = value?.length > 0;
+  const hasError = error ? error.length > 0 : false;
 
   const onAccept = (_, __, event?: InputEvent | undefined) => {
     onChange(event as Partial<ChangeEvent<any>>);
@@ -46,6 +59,7 @@ const TextInput: FC<TextInputType> = ({
             inputRef={inputRef}
             onAccept={onAccept}
             autoFocus={autoFocus}
+            hasError={hasError}
           />
         ) : (
           <Input
@@ -59,10 +73,15 @@ const TextInput: FC<TextInputType> = ({
             onChange={onChange}
             maxLength={maxLength}
             autoFocus={autoFocus}
+            $hasError={hasError}
           />
         )}
-        <PlaceholderLabel $hasValue={hasValue}>{label}</PlaceholderLabel>
-        {message ? <Message>{message}</Message> : null}
+        <PlaceholderLabel $hasError={hasError} $hasValue={hasValue}>
+          {label}
+        </PlaceholderLabel>
+        {error || message ? (
+          <Message $hasError={hasError}>{error || message}</Message>
+        ) : null}
       </Label>
     </Wrapper>
   );

@@ -6,6 +6,7 @@ export type TextInputType = {
   maskOptions?: any;
   label: string;
   message?: string;
+  error?: string;
   name: string;
   id: string;
   maxLength?: number;

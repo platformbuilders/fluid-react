@@ -9,14 +9,14 @@ exports[`Component: TextInput snapshots with default props 1`] = `
       class="sc-hKMtDE"
     >
       <input
-        class="sc-gsnScm lmkUye"
+        class="sc-gsnScm izDSdi"
         data-testid="input-test"
         id="input-test"
         name="inputTest"
         value=""
       />
       <span
-        class="sc-bczSft cNBLmY"
+        class="sc-bczSft kbcmjg"
       >
         label
       </span>
