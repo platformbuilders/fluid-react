@@ -18,4 +18,14 @@ describe('<LoadingIndicator />', () => {
 
     expect(container).toBeInTheDocument();
   });
+
+  it('should have container in the document when variant is button', () => {
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <LoadingIndicator variant="button" />
+      </ThemeProvider>,
+    );
+
+    expect(container).toBeInTheDocument();
+  });
 });

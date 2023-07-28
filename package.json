@@ -84,6 +84,7 @@
     "@typescript-eslint/eslint-plugin": "5.34.0",
     "@typescript-eslint/parser": "5.34.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "@vitest/coverage-istanbul": "^0.33.0",
     "babel-loader": "8.2.5",
     "babel-plugin-transform-async-to-generator": "6.24.1",
     "css-loader": "6.8.1",
