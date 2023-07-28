@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 import {
+  TypographyVariants,
   getFontSize,
   getLineHeight,
   getTheme,
 } from '@platformbuilders/theme-toolkit';
-import { TypographyTypeStyleProps } from '../../types';
+import { TypographyTypeBase } from '.';
+
+export type TypographyTypeStyleProps = TypographyTypeBase & {
+  $lineHeightVariant?: TypographyVariants;
+  $variant?: TypographyVariants;
+};
 
 export const Text = styled.p<TypographyTypeStyleProps>`
   color: ${getTheme('text.main')};

@@ -1,7 +1,6 @@
-import { ChangeEvent, FC, Ref, RefObject, useRef } from 'react';
+import { ChangeEvent, FC, FocusEvent, Ref, RefObject, useRef } from 'react';
 import { IMaskMixin, ReactElementProps } from 'react-imask';
 
-import { TextInputType } from '../../types';
 import { Input, Label, Message, PlaceholderLabel, Wrapper } from './styles';
 
 type InputMaskProps = ReactElementProps<any> & {
@@ -18,6 +17,33 @@ const InputMask = IMaskMixin(
     />
   ),
 );
+
+export type TextInputType = {
+  style?: any;
+  textInputStyle?: any;
+  maskOptions?: any;
+  label: string;
+  message?: string;
+  error?: string;
+  name: string;
+  id: string;
+  maxLength?: number;
+  value: string;
+  autoFocus?: boolean;
+  onChange: (e: Partial<ChangeEvent<any>>) => void;
+  onBlur?: (
+    e:
+      | FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+      | ChangeEvent<HTMLDivElement>,
+  ) => void;
+  onFocus?:
+    | ((
+        e:
+          | FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+          | ChangeEvent<HTMLDivElement>,
+      ) => void)
+    | undefined;
+};
 
 const TextInput: FC<TextInputType> = ({
   message,

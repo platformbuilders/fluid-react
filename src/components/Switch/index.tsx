@@ -1,7 +1,7 @@
 import { ChangeEvent, FC } from 'react';
 import { Input, Label, Wrapper } from './styles';
 
-type Props = {
+export type Props = {
   id: string;
   label: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;

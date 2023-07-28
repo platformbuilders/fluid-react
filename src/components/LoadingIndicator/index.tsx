@@ -1,8 +1,17 @@
 import { FC, useEffect } from 'react';
 import lottie from 'lottie-web';
-import { AnimationObject } from '@platformbuilders/theme-toolkit';
+import {
+  AnimationObject,
+  LoadingVariants,
+} from '@platformbuilders/theme-toolkit';
 import animations from '../../theme/animations';
-import { LoadingType } from '../../types';
+
+interface LoadingType {
+  large?: boolean;
+  contrast?: boolean;
+  variant?: LoadingVariants;
+  accessibility?: string;
+}
 
 const loadingVariant = ({
   variant,
