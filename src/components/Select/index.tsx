@@ -6,7 +6,6 @@ import {
   ScrollUpButton,
   Value,
 } from '@radix-ui/react-select';
-import { SelectOptions } from '../../types';
 import {
   PlaceholderText,
   StyledContent,
@@ -16,6 +15,11 @@ import {
   StyledViewPort,
   Wrapper,
 } from './styles';
+
+type SelectOptions = {
+  option: string;
+  value: string;
+};
 
 type Props = {
   id: string;
