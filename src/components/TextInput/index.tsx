@@ -1,4 +1,12 @@
-import { ChangeEvent, FC, FocusEvent, Ref, RefObject, useRef } from 'react';
+import {
+  ChangeEvent,
+  FC,
+  FocusEvent,
+  InputHTMLAttributes,
+  Ref,
+  RefObject,
+  useRef,
+} from 'react';
 import { IMaskMixin, ReactElementProps } from 'react-imask';
 
 import { Input, Label, Message, PlaceholderLabel, Wrapper } from './styles';
@@ -18,7 +26,7 @@ const InputMask = IMaskMixin(
   ),
 );
 
-export type TextInputType = {
+export type TextInputType = InputHTMLAttributes<HTMLInputElement> & {
   style?: any;
   textInputStyle?: any;
   maskOptions?: any;
@@ -60,6 +68,7 @@ const TextInput: FC<TextInputType> = ({
   maxLength,
   autoFocus,
   maskOptions,
+  ...rest
 }) => {
   const hasValue = value?.length > 0;
   const hasError = error ? error.length > 0 : false;
@@ -100,6 +109,7 @@ const TextInput: FC<TextInputType> = ({
             maxLength={maxLength}
             autoFocus={autoFocus}
             $hasError={hasError}
+            {...rest}
           />
         )}
         <PlaceholderLabel $hasError={hasError} $hasValue={hasValue}>
