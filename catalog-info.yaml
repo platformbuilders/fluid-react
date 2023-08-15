@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: fluid-react
+  description: Fluid Design System
+  tags:
+    - javascript
+spec:
+  type: library
+  owner: digitals
+  lifecycle: production
