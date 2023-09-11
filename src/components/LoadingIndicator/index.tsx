@@ -6,12 +6,12 @@ import {
 } from '@platformbuilders/theme-toolkit';
 import animations from '../../theme/animations';
 
-interface LoadingType {
+export type LoadingType = {
   large?: boolean;
   contrast?: boolean;
   variant?: LoadingVariants;
   accessibility?: string;
-}
+};
 
 const loadingVariant = ({
   variant,
@@ -43,7 +43,7 @@ const largeSize = {
   height: 120,
 };
 
-const Loading: FC<LoadingType> = ({
+const LoadingIndicator: FC<LoadingType> = ({
   large = false,
   contrast = false,
   variant = 'circular',
@@ -70,4 +70,4 @@ const Loading: FC<LoadingType> = ({
   );
 };
 
-export default Loading;
+export default LoadingIndicator;
