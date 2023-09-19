@@ -1,5 +1,8 @@
 module.exports = {
-  extends: '@platformbuilders/eslint-config-builders/react',
+  extends: [
+    "@platformbuilders/eslint-config-builders/react",
+    "plugin:storybook/recommended"
+  ],
   overrides: [{
     files: "**/*.+(ts|tsx|js)",
     rules: {
