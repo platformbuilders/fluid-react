@@ -27,9 +27,11 @@ export const PlaceholderLabel = styled.span<PlaceholderLabelProps>`
   color: rgba(19, 19, 21, 0.6);
   transition: top 0.2s;
 
-  ${({ $hasValue }) =>
-    $hasValue &&
-    'top: 0; font-size: 0.9375rem; margin-bottom: 40px; color: #1e4bd1;'}
+  ${(props) =>
+    props.$hasValue &&
+    `top: 0; font-size: 0.9375rem; margin-bottom: 40px; color: ${primaryMain(
+      props,
+    )};`}
 
   color: ${(props) => hasError(dangerMain(props), primaryMain(props))(props)};
 `;
