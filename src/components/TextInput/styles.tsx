@@ -14,6 +14,7 @@ type InputProps = {
   $hasError: boolean;
 };
 
+const primaryMain = getTheme('brand.primary.main');
 const dangerMain = getTheme('danger.main');
 const textMain = getTheme('danger.main');
 const hasError = ifStyle('$hasError');
@@ -26,11 +27,13 @@ export const PlaceholderLabel = styled.span<PlaceholderLabelProps>`
   color: rgba(19, 19, 21, 0.6);
   transition: top 0.2s;
 
-  ${({ $hasValue }) =>
-    $hasValue &&
-    'top: 0; font-size: 0.9375rem; margin-bottom: 40px; color: #1e4bd1;'}
+  ${(props) =>
+    props.$hasValue &&
+    `top: 0; font-size: 0.9375rem; margin-bottom: 40px; color: ${primaryMain(
+      props,
+    )};`}
 
-  color: ${(props) => hasError(dangerMain(props), '#1e4bd1')(props)};
+  color: ${(props) => hasError(dangerMain(props), primaryMain(props))(props)};
 `;
 
 export const Input = styled.input<InputProps>`
@@ -50,7 +53,8 @@ export const Input = styled.input<InputProps>`
   }
 
   &:focus {
-    border-color: ${(props) => hasError(dangerMain(props), '#1e4bd1')(props)};
+    border-color: ${(props) =>
+      hasError(dangerMain(props), primaryMain(props))(props)};
     outline: none;
   }
 
@@ -58,7 +62,7 @@ export const Input = styled.input<InputProps>`
     top: 0;
     font-size: 0.9375rem;
     margin-bottom: 40px;
-    color: ${(props) => hasError(dangerMain(props), '#1e4bd1')(props)};
+    color: ${(props) => hasError(dangerMain(props), primaryMain(props))(props)};
   }
 
   background: #eff1f2;
