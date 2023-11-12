@@ -95,6 +95,7 @@ const TextInput: FC<TextInputType> = ({
             onAccept={onAccept}
             autoFocus={autoFocus}
             hasError={hasError}
+            {...rest}
           />
         ) : (
           <Input
