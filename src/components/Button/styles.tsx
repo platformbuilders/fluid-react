@@ -11,6 +11,8 @@ import Typography from '../Typography';
 import { ButtonProps } from './types';
 
 const buttonRadius = getTheme('themeRadius.button');
+const spacingSm = getTheme('spacing.sm');
+const borderWidthSm = getTheme('borderWidth.sm');
 const isDisabled = ifStyle('disabled');
 
 type ButtonWrapperProps = ButtonProps & ThemeProps;
@@ -69,7 +71,7 @@ const getStylesButton = (props: ButtonWrapperProps) => {
     case 'outline':
       return css`
         background-color: transparent;
-        border: 2px solid ${colorButton};
+        border: ${borderWidthSm}px solid ${colorButton};
         &:hover {
           background-color: ${colorButton}10;
         }
@@ -89,15 +91,12 @@ const getStylesButton = (props: ButtonWrapperProps) => {
 const sizeButton = {
   normal: css`
     min-height: 2.25rem;
-    font-size: 16px;
   `,
   medium: css`
     min-height: 2.75rem;
-    font-size: 16px;
   `,
   large: css`
     min-height: 3.25rem;
-    font-size: 18px;
   `,
 };
 
@@ -105,7 +104,7 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   ${getStylesButton}
   ${({ size }) => !!size && sizeButton[size]}
   width: ${({ fullWidth }) => (!!fullWidth ? '100%' : undefined)};
-  padding: 12px;
+  padding: ${spacingSm}px;
   cursor: ${isDisabled('not-allowed', 'pointer')};
   flex-direction: row;
   align-items: center;
@@ -184,7 +183,6 @@ export const ContentWrapper = styled.div<ButtonWrapperProps>`
 
 export const TextButton = styled(Typography)`
   letter-spacing: 0.4px;
-  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 100%;
