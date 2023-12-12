@@ -88,17 +88,17 @@ const getStylesButton = (props: ButtonWrapperProps) => {
 
 const sizeButton = {
   normal: css`
-    height: 2.25rem;
+    min-height: 2.25rem;
     font-size: 16px;
     border: none;
   `,
   medium: css`
-    height: 2.75rem;
+    min-height: 2.75rem;
     font-size: 16px;
     border: none;
   `,
   large: css`
-    height: 3.25rem;
+    min-height: 3.25rem;
     font-size: 18px;
     border: none;
   `,
@@ -122,7 +122,6 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
   vertical-align: middle;
   text-align: center;
   text-overflow: ellipsis;
-  text-transform: uppercase;
   outline: none;
 
   &::-moz-focus-inner {
