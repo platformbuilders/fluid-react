@@ -90,17 +90,14 @@ const sizeButton = {
   normal: css`
     min-height: 2.25rem;
     font-size: 16px;
-    border: none;
   `,
   medium: css`
     min-height: 2.75rem;
     font-size: 16px;
-    border: none;
   `,
   large: css`
     min-height: 3.25rem;
     font-size: 18px;
-    border: none;
   `,
 };
 
