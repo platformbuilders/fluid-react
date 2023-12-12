@@ -21,7 +21,7 @@ describe('Component: Button', () => {
     // when
     const { getByText } = render(
       <ThemeProvider theme={theme}>
-        <Button {...defaultProps} disabled variant="secondary">
+        <Button {...defaultProps} disabled variant="filled">
           {defaultContent}
         </Button>
       </ThemeProvider>,
