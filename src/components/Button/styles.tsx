@@ -131,7 +131,7 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(255, 255, 255);
     opacity: 0;
     transition: opacity 0.2s;
   }
@@ -144,7 +144,7 @@ export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
     padding: 50%;
     width: 32px; /* Safari */
     height: 32px; /* Safari */
-    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(255, 255, 255);
     opacity: 0;
     transform: translate(-50%, -50%) scale(1);
     transition: opacity 1s, transform 0.5s;
