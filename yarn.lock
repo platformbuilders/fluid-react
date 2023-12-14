@@ -2725,10 +2725,10 @@
   dependencies:
     lint-staged "^13.2.2"
 
-"@platformbuilders/theme-toolkit@0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@platformbuilders/theme-toolkit/-/theme-toolkit-0.2.6.tgz#532a712bcce6d43cee76f90f4a0d0a913250dffb"
-  integrity sha512-uoRf3D2dszihYYHF/KP1iC6Gc0uzeri16/bw6ZVlBeDdFFDZbSc7RFcXePbU6Hg6hbuN7n4bSVB0g0Wyg5qhBQ==
+"@platformbuilders/theme-toolkit@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@platformbuilders/theme-toolkit/-/theme-toolkit-0.3.0.tgz#eff59fd6693e9e59a6d65b304d22dd204cb7793c"
+  integrity sha512-6/Ifts8C1DeQaavmOM5JnZRfFL/qJRdfzKgUeB1B01iDEIiIzpDNGp6bn2oGd5JnDkXpwgnCuuo4K0InoYPnwA==
   dependencies:
     "@platformbuilders/helpers" "0.8.2"
     lodash "4.17.21"

@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/fluid-react",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "private": false,
   "description": "Builders React for Fluid Design System",
   "keywords": [
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@platformbuilders/helpers": "0.10.2",
-    "@platformbuilders/theme-toolkit": "0.2.6",
+    "@platformbuilders/theme-toolkit": "^0.3.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-select": "^1.2.2",

@@ -101,6 +101,7 @@ const sizeButton = {
 };
 
 export const Touchable = styled(TouchableComponent)<ButtonWrapperProps>`
+  border: none;
   ${getStylesButton}
   ${({ size }) => !!size && sizeButton[size]}
   width: ${({ fullWidth }) => (!!fullWidth ? '100%' : undefined)};

@@ -1,16 +1,10 @@
 import { ReactNode } from 'react';
-import { TypographyVariants } from '@platformbuilders/theme-toolkit';
+import {
+  ButtonColorType,
+  ButtonVariants,
+  TypographyVariants,
+} from '@platformbuilders/theme-toolkit';
 import RadixIcon from '@radix-ui/react-icons';
-
-export type ButtonVariants = 'filled' | 'ghost' | 'tint' | 'outline';
-export type ButtonColorType =
-  | 'primary'
-  | 'secondary'
-  | 'accent'
-  | 'danger'
-  | 'success'
-  | 'warning'
-  | 'info';
 
 export type ButtonProps = {
   style?: any;
