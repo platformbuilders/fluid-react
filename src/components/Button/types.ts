@@ -17,7 +17,7 @@ export type ButtonProps = {
   leftIconName?: keyof typeof RadixIcon;
   rightIconName?: keyof typeof RadixIcon;
   colorVariant?: ButtonColorType;
-  size?: string;
+  size?: 'normal' | 'medium' | 'large';
 } & TouchableType;
 
 export type TouchableType = {
