@@ -1,52 +1,22 @@
-import { FC, ReactNode } from 'react';
-import {
-  ButtonVariants,
-  TypographyVariants,
-} from '@platformbuilders/theme-toolkit';
-import RadixIcon from '@radix-ui/react-icons';
+import { FC } from 'react';
 import Icons from '../Icons';
 import { ContentWrapper, Loading, TextButton, Touchable } from './styles';
-
-type TouchableType = {
-  id?: string;
-  accessibility: string;
-  testID?: string;
-  disabled?: boolean;
-  onPress?: (param: any) => void;
-};
-
-export type ButtonProps = {
-  style?: any;
-  type?: 'button' | 'submit' | 'reset';
-  textStyle?: any;
-  rounded?: boolean;
-  loading?: boolean;
-  contrast?: boolean;
-  variant?: ButtonVariants;
-  typographyVariant?: TypographyVariants;
-  children?: string | ReactNode;
-  minWidth?: string | number;
-  maxWidth?: string | number;
-  leftIconName?: keyof typeof RadixIcon;
-  rightIconName?: keyof typeof RadixIcon;
-  hasBorder?: boolean;
-} & TouchableType;
+import { ButtonProps } from './types';
 
 const Button: FC<ButtonProps> = ({
   id,
   children,
   onPress,
   accessibility,
-  textStyle = {},
   disabled = false,
-  rounded = false,
   loading = false,
-  contrast = false,
-  hasBorder = false,
-  variant = 'primary',
+  fullWidth = false,
+  variant = 'filled',
   typographyVariant = 'md',
   leftIconName,
   rightIconName,
+  colorVariant = 'primary',
+  size = 'normal',
   ...rest
 }) => {
   const LeftIcon = leftIconName ? Icons[leftIconName] : undefined;
@@ -58,22 +28,22 @@ const Button: FC<ButtonProps> = ({
       accessibility={accessibility}
       disabled={loading || disabled}
       onPress={onPress}
-      $hasBorder={hasBorder}
-      $rounded={rounded}
       variant={variant}
+      colorVariant={colorVariant}
+      size={size}
       {...rest}
     >
       {loading ? (
-        <Loading contrast={contrast} />
+        <Loading />
       ) : (
-        <ContentWrapper $buttonVariant={variant}>
+        <ContentWrapper
+          accessibility="container button"
+          variant={variant}
+          size={size}
+          fullWidth={fullWidth}
+        >
           {LeftIcon ? <LeftIcon /> : null}
-          <TextButton
-            style={textStyle}
-            disabled={disabled}
-            variant={typographyVariant}
-            $buttonVariant={variant}
-          >
+          <TextButton className="text-button" variant={typographyVariant}>
             {children}
           </TextButton>
           {RightIcon ? <RightIcon /> : null}
@@ -84,3 +54,4 @@ const Button: FC<ButtonProps> = ({
 };
 
 export default Button;
+export * from './types';

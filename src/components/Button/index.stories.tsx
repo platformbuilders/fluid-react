@@ -31,12 +31,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
     loading: { control: 'boolean' },
-    rounded: { control: 'boolean' },
-    contrast: { control: 'boolean' },
-    hasBorder: { control: 'boolean' },
     disabled: { control: 'boolean' },
-    minWidth: { control: 'text' },
-    maxWidth: { control: 'text' },
     id: { control: 'text' },
     testID: { control: 'text' },
   },

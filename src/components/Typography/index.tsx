@@ -13,6 +13,7 @@ export type TypographyTypeBase = PropsWithChildren<{
 
 export type TypographyTypeProps = TypographyTypeBase & {
   lineHeightVariant?: TypographyVariants;
+  className?: string;
 };
 
 const Typography: FC<TypographyTypeProps> = ({
