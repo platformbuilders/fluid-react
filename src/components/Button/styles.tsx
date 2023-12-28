@@ -90,13 +90,13 @@ const getStylesButton = (props: ButtonWrapperProps) => {
 
 const sizeButton = {
   normal: css`
-    min-height: 2.25rem;
+    height: 2.25rem;
   `,
   medium: css`
-    min-height: 2.75rem;
+    height: 2.75rem;
   `,
   large: css`
-    min-height: 3.25rem;
+    height: 3.25rem;
   `,
 };
 

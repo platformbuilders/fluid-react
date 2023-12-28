@@ -1,5 +1,4 @@
-import { FC, useEffect } from 'react';
-import lottie from 'lottie-web';
+import { FC, useEffect, useRef } from 'react';
 import {
   AnimationObject,
   LoadingVariants,
@@ -49,20 +48,30 @@ const LoadingIndicator: FC<LoadingType> = ({
   variant = 'circular',
   accessibility,
 }) => {
-  useEffect(() => {
-    const animationData = loadingVariant({ variant, contrast });
+  const ref = useRef<HTMLDivElement>(null);
 
-    lottie.loadAnimation({
-      container: document.getElementById('loading') as Element,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      animationData,
-    });
-  }, []);
+  const loadAnimation = async () => {
+    if (ref.current) {
+      const animationData = loadingVariant({ variant, contrast });
+      const lottie = await import('lottie-web');
+
+      lottie.default.loadAnimation({
+        container: ref.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData,
+      });
+    }
+  };
+
+  useEffect(() => {
+    loadAnimation();
+  }, [ref]);
 
   return (
     <div
+      ref={ref}
       style={large ? largeSize : smallSize}
       id="loading"
       aria-label={accessibility || 'Aguarde...'}
