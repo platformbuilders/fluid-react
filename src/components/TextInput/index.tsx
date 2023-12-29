@@ -135,6 +135,7 @@ const TextInput: FC<TextInputType> = ({
           hasError={hasError}
           hasIconLeft={!!iconLeft}
           hasIconRight={!!iconRight}
+          defaultValue={value}
           {...rest}
         />
       ) : (
