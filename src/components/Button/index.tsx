@@ -10,7 +10,7 @@ const Button: FC<ButtonProps> = ({
   accessibility,
   disabled = false,
   loading = false,
-  fullWidth = false,
+  $fullWidth = false,
   variant = 'filled',
   typographyVariant = 'md',
   leftIconName,
@@ -21,26 +21,28 @@ const Button: FC<ButtonProps> = ({
 }) => {
   const LeftIcon = leftIconName ? Icons[leftIconName] : undefined;
   const RightIcon = rightIconName ? Icons[rightIconName] : undefined;
+  const contentWrapperProps = {
+    variant,
+    size,
+    $fullWidth,
+  };
+  const touchableProps = {
+    accessibility,
+    disabled: loading || disabled,
+    variant,
+    onPress,
+    colorVariant,
+    size,
+  };
 
   return (
-    <Touchable
-      id={id || accessibility}
-      accessibility={accessibility}
-      disabled={loading || disabled}
-      onPress={onPress}
-      variant={variant}
-      colorVariant={colorVariant}
-      size={size}
-      {...rest}
-    >
+    <Touchable id={id || accessibility} {...touchableProps} {...rest}>
       {loading ? (
         <Loading />
       ) : (
         <ContentWrapper
           accessibility="container button"
-          variant={variant}
-          size={size}
-          fullWidth={fullWidth}
+          {...contentWrapperProps}
         >
           {LeftIcon ? <LeftIcon /> : null}
           <TextButton className="text-button" variant={typographyVariant}>

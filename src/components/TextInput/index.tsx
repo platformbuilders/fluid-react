@@ -24,23 +24,23 @@ type IconsType = keyof typeof Icons;
 type InputMaskProps = ReactElementProps<any> & {
   inputRef: Ref<any>;
   hasError?: boolean;
-  hasIconLeft?: boolean;
-  hasIconRight?: boolean;
+  $hasIconLeft?: boolean;
+  $hasIconRight?: boolean;
 };
 
 const InputMask = IMaskMixin(
   ({
     inputRef,
     hasError,
-    hasIconRight,
-    hasIconLeft,
+    $hasIconRight,
+    $hasIconLeft,
     ...props
   }: InputMaskProps) => (
     <Input
       {...props}
       $hasError={!!hasError}
-      hasIconLeft={!!hasIconLeft}
-      hasIconRight={!!hasIconRight}
+      $hasIconLeft={!!$hasIconLeft}
+      $hasIconRight={!!$hasIconRight}
       ref={inputRef as RefObject<HTMLInputElement> | undefined}
     />
   ),
@@ -133,8 +133,8 @@ const TextInput: FC<TextInputType> = ({
           onAccept={onAccept}
           autoFocus={autoFocus}
           hasError={hasError}
-          hasIconLeft={!!iconLeft}
-          hasIconRight={!!iconRight}
+          $hasIconLeft={!!iconLeft}
+          $hasIconRight={!!iconRight}
           defaultValue={value}
           {...rest}
         />
@@ -151,8 +151,8 @@ const TextInput: FC<TextInputType> = ({
           maxLength={maxLength}
           autoFocus={autoFocus}
           $hasError={hasError}
-          hasIconLeft={!!iconLeft}
-          hasIconRight={!!iconRight}
+          $hasIconLeft={!!iconLeft}
+          $hasIconRight={!!iconRight}
           {...rest}
         />
       )}
@@ -166,8 +166,8 @@ const TextInput: FC<TextInputType> = ({
       )}
       <PlaceholderLabel
         className="text-input-label"
-        hasIconLeft={!!iconLeft}
-        hasIconRight={!!iconRight}
+        $hasIconLeft={!!iconLeft}
+        $hasIconRight={!!iconRight}
         $hasError={hasError}
         $hasValue={hasValue}
       >
