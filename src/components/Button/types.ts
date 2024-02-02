@@ -10,7 +10,7 @@ export type ButtonProps = {
   style?: any;
   type?: 'button' | 'submit' | 'reset';
   loading?: boolean;
-  fullWidth?: boolean;
+  $fullWidth?: boolean;
   variant?: ButtonVariants;
   typographyVariant?: TypographyVariants;
   children?: string | ReactNode;

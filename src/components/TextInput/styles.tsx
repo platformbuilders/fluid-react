@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { getTheme, ifStyle, pxToRem } from '@platformbuilders/theme-toolkit';
 
 type HasIcon = {
-  hasIconLeft?: boolean;
-  hasIconRight?: boolean;
+  $hasIconLeft?: boolean;
+  $hasIconRight?: boolean;
 };
 
 type PlaceholderLabelProps = {
@@ -38,7 +38,7 @@ export const PlaceholderLabel = styled.span<PlaceholderLabelProps>`
   left: ${pxToRem(14)};
   line-height: 147.6%;
   transition: top 0.2s;
-  ${({ hasIconLeft }) => !!hasIconLeft && `left: ${pxToRem(36)};`}
+  ${({ $hasIconLeft }) => !!$hasIconLeft && `left: ${pxToRem(36)};`}
   ${(props) =>
     props.$hasValue && `top: 0; font-size: ${fontSizeMd}; margin-bottom: 40px;`}
 
@@ -53,8 +53,8 @@ export const Input = styled.input<InputProps>`
   display: flex;
   height: ${pxToRem(44)};
   padding: ${spacingXs}px ${spacingSm}px ${spacingXs}px ${spacingMd}px;
-  ${({ hasIconRight }) => !!hasIconRight && `padding-right: ${pxToRem(36)};`}
-  ${({ hasIconLeft }) => !!hasIconLeft && `padding-left: ${pxToRem(36)};`}
+  ${({ $hasIconRight }) => !!$hasIconRight && `padding-right: ${pxToRem(36)};`}
+  ${({ $hasIconLeft }) => !!$hasIconLeft && `padding-left: ${pxToRem(36)};`}
   align-items: center;
   gap: ${pxToRem(12)};
   background: ${(props) =>
