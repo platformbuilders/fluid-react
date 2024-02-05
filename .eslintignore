@@ -5,3 +5,4 @@ node_modules
 *.d.ts
 vitest.config.ts
 setupTests.ts
+storybook-static
