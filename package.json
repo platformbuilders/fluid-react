@@ -65,6 +65,7 @@
     "@commitlint/config-conventional": "17.6.7",
     "@faker-js/faker": "7.4.0",
     "@platformbuilders/eslint-config-builders": "1.0.2",
+    "@storybook/addon-a11y": "^7.6.12",
     "@storybook/addon-essentials": "^7.6.12",
     "@storybook/addon-interactions": "^7.6.12",
     "@storybook/addon-links": "^7.6.12",
