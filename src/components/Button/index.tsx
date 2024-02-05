@@ -15,7 +15,7 @@ const Button: FC<ButtonProps> = ({
   typographyVariant = 'md',
   leftIconName,
   rightIconName,
-  colorVariant = 'primary',
+  $colorVariant = 'primary',
   size = 'normal',
   ...rest
 }) => {
@@ -31,7 +31,7 @@ const Button: FC<ButtonProps> = ({
     disabled: loading || disabled,
     variant,
     onPress,
-    colorVariant,
+    $colorVariant,
     size,
   };
 
