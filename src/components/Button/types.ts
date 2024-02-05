@@ -16,7 +16,7 @@ export type ButtonProps = {
   children?: string | ReactNode;
   leftIconName?: keyof typeof RadixIcon;
   rightIconName?: keyof typeof RadixIcon;
-  colorVariant?: ButtonColorType;
+  $colorVariant?: ButtonColorType;
   size?: 'normal' | 'medium' | 'large';
 } & TouchableType;
 
