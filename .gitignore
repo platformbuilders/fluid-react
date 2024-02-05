@@ -1,7 +1,10 @@
 # OSX
 #
 .DS_Store
+
+# Storybook
 storybook-static
+build-storybook.log
 
 # Xcode
 #

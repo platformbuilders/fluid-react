@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   args: {
-    children: 'Button',
+    children: 'Botão de Teste',
   },
 };
 
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Normal: Story = {
   args: {
-    children: 'Button',
+    children: 'Botão de Teste',
     size: 'normal',
   },
 };
