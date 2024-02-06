@@ -9,6 +9,6 @@ on:
 
 jobs:
   call-workflow:
-    uses: platformbuilders/actions-workflows/.github/workflows/check-react-shared.yml@main
+    uses: platformbuilders/actions-workflows/.github/workflows/check-react-lib.yml@main
     secrets:
       PACKAGES_NPMRC: ${{ secrets.PACKAGES_NPMRC }}
