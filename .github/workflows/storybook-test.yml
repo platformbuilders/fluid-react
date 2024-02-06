@@ -1,6 +1,6 @@
 name: Storybook Tests
 
-on: deployment_statuson:
+on:
   pull_request:
     branches:
       - '*'
