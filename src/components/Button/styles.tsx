@@ -19,11 +19,11 @@ type ButtonWrapperProps = ButtonProps & ThemeProps;
 
 const getStylesButton = (props: ButtonWrapperProps) => {
   const colorButton =
-    getTheme(`brand.${props.colorVariant}.main`)(props) ||
-    getTheme(`${props.colorVariant}.main`)(props);
+    getTheme(`brand.${props.$colorVariant}.main`)(props) ||
+    getTheme(`${props.$colorVariant}.main`)(props);
   const colorConstrastButton =
-    getTheme(`brand.${props.colorVariant}.contrast`)(props) ||
-    getTheme(`${props.colorVariant}.contrast`)(props);
+    getTheme(`brand.${props.$colorVariant}.contrast`)(props) ||
+    getTheme(`${props.$colorVariant}.contrast`)(props);
   const defaultTheme = css`
     background-color: ${colorButton};
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
