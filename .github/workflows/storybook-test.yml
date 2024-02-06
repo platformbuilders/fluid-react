@@ -20,12 +20,18 @@ jobs:
         run: yarn
       - name: Install Playwright
         run: npx playwright install --with-deps
+      - name: Build Storybook
+        run: yarn storybook:build --quiet
       - name: Serve Storybook and run tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006"
-      - name: Run Storybook tests
+            "npx wait-on tcp:6006 && yarn storybook:test"
+  user-flow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn
+      - name: Run Test
         run: yarn storybook:test
-        env:
-          TARGET_URL: http://localhost:6006
