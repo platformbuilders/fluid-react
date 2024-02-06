@@ -47,6 +47,7 @@ describe('Component: Button', () => {
     // then
     expect(mockFunction).toHaveBeenCalled();
   });
+
   test('should not call onPress when pressed', () => {
     // should
     const mockFunction = vi.fn();
