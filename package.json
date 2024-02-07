@@ -37,7 +37,7 @@
     "storybook:dev": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "storybook:test": "test-storybook",
-    "chromatic": "npx chromatic --project-token=chpt_ca9ead39821522d"
+    "storybook:chromatic": "npx chromatic --project-token=chpt_ca9ead39821522d"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

@@ -41,6 +41,6 @@ jobs:
         with:
           projectToken: "chpt_ca9ead39821522d"
           autoAcceptChanges: "main"
-          buildScriptName: "storybook:chromatic"
+          buildScriptName: "storybook:build"
         env:
           CI: true
