@@ -6,3 +6,8 @@ node_modules
 vitest.config.ts
 setupTests.ts
 storybook-static
+*.test.ts
+*.test.tsx
+*.stories.tsx
+*.stories.ts
+
