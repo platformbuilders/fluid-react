@@ -118,7 +118,10 @@ const TextInput: FC<TextInputType> = ({
           clickable={!!onClickIconLeft}
           onClick={onClickIconLeft}
         >
-          <LeftIconComponent accessibility="ícone do botão" />
+          <LeftIconComponent
+            id={`${id}-left-icon`}
+            accessibility="ícone do botão"
+          />
         </IconWrapperLeft>
       )}
       {maskOptions ? (
@@ -161,7 +164,10 @@ const TextInput: FC<TextInputType> = ({
           clickable={!!onClickIconRight}
           onClick={onClickIconRight}
         >
-          <RightIconComponent accessibility="ícone do botão" />
+          <RightIconComponent
+            id={`${id}-right-icon`}
+            accessibility="ícone do botão"
+          />
         </IconWrapperRight>
       )}
       <PlaceholderLabel

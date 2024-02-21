@@ -40,13 +40,14 @@ const Select: FC<Props> = ({
   onValueChange,
   value,
   defaultValue,
+  id,
 }) => (
   <Wrapper
     onValueChange={onValueChange}
     defaultValue={defaultValue}
     value={value}
   >
-    <StyledTrigger aria-label="select" disabled={disabled}>
+    <StyledTrigger id={id} aria-label="select" disabled={disabled}>
       <Value placeholder={<PlaceholderText>{placeholder}</PlaceholderText>} />
       <Icon>
         <ChevronDownIcon />
