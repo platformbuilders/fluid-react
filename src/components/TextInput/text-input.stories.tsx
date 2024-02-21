@@ -36,10 +36,17 @@ const meta: Meta<typeof TextInput> = {
     id: mockTextId,
     placeholder: 'Name',
     message: 'Type your name',
-    iconLeft: 'PersonIcon',
-    ...events,
+    onChange: events.onChange,
+    onBlur: events.onBlur,
+    onFocus: events.onFocus,
+    onClickIconLeft: events.onClickIconLeft,
   },
   tags: ['autodocs'],
+};
+
+type Story = StoryObj<typeof TextInput>;
+
+export const Default: Story = {
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -47,33 +54,12 @@ const meta: Meta<typeof TextInput> = {
       expect(canvas.getByTestId(mockTextId)).toBeInTheDocument();
     });
 
-    await step('TextInput | Event Click', async () => {
-      await userEvent.click(canvas.getByTestId(mockTextId));
-      expect(events.onFocus).toHaveBeenCalled();
-    });
-
-    await step('TextInput | Change Value', async () => {
-      await userEvent.type(canvas.getByTestId(mockTextId), 'Marcelo Silva');
-      expect(events.onFocus).toHaveBeenCalled();
-      expect(events.onChange).toHaveBeenCalled();
-    });
-
     await step('TextInput | Event Blur', async () => {
+      await userEvent.type(canvas.getByTestId(mockTextId), 'Fluid React');
       await userEvent.tab();
       expect(events.onBlur).toHaveBeenCalled();
     });
-
-    await step('TextInput | Event Click Icon Left', async () => {
-      await userEvent.click(canvas.getByTestId(`${mockTextId}-left-icon`));
-      expect(events.onClickIconLeft).toHaveBeenCalled();
-    });
   },
-};
-
-type Story = StoryObj<typeof TextInput>;
-
-export const Default: Story = {
-  args: {},
 };
 
 export const MaskPhone: Story = {
@@ -83,18 +69,44 @@ export const MaskPhone: Story = {
       mask: '+{00} (00) 00000-0000',
     },
   },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('TextInput | Test Render', async () => {
+      expect(canvas.getByTestId(mockTextId)).toBeInTheDocument();
+    });
+
+    await step('TextInput | Change Value', async () => {
+      await userEvent.type(canvas.getByTestId(mockTextId), '5511999999999');
+      expect(events.onFocus).toHaveBeenCalled();
+      expect(events.onChange).toHaveBeenCalled();
+    });
+  },
 };
 
 export const MaskDate: Story = {
   args: {
     placeholder: 'Date',
     message: 'Type your Birthdate',
+    iconLeft: 'PersonIcon',
     maskOptions: {
       pattern: 'd/m/YYYY',
       mask: Date,
       min: new Date(1900, 0, 1),
       max: new Date(Date.now()),
     },
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('TextInput | Test Render', async () => {
+      expect(canvas.getByTestId(mockTextId)).toBeInTheDocument();
+    });
+
+    await step('TextInput | Event Click Icon Left', async () => {
+      await userEvent.click(canvas.getByTestId(`${mockTextId}-left-icon`));
+      expect(events.onClickIconLeft).toHaveBeenCalled();
+    });
   },
 };
 
