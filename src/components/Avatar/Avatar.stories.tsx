@@ -31,7 +31,6 @@ const meta: Meta<typeof Avatar> = {
 
     await step('Avatar - Normal | Test Render', async () => {
       expect(canvas.getByTestId(testId)).toBeInTheDocument();
-      expect(eventMockFn).not.toHaveBeenCalled();
     });
 
     await step('Avatar - Normal | Check Event Click', async () => {

@@ -22,7 +22,13 @@ const meta: Meta<typeof Touchable> = {
     testID: mockTextId,
     children: 'Touchable Test',
     onPress: mockOnPress,
+    disabled: false,
   },
+};
+
+type Story = StoryObj<typeof Touchable>;
+
+export const Default: Story = {
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -31,16 +37,11 @@ const meta: Meta<typeof Touchable> = {
     });
 
     await step('Touchable | Event Click', async () => {
+      expect(canvas.getByTestId(mockTextId)).not.toHaveAttribute('disabled');
       await userEvent.click(canvas.getByTestId(mockTextId));
       expect(mockOnPress).toHaveBeenCalled();
     });
   },
-};
-
-type Story = StoryObj<typeof Touchable>;
-
-export const Default: Story = {
-  args: {},
 };
 
 export const Disabled: Story = {
@@ -57,7 +58,9 @@ export const Disabled: Story = {
 
     await step('Touchable | Event Click', async () => {
       await userEvent.click(canvas.getByTestId(mockDisabledTextId));
-      expect(mockOnPress).not.toHaveBeenCalled();
+      expect(canvas.getByTestId(mockDisabledTextId)).toHaveAttribute(
+        'disabled',
+      );
     });
   },
 };

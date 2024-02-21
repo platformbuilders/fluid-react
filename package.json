@@ -36,8 +36,7 @@
     "version:patch": "npm version patch",
     "storybook:dev": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:test": "test-storybook",
-    "storybook:chromatic": "npx chromatic --project-token=chpt_ca9ead39821522d"
+    "storybook:test": "test-storybook"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
