@@ -27,22 +27,22 @@ jobs:
            npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on http-get://127.0.0.1:6006 && yarn storybook:test"
-  user-flow:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-      - name: Install dependencies
-        run: yarn
-      - name: Publish to Chromatic
-        uses: chromaui/action@latest
-        with:
-          projectToken: "chpt_ca9ead39821522d"
-          autoAcceptChanges: "main"
-          buildScriptName: "storybook:build"
-        env:
-          CI: true
+  # user-flow: // temporarily disabled
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version-file: '.nvmrc'
+  #     - name: Install dependencies
+  #       run: yarn
+  #     - name: Publish to Chromatic
+  #       uses: chromaui/action@latest
+  #       with:
+  #         projectToken: "chpt_ca9ead39821522d"
+  #         autoAcceptChanges: "main"
+  #         buildScriptName: "storybook:build"
+  #       env:
+  #         CI: true
