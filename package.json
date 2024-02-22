@@ -26,14 +26,14 @@
     "prepare": "husky install",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.{ts,tsx,js}\"",
     "prepublish": "yarn build",
-    "preversion": "yarn storybook:test && yarn lint",
+    "preversion": "yarn test && yarn lint",
     "postversion": "git push && git push --tags",
     "version:major": "npm version major",
     "version:minor": "npm version minor",
     "version:patch": "npm version patch",
     "storybook:dev": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:test": "yarn storybook:build; npx concurrently -k -s first -n \"Storybook Build,Storybook Test\" -c \"auto\" \"npx http-server storybook-static --port 6006 --silent \" \"npx wait-on http-get://127.0.0.1:6006 && test-storybook \""
+    "test": "yarn storybook:build; npx concurrently -k -s first -n \"Storybook Build,Storybook Test\" -c \"auto\" \"npx http-server storybook-static --port 6006 --silent \" \"npx wait-on http-get://127.0.0.1:6006 && test-storybook \""
   },
   "lint-staged": {
     "*.{ts,tsx}": [
