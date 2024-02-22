@@ -36,7 +36,7 @@
     "version:patch": "npm version patch",
     "storybook:dev": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:test": "test-storybook"
+    "storybook:test": "yarn storybook:build; npx concurrently -k -s first -n \"Storybook Build,Storybook Test\" -c \"auto\" \"npx http-server storybook-static --port 6006 --silent \" \"npx wait-on http-get://127.0.0.1:6006 && test-storybook \""
   },
   "lint-staged": {
     "*.{ts,tsx}": [
