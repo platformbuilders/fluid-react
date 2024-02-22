@@ -46,8 +46,6 @@
     "src/**/*.spec.{ts,tsx}",
     "**/*.stories.ts",
     "**/*.stories.tsx",
-    "**/*.test.tsx",
-    "**/*.test.ts",
     "node_modules",
     "dist",
     "documentation",

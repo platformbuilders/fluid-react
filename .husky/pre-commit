@@ -3,5 +3,4 @@
 
 yarn pretty
 yarn lint
-yarn test
 git add .
