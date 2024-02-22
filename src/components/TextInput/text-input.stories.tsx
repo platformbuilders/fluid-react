@@ -59,6 +59,12 @@ export const Default: Story = {
       await userEvent.tab();
       expect(events.onBlur).toHaveBeenCalled();
     });
+
+    await step('TextInput | Change Value', async () => {
+      await userEvent.type(canvas.getByTestId(mockTextId), 'Fluid React');
+      expect(events.onFocus).toHaveBeenCalled();
+      expect(events.onChange).toHaveBeenCalled();
+    });
   },
 };
 
@@ -77,8 +83,7 @@ export const MaskPhone: Story = {
     });
 
     await step('TextInput | Change Value', async () => {
-      await userEvent.type(canvas.getByTestId(mockTextId), '5511999999999');
-      expect(events.onFocus).toHaveBeenCalled();
+      await userEvent.type(canvas.getByTestId(mockTextId), 'Fluid React');
       expect(events.onChange).toHaveBeenCalled();
     });
   },
