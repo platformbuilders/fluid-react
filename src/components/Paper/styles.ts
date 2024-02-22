@@ -14,6 +14,6 @@ interface WrapperProps {
 
 export const Wrapper = styled.div<WrapperProps>`
   padding: ${spacingMd}px;
-  box-shadow: ${({ elevation }) => getTheme(`boxShadow.${elevation}`)};
+  ${({ elevation }) => getTheme(`boxShadow.${elevation}`)};
   border-radius: ${({ square }) => (square ? 0 : cardBorderRadius)}px;
 `;

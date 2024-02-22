@@ -5,6 +5,7 @@ type Props = {
   children?: React.ReactNode;
   elevation?: ElevationVariants;
   square?: boolean;
+  id?: string;
 };
 
 const Paper: FC<Props> = ({ children, ...rest }): JSX.Element => (
