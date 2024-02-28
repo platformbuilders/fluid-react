@@ -1,0 +1,31 @@
+{
+  "name": "brl_upercase",
+  "months": [
+    ["Janeiro ", "JAN"],
+    ["Fevereiro", "FEV"],
+    ["Março", "MAR"],
+    ["Abril", "ABR"],
+    ["Maio", "MAI"],
+    ["Junho", "JUN"],
+    ["Julho", "JUL"],
+    ["Agosto", "AGO"],
+    ["Setembro", "SET"],
+    ["Outubro", "OUT"],
+    ["Novembro", "NOV"],
+    ["Dezembro", "DEZ"]
+  ],
+  "weekDays": [
+    ["Sábado", "SA"],
+    ["Domingo", "DO"],
+    ["Segunda", "SE"],
+    ["Terça", "TE"],
+    ["Quarta", "QA"],
+    ["Quinta", "QI"],
+    ["Sexta", "SE"]
+  ],
+  "digits": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+  "meridiems": [
+    ["AM", "am"],
+    ["PM", "pm"]
+  ]
+}
