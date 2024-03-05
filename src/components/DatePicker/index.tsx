@@ -9,6 +9,8 @@ interface Props extends DatePickerProps {
   onChange: (date: DateObject) => void;
   minDate?: Date;
   maxDate?: Date;
+  name: string;
+  id: string;
   disableMonthPicker?: boolean;
   disableYearPicker?: boolean;
   workDays?: boolean;
@@ -24,19 +26,19 @@ const DatePickerComponent: React.FC<Props> = ({
   disableYearPicker,
   workDays,
   holidays,
+  name,
+  id,
 }) => {
   const datePickerRef = useRef();
   return (
     <CustomCalendar
       locale={localeCalendar}
-      className="custom-date-picker"
       ref={datePickerRef}
       render={(value, openCalendar, onChange) => {
         return (
           <TextInput
-            className="input-date"
-            name="date"
-            id="date"
+            name={name}
+            id={id}
             value={value}
             onClick={openCalendar}
             onChange={(e) => onChange(e)}
