@@ -10993,6 +10993,11 @@ react-colorful@^5.1.2:
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.6.1.tgz#7dc2aed2d7c72fac89694e834d179e32f3da563b"
   integrity sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==
 
+react-date-object@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/react-date-object/-/react-date-object-2.1.8.tgz#2bc482f950d11f241bb127b08ab8152c12c2f80c"
+  integrity sha512-94zg/9r29v/VsKsJT0E5+tPg85IyMirkU/B7qBWlhT7RDSuf9x5dczfbQOsj9TbzSVUK/Vx/ZDboOBy9hA381w==
+
 react-docgen-typescript-loader@3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.7.2.tgz#45cb2305652c0602767242a8700ad1ebd66bbbbd"
@@ -11036,6 +11041,11 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-element-popper@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/react-element-popper/-/react-element-popper-2.1.6.tgz#4afb912287d57de5d442fb85e76f4d7b94fde879"
+  integrity sha512-8va7mUmrKIkUnaM2t5Dyctd8cjgVgVcrv5vVD0FRay0sN6EPBCKa0bDi1/KmVDAjfgSIn7zQnjtc4VojcGrkgQ==
+
 react-element-to-jsx-string@^15.0.0:
   version "15.0.0"
   resolved "https://registry.yarnpkg.com/react-element-to-jsx-string/-/react-element-to-jsx-string-15.0.0.tgz#1cafd5b6ad41946ffc8755e254da3fc752a01ac6"
@@ -11077,6 +11087,14 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-multi-date-picker@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/react-multi-date-picker/-/react-multi-date-picker-4.4.1.tgz#98e137ab4829f69385d9e14f8ff6d48f31e180c8"
+  integrity sha512-z0utCiMYijt2w3UoVJkYgsReE9l1k6DkiL13Vr2RKHnBnorKK0IYq7xpfkuMimvt7sLumFr5wTKsWumCgSkXkA==
+  dependencies:
+    react-date-object "^2.1.8"
+    react-element-popper "^2.1.6"
 
 react-refresh@^0.14.0:
   version "0.14.0"
