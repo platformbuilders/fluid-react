@@ -1,14 +1,30 @@
 import styled from 'styled-components';
-import { getTheme } from '@platformbuilders/theme-toolkit';
+import { getTheme, ifStyle } from '@platformbuilders/theme-toolkit';
 
-const brandPrimaryMain = getTheme('brand.primary.main');
 const brandPrimaryContrast = getTheme('brand.primary.contrast');
+const infoMain = getTheme('info.main');
+const spacingSm = getTheme('spacing.sm');
+const borderRadiusSm = getTheme('borderRadius.sm');
 
-export const Wrapper = styled.div`
+// Ifs
+const isEnabled = ifStyle('enabled');
+
+type WrapperProps = {
+  enabled?: boolean;
+};
+
+export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
+  padding: ${spacingSm}px;
+  border-radius: ${borderRadiusSm}px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: ${isEnabled(infoMain)}20;
+  }
 `;
 
 export const CheckboxRoot = styled.label`
@@ -21,8 +37,8 @@ export const CheckboxRoot = styled.label`
 
   input:checked + span::before,
   input:indeterminate + span::before {
-    border-color: ${brandPrimaryMain};
-    background-color: ${brandPrimaryMain};
+    border-color: ${infoMain};
+    background-color: ${infoMain};
   }
 
   input:checked + span::after,
@@ -35,23 +51,8 @@ export const CheckboxRoot = styled.label`
     transform: translate(4px, 3px);
   }
 
-  &:hover {
-    input {
-      opacity: 0.12;
-
-      :focus {
-        opacity: 0.16;
-      }
-    }
-  }
-
   input:active + span::before {
-    border-color: ${brandPrimaryMain};
-  }
-
-  input:checked:active + span::before {
-    border-color: transparent;
-    background-color: rgba(0, 0, 0, 0.6);
+    border-color: ${infoMain};
   }
 
   input:disabled + span {
@@ -60,13 +61,14 @@ export const CheckboxRoot = styled.label`
   }
 
   input:disabled + span::before {
-    border-color: currentColor;
+    border-color: ${infoMain};
+    opacity: 0.5;
   }
 
   input:checked:disabled + span::before,
   input:indeterminate:disabled + span::before {
     border-color: transparent;
-    background-color: currentColor;
+    background-color: ${infoMain};
   }
 `;
 
@@ -91,7 +93,7 @@ export const Check = styled.input`
 
   &:checked,
   &:indeterminate {
-    background-color: ${brandPrimaryMain};
+    background-color: ${infoMain};
   }
 
   &:focus {
@@ -120,8 +122,8 @@ export const Label = styled.span`
     box-sizing: border-box;
     margin: 3px 11px 3px 1px;
     border: solid 2px; /* Safari */
-    border-color: rgba(0, 0, 0, 0.6);
-    border-radius: 2px;
+    border-color: ${infoMain};
+    border-radius: 3px;
     width: 18px;
     height: 18px;
     vertical-align: top;

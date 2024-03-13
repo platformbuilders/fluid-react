@@ -22,6 +22,8 @@ const meta: Meta<typeof Checkbox> = {
     onChange: eventMockFn,
     id: testId,
     label: 'Enable Settings',
+    disabled: false,
+    checked: false,
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
