@@ -12,6 +12,7 @@ export type CheckboxProps = {
   name?: string;
   id?: string;
   style?: CSSProperties;
+  disabled?: boolean;
 };
 
 const Checkbox: FC<CheckboxProps> = ({
@@ -22,8 +23,9 @@ const Checkbox: FC<CheckboxProps> = ({
   name,
   error,
   style,
+  disabled,
 }): JSX.Element => (
-  <Wrapper>
+  <Wrapper enabled={!disabled}>
     <FormError error={error}>
       <CheckboxRoot htmlFor={id} style={style}>
         <Check
@@ -32,6 +34,7 @@ const Checkbox: FC<CheckboxProps> = ({
           checked={checked}
           onChange={onChange}
           name={name}
+          disabled={disabled}
         />
         <Label>{label}</Label>
       </CheckboxRoot>
