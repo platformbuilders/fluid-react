@@ -52,7 +52,7 @@ export const Input = styled.input<InputProps>`
   border-color: ${(props) => hasError(dangerMain(props), '#121212')(props)};
   display: flex;
   height: ${pxToRem(44)};
-  padding: ${spacingXs}px ${spacingSm}px ${spacingXs}px ${spacingMd}px;
+  padding: 0px ${spacingSm}px 0px ${spacingMd}px;
   ${({ $hasIconRight }) => !!$hasIconRight && `padding-right: ${pxToRem(36)};`}
   ${({ $hasIconLeft }) => !!$hasIconLeft && `padding-left: ${pxToRem(36)};`}
   align-items: center;
@@ -72,11 +72,11 @@ export const Input = styled.input<InputProps>`
   }
 `;
 
-export const Message = styled.span<MessageProps>`
+export const Message = styled.p<MessageProps>`
   font-size: ${fontSizeMd}px;
   color: ${(props) => hasError(dangerMain(props), textMain(props))(props)};
   letter-spacing: 0.0275rem;
-  margin: ${spacingXs}px ${spacingMd}px;
+  margin: ${spacingSm}px ${spacingMd}px;
 `;
 
 export const Wrapper = styled.div`
