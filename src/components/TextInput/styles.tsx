@@ -23,7 +23,6 @@ const primaryMain = getTheme('brand.primary.main');
 const dangerMain = getTheme('danger.main');
 const fontSizeSm = getTheme('fontSizes.sm');
 const fontSizeMd = getTheme('fontSizes.md');
-const spacingXs = getTheme('spacing.xs');
 const spacingSm = getTheme('spacing.sm');
 const spacingMd = getTheme('spacing.md');
 const spacingLg = getTheme('spacing.lg');
