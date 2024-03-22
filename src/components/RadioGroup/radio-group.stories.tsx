@@ -1,44 +1,55 @@
 import { expect, jest } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
 import { configure, userEvent, within } from '@storybook/testing-library';
-import Radio from './index';
+import RadioGroup from './index';
 
 configure({ testIdAttribute: 'id' });
 
 //  Mocks
-const mockTextId = 'radio-test-id';
+const mockTextId = 'radio-group-test-id';
 const mockOnChange = jest.fn();
 
-const meta: Meta<typeof Radio> = {
-  title: 'Components/Radio',
-  component: Radio,
+const meta: Meta<typeof RadioGroup> = {
+  title: 'Components/RadioGroup',
+  component: RadioGroup,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   args: {
     id: mockTextId,
-    label: 'Radio Test',
-    group: 'radio-test',
+    options: [
+      {
+        id: 'option1',
+        value: 'option1',
+        label: 'Opção 1',
+      },
+      {
+        id: 'option2',
+        value: 'option2',
+        label: 'Opção 2',
+      },
+      {
+        id: 'option3',
+        value: 'option3',
+        label: 'Opção 3',
+      },
+    ],
+    defaultValue: 'option1',
+    name: 'radio-group-test',
     onChange: mockOnChange,
     disabled: false,
-    checked: false,
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
-    await step('Radio | Test Render', async () => {
+    await step('RadioGroup | Test Render', async () => {
       expect(canvas.getByTestId(mockTextId)).toBeInTheDocument();
-    });
-
-    await step('Radio | Event Click', async () => {
-      await userEvent.click(canvas.getByTestId(mockTextId));
-      expect(mockOnChange).toHaveBeenCalled();
     });
   },
 };
 
-type Story = StoryObj<typeof Radio>;
+type Story = StoryObj<typeof RadioGroup>;
 
 export const Default: Story = {
   args: {},
