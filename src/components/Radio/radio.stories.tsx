@@ -21,6 +21,8 @@ const meta: Meta<typeof Radio> = {
     label: 'Radio Test',
     group: 'radio-test',
     onChange: mockOnChange,
+    disabled: false,
+    checked: false,
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
