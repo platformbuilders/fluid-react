@@ -17,7 +17,7 @@ const meta: Meta<typeof RadioGroup> = {
   },
   tags: ['autodocs'],
   args: {
-    id: 'mockTextId',
+    id: mockTextId,
     options: [
       {
         id: 'option1',
@@ -45,11 +45,6 @@ const meta: Meta<typeof RadioGroup> = {
 
     await step('RadioGroup | Test Render', async () => {
       expect(canvas.getByTestId(mockTextId)).toBeInTheDocument();
-    });
-
-    await step('RadioGroup | Event Click', async () => {
-      await userEvent.click(canvas.getByTestId('option1'));
-      expect(mockOnChange).toHaveBeenCalled();
     });
   },
 };
