@@ -51,10 +51,15 @@ export const Input = styled.input`
   &:checked + label {
     color: ${textMain};
   }
+
+  &:disabled + label {
+    cursor: initial;
+  }
 `;
 
 export const Label = styled.label`
   color: ${textMain}70;
+  cursor: pointer;
 
   &:before,
   &:after {

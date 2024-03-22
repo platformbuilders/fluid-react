@@ -34,10 +34,6 @@ const Radio: FC<Props> = ({
     setInternalChecked(checked);
   }, [checked]);
 
-  useEffect(() => {
-    if (disabled && checked) setInternalChecked(false);
-  }, [disabled, checked]);
-
   return (
     <Wrapper disabled={!!disabled} style={style}>
       <Input
