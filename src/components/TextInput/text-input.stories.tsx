@@ -7,6 +7,9 @@ configure({ testIdAttribute: 'id' });
 
 //  Mocks
 const mockTextId = 'text-input-test-id';
+const mockInputOutlined = 'Diego Cruz';
+const mockInputCpfMask = '56728709029';
+const mockResultCpfMask = '567.287.090-29';
 
 const events = {
   onChange: jest.fn(),
@@ -31,6 +34,10 @@ const meta: Meta<typeof TextInput> = {
       control: { type: null },
       description: 'All Mask options in: https://imask.js.org',
     },
+    variant: {
+      type: 'string',
+      defaultValue: 'default',
+    },
   },
   args: {
     id: mockTextId,
@@ -40,6 +47,7 @@ const meta: Meta<typeof TextInput> = {
     onBlur: events.onBlur,
     onFocus: events.onFocus,
     onClickIconLeft: events.onClickIconLeft,
+    variant: 'default',
   },
   tags: ['autodocs'],
 };
@@ -68,6 +76,73 @@ export const Default: Story = {
   },
 };
 
+export const Outlined: Story = {
+  args: {
+    label: 'Name',
+    variant: 'outlined',
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('TextInput | Test Render', async () => {
+      expect(canvas.getByTestId(mockTextId)).toBeInTheDocument();
+    });
+
+    await step('TextInput | Event Focus', async () => {
+      await userEvent.click(canvas.getByTestId(mockTextId));
+      expect(events.onFocus).toHaveBeenCalled();
+    });
+
+    await step('TextInput | Event Blur', async () => {
+      await userEvent.click(canvas.getByTestId(mockTextId));
+      await userEvent.tab();
+      expect(events.onBlur).toHaveBeenCalled();
+    });
+
+    await step('TextInput | Change Value', async () => {
+      await userEvent.type(canvas.getByTestId(mockTextId), mockInputOutlined);
+      expect(events.onFocus).toHaveBeenCalled();
+      expect(events.onChange).toHaveBeenCalled();
+      expect(canvas.getByTestId(mockTextId)).toHaveValue(mockInputOutlined);
+    });
+  },
+};
+
+export const OutlinedMaskCPF: Story = {
+  args: {
+    label: 'CPF',
+    variant: 'outlined',
+    maskOptions: {
+      mask: '000.000.000-00',
+    },
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('TextInput | Test Render', async () => {
+      expect(canvas.getByTestId(mockTextId)).toBeInTheDocument();
+    });
+
+    await step('TextInput | Event Focus', async () => {
+      await userEvent.click(canvas.getByTestId(mockTextId));
+      expect(events.onFocus).toHaveBeenCalled();
+    });
+
+    await step('TextInput | Event Blur', async () => {
+      await userEvent.click(canvas.getByTestId(mockTextId));
+      await userEvent.tab();
+      expect(events.onBlur).toHaveBeenCalled();
+    });
+
+    await step('TextInput | Change Value', async () => {
+      await userEvent.type(canvas.getByTestId(mockTextId), mockInputCpfMask);
+      expect(events.onFocus).toHaveBeenCalled();
+      expect(events.onChange).toHaveBeenCalled();
+      expect(canvas.getByTestId(mockTextId)).toHaveValue(mockResultCpfMask);
+    });
+  },
+};
+
 export const MaskPhone: Story = {
   args: {
     message: 'Type your Phone',
@@ -83,7 +158,7 @@ export const MaskPhone: Story = {
     });
 
     await step('TextInput | Change Value', async () => {
-      await userEvent.type(canvas.getByTestId(mockTextId), 'Fluid React');
+      await userEvent.type(canvas.getByTestId(mockTextId), '5587988888888');
       expect(events.onChange).toHaveBeenCalled();
     });
   },
