@@ -20,11 +20,13 @@ type MessageProps = VariantProps & {
 
 type InputProps = VariantProps & {
   $hasError: boolean;
+  $isDisabled?: boolean;
 } & HasIcon;
 
 type InputWrapperProps = VariantProps & {
   $hasFocus: boolean;
   $hasError: boolean;
+  $isDisabled?: boolean;
 };
 
 type IconProps = {
@@ -35,7 +37,14 @@ type IconProps = {
 type LabelProps = {
   $hasFocus: boolean;
   $hasError: boolean;
+  $isDisabled?: boolean;
 } & HasIcon;
+
+type FieldsetProps = {
+  $hasFocus: boolean;
+  $hasError: boolean;
+  $isDisabled?: boolean;
+};
 
 const primaryMain = getTheme('brand.primary.main');
 const dangerMain = getTheme('danger.main');
@@ -63,6 +72,7 @@ const inputOutlinedStyles = ({
   height: 30px;
   padding: 0;
   background: transparent;
+  margin-bottom: 0;
 
   ${$hasIconRight && `padding-right: ${pxToRem(36)};`}
   ${$hasIconLeft && `padding-left: ${pxToRem(36)};`}
@@ -70,6 +80,10 @@ const inputOutlinedStyles = ({
 
   &::placeholder {
     color: transparent;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 `;
 
@@ -154,8 +168,9 @@ export const Message = styled.p<MessageProps>`
     `};
 `;
 
-export const Wrapper = styled.div`
-  margin-bottom: ${spacingLg}px;
+export const Wrapper = styled.div<VariantProps>`
+  margin-bottom: ${({ $variant }) =>
+    $variant === 'outlined' ? `0` : `${spacingLg}px`};
   position: relative;
 `;
 
@@ -197,10 +212,16 @@ export const Label = styled.label<LabelProps>`
       color: ${hasError(dangerMain, primaryMain)};
       padding: 0 ${pxToRem(4)};
     `}
+
+    ${({ $isDisabled }) =>
+    $isDisabled &&
+    css`
+      opacity: 0.5;
+    `}
 `;
 
 export const InputWrapper = styled.div<InputWrapperProps>`
-  ${({ $variant, $hasFocus }) =>
+  ${({ $variant, $hasFocus, $isDisabled }) =>
     $variant === 'outlined' &&
     css`
       position: relative;
@@ -213,16 +234,16 @@ export const InputWrapper = styled.div<InputWrapperProps>`
       border: ${$hasFocus ? 'none' : `1px solid #10141633`};
       border-color: ${hasError(dangerMain, '')};
 
+      ${$isDisabled && `opacity: 0.5`};
+
       &:hover {
         border-color: ${hasError(dangerMain, primaryMain)};
+        ${$isDisabled && `border-color: #10141633`};
       }
     `}
 `;
 
-export const Fieldset = styled.fieldset<{
-  $hasFocus: boolean;
-  $hasError: boolean;
-}>`
+export const Fieldset = styled.fieldset<FieldsetProps>`
   position: absolute;
   top: ${pxToRem(-5)};
   left: ${pxToRem(-1)};
@@ -235,6 +256,12 @@ export const Fieldset = styled.fieldset<{
   pointer-events: none;
   display: ${({ $hasFocus }) => !$hasFocus && 'none'};
 
+  ${({ $isDisabled }) =>
+    $isDisabled &&
+    css`
+      border: 1px solid #10141633;
+    `}
+
   legend {
     width: auto;
     padding: 0 ${pxToRem(5)};
@@ -244,7 +271,7 @@ export const Fieldset = styled.fieldset<{
     color: ${hasError(dangerMain, primaryMain)};
 
     span {
-      visibility: ${(props) => props.$hasFocus && 'hidden'};
+      visibility: ${({ $hasFocus }) => $hasFocus && 'hidden'};
     }
   }
 `;

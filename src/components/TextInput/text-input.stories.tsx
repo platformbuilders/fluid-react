@@ -38,6 +38,10 @@ const meta: Meta<typeof TextInput> = {
       type: 'string',
       defaultValue: 'default',
     },
+    disabled: {
+      type: 'boolean',
+      defaultValue: false,
+    },
   },
   args: {
     id: mockTextId,
@@ -48,6 +52,7 @@ const meta: Meta<typeof TextInput> = {
     onFocus: events.onFocus,
     onClickIconLeft: events.onClickIconLeft,
     variant: 'default',
+    disabled: false,
   },
   tags: ['autodocs'],
 };
