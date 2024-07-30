@@ -4,6 +4,7 @@ import {
   FocusEvent,
   InputHTMLAttributes,
   MouseEvent,
+  forwardRef,
   useRef,
   useState,
 } from 'react';
@@ -56,194 +57,210 @@ export type TextInputType = InputHTMLAttributes<HTMLInputElement> &
       | undefined;
   };
 
-const TextInput: FC<TextInputType> = ({
-  message,
-  error,
-  onChange,
-  onBlur,
-  onFocus,
-  onClickIconLeft,
-  onClickIconRight,
-  style,
-  label,
-  textInputStyle,
-  value,
-  id,
-  name,
-  maxLength,
-  autoFocus,
-  maskOptions,
-  iconRight,
-  iconLeft,
-  variant = 'default',
-  ...rest
-}) => {
-  const [isFocused, setIsFocused] = useState(false);
+const TextInput: FC<TextInputType> = forwardRef<
+  HTMLInputElement,
+  TextInputType
+>(
+  (
+    {
+      message,
+      error,
+      onChange,
+      onBlur,
+      onFocus,
+      onClickIconLeft,
+      onClickIconRight,
+      style,
+      label,
+      textInputStyle,
+      value,
+      id,
+      name,
+      maxLength,
+      autoFocus,
+      maskOptions,
+      iconRight,
+      iconLeft,
+      variant = 'default',
+      ...rest
+    },
+    ref,
+  ) => {
+    const [isFocused, setIsFocused] = useState(false);
 
-  const hasValue = value?.length > 0;
-  const hasError = error ? error.length > 0 : false;
-  const hasFocus = isFocused || hasValue;
+    const hasValue = value?.length > 0;
+    const hasError = error ? error.length > 0 : false;
+    const hasFocus = isFocused || hasValue;
 
-  const RightIconComponent: any = iconRight && Icons[iconRight];
-  const LeftIconComponent: any = iconLeft && Icons[iconLeft];
-  const ErrorIconComponent: any = Icons['ExclamationTriangleIcon'];
+    const RightIconComponent: any = iconRight && Icons[iconRight];
+    const LeftIconComponent: any = iconLeft && Icons[iconLeft];
+    const ErrorIconComponent: any = Icons['ExclamationTriangleIcon'];
 
-  const onAccept = (value: any) => {
-    if (onChange) {
-      onChange({
-        target: {
-          name,
-          value,
-        },
-      } as any);
-    }
-  };
+    const onAccept = (value: any) => {
+      if (onChange) {
+        onChange({
+          target: {
+            name,
+            value,
+          },
+        } as any);
+      }
+    };
 
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
+    const handleFocus = () => {
+      setIsFocused(true);
+    };
 
-  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-    if (event.target.value === '') {
-      setIsFocused(false);
-    }
-  };
+    const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+      if (event.target.value === '') {
+        setIsFocused(false);
+      }
+    };
 
-  const ref = useRef(null);
-  const inputRef = useRef(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
-  return (
-    <Wrapper style={style}>
-      {variant === 'outlined' && (
-        <Label
-          htmlFor={id}
+    return (
+      <Wrapper style={style} $variant={variant}>
+        {variant === 'outlined' && (
+          <Label
+            htmlFor={id}
+            $hasFocus={hasFocus}
+            $hasError={hasError}
+            $hasIconLeft={!!iconLeft}
+            $hasIconRight={!!iconRight}
+            $isDisabled={rest.disabled}
+          >
+            {label}
+          </Label>
+        )}
+
+        <InputWrapper
           $hasFocus={hasFocus}
           $hasError={hasError}
-          $hasIconLeft={!!iconLeft}
-          $hasIconRight={!!iconRight}
-        >
-          {label}
-        </Label>
-      )}
-
-      <InputWrapper
-        $hasFocus={hasFocus}
-        $hasError={hasError}
-        $variant={variant}
-      >
-        {iconLeft && (
-          <IconWrapperLeft
-            $clickable={!!onClickIconLeft}
-            $hasError={hasError}
-            onClick={onClickIconLeft}
-          >
-            <LeftIconComponent
-              id={`${id}-left-icon`}
-              accessibility="ícone do botão"
-            />
-          </IconWrapperLeft>
-        )}
-
-        {maskOptions ? (
-          <StyledIMaskInput
-            {...maskOptions}
-            id={id}
-            name={name}
-            data-testid={id}
-            style={textInputStyle}
-            ref={ref}
-            inputRef={inputRef}
-            onAccept={onAccept}
-            autoFocus={autoFocus}
-            hasError={hasError}
-            onFocus={(event) => {
-              handleFocus();
-              onFocus?.(event);
-            }}
-            onBlur={(event) => {
-              handleBlur(event);
-              onBlur?.(event);
-            }}
-            mask={hasFocus ? maskOptions?.mask : ''}
-            defaultValue={value}
-            $hasIconLeft={!!iconLeft}
-            $hasIconRight={!!iconRight}
-            $hasError={hasError}
-            $variant={variant}
-            {...rest}
-          />
-        ) : (
-          <Input
-            id={id}
-            data-testid={id}
-            name={name}
-            value={value}
-            style={textInputStyle}
-            onFocus={(event) => {
-              handleFocus();
-              onFocus?.(event);
-            }}
-            onBlur={(event) => {
-              handleBlur(event);
-              onBlur?.(event);
-            }}
-            onChange={onChange}
-            maxLength={maxLength}
-            autoFocus={autoFocus}
-            $hasError={hasError}
-            $hasIconLeft={!!iconLeft}
-            $hasIconRight={!!iconRight}
-            $variant={variant}
-            {...rest}
-          />
-        )}
-
-        {iconRight && (
-          <IconWrapperRight
-            $clickable={!!onClickIconRight}
-            $hasError={hasError}
-            onClick={onClickIconRight}
-          >
-            <RightIconComponent
-              id={`${id}-right-icon`}
-              accessibility="ícone do botão"
-            />
-          </IconWrapperRight>
-        )}
-
-        {variant === 'outlined' && (
-          <Fieldset $hasFocus={hasFocus} $hasError={hasError}>
-            <legend>
-              <span>{label}</span>
-            </legend>
-          </Fieldset>
-        )}
-      </InputWrapper>
-
-      {variant !== 'outlined' && (
-        <PlaceholderLabel
-          className="text-input-label"
-          $hasIconLeft={!!iconLeft}
-          $hasIconRight={!!iconRight}
-          $hasError={hasError}
-          $hasValue={hasValue}
-        >
-          {label}
-        </PlaceholderLabel>
-      )}
-
-      {error || message ? (
-        <Message
-          className="error-text-input"
-          $hasError={hasError}
           $variant={variant}
+          $isDisabled={rest.disabled}
         >
-          {variant === 'outlined' && <ErrorIconComponent />}
-          {error || message}
-        </Message>
-      ) : null}
-    </Wrapper>
-  );
-};
+          {iconLeft && (
+            <IconWrapperLeft
+              $clickable={!!onClickIconLeft}
+              $hasError={hasError}
+              onClick={onClickIconLeft}
+            >
+              <LeftIconComponent
+                id={`${id}-left-icon`}
+                accessibility="ícone do botão"
+              />
+            </IconWrapperLeft>
+          )}
+
+          {maskOptions ? (
+            <StyledIMaskInput
+              {...maskOptions}
+              id={id}
+              name={name}
+              data-testid={id}
+              style={textInputStyle}
+              ref={ref}
+              inputRef={inputRef}
+              onAccept={onAccept}
+              autoFocus={autoFocus}
+              hasError={hasError}
+              onFocus={(event) => {
+                handleFocus();
+                onFocus?.(event);
+              }}
+              onBlur={(event) => {
+                handleBlur(event);
+                onBlur?.(event);
+              }}
+              mask={hasFocus ? maskOptions?.mask : ''}
+              defaultValue={value}
+              $hasIconLeft={!!iconLeft}
+              $hasIconRight={!!iconRight}
+              $hasError={hasError}
+              $variant={variant}
+              $isDisabled={rest.disabled}
+              {...rest}
+            />
+          ) : (
+            <Input
+              id={id}
+              data-testid={id}
+              name={name}
+              value={value}
+              style={textInputStyle}
+              ref={ref}
+              onFocus={(event) => {
+                handleFocus();
+                onFocus?.(event);
+              }}
+              onBlur={(event) => {
+                handleBlur(event);
+                onBlur?.(event);
+              }}
+              onChange={onChange}
+              maxLength={maxLength}
+              autoFocus={autoFocus}
+              $hasError={hasError}
+              $hasIconLeft={!!iconLeft}
+              $hasIconRight={!!iconRight}
+              $variant={variant}
+              $isDisabled={rest.disabled}
+              {...rest}
+            />
+          )}
+
+          {iconRight && (
+            <IconWrapperRight
+              $clickable={!!onClickIconRight}
+              $hasError={hasError}
+              onClick={onClickIconRight}
+            >
+              <RightIconComponent
+                id={`${id}-right-icon`}
+                accessibility="ícone do botão"
+              />
+            </IconWrapperRight>
+          )}
+
+          {variant === 'outlined' && (
+            <Fieldset
+              $hasFocus={hasFocus}
+              $hasError={hasError}
+              $isDisabled={rest.disabled}
+            >
+              <legend>
+                <span>{label}</span>
+              </legend>
+            </Fieldset>
+          )}
+        </InputWrapper>
+
+        {variant !== 'outlined' && (
+          <PlaceholderLabel
+            className="text-input-label"
+            $hasIconLeft={!!iconLeft}
+            $hasIconRight={!!iconRight}
+            $hasError={hasError}
+            $hasValue={hasValue}
+          >
+            {label}
+          </PlaceholderLabel>
+        )}
+
+        {error || message ? (
+          <Message
+            className="error-text-input"
+            $hasError={hasError}
+            $variant={variant}
+          >
+            {variant === 'outlined' && <ErrorIconComponent />}
+            {error || message}
+          </Message>
+        ) : null}
+      </Wrapper>
+    );
+  },
+);
 
 export default TextInput;
