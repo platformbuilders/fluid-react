@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, SelectHTMLAttributes } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import {
   Icon,
@@ -21,7 +21,7 @@ type SelectOptions = {
   value: string;
 };
 
-type Props = {
+export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   id: string;
   options: SelectOptions[];
   disabled?: boolean;
@@ -31,9 +31,12 @@ type Props = {
   onValueChange: (value: string) => void;
   defaultValue?: string;
   value?: string;
+  style?: any;
+  styleItem?: any;
+  styleContentItem?: any;
 };
 
-const Select: FC<Props> = ({
+const Select: FC<SelectProps> = ({
   options,
   disabled = false,
   placeholder,
@@ -41,13 +44,21 @@ const Select: FC<Props> = ({
   value,
   defaultValue,
   id,
+  style,
+  styleItem,
+  styleContentItem,
 }) => (
   <Wrapper
     onValueChange={onValueChange}
     defaultValue={defaultValue}
     value={value}
   >
-    <StyledTrigger id={id} aria-label="select" disabled={disabled}>
+    <StyledTrigger
+      id={id}
+      aria-label="select"
+      disabled={disabled}
+      style={style}
+    >
       <Value placeholder={<PlaceholderText>{placeholder}</PlaceholderText>} />
       <Icon>
         <ChevronDownIcon />
@@ -57,9 +68,9 @@ const Select: FC<Props> = ({
       <ScrollUpButton>
         <ChevronUpIcon />
       </ScrollUpButton>
-      <StyledViewPort>
+      <StyledViewPort style={styleContentItem}>
         {options.map((item) => (
-          <StyledItem value={item.value} key={item.value}>
+          <StyledItem value={item.value} key={item.value} style={styleItem}>
             <StyledItemText>{item.option}</StyledItemText>
           </StyledItem>
         ))}
