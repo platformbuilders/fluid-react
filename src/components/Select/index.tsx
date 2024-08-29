@@ -4,6 +4,9 @@ import {
   Icon,
   ScrollDownButton,
   ScrollUpButton,
+  SelectItemProps,
+  SelectTriggerProps,
+  SelectViewportProps,
   Value,
 } from '@radix-ui/react-select';
 import {
@@ -31,9 +34,9 @@ export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   onValueChange: (value: string) => void;
   defaultValue?: string;
   value?: string;
-  style?: any;
-  styleItem?: any;
-  styleContentItem?: any;
+  style?: SelectTriggerProps;
+  styleItem?: SelectItemProps;
+  styleContentItem?: SelectViewportProps;
 };
 
 const Select: FC<SelectProps> = ({

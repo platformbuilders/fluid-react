@@ -23,7 +23,7 @@ const meta: Meta<typeof Select> = {
     value: 'Female',
     style: {},
     styleContentItem: {},
-    styleItem: {},
+    styleItem: undefined,
     options: [
       {
         value: 'Male',
