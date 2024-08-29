@@ -15,6 +15,7 @@ interface Props extends DatePickerProps {
   disableYearPicker?: boolean;
   workDays?: boolean;
   holidays?: string[];
+  inputVariant?: 'default' | 'outlined';
 }
 
 const DatePickerComponent: React.FC<Props> = ({
@@ -28,6 +29,7 @@ const DatePickerComponent: React.FC<Props> = ({
   holidays,
   name,
   id,
+  inputVariant = 'outlined',
 }) => {
   const datePickerRef = useRef();
   return (
@@ -43,6 +45,7 @@ const DatePickerComponent: React.FC<Props> = ({
             onClick={openCalendar}
             onChange={(e) => onChange(e)}
             iconRight="ChevronDownIcon"
+            variant={inputVariant}
           />
         );
       }}

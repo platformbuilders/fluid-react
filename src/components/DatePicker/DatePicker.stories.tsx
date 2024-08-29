@@ -1,6 +1,6 @@
-import { expect, jest } from '@storybook/jest';
+import { jest } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
-import { configure, userEvent, within } from '@storybook/testing-library';
+import { configure } from '@storybook/testing-library';
 import DatePicker from './index';
 
 configure({
@@ -9,7 +9,6 @@ configure({
 
 //  Mocks
 const onChange = jest.fn();
-const calendarTestID = 'calendar-test-id';
 
 const meta: Meta<typeof DatePicker> = {
   title: 'Components/DatePicker',
@@ -26,6 +25,7 @@ const meta: Meta<typeof DatePicker> = {
     workDays: { control: { type: 'boolean' } },
     minDate: { control: { type: 'boolean' } },
     maxDate: { control: { type: 'boolean' } },
+    inputVariant: { type: 'string' },
   },
   args: {
     onChange: onChange,

@@ -21,6 +21,9 @@ const meta: Meta<typeof Select> = {
     helperMessage: 'Select Test',
     label: 'Select Test',
     value: 'Female',
+    style: {},
+    styleContentItem: {},
+    styleItem: undefined,
     options: [
       {
         value: 'Male',
