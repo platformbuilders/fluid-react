@@ -18,12 +18,19 @@ const meta: Meta<typeof Checkbox> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      type: 'string',
+      defaultValue: 'default',
+    },
+  },
   args: {
     onChange: eventMockFn,
     id: testId,
     label: 'Enable Settings',
     disabled: false,
     checked: false,
+    variant: 'default',
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
