@@ -13,6 +13,8 @@ export type CheckboxProps = {
   id?: string;
   style?: CSSProperties;
   disabled?: boolean;
+  variant?: 'default' | 'primary';
+  labelFontWeight?: number;
 };
 
 const Checkbox: FC<CheckboxProps> = ({
@@ -24,10 +26,12 @@ const Checkbox: FC<CheckboxProps> = ({
   error,
   style,
   disabled,
+  variant = 'default',
+  labelFontWeight,
 }): JSX.Element => (
-  <Wrapper enabled={!disabled}>
+  <Wrapper enabled={!disabled} $variant={variant}>
     <FormError error={error}>
-      <CheckboxRoot htmlFor={id} style={style}>
+      <CheckboxRoot htmlFor={id} style={style} $variant={variant}>
         <Check
           type="checkbox"
           id={id}
@@ -35,8 +39,11 @@ const Checkbox: FC<CheckboxProps> = ({
           onChange={onChange}
           name={name}
           disabled={disabled}
+          $variant={variant}
         />
-        <Label>{label}</Label>
+        <Label $variant={variant} $fontWeight={labelFontWeight}>
+          {label}
+        </Label>
       </CheckboxRoot>
     </FormError>
   </Wrapper>

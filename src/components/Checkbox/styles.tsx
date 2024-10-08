@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { getTheme, ifStyle } from '@platformbuilders/theme-toolkit';
 
 const brandPrimaryContrast = getTheme('brand.primary.contrast');
+const brandPrimaryMain = getTheme('brand.primary.main');
 const infoMain = getTheme('info.main');
 const spacingSm = getTheme('spacing.sm');
 const borderRadiusSm = getTheme('borderRadius.sm');
@@ -9,25 +10,46 @@ const borderRadiusSm = getTheme('borderRadius.sm');
 // Ifs
 const isEnabled = ifStyle('enabled');
 
+type VariantProps = {
+  $variant?: 'default' | 'primary';
+};
+
+type LabelProps = {
+  $fontWeight?: number;
+} & VariantProps;
+
 type WrapperProps = {
   enabled?: boolean;
+} & VariantProps;
+
+const getVariantStyles = ({ $variant }: VariantProps) => {
+  switch ($variant) {
+    case 'primary':
+      return brandPrimaryMain;
+    case 'default':
+      return infoMain;
+    default:
+      return infoMain;
+  }
 };
 
 export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: ${({ $variant }) =>
+    $variant && $variant === 'primary' ? '0' : '10px'};
   padding: ${spacingSm}px;
   border-radius: ${borderRadiusSm}px;
   transition: 0.5s;
 
   &:hover {
-    background-color: ${isEnabled(infoMain)}20;
+    background-color: ${({ $variant }) =>
+      $variant && $variant === 'primary' ? 'none' : isEnabled(infoMain)}20;
   }
 `;
 
-export const CheckboxRoot = styled.label`
+export const CheckboxRoot = styled.label<VariantProps>`
   z-index: 0;
   position: relative;
   display: inline-block;
@@ -37,8 +59,8 @@ export const CheckboxRoot = styled.label`
 
   input:checked + span::before,
   input:indeterminate + span::before {
-    border-color: ${infoMain};
-    background-color: ${infoMain};
+    border-color: ${({ $variant }) => getVariantStyles({ $variant })};
+    background-color: ${({ $variant }) => getVariantStyles({ $variant })};
   }
 
   input:checked + span::after,
@@ -52,7 +74,7 @@ export const CheckboxRoot = styled.label`
   }
 
   input:active + span::before {
-    border-color: ${infoMain};
+    border-color: ${({ $variant }) => getVariantStyles({ $variant })};
   }
 
   input:disabled + span {
@@ -61,18 +83,18 @@ export const CheckboxRoot = styled.label`
   }
 
   input:disabled + span::before {
-    border-color: ${infoMain};
+    border-color: ${({ $variant }) => getVariantStyles({ $variant })};
     opacity: 0.5;
   }
 
   input:checked:disabled + span::before,
   input:indeterminate:disabled + span::before {
     border-color: transparent;
-    background-color: ${infoMain};
+    background-color: ${({ $variant }) => getVariantStyles({ $variant })};
   }
 `;
 
-export const Check = styled.input`
+export const Check = styled.input<VariantProps>`
   appearance: none;
   z-index: -1;
   position: absolute;
@@ -93,7 +115,7 @@ export const Check = styled.input`
 
   &:checked,
   &:indeterminate {
-    background-color: ${infoMain};
+    background-color: ${({ $variant }) => getVariantStyles({ $variant })};
   }
 
   &:focus {
@@ -111,10 +133,16 @@ export const Check = styled.input`
   }
 `;
 
-export const Label = styled.span`
+export const Label = styled.span<LabelProps>`
   display: inline-block;
   width: 100%;
   cursor: pointer;
+
+  ${({ $fontWeight }) =>
+    $fontWeight &&
+    css`
+      font-weight: ${$fontWeight};
+    `}
 
   &::before {
     content: '';
@@ -122,7 +150,7 @@ export const Label = styled.span`
     box-sizing: border-box;
     margin: 3px 11px 3px 1px;
     border: solid 2px; /* Safari */
-    border-color: ${infoMain};
+    border-color: ${({ $variant }) => getVariantStyles({ $variant })};
     border-radius: 3px;
     width: 18px;
     height: 18px;
