@@ -236,6 +236,16 @@ export const InputWrapper = styled.div<InputWrapperProps>`
 
       ${$isDisabled && `opacity: 0.5`};
 
+      ${$hasFocus &&
+      css`
+        input {
+          &::placeholder {
+            color: ${textMain};
+            opacity: 0.5;
+          }
+        }
+      `}
+
       &:hover {
         border-color: ${hasError(dangerMain, primaryMain)};
         ${$isDisabled && `border-color: #10141633`};
