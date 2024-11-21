@@ -4,6 +4,7 @@ import {
   FocusEvent,
   InputHTMLAttributes,
   MouseEvent,
+  ReactNode,
   forwardRef,
   useRef,
   useState,
@@ -38,7 +39,7 @@ export type TextInputType = InputHTMLAttributes<HTMLInputElement> &
     maxLength?: number;
     value: string;
     autoFocus?: boolean;
-    iconRight?: IconsType;
+    iconRight?: IconsType | Exclude<ReactNode, string | IconsType>;
     iconLeft?: IconsType;
     onClickIconRight?: (event: MouseEvent<HTMLElement>) => void;
     onClickIconLeft?: (event: MouseEvent<HTMLElement>) => void;
@@ -92,7 +93,10 @@ const TextInput: FC<TextInputType> = forwardRef<
     const hasError = error ? error.length > 0 : false;
     const hasFocus = isFocused || hasValue;
 
-    const RightIconComponent: any = iconRight && Icons[iconRight];
+    const RightIconComponent: any =
+      typeof iconRight === 'string' && iconRight in Icons
+        ? Icons[iconRight as IconsType]
+        : null;
     const LeftIconComponent: any = iconLeft && Icons[iconLeft];
     const ErrorIconComponent: any = Icons['ExclamationTriangleIcon'];
 
@@ -216,10 +220,14 @@ const TextInput: FC<TextInputType> = forwardRef<
               $hasError={hasError}
               onClick={onClickIconRight}
             >
-              <RightIconComponent
-                id={`${id}-right-icon`}
-                accessibility="ícone do botão"
-              />
+              {RightIconComponent ? (
+                <RightIconComponent
+                  id={`${id}-right-icon`}
+                  accessibility="ícone do botão"
+                />
+              ) : (
+                iconRight
+              )}
             </IconWrapperRight>
           )}
 
