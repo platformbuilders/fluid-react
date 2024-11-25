@@ -26,6 +26,7 @@ const meta: Meta<typeof DatePicker> = {
     minDate: { control: { type: 'boolean' } },
     maxDate: { control: { type: 'boolean' } },
     inputVariant: { type: 'string' },
+    disabledInput: { control: { type: 'boolean' } },
   },
   args: {
     onChange: onChange,
