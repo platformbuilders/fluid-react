@@ -21,6 +21,7 @@ const meta: Meta<typeof Switch> = {
     label: 'Switch Test',
     checked: false,
     onChange: mockOnChange,
+    variant: 'default',
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
